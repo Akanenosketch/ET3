@@ -25,9 +25,12 @@
 	<script type="text/javascript" src="./js_app/tests_project.js"></script>
 
 
+
+
 	<!-- Hace falta cargar los html del API y estructuras?-->
 
 	<!-- Creo que hace falta cargar el de datos-->
+	<script type="text/javascript" src="./ET3_Datos_ET3_xor_Coffee_enjoyers.js"></script>
 
 	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -142,6 +145,17 @@
 
 	<footer class='bordeado'>
 		<spam class="text_titulo_pie">Pie de página</spam>
+		<div id="divTablasDatosEntrega">
+			<table>
+				<tbody id="salidaDatosEntrega">
+				</tbody>
+			</table>
+			<table>
+				<tbody id="salidaDatosEntregaPersonas">
+				</tbody>
+			</table>
+
+		</div>
 	</footer>
 
 	<!-- Overlay para acompañar el modal -->
@@ -156,6 +170,14 @@
 
 	<script type="text/javascript">
 
+		function menu_work() {
+			if (document.getElementById('div-menu').style.display == 'none') {
+				document.getElementById('div-menu').style.display = 'block';
+			}
+			else {
+				document.getElementById('div-menu').style.display = 'none';
+			}
+		}
 		document.getElementById('div-menu').style.display = 'none';
 		document.getElementById('div_IU_form').style.display = 'none';
 		document.getElementById('id_tabla_datos').style.display = 'none';
@@ -165,15 +187,36 @@
 		// poner no visible el modal de error de accion
 		document.getElementById('error_action_modal').style.display = 'none';
 
-		function menu_work() {
-			if (document.getElementById('div-menu').style.display == 'none') {
-				document.getElementById('div-menu').style.display = 'block';
-			}
-			else {
-				document.getElementById('div-menu').style.display = 'none';
-			}
-		}
 
+		let datos = eval("def_grupo_ET3_xor_Coffee_enjoyers");
+		document.getElementById('divTablasDatosEntrega').style.display = 'block';
+		let headersEntrega = `<tr>
+        	<th class="Nombre Grupo">Nombre Grupo</th>
+        	<th class="Entrega">Entrega</th>
+        	<th class="Horas Totales">Horas Totales</th>
+        	</tr>`;
+		document.getElementById('salidaDatosEntrega').innerHTML = headersEntrega;
+		let headersPersonas = `<tr>
+        	<th class="Nombre Integrante">Nombre Integrante</th>
+        	<th class="Horas">Horas</th>
+        	</tr>`;
+		document.getElementById('salidaDatosEntregaPersonas').innerHTML = headersPersonas;
+
+		let datosEntrega = `<tr>
+            <td>`+ datos[1] + `</td>
+            <td>`+ datos[0] + `</td>
+            <td>`+ datos[4] + `</td>
+            </tr>`;
+		document.getElementById('salidaDatosEntrega').innerHTML += datosEntrega;
+
+		let datosPersona = "";
+		for (let i = 0; i < datos[2].length; i++) {
+			datosPersona += `<tr>
+            <td>`+ datos[2][i] + `</td>
+            <td>`+ datos[3][i] + `</td>
+            </tr>`;
+		}
+		document.getElementById('salidaDatosEntregaPersonas').innerHTML += datosPersona;
 		setLang('');
 
 	</script>
