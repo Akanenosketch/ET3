@@ -1,0 +1,1 @@
+datosgenerales = Array("Rodriguez Lorenzo Daniel Fabian","ET2",83);
