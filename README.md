@@ -7,13 +7,10 @@ La version inicial _deberia_ funcionar tal y como esta
 Estructura (archivos con check se presume estan en su version final):
 
 css
-
 	IU.css [ ]
 iconos
-
 	Add,back,delete,edit,file,search,showcurrent,test, (spain,uk cambiar por un select), añadir al menos 2 mas para API y estructuras [ ]
 js_app
-
 	estructura_nombreentidad.js ? [ ]
  
 	analisis ? [ ]
