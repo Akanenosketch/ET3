@@ -57,89 +57,69 @@ API.html [ ]
 
 
 TODO LIST
+-Crear archivo estructura_nombreentidad.js
 
-[ ] Organizar directorios
+-Preparar estructura def_html_nombreentidad
 
-[ ] Modificar dependencias necesarias
+-Preparar estructura def_test_nombreentidad
 
-[ ] Crear archivo estructura_nombreentidad.js:
+-Rellenar estructura_nombreentidad.js para Analisis
 
-[ ] Preparar estructura def_html_nombreentidad
+-Rellenar estructura_nombreentidad.js para Proyecto
 
-[ ] Preparar estructura def_test_nombreentidad
+-Rellenar estructura_nombreentidad.js para Characteristic
 
-[ ] Rellenar estructura_nombreentidad.js para Analisis
+-Refactorizar entidades ET2, mover metodos a EntidadAbstracta
 
-[ ] Rellenar estructura_nombreentidad.js para Proyecto
+-Reescribir Test class para usar lo nuevo
 
-[ ] Refactorizar entidades ET2, mover metodos a EntidadAbstracta
+-Implementar createForm() en EntidadAbstracta
 
-[ ] Reescribir Test class para usar lo nuevo
+-Crear clase para construir form dinamico
 
-[ ] Implementar createForm() en EntidadAbstracta
+-Crear clase para colocar valores
 
-[ ] Crear clase para construir form dinamico
+-Crear clase para crear validaciones
 
-[ ] Crear clase para colocar valores
+-Organizar la muestra del array de datos
 
-[ ] Crear clase para crear validaciones
+-Crear API.html
 
-[ ] Mostrar Array datos en index
+-Poner API.html en index
 
-[ ] Organizar la muestra del array
+-Crear estructuras.html
 
-[ ] Crear API.html
+-Poner estructuras.html en index
 
-[ ] Poner API.html en index
+-Desarrollar characteristic
 
-[ ] Crear estructuras.html
+-Desarrollar characteristic tests
 
-[ ] Poner estructuras.html en index
+-Desarrollar characteristic pruebas
 
-[ ] Desarrollar characteristic
+-Desarrollar characteristic traducciones
 
-[ ] Desarrollar characteristic tests
+-Añadir characteristic a index
 
-[ ] Desarrollar characteristic pruebas
+-Refactorizar index.html
 
-[ ] Desarrollar characteristic traducciones
+-Mostrar tests con scroll y modal
 
-[ ] Añadir characteristic a index
+-HACER CSS PARA MODAL Y DEMAS
 
-[ ] Refactorizar index.html
+-HACER CSS PARA COLORES Y PRESENTACION
 
-[ ] Mostrar tests con scroll y modal
+-HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
 
-[ ] HACER CSS PARA MODAL Y DEMAS
-
-[ ] HACER CSS PARA COLORES Y PRESENTACION
-
-[ ] HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
-
-[ ] Reorganizar idioma
+-Reorganizar idioma
 
 
 
 
 Enunciado : https://docs.google.com/document/d/1Kl11WnqrlurwHtuUmPAz4m8kH6adguH33vzfODUaae8/edit?tab=t.0
 
-Definición Entrega ET3
-Interfaces de Usuario
-Curso 2024-2025
 
-Tipología
-
-VOLUNTARIA (Si se presenta deben seguirse las normas de aplicación establecidas en la guía docente)
-
-Realización en grupo de como máximo cuatro miembros, de los cuales uno es el líder. El líder puntúa sobre 12 en vez de 10 que lo hacen el resto de miembros del grupo.
-
-Entrega individual por parte del líder del grupo.
-
-La ET3 tiene una dedicación entre teoría y práctica de 40 horas por alumno y se plantea con una duración estimada de 120 horas en una holgura por grupo de 4 personas de 40 horas.
-
-Definición
-
-Siguiendo la arquitectura de directorios definida en la ET2, (js_core, js_base, locale, iconos, css, index.html), colocando Validaciones_Atomicas.js y Test_Class.js en js_core, EntidadAbstracta en js_base, idioma en locale.
+~~Siguiendo la arquitectura de directorios definida en la ET2, (js_core, js_base, locale, iconos, css, index.html), colocando Validaciones_Atomicas.js y Test_Class.js en js_core, EntidadAbstracta en js_base, idioma en locale.~~
 
 Se solicita que en un fichero estructura_nombreentidad.js en js_app se definan dos estructuras de datos que permitan rellenarlas con la información necesaria para poder generar automaticamente las tablas de presentación de información, los formularios de acciones y las validaciones de los campos de formulario. Estas estructuras serían:
 
@@ -186,8 +166,6 @@ En la página index.html debe existir un icono que lleve a una página API.html 
 
 Debe existir un fichero IU.css en el directorio /css que contenga todas las reglas de estilo aplicables en el interfaz. La interfaz de las páginas web debe poder visualizarse desde 1920x1080 píxeles hasta 960×540 píxeles de forma dinámica. A partir de 960×540 píxeles debe cambiar al formato móvil de una columna con la resolución 640×480 píxeles como tamaño mínimo. El formato de index.html debe tener un encabezado, un pie de página, un icono de menú debajo de la cabecera (para mostrar las entidades que se pueden seleccioinar) y una zona de trabajo. Se mostrará en un modal los resultados de test y se mostrarán la tabla y los formularios (modales) y los mensajes de acción (modales).
 
-El líder debe mandar por correo electrónico a jriglesias@esei.uvigo.es la composición del grupo con copia a cada uno de los miembros del mismo. Los miembros del grupo deben responder a todos al correo del líder indicando que están de acuerdo en formar parte del grupo. Todo esto debe hacerse antes del día 1 de diciembre de 2024. Posteriormente a esta fecha no se permitirán modificaciones en la composición de los grupos ni nuevos grupos.
-
 
 Objetivos
 
@@ -204,86 +182,3 @@ Objetivos
 6) Los datos del grupo mostrados en la página index.html debe leerse el fichero ET3_Datos_NombreGrupo.js
 
 7) Debe utilizarse todo lo desarrollado para implementar los test y la gestión y acceso a BACK de las tablas analysis_preparation, project y characteristic (definida al final del documento), los cuales deben ser accesibles desde index.html.
-
-
-Historias de usuario a cumplir
-
-Particulares de entrega (Obligatorio. Si se incumple alguno de estos criterios la nota será 0)
-1. Los ficheros tienen el nombre, formato y tipo indicado en la entrega
-2. El directorio a entregar existe y tiene el nombre indicado en la entrega
-3. Se han indicado el número de horas utilizadas en la realización de la entrega por cada alumno.
-
-
-Por cada error en la estructura de directorios, ficheros o variables solicitadas : 0,1
-
-Por cada error en lo solicitado en los ficheros de información mostrados desde el index.html : 0,1
-
-Por cada error en los test : 0,1
-
-Por cada error en los formularios : 0,1
-
-Por cada error en la interacción en interfaz : 0,1
-
-Por cada error en la apariencia de la interfaz : 0,1
-
-
-
-
-
-Forma de entrega
-
-1) Colocar todo el código en un directorio con nombre CODIGO
-
-2) Crear un directorio con el nombre ET3_NombreGrupo y poner en su interior el directorio CODIGO
-
-3) Comprimir el directorio ET3_NombreGrupo en formato .rar con el nombre ET3_NombreGrupo.rar
-
-4) Subir el fichero ET3_NombreGrupo.rar al ejercicio ET3 en Moovi.
-
-
-
-Modo de corrección
-
-Se descomprime el fichero .rar proporcionado por el grupo.
-Se coloca en un directorio de la máquina virtual. NO necesariamente en el directorio raíz.
-Se verifica la información proporcionada a nivel de grupo, estructuras de datos, test y api.
-Se verifica el funcionamiento para las entidades propuestas.
-Se verifica el funcionamiento para una tabla nueva usando las estructuras de datos de la entrega.
-Se verifica la presentación de la interfaz conforme a las indicaciones de corrección proporcionadas.
-
-
-(SE ENTREGA ANTES DEL VIERNES DÍA 10 DE ENERO A LAS 23:59 HORAS)
-
-
-
-CREATE TABLE `characteristic` (
-  `id_characteristic` int(11) NOT NULL AUTOINCREMENT,
-  `name_characteristic` varchar(100) NOT NULL,
-  `description_characteristic` varchar(5000) NOT NULL,
-  `data_type_characteristic` enum('number','text','set') NOT NULL,
-  `category_characteristic` enum('soil_site','soil_chem','soil_bio') NOT NULL,
-  `bibref_characteristic` varchar(200) NOT NULL,
-  `file_characteristic` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
-
-
-
-id_characteristic
-dígitos min 1 max 11 
-name_characteristic
-alfabéticos y espacios sin acentos ni ñ, min 8 max 100
-description_characteristic
-alfabéticos y espacios sin acentos ni ñ, min 80 max 5000
-data_type_characteristic
-
-
-category_characteristic
-
-
-bibref_characteristic
-alfabéticos con acentos, ñ, espacios y signos de puntuación, min 16 max 200
-file_characteristic
-alfabéticos con punto sin acentos ni ñ ni espacios min 7 max 100. Solo los mime type pdf, doc o docx y tamaño de fichero menor de 200000 bytes.
-
-
