@@ -7,66 +7,116 @@ La version inicial _deberia_ funcionar tal y como esta
 Estructura (archivos con check se presume estan en su version final):
 
 css
+
 	IU.css [ ]
 iconos
+
 	Add,back,delete,edit,file,search,showcurrent,test, (spain,uk cambiar por un select), añadir al menos 2 mas para API y estructuras [ ]
 js_app
+
 	estructura_nombreentidad.js ? [ ]
+ 
 	analisis ? [ ]
+ 
 	project ? [ ]
+ 
 	test_analisis [X]
+ 
 	test_project [X]
+ 
 	Textos_ES [ ]
+ 
 	Textos_EN [ ]
+ 
 	3 clases a mayores [ ]
 	
 js_base
+
 	EntidadAbstracta [ ]
 js_core
+
 	DOM_class [ ]
+ 
 	ExternalAccess [ ]
-	Test_class [ ]
+
+ 	Test_class [ ]
+  
 	Validaciones [ ]
+ 
 Locale
+
 	idioma.js [ ]
 
 index.html [ ]
+
 ET3_Datos_NombreGrupo.js [X] (falta poner las horas)
+
 estructuras.html [ ]
+
 API.html [ ]
+
 
 
 TODO LIST
 
 [ ] Organizar directorios
+
 [ ] Modificar dependencias necesarias
+
 [ ] Crear archivo estructura_nombreentidad.js:
+
 [ ] Preparar estructura def_html_nombreentidad
+
 [ ] Preparar estructura def_test_nombreentidad
+
 [ ] Rellenar estructura_nombreentidad.js para Analisis
+
 [ ] Rellenar estructura_nombreentidad.js para Proyecto
+
 [ ] Refactorizar entidades ET2, mover metodos a EntidadAbstracta
+
 [ ] Reescribir Test class para usar lo nuevo
+
 [ ] Implementar createForm() en EntidadAbstracta
+
 [ ] Crear clase para construir form dinamico
+
 [ ] Crear clase para colocar valores
+
 [ ] Crear clase para crear validaciones
+
 [ ] Mostrar Array datos en index
+
 [ ] Organizar la muestra del array
+
 [ ] Crear API.html
+
 [ ] Poner API.html en index
+
 [ ] Crear estructuras.html
+
 [ ] Poner estructuras.html en index
+
 [ ] Desarrollar characteristic
+
 [ ] Desarrollar characteristic tests
+
 [ ] Desarrollar characteristic pruebas
+
 [ ] Desarrollar characteristic traducciones
+
 [ ] Añadir characteristic a index
+
 [ ] Refactorizar index.html
+
 [ ] Mostrar tests con scroll y modal
+
 [ ] HACER CSS PARA MODAL Y DEMAS
+
 [ ] HACER CSS PARA COLORES Y PRESENTACION
+
 [ ] HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
+
 [ ] Reorganizar idioma
 
 
