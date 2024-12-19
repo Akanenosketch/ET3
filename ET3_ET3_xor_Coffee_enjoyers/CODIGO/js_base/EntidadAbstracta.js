@@ -22,7 +22,7 @@ class EntidadAbstracta extends DOM_class{
 
 	
 
-	crearTablaDatos(){
+	crearTablaDatos(){ //Mover a DOM class?
 
 		document.getElementById("id_tabla_datos").style.display = 'block';
 
@@ -162,7 +162,7 @@ class EntidadAbstracta extends DOM_class{
     
     }
 
-	cambiacolumnastabla(atributo){
+	cambiacolumnastabla(atributo){ //Mover a dom class?
 
 		document.querySelector("th[class='"+atributo+"']").style.display = 'none';
 

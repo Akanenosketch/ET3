@@ -31,6 +31,7 @@ function setLang(lang=''){
    //**Se recorre el array de traducciones buscando coincidencias una por una*/
    for(var clave in traduccion) {
 
+    //Hacer un apaño para los textareas y que no haga falta el lio de funciones en las entidades
  		var elementos = document.getElementsByClassName(clave);
         var etiquetas =document.getElementsByTagName('label');
         var inputs = document.getElementsByTagName('input');

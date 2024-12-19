@@ -1,5 +1,5 @@
 class test {
-
+//poner que pueda usar las estructuras sin depender del cargar form
     constructor() {
         // mostrar boton de test una vez creada la clase de entidad
         this.mostrar_boton_test();

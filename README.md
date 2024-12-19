@@ -9,10 +9,13 @@ Estructura (archivos con check se presume estan en su version final):
 css
 
 	IU.css [ ]
+
 iconos
 
 	Add,back,delete,edit,file,search,showcurrent,test, (spain,uk cambiar por un select), añadir al menos 2 mas para API y estructuras [ ]
+	
 js_app
+
 	estructura_nombreentidad.js ? [ ]
  
 	analisis ? [ ]
@@ -32,11 +35,12 @@ js_app
 js_base
 
 	EntidadAbstracta [ ]
+
 js_core
 
 	DOM_class [ ]
  
-	ExternalAccess [ ]
+	ExternalAccess [X] (NO TOCAR)
 
  	Test_class [ ]
   
@@ -56,12 +60,32 @@ API.html [ ]
 
 
 
-TODO LIST
+
+
+*TODO LIST*
+
 -Crear archivo estructura_nombreentidad.js
 
 -Preparar estructura def_html_nombreentidad
 
 -Preparar estructura def_test_nombreentidad
+
+-Reorganizar arbol de clases para meter lo nuevo
+
+-Implementar createForm() en EntidadAbstracta
+
+-Refactorizar entidades ET2, mover metodos a EntidadAbstracta
+
+-Montar un select para idiomas
+
+-Completar Validaciones_Atomicas para cualquier input
+
+-Revisar DOM_class
+
+-Modificar idioma.js
+
+
+-Reescribir Test class para usar lo nuevo
 
 -Rellenar estructura_nombreentidad.js para Analisis
 
@@ -69,19 +93,13 @@ TODO LIST
 
 -Rellenar estructura_nombreentidad.js para Characteristic
 
--Refactorizar entidades ET2, mover metodos a EntidadAbstracta
-
--Reescribir Test class para usar lo nuevo
-
--Implementar createForm() en EntidadAbstracta
-
 -Crear clase para construir form dinamico
 
 -Crear clase para colocar valores
 
 -Crear clase para crear validaciones
 
--Organizar la muestra del array de datos
+-Añadir characteristic a index
 
 -Crear API.html
 
@@ -91,7 +109,7 @@ TODO LIST
 
 -Poner estructuras.html en index
 
--Desarrollar characteristic
+-Desarrollar characteristic 
 
 -Desarrollar characteristic tests
 
@@ -99,24 +117,22 @@ TODO LIST
 
 -Desarrollar characteristic traducciones
 
--Añadir characteristic a index
-
 -Refactorizar index.html
 
--Mostrar tests con scroll y modal
-
 -HACER CSS PARA MODAL Y DEMAS
+
+-Mostrar tests con scroll y modal
 
 -HACER CSS PARA COLORES Y PRESENTACION
 
 -HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
 
--Reorganizar idioma
+-Organizar la muestra del array de datos
 
 
 
 
-Enunciado : https://docs.google.com/document/d/1Kl11WnqrlurwHtuUmPAz4m8kH6adguH33vzfODUaae8/edit?tab=t.0
+*Enunciado : https://docs.google.com/document/d/1Kl11WnqrlurwHtuUmPAz4m8kH6adguH33vzfODUaae8/edit?tab=t.0*
 
 
 ~~Siguiendo la arquitectura de directorios definida en la ET2, (js_core, js_base, locale, iconos, css, index.html), colocando Validaciones_Atomicas.js y Test_Class.js en js_core, EntidadAbstracta en js_base, idioma en locale.~~
@@ -128,8 +144,6 @@ variable def_html_nombreentidad que defina para una tabla la información necesa
 variable def_test_nombreentidad que defina las validaciones por acción junto con los mensajes de respuesta de error de las validaciones 
 
 Una vez que se establezca la estructura de datos, esta debe poder rellenarse con la información necesaria para cada tabla a gestionar en la interfaz.
-
-Se solicita también: 
 
 Utilizar la clase test para que verifique el formato de test y pruebas y ejecute todas las pruebas de test de las definiciones de test definidas para cada atributo (incluidas las de fichero) y saque su resultado en un componente modal con scroll para ser visualizado por el usuario. La acción de test debe estar disponible como en la ET2 en la parte superior del index cuando se entra en la gestión de una entidad.
 
@@ -151,13 +165,13 @@ Debe existir una clase para la colocación de los valores de los atributos para 
 
 Debe existir una clase para la construcción de las validaciones de campo y submit en los formularios para las acciones.
 
-En la página index.html, al abrirse, debe mostrarse (no estático en html) la información de un fichero ET3_Datos_NombreGrupo.js con una variable de tipo array con el nombre def_grupo_nombreGrupo con la siguiente información (este fichero debe estar a nivel de index.html) :
+~~En la página index.html, al abrirse, debe mostrarse (no estático en html) la información de un fichero ET3_Datos_NombreGrupo.js con una variable de tipo array con el nombre def_grupo_nombreGrupo con la siguiente información (este fichero debe estar a nivel de index.html) :~~
 
-Entrega,
-nombre de grupo,
-integrantes,
-horas dedicadas por integrante,
-horas totales
+~~Entrega,~~
+~~nombre de grupo,~~
+~~integrantes,~~
+~~horas dedicadas por integrante,~~
+~~horas totales~~
 
 
 En la página index.html debe existir un icono que lleve a una página estructuras.html en donde se describan las estructuras de datos realizadas y un ejemplo de su uso. Este fichero debe estar a nivel de index.html.
@@ -173,12 +187,12 @@ Objetivos
 
 2) Deben poder definirse definiciones de test y pruebas de test para todos los campos de la tabla incluyendo los campos de tipo file.
 
-3) La realización de los test debe realizarse en index.html
+~~3) La realización de los test debe realizarse en index.html~~
 
 4) Debe utilizar los códigos definidos en textos_ES y textos_EN para la información de interfaz.
 
 5) Las acciones deben estar representadas por iconos. 
 
-6) Los datos del grupo mostrados en la página index.html debe leerse el fichero ET3_Datos_NombreGrupo.js
+~~6) Los datos del grupo mostrados en la página index.html debe leerse el fichero ET3_Datos_NombreGrupo.js~~
 
 7) Debe utilizarse todo lo desarrollado para implementar los test y la gestión y acceso a BACK de las tablas analysis_preparation, project y characteristic (definida al final del documento), los cuales deben ser accesibles desde index.html.
