@@ -3,6 +3,10 @@ let textos_ES = {
     /*TITULOS*/
 
 
+    //Idiomas
+    "idiomaES" : "Español",
+    "idiomaEN" : "Ingles",
+
     //textos titulos index
     'text_titulo_app'   : 'Interfaz ET2 IU',
     'text_titulo_menu'  : 'Menú',

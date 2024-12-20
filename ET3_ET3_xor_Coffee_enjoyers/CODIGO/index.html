@@ -43,14 +43,14 @@
 	
 		<!-- Select para cambiar idiomas -->
 		<select id="languageSelect" onchange="setLang(this.value);">
-			<option value="ES">Español</option>
-			<option value="EN">English</option>
+			<option value="ES" class="idiomaES"></option>
+			<option value="EN" class="idiomaEN"></option>
 		</select>
 	
 		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
 	</header>	
 
-	<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();">Opciones de ménu</span></nav>
+	<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();"></span></nav>
 
 	<aside id='div-menu'>
 		<ol>
@@ -93,7 +93,7 @@
 
 		<div class="contenidoForm" id="contenidoForm">
 			<div class="class_titulo_form">
-				<spam id="class_contenido_titulo_form" class="">titulo para el formulario de este tamano</spam>
+				<spam id="class_contenido_titulo_form" class="">titulo para el formulario de entidad</spam>
 			</div>
 
 			<form id='IU_form' name='IU_form' method='POST' enctype="multipart/form-data" class="formulario">
@@ -147,7 +147,7 @@
 
 
 	<footer class='bordeado'>
-		<spam class="text_titulo_pie">Pie de página</spam>
+		<spam class="text_titulo_pie"></spam>
 		<div id="divTablasDatosEntrega">
 			<table>
 				<tbody id="salidaDatosEntrega">

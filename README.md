@@ -2,30 +2,40 @@
  Un repositorio para la ET3
 
 
-La version inicial _deberia_ funcionar tal y como esta
-
 Estructura (archivos con check se presume estan en su version final):
 
 css
 
-	IU.css [ ]
+	- [] IU.css 
 
 iconos
 
-	Add,back,delete,edit,file,search,showcurrent,test, (spain,uk cambiar por un select), añadir al menos 2 mas para API y estructuras [ ]
-	
+	Acciones: Add,delete,edit,search,showcurrent,test [x]
+
+	Para forms: back,file [X]
+
+	Para el index: añadir al menos 2 mas para API y estructuras [ ]
+
 js_app
 
-	estructura_nombreentidad.js ? [ ]
+	estructura_analisis.js  [ ]
  
 	analisis ? [ ]
- 
+
+	estructura_project.js  [ ]
+
 	project ? [ ]
+
+	estructura_characteristic.js  [ ]
  
+	characteristic ? [ ]
+
 	test_analisis [X]
  
 	test_project [X]
  
+	test_characteristic []
+
 	Textos_ES [ ]
  
 	Textos_EN [ ]
@@ -76,14 +86,15 @@ API.html [ ]
 
 -Refactorizar entidades ET2, mover metodos a EntidadAbstracta
 
--Montar un select para idiomas
+-Que se pueda meter cualquier tipo de input en los forms
 
 -Completar Validaciones_Atomicas para cualquier input
 
 -Revisar DOM_class
 
--Modificar idioma.js
+-Modificar idioma.js para textareas, radio,select, checkbox o lo que haga falta
 
+-Hacer tests y pruebas para lo de la fecha
 
 -Reescribir Test class para usar lo nuevo
 

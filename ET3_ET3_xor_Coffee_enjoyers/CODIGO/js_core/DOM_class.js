@@ -6,15 +6,16 @@ class DOM_class extends test{
 
     }
 
+    /** Para el campo con id proporcionada, muestra error y el mensaje de error correspondiente a codigoerror */
 mostrar_error_campo(id, codigoerror){
 	document.getElementById('div_error_'+id).style.display = 'inline';
 	document.getElementById('div_error_'+id).innerHTML = codigoerror;
     document.getElementById('div_error_'+id).className = codigoerror;
     document.getElementById(id).className = 'errorcampo';
-	document.getElementById('submit_button').focus();
+	document.getElementById(id).focus();
     setLang();
 }
-
+/**Muestra que el campo con id id es correcto */
 mostrar_exito_campo(id){
 	document.getElementById('div_error_'+id).style.display = 'none';
 	document.getElementById('div_error_'+id).innerHTML = '';
@@ -61,7 +62,7 @@ mostrarocultarcolumnas(){
 
 }
 
-construirSelect(){
+construirSelect(){ //copiar algo asi para un select de idiomas
 
     document.getElementById("seleccioncolumnas").innerHTML = '';
     
@@ -70,7 +71,7 @@ construirSelect(){
         optionselect = document.createElement('option');
         optionselect.className = atributo;
         optionselect.innerHTML = atributo;
-        optionselect.setAttribute("onclick","validar.modificarcolumnasamostrar('"+atributo+"');");
+        optionselect.setAttribute("onclick","validar.modificarcolumnasamostrar('"+atributo+"');"); //para idiomas cambiarlo y que invoque a clase idioma, habria que usar la cookie para sacar el marcado
         if (this.columnasamostrar.includes(atributo)){
             optionselect.selected = true;
         }
@@ -168,7 +169,7 @@ hacertabla(){
 }
 
 
-crearboton(entidad, accion, parametros){
+crearboton(entidad, accion, parametros){ //por que tiene entidad?
         let columna = document.createElement('td');
         let opcion = document.createElement('img');
         opcion.src = "./iconos/"+accion+'.png';

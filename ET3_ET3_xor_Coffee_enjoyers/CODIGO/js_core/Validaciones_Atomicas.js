@@ -36,7 +36,7 @@ class validacionesatomicas {
 
 	evaluar_tam(id, parametro, mayor) {
 		let elemento = document.getElementById(id);
-		switch (elemento.tagName) {
+		switch (elemento.tagName) { //permitir comprobar no solo input y textarea por si acaso
 			case 'INPUT':
 			case 'TEXTAREA':
 				switch (elemento.type) {
