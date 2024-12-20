@@ -40,14 +40,15 @@
 
 	<header id='header_page' class='bordeado'>
 		<spam class="text_titulo_app"></spam>
-
-		<!-- Cambiar por un select idionas-->
 	
-		<img src="./iconos/Spain.png" onclick="setLang('ES');" />
-		<img src="./iconos/United-Kingdom.png" onclick="setLang('EN');" />
-
+		<!-- Select para cambiar idiomas -->
+		<select id="languageSelect" onchange="setLang(this.value);">
+			<option value="ES">Español</option>
+			<option value="EN">English</option>
+		</select>
+	
 		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
-	</header>
+	</header>	
 
 	<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();">Opciones de ménu</span></nav>
 
