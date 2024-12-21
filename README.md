@@ -2,143 +2,141 @@
  Un repositorio para la ET3
 
 
-Estructura (archivos con check se presume estan en su version final):
+### Estructura (archivos con check se presume estan en su version final):
 
-css
+#### css
 
-	- [] IU.css 
+- [ ] IU.css 
 
-iconos
+#### iconos
 
-	Acciones: Add,delete,edit,search,showcurrent,test [x]
+- [x] Acciones: Add,delete,edit,search,showcurrent,test 
 
-	Para forms: back,file [X]
+- [X] Para forms: back,file 
 
-	Para el index: añadir al menos 2 mas para API y estructuras [ ]
+- [ ] Para el index: añadir al menos 2 mas para API y estructuras 
 
-js_app
+#### js_app
 
-	estructura_analisis.js  [ ]
+- [ ] estructura_analisis.js  
  
-	analisis ? [ ]
+- [ ] analisis ?
 
-	estructura_project.js  [ ]
+- [ ] estructura_project.js
 
-	project ? [ ]
+- [ ] project ?
 
-	estructura_characteristic.js  [ ]
+- [ ] estructura_characteristic.js
  
-	characteristic ? [ ]
+- [ ] characteristic ? 
 
-	test_analisis [X]
+- [x] test_analisis 
  
-	test_project [X]
+- [x] test_project 
  
-	test_characteristic []
+- [ ] test_characteristic 
 
-	Textos_ES [ ]
+- [ ] Textos_ES 
  
-	Textos_EN [ ]
+- [ ] Textos_EN 
  
-	3 clases a mayores [ ]
+- [ ] 3 clases a mayores 
 	
-js_base
+#### js_base
 
-	EntidadAbstracta [ ]
+- [ ] EntidadAbstracta 
 
-js_core
+#### js_core
 
-	DOM_class [ ]
+- [ ] DOM_class [ ]
  
-	ExternalAccess [X] (NO TOCAR)
+- [x] ExternalAccess (NO TOCAR)
 
- 	Test_class [ ]
+- [ ] Test_class [ ]
   
-	Validaciones [ ]
+- [ ] Validaciones [ ]
  
-Locale
+#### Locale
 
-	idioma.js [ ]
+- [ ] idioma.js
 
-index.html [ ]
+#### Otros
 
-ET3_Datos_NombreGrupo.js [X] (falta poner las horas)
+- [ ] index.html
 
-estructuras.html [ ]
+- [x] ET3_Datos_NombreGrupo.js (falta poner las horas)
 
-API.html [ ]
+- [ ] estructuras.html 
 
+- [ ] API.html 
 
+### TODO LIST
 
+- [ ] Crear archivo estructura_nombreentidad.js
 
+- [ ] Preparar estructura def_html_nombreentidad
 
-*TODO LIST*
+- [ ] Preparar estructura def_test_nombreentidad
 
--Crear archivo estructura_nombreentidad.js
+- [ ] Reorganizar arbol de clases para meter lo nuevo
 
--Preparar estructura def_html_nombreentidad
+- [ ] Implementar createForm() en EntidadAbstracta
 
--Preparar estructura def_test_nombreentidad
+- [ ] Refactorizar entidades ET2, mover metodos a EntidadAbstracta
 
--Reorganizar arbol de clases para meter lo nuevo
+- [ ] Que se pueda meter cualquier tipo de input en los forms
 
--Implementar createForm() en EntidadAbstracta
+- [ ] Completar Validaciones_Atomicas para cualquier input
 
--Refactorizar entidades ET2, mover metodos a EntidadAbstracta
+- [ ] Revisar DOM_class
 
--Que se pueda meter cualquier tipo de input en los forms
+- [ ] Modificar idioma.js para textareas, radio,select, checkbox o lo que haga falta
 
--Completar Validaciones_Atomicas para cualquier input
+- [ ] Hacer tests y pruebas para lo de la fecha
 
--Revisar DOM_class
+- [ ] Reescribir Test class para usar lo nuevo
 
--Modificar idioma.js para textareas, radio,select, checkbox o lo que haga falta
+- [ ] Rellenar estructura_nombreentidad.js para Analisis
 
--Hacer tests y pruebas para lo de la fecha
+- [ ] Rellenar estructura_nombreentidad.js para Proyecto
 
--Reescribir Test class para usar lo nuevo
+- [ ] Rellenar estructura_nombreentidad.js para Characteristic
 
--Rellenar estructura_nombreentidad.js para Analisis
+- [ ] Crear clase para construir form dinamico
 
--Rellenar estructura_nombreentidad.js para Proyecto
+- [ ] Crear clase para colocar valores
 
--Rellenar estructura_nombreentidad.js para Characteristic
+- [ ] Crear clase para crear validaciones
 
--Crear clase para construir form dinamico
+- [ ] Añadir characteristic a index
 
--Crear clase para colocar valores
+- [ ] Crear API.html
 
--Crear clase para crear validaciones
+- [ ] Poner API.html en index
 
--Añadir characteristic a index
+- [ ] Crear estructuras.html
 
--Crear API.html
+- [ ] Poner estructuras.html en index
 
--Poner API.html en index
+- [ ] Desarrollar characteristic 
 
--Crear estructuras.html
+- [ ] Desarrollar characteristic tests
 
--Poner estructuras.html en index
+- [ ] Desarrollar characteristic pruebas
 
--Desarrollar characteristic 
+- [ ] Desarrollar characteristic traducciones
 
--Desarrollar characteristic tests
+- [ ] Refactorizar index.html
 
--Desarrollar characteristic pruebas
+- [ ] HACER CSS PARA MODAL Y DEMAS
 
--Desarrollar characteristic traducciones
+- [ ] Mostrar tests con scroll y modal
 
--Refactorizar index.html
+- [ ] HACER CSS PARA COLORES Y PRESENTACION
 
--HACER CSS PARA MODAL Y DEMAS
+- [ ] HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
 
--Mostrar tests con scroll y modal
-
--HACER CSS PARA COLORES Y PRESENTACION
-
--HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
-
--Organizar la muestra del array de datos
+- [ ] Organizar la muestra del array de datos
 
 
 
@@ -198,12 +196,12 @@ Objetivos
 
 2) Deben poder definirse definiciones de test y pruebas de test para todos los campos de la tabla incluyendo los campos de tipo file.
 
-~~3) La realización de los test debe realizarse en index.html~~
+3) ~~La realización de los test debe realizarse en index.html~~
 
 4) Debe utilizar los códigos definidos en textos_ES y textos_EN para la información de interfaz.
 
 5) Las acciones deben estar representadas por iconos. 
 
-~~6) Los datos del grupo mostrados en la página index.html debe leerse el fichero ET3_Datos_NombreGrupo.js~~
+6) ~~Los datos del grupo mostrados en la página index.html debe leerse el fichero ET3_Datos_NombreGrupo.js~~
 
 7) Debe utilizarse todo lo desarrollado para implementar los test y la gestión y acceso a BACK de las tablas analysis_preparation, project y characteristic (definida al final del documento), los cuales deben ser accesibles desde index.html.
