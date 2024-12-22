@@ -302,7 +302,7 @@ class EntidadAbstracta extends DOM_class {
 			case 'EDIT':
 				this.cargarClasesForm(accion);
 				setLang();
-				this.arreglarTraducciones();
+		//		this.arreglarTraducciones();
 				break;
 			case 'DELETE':
 			case 'SHOWCURRENT':

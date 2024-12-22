@@ -1,6 +1,6 @@
 class analysis_preparation extends EntidadAbstracta { //Cambiar par que herede de estreuctura y estructura de Entidad?
 
-
+//mantener columnas a mostrar, pero no datos especiales y entidad
 	constructor() { //mantener,tal vez mover columnas y datos especiales a estructura
 		super();
 		this.entidad = 'analysis_preparation';

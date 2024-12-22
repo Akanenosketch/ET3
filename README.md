@@ -20,19 +20,19 @@
 
 - [ ] estructura_analisis.js  
  
-- [ ] analisis ?
+- [ ] analisis 
 
 - [ ] estructura_project.js
 
-- [ ] project ?
+- [ ] project 
 
 - [ ] estructura_characteristic.js
  
-- [ ] characteristic ? 
+- [ ] characteristic 
 
 - [x] test_analisis 
  
-- [x] test_project 
+- [ ] test_project 
  
 - [ ] test_characteristic 
 
@@ -58,7 +58,7 @@
  
 #### Locale
 
-- [ ] idioma.js
+- [X] idioma.js (posiblemente necesite actualizarse para radio y checkbox y select)
 
 #### Otros
 
@@ -72,72 +72,75 @@
 
 ### TODO LIST
 
-- [ ] Crear archivo estructura_nombreentidad.js
+- Preparar estructura def_html_nombreentidad
 
-- [ ] Preparar estructura def_html_nombreentidad
+- Preparar estructura def_test_nombreentidad
 
-- [ ] Preparar estructura def_test_nombreentidad
+- Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
-- [ ] Reorganizar arbol de clases para meter lo nuevo
+- Reorganizar arbol de clases para meter lo nuevo
 
-- [ ] Implementar createForm() en EntidadAbstracta
+- Implementar createForm() en EntidadAbstracta
 
-- [ ] Refactorizar entidades ET2, mover metodos a EntidadAbstracta
+- Refactorizar entidades ET2, mover metodos a EntidadAbstracta
 
-- [ ] Que se pueda meter cualquier tipo de input en los forms
+- Que se pueda meter cualquier tipo de input en los forms
 
-- [ ] Completar Validaciones_Atomicas para cualquier input
+- Completar Validaciones_Atomicas para cualquier input
 
-- [ ] Revisar DOM_class
+- Revisar DOM_class
 
-- [ ] Modificar idioma.js para textareas, radio,select, checkbox o lo que haga falta
+- Modificar idioma.js para textareas, radio,select, checkbox o lo que haga falta
 
-- [ ] Hacer tests y pruebas para lo de la fecha
+- Hacer tests y pruebas para lo de la fecha
 
-- [ ] Reescribir Test class para usar lo nuevo
+- Reescribir Test class para usar lo nuevo
 
-- [ ] Rellenar estructura_nombreentidad.js para Analisis
+- Rellenar estructura_nombreentidad.js para Analisis
 
-- [ ] Rellenar estructura_nombreentidad.js para Proyecto
+- Rellenar estructura_nombreentidad.js para Proyecto
 
-- [ ] Rellenar estructura_nombreentidad.js para Characteristic
+- Rellenar estructura_nombreentidad.js para Characteristic
 
-- [ ] Crear clase para construir form dinamico
+- Crear clase para construir form dinamico
 
-- [ ] Crear clase para colocar valores
+- Crear clase para colocar valores
 
-- [ ] Crear clase para crear validaciones
+- Crear clase para crear validaciones
 
-- [ ] Añadir characteristic a index
+- Añadir characteristic a index
 
-- [ ] Crear API.html
+- Crear API.html
 
-- [ ] Poner API.html en index
+- Poner API.html en index
 
-- [ ] Crear estructuras.html
+- Crear estructuras.html
 
-- [ ] Poner estructuras.html en index
+- Poner estructuras.html en index
 
-- [ ] Desarrollar characteristic 
+- Desarrollar characteristic 
 
-- [ ] Desarrollar characteristic tests
+- Desarrollar characteristic tests
 
-- [ ] Desarrollar characteristic pruebas
+- Desarrollar characteristic pruebas
 
-- [ ] Desarrollar characteristic traducciones
+- Desarrollar characteristic traducciones
 
-- [ ] Refactorizar index.html
+- Refactorizar index.html
 
-- [ ] HACER CSS PARA MODAL Y DEMAS
+- HACER CSS PARA MODAL Y DEMAS
 
-- [ ] Mostrar tests con scroll y modal
+- Mostrar tests con scroll y modal
 
-- [ ] HACER CSS PARA COLORES Y PRESENTACION
+- HACER CSS PARA COLORES Y PRESENTACION
 
-- [ ] HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
+- HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
 
-- [ ] Organizar la muestra del array de datos
+- Organizar la muestra del array de datos
 
+- Traducir el array de datos
+
+-Rehacer lo necesario para que use la estructura
 
 
 

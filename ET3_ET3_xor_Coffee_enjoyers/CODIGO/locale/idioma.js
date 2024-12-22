@@ -1,5 +1,5 @@
 
-// funcion de idioma
+/** Funcion para traducir */
 function setLang(lang = '') {
 
     if (lang == '') {
@@ -28,19 +28,16 @@ function setLang(lang = '') {
     }
 
 
-    //**Se recorre el array de traducciones buscando coincidencias una por una*/
+    /*Se recorre el array de traducciones buscando coincidencias una por una*/
     for (var clave in traduccion) {
 
-        //Hacer un apaño para los textareas y que no haga falta el lio de funciones en las entidades
         var elementos = document.getElementsByClassName(clave);
         var etiquetas = document.getElementsByTagName('label');
         var inputs = document.getElementsByTagName('input');
+        var textareas = document.getElementsByTagName('textarea');
         var imgs = document.getElementsByTagName('img');
         var options = document.getElementsByTagName('option');
-
-        for (var elem in elementos) {
-            elementos[elem].innerHTML = traduccion[clave];
-        }
+        var traducido = false;
 
         for (var i = 0; i < etiquetas.length; i++) {
             if (etiquetas[i].htmlFor == clave) {
@@ -54,6 +51,17 @@ function setLang(lang = '') {
                 if (list[j] == clave) {
                     inputs[i].placeholder = traduccion[clave];
                     inputs[i].title = traduccion[clave];
+                    traducido = true;
+                }
+            }
+        }
+        for (var i = 0; i < textareas.length; i++) {
+            var list = textareas[i].classList;
+            for (var j = 0; j < list.length; j++) {
+                if (list[j] == clave) {
+                    textareas[i].placeholder = traduccion[clave];
+                    textareas[i].title = traduccion[clave];
+                    traducido = true;
                 }
             }
         }
@@ -73,10 +81,18 @@ function setLang(lang = '') {
                 options[i].label = traduccion[clave];
             }
         }
+        
+        //comprobar si es necesario traducir otros tipos de campos
+        if (!traducido) { //evita que se traduzca al innerHTML si se ha traducido un input o textarea (comprobar si hace falta para select o radio)
+            for (var elem in elementos) {
+                elementos[elem].innerHTML = traduccion[clave];
+            }
+        }
     }
+
 }
 
-/*Función para establecer el valor de la cookie*/
+/**Función para establecer el valor de la cookie*/
 function setCookie(name, value, days) {
 
     var expires = "";
@@ -91,7 +107,7 @@ function setCookie(name, value, days) {
     document.cookie += "; Secure; SameSite=none; path=/";
 }
 
-/*Función para obtener el valor de la cookie*/
+/**Función para obtener el valor de la cookie*/
 function getCookie(name) {
 
     var nameEQ = name + "=";

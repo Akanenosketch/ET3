@@ -1,196 +1,169 @@
-class DOM_class extends test{
+class DOM_class extends test {
 
-    constructor(){
-
+    constructor() {
         super();
-
     }
 
     /** Para el campo con id proporcionada, muestra error y el mensaje de error correspondiente a codigoerror */
-mostrar_error_campo(id, codigoerror){
-	document.getElementById('div_error_'+id).style.display = 'inline';
-	document.getElementById('div_error_'+id).innerHTML = codigoerror;
-    document.getElementById('div_error_'+id).className = codigoerror;
-    document.getElementById(id).className = 'errorcampo';
-	document.getElementById(id).focus();
-    setLang();
-}
-/**Muestra que el campo con id id es correcto */
-mostrar_exito_campo(id){
-	document.getElementById('div_error_'+id).style.display = 'none';
-	document.getElementById('div_error_'+id).innerHTML = '';
-    document.getElementById(id).className = 'exitocampo';
-}
-
-modificarcolumnasamostrar(atributo){
-
-
-    let nuevascolumnas = Array();
-    if (this.columnasamostrar.includes(atributo)){
-        // borrar ese atributo
-        for (let i=0;i<this.columnasamostrar.length;i++){
-            if (this.columnasamostrar[i] == atributo){}
-            else{
-                nuevascolumnas.push(this.columnasamostrar[i]);
-            }
-        }
-        this.columnasamostrar = nuevascolumnas;
-    }
-    else{
-        // añadir
-        this.columnasamostrar.push(atributo);
+    mostrar_error_campo(id, codigoerror) {
+        document.getElementById('div_error_' + id).style.display = 'inline';
+        document.getElementById('div_error_' + id).innerHTML = codigoerror;
+        document.getElementById('div_error_' + id).className = codigoerror;
+        document.getElementById(id).className = 'errorcampo';
+        document.getElementById(id).focus();
+        setLang();
     }
 
-
-    this.crearTablaDatos();
-}
-
-mostrarocultarcolumnas(){
-
-    for (let columna of this.atributos){
-        if (this.columnasamostrar.includes(columna)){}
-        else{
-            //document.querySelector("th[class='"+columna+" tabla-th-"+columna+"']").style.display = 'none';
-            document.querySelector("th[class='"+columna+"']").style.display = 'none';
-            let arraytds = document.querySelectorAll("td[class='tabla-td-"+columna+"']");
-            for (let i=0;i<arraytds.length;i++){
-                arraytds[i].style.display = 'none';
-            }
-        }
+    /**Muestra que el campo con id id es correcto */
+    mostrar_exito_campo(id) {
+        document.getElementById('div_error_' + id).style.display = 'none';
+        document.getElementById('div_error_' + id).innerHTML = '';
+        document.getElementById(id).className = 'exitocampo';
     }
 
-
-}
-
-construirSelect(){ //copiar algo asi para un select de idiomas
-
-    document.getElementById("seleccioncolumnas").innerHTML = '';
-    
-    let optionselect = '';
-    for (let atributo of this.atributos){
-        optionselect = document.createElement('option');
-        optionselect.className = atributo;
-        optionselect.innerHTML = atributo;
-        optionselect.setAttribute("onclick","validar.modificarcolumnasamostrar('"+atributo+"');"); //para idiomas cambiarlo y que invoque a clase idioma, habria que usar la cookie para sacar el marcado
-        if (this.columnasamostrar.includes(atributo)){
-            optionselect.selected = true;
-        }
-        document.getElementById("seleccioncolumnas").append(optionselect);
-    }
-    setLang();
-}
-
-hacertabla(){
-
-    // titulos
-
-    document.getElementById("text_title_page").className = "text_titulo_page_"+this.entidad;
-    document.getElementById('title_page').style.display = 'block';
-
-    if (this.datos == ""){
-
-        document.getElementById("id_tabla_datos").style.display = 'block';
-        document.getElementById('titulostablacabecera').innerHTML = '';
-		document.getElementById('muestradatostabla').innerHTML = '';
-        document.getElementById('muestradatostabla').className = 'RECORDSET_VACIO';
-
-    }
-    else{
-
-        var textolineatitulos = '<tr>';
-
-        for (let atributo of this.atributos){
-        
-            textolineatitulos += '<th class="'+atributo+'">'+atributo+'</th>';
-        
-        }  
-            
-        textolineatitulos += '<th colspan="3"></th>';
-        
-        textolineatitulos += '</tr>';
-        
-        let cabecera = document.getElementById("titulostablacabecera");
-        cabecera.innerHTML = textolineatitulos;
-
-        // filas
-
-        var textolineadatos = ''; 
-
-        for (let i=0;i<this.datos.length;i++){
-        
-            textolineadatos += '<tr style="background-color:grey;">';
-
-            for (let clave in this.datos[i]){
-
-                if (this.datosespecialestabla.includes(clave)){
-                    let valorcolumna = this.cambiardatosespecialestabla(clave,this.datos[i][clave]);
-                    textolineadatos += '<td class="tabla-td-'+clave+'">'+valorcolumna+'</td>';
+    /**Usado en el select para seleccionar atributos a mostrar, al seleccionar un atributo ejecuta esto, si se muestra se oculta y viceversa */
+    modificarcolumnasamostrar(atributo) {
+        let nuevascolumnas = Array();
+        if (this.columnasamostrar.includes(atributo)) { // borrar ese atributo
+            for (let i = 0; i < this.columnasamostrar.length; i++) {
+                if (this.columnasamostrar[i] != atributo) {
+                    nuevascolumnas.push(this.columnasamostrar[i]);
                 }
-                else{
-                    // limpieza codigo no deseado incrustado html y script
-                    let san = (obj) => {
-                        let value = obj?.toString() || '';
-                        let sanitizedObj = value.replace(/[&<>"'`]/g, function(match) {
-                            switch (match) {
-                                case '&': return '&amp;';
-                                case '<': return '&lt;';
-                                case '>': return '&gt;';
-                                case '"': return '&quot;';
-                                case "'": return '&#039;';
-                                case '`': return '&#x60;';
-                            }
-                        });
-                        return sanitizedObj;
+            }
+            this.columnasamostrar = nuevascolumnas;
+        }
+        else {// añadir
+            this.columnasamostrar.push(atributo);
+        }
+        this.crearTablaDatos();
+    }
+
+    /**Si no esta en las columnas a mostrar, oculta la columna */
+    mostrarocultarcolumnas() {
+        for (let columna of this.atributos) {
+            if (!this.columnasamostrar.includes(columna)) {
+                document.querySelector("th[class='" + columna + "']").style.display = 'none';
+                let arraytds = document.querySelectorAll("td[class='tabla-td-" + columna + "']");
+                for (let i = 0; i < arraytds.length; i++) {
+                    arraytds[i].style.display = 'none';
+                }
+            }
+        }
+    }
+
+    /**Construye el select de seleccion de columnas */
+    construirSelect() {
+        document.getElementById("seleccioncolumnas").innerHTML = '';
+        let optionselect = '';
+        for (let atributo of this.atributos) {
+            optionselect = document.createElement('option');
+            optionselect.className = atributo;
+            optionselect.innerHTML = atributo;
+            optionselect.setAttribute("onclick", "validar.modificarcolumnasamostrar('" + atributo + "');"); 
+            optionselect.selected = this.columnasamostrar.includes(atributo);
+            document.getElementById("seleccioncolumnas").append(optionselect);
+        }
+        setLang();
+    }
+
+    /**Crea la tabla */
+    hacertabla() {
+        // titulo de la entidad
+        document.getElementById("text_title_page").className = "text_titulo_page_" + this.entidad;
+        document.getElementById('title_page').style.display = 'block';
+
+        if (this.datos == "") { //No hay datos
+            document.getElementById("id_tabla_datos").style.display = 'block';
+            document.getElementById('titulostablacabecera').innerHTML = '';
+            document.getElementById('muestradatostabla').innerHTML = '';
+            document.getElementById('muestradatostabla').className = 'RECORDSET_VACIO';
+        }
+        else {
+            var textolineatitulos = '<tr>';
+            for (let atributo of this.atributos) {
+                textolineatitulos += '<th class="' + atributo + '">' + atributo + '</th>';
+            }
+
+            textolineatitulos += '<th colspan="3"></th>';
+
+            textolineatitulos += '</tr>';
+
+            let cabecera = document.getElementById("titulostablacabecera");
+            cabecera.innerHTML = textolineatitulos;
+
+            // filas
+
+            var textolineadatos = '';
+
+            for (let i = 0; i < this.datos.length; i++) {
+
+                textolineadatos += '<tr style="background-color:grey;">';
+
+                for (let clave in this.datos[i]) {
+
+                    if (this.datosespecialestabla.includes(clave)) {
+                        let valorcolumna = this.cambiardatosespecialestabla(clave, this.datos[i][clave]);
+                        textolineadatos += '<td class="tabla-td-' + clave + '">' + valorcolumna + '</td>';
                     }
-                    let valorE = san(this.datos[i][clave]);
-                    textolineadatos += '<td class="tabla-td-'+clave+'">'+valorE+'</td>';
+                    else {
+                        // limpieza codigo no deseado incrustado html y script
+                        let san = (obj) => {
+                            let value = obj?.toString() || '';
+                            let sanitizedObj = value.replace(/[&<>"'`]/g, function (match) {
+                                switch (match) {
+                                    case '&': return '&amp;';
+                                    case '<': return '&lt;';
+                                    case '>': return '&gt;';
+                                    case '"': return '&quot;';
+                                    case "'": return '&#039;';
+                                    case '`': return '&#x60;';
+                                }
+                            });
+                            return sanitizedObj;
+                        }
+                        let valorE = san(this.datos[i][clave]);
+                        textolineadatos += '<td class="tabla-td-' + clave + '">' + valorE + '</td>';
+                    } //se podria simplificar este else con el if
                 }
+                // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)
+                let lineaedit = this.crearboton(this.entidad, 'EDIT', JSON.stringify(this.datos[i]));
+                let lineadelete = this.crearboton(this.entidad, 'DELETE', JSON.stringify(this.datos[i]));
+                let lineashowcurrent = this.crearboton(this.entidad, 'SHOWCURRENT', JSON.stringify(this.datos[i]));
+
+                textolineadatos += lineaedit + lineadelete + lineashowcurrent;
+
+                textolineadatos += '</tr>';
 
             }
-
-            // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)
-
-            let lineaedit = this.crearboton(this.entidad, 'EDIT', JSON.stringify(this.datos[i]));
-            let lineadelete = this.crearboton(this.entidad, 'DELETE', JSON.stringify(this.datos[i]));
-            let lineashowcurrent = this.crearboton(this.entidad, 'SHOWCURRENT', JSON.stringify(this.datos[i]));
-
-            textolineadatos += lineaedit+lineadelete+lineashowcurrent;
-
-            textolineadatos += '</tr>';
-
+            let cuerpo = document.getElementById('muestradatostabla');
+            cuerpo.innerHTML = textolineadatos;
         }
-        
-        let cuerpo = document.getElementById('muestradatostabla');
-        cuerpo.innerHTML = textolineadatos;
+        setLang();
     }
 
-    setLang();
 
-}
-
-
-crearboton(entidad, accion, parametros){ //por que tiene entidad?
+    crearboton(entidad, accion, parametros) { //por que tiene entidad?
         let columna = document.createElement('td');
         let opcion = document.createElement('img');
-        opcion.src = "./iconos/"+accion+'.png';
-        let textoonclick = "validar.createForm_"+accion+"("+parametros+");"
-        opcion.setAttribute('onclick',textoonclick);
+        opcion.src = "./iconos/" + accion + '.png';
+        let textoonclick = "validar.createForm_" + accion + "(" + parametros + ");"
+        opcion.setAttribute('onclick', textoonclick);
         columna.appendChild(opcion);
         return columna.outerHTML;
-    
-}
 
-    
-    cerrar_formulario(){
+    }
+
+
+    cerrar_formulario() {
 
         document.getElementById("IU_form").innerHTML = '';
-        document.getElementById("IU_form").setAttribute('onsubmit',"");
-        document.getElementById("IU_form").setAttribute('action',"");
+        document.getElementById("IU_form").setAttribute('onsubmit', "");
+        document.getElementById("IU_form").setAttribute('action', "");
         document.getElementById("div_IU_form").style.display = 'none';
 
     }
 
-    cerrar_test(){
+    cerrar_test() {
 
         document.getElementById('div_IU_test').style.display = 'none'; //Para ocultarlo
         //Para limpiarlo
@@ -203,7 +176,7 @@ crearboton(entidad, accion, parametros){ //por que tiene entidad?
 
     }
 
-    cerrar_tabla(){
+    cerrar_tabla() {
 
         document.getElementById("titulostablacabecera").innerHTML = '';
         document.getElementById("muestradatostabla").innerHTML = '';
@@ -215,11 +188,11 @@ crearboton(entidad, accion, parametros){ //por que tiene entidad?
 
     }
 
-    ocultar_boton_test(){
+    ocultar_boton_test() {
         document.getElementById('botonTEST').style.display = 'none';
     }
 
-    mostrar_boton_test(){
+    mostrar_boton_test() {
         document.getElementById('botonTEST').style.display = 'inline';
     }
 
@@ -230,7 +203,7 @@ crearboton(entidad, accion, parametros){ //por que tiene entidad?
         setLang();
     }
 
-    cerrarModalError(){
+    cerrarModalError() {
         document.getElementById('error_action_modal').style.display = 'none';
         document.getElementById('modal_action_overlay').style.display = 'none';
         //document.getElementById('error_action_msg').removeAttribute('class');
