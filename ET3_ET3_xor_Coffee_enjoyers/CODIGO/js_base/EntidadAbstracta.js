@@ -21,6 +21,8 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 
+	//Ahora mismo la traduccion de placeholders falla pq no tiene clases
+
 	/*
 	Atributo en la estructura para los que sean de mostrado especial o algo = que la funcion invoque a una funcion de su clase 
 	Para los de validaciones especiales si
@@ -64,7 +66,7 @@ class EntidadAbstracta extends DOM_class {
 				//limpiar el formulario
 				this.cargar_formulario_html();
 				//quito los class de la muestra de filas
-				document.getElementById('muestradatostabla').removeAttribute('class');
+				document.getElementById('muestradatostabla').removeAttribute('class'); //QUE HACE ESTO?
 
 				//poner el div del formulario no visible
 				document.getElementById("div_IU_form").style.display = 'none';
@@ -253,65 +255,6 @@ class EntidadAbstracta extends DOM_class {
 		document.getElementById('class_contenido_titulo_form').className = 'text_contenido_titulo_form_' + this.entidad + '_' + accion;
 	}
 
-	cargarClasesForm(accion) {
-		if (accion == "SEARCH") {
-			accion = "_SEARCH";
-		} else {
-			accion = "";
-		}
-
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			//los elementos son los campos Y el boton de submit, y el boton aun no esta cargado al invocar este metodo
-			document.getElementById(campos[i].id).className = "PH_" + campos[i].id + accion;
-		}
-
-	}
-
-	arreglarTraducciones() { //modificar idioma para que esto no haga falta
-		let inputs = document.getElementsByTagName('input');
-		let textareas = document.getElementsByTagName('textarea');
-
-		/*Para los inputs, la funcion de setLang les aplica 2 traducciones:
-		-la de elementos con una clase en el array de Textos (innerHTML=traduccion)
-		-la de inputs (placeholder=title=traduccion)
-		Recorro los inputs del form para eliminar su innerHTML
-		*/
-		for (let i = 0; i < inputs.length; i++) {
-			inputs[i].innerHTML = "";
-			inputs[i].className = ""; //Eliminar class para que no se actualize mal la traduccion al haber un error
-			if (inputs[i].type == "file") inputs[i].placeholder = "";
-		}
-
-		//Para los textarea, la funcion de setLang no les asigna placeholder ni title, que es lo que quiero, solo les asigna un innerHTML, que no quiero ya que se tomaria como valor
-		for (let i = 0; i < textareas.length; i++) {
-			textareas[i].placeholder = textareas[i].innerHTML;
-			textareas[i].title = textareas[i].innerHTML;
-			textareas[i].innerHTML = "";
-			textareas[i].className = "";
-		}
-		//Elimino las clases para que no se recarguen las traducciones al saltar un error
-	}
-
-	traducirForm(accion) {
-		switch (accion) {
-			case 'ADD':
-			case 'SEARCH':
-			case 'EDIT':
-				this.cargarClasesForm(accion);
-				setLang();
-		//		this.arreglarTraducciones();
-				break;
-			case 'DELETE':
-			case 'SHOWCURRENT':
-			default:
-				setLang();
-				return;
-		}
-	}
-
 	colocarOnSubmitForm(accion) {
 		switch (accion) {
 			case 'EDIT':
@@ -408,4 +351,109 @@ class EntidadAbstracta extends DOM_class {
 		this.mostrar_exito_campo(id);
 		return true;
 	}
+
+
+	createForm_ADD() {
+		//Recrear el formulario limpio
+		if (eval(this.cargar_formulario_html)) {
+			this.cargar_formulario_html();
+			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
+			this.accion = 'ADD';
+		}
+		// poner titulo al formulario
+		this.ponerTituloForm("ADD");
+		//Elimina campos no necesarios
+		this.eliminarCamposForm("ADD");
+		//Colocar Validaciones
+		this.colocarvalidaciones('ADD');
+		//Añadir boton para submit
+		this.colocarboton('ADD');
+		//Poner onsubmit y action al formulario
+		this.colocarOnSubmitForm("ADD");
+		this.colocarActionForm("ADD");
+		//Mostrar el formulario
+		this.mostrarForm();
+	}
+
+	createForm_SEARCH() {
+		//Recrear el formulario limpio
+		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
+		// poner titulo al formulario
+		this.ponerTituloForm("SEARCH");
+		//Elimina campos no necesarios
+		this.eliminarCamposForm("SEARCH");
+		//Colocar Validaciones 		
+		this.colocarvalidaciones('SEARCH');
+		//Añadir boton para submit
+		this.colocarboton('SEARCH');
+		//Poner onsubmit y action al formulario
+		this.colocarOnSubmitForm("SEARCH");
+		this.colocarActionForm("SEARCH");
+		//Mostrar el formulario
+		this.mostrarForm();
+	}
+
+	createForm_EDIT(parametros) {
+		//Recrear el formulario limpio
+		if (eval(this.cargar_formulario_html)) {
+			this.cargar_formulario_html();
+			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
+			this.accion = 'EDIT';
+		}
+		// poner titulo al formulario
+		this.ponerTituloForm("EDIT");
+		// relleno los valores de los atributos
+		this.mostrarAtributosForm(parametros);
+		// coloco las validaciones
+		this.colocarvalidaciones('EDIT');
+		// desactivo los campos necesarios
+		this.ponerEditAReadonly();
+		// coloco el boton
+		this.colocarboton('EDIT');
+		// pongo valores a los onsubmit y action
+		this.colocarOnSubmitForm("EDIT");
+		this.colocarActionForm("EDIT");
+		// pongo visible el formulario
+		this.mostrarForm();
+	}
+
+	createForm_DELETE(parametros) {
+		//Recrear el formulario limpio
+		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
+		// poner titulo al formulario
+		this.ponerTituloForm("DELETE");
+		//Elimina campos no necesarios 
+		this.eliminarCamposForm("DELETE");
+		//Muestra los valores actuales del formulario
+		this.mostrarAtributosForm(parametros);
+		// pongo no activos todos los campos
+		this.ponernoactivoform();
+		// coloco el boton
+		this.colocarboton('DELETE');
+		// pongo valores a los onsubmit y action
+		this.colocarOnSubmitForm("DELETE");
+		this.colocarActionForm("DELETE");
+		// pongo visible el formulario
+		this.mostrarForm();
+	}
+
+	createForm_SHOWCURRENT(parametros) {
+		//Recrear el formulario limpio
+		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
+		// poner titulo al formulario
+		this.ponerTituloForm("SHOWCURRENT");
+		//Elimina campos no necesarios 
+		this.eliminarCamposForm("SHOWCURRENT");
+		//Muestra los valores actuales del formulario
+		this.mostrarAtributosForm(parametros);
+		// pongo no activos todos los campos
+		this.ponernoactivoform();
+		// pongo valores a los onsubmit y action
+		this.colocarOnSubmitForm("SHOWCURRENT");
+		this.colocarActionForm("SHOWCURRENT");
+		// pongo visible el formulario
+		this.mostrarForm();
+	}
+
+
 }

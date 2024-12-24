@@ -206,7 +206,6 @@ class DOM_class extends test {
     cerrarModalError() {
         document.getElementById('error_action_modal').style.display = 'none';
         document.getElementById('modal_action_overlay').style.display = 'none';
-        //document.getElementById('error_action_msg').removeAttribute('class');
     }
 
 

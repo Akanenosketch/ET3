@@ -109,112 +109,11 @@ class project extends EntidadAbstracta {
 	//CREATE FORMS
 
 
-	createForm_ADD() {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) {
-			this.cargar_formulario_html();
-			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
-			this.accion = 'ADD';
-		}
-		// poner titulo al formulario
-		this.ponerTituloForm("ADD");
-		//Elimina campos no necesarios
-		this.eliminarCamposForm("ADD");
-		this.traducirForm("ADD");
-		//Colocar Validaciones
-		this.colocarvalidaciones('ADD');
-		//Añadir boton para submit
-		this.colocarboton('ADD');
-		//Poner onsubmit y action al formulario
-		this.colocarOnSubmitForm("ADD");
-		this.colocarActionForm("ADD");
-		//Mostrar el formulario
-		this.mostrarForm();
-	}
 
-	createForm_SEARCH() {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
-		// poner titulo al formulario
-		this.ponerTituloForm("SEARCH");
-		//Elimina campos no necesarios
-		this.eliminarCamposForm("SEARCH");
-		this.traducirForm("SEARCH");
-		//Colocar Validaciones 		
-		this.colocarvalidaciones('SEARCH');
-		//Añadir boton para submit
-		this.colocarboton('SEARCH');
-		//Poner onsubmit y action al formulario
-		this.colocarOnSubmitForm("SEARCH");
-		this.colocarActionForm("SEARCH");
-		//Mostrar el formulario
-		this.mostrarForm();
-	}
 
-	createForm_EDIT(parametros) {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) {
-			this.cargar_formulario_html();
-			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
-			this.accion = 'EDIT';
-		}
-		// poner titulo al formulario
-		this.ponerTituloForm("EDIT");
-		this.traducirForm("EDIT");
-		// relleno los valores de los atributos
-		this.mostrarAtributosForm(parametros);
-		// coloco las validaciones
-		this.colocarvalidaciones('EDIT');
-		// desactivo los campos necesarios
-		this.ponerEditAReadonly();
-		// coloco el boton
-		this.colocarboton('EDIT');
-		// pongo valores a los onsubmit y action
-		this.colocarOnSubmitForm("EDIT");
-		this.colocarActionForm("EDIT");
-		// pongo visible el formulario
-		this.mostrarForm();
-	}
 
-	createForm_DELETE(parametros) {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
-		// poner titulo al formulario
-		this.ponerTituloForm("DELETE");
-		//Elimina campos no necesarios 
-		this.eliminarCamposForm("DELETE");
-		this.traducirForm("DELETE");
-		//Muestra los valores actuales del formulario
-		this.mostrarAtributosForm(parametros);
-		// pongo no activos todos los campos
-		this.ponernoactivoform();
-		// coloco el boton
-		this.colocarboton('DELETE');
-		// pongo valores a los onsubmit y action
-		this.colocarOnSubmitForm("DELETE");
-		this.colocarActionForm("DELETE");
-		// pongo visible el formulario
-		this.mostrarForm();
-	}
 
-	createForm_SHOWCURRENT(parametros) {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
-		// poner titulo al formulario
-		this.ponerTituloForm("SHOWCURRENT");
-		//Elimina campos no necesarios 
-		this.eliminarCamposForm("SHOWCURRENT");
-		this.traducirForm("SHOWCURRENT");
-		//Muestra los valores actuales del formulario
-		this.mostrarAtributosForm(parametros);
-		// pongo no activos todos los campos
-		this.ponernoactivoform();
-		// pongo valores a los onsubmit y action
-		this.colocarOnSubmitForm("SHOWCURRENT");
-		this.colocarActionForm("SHOWCURRENT");
-		// pongo visible el formulario
-		this.mostrarForm();
-	}
+
 
 
 	//COMPROBACIONES

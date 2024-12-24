@@ -74,8 +74,6 @@
 
 - Preparar estructura def_html_nombreentidad
 
-- Preparar estructura def_test_nombreentidad
-
 - Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
 - Reorganizar arbol de clases para meter lo nuevo
@@ -107,8 +105,6 @@
 - Crear clase para colocar valores
 
 - Crear clase para crear validaciones
-
-- Añadir characteristic a index
 
 - Crear API.html
 
@@ -149,13 +145,13 @@
 
 ~~Siguiendo la arquitectura de directorios definida en la ET2, (js_core, js_base, locale, iconos, css, index.html), colocando Validaciones_Atomicas.js y Test_Class.js en js_core, EntidadAbstracta en js_base, idioma en locale.~~
 
-Se solicita que en un fichero estructura_nombreentidad.js en js_app se definan dos estructuras de datos que permitan rellenarlas con la información necesaria para poder generar automaticamente las tablas de presentación de información, los formularios de acciones y las validaciones de los campos de formulario. Estas estructuras serían:
+~~Se solicita que en un fichero estructura_nombreentidad.js en js_app se definan dos estructuras de datos que permitan rellenarlas con la información necesaria para poder generar automaticamente las tablas de presentación de información, los formularios de acciones y las validaciones de los campos de formulario. Estas estructuras serían:~~
 
-variable def_html_nombreentidad que defina para una tabla la información necesaria para definir los elementos html que representan dentro de un formulario los atributos de la tabla
+~~variable def_html_nombreentidad que defina para una tabla la información necesaria para definir los elementos html que representan dentro de un formulario los atributos de la tabla~~
 
-variable def_test_nombreentidad que defina las validaciones por acción junto con los mensajes de respuesta de error de las validaciones 
+~~variable def_test_nombreentidad que defina las validaciones por acción junto con los mensajes de respuesta de error de las validaciones~~
 
-Una vez que se establezca la estructura de datos, esta debe poder rellenarse con la información necesaria para cada tabla a gestionar en la interfaz.
+~~Una vez que se establezca la estructura de datos, esta debe poder rellenarse con la información necesaria para cada tabla a gestionar en la interfaz.~~
 
 Utilizar la clase test para que verifique el formato de test y pruebas y ejecute todas las pruebas de test de las definiciones de test definidas para cada atributo (incluidas las de fichero) y saque su resultado en un componente modal con scroll para ser visualizado por el usuario. La acción de test debe estar disponible como en la ET2 en la parte superior del index cuando se entra en la gestión de una entidad.
 
