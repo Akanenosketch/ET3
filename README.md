@@ -40,8 +40,12 @@
  
 - [ ] Textos_EN 
  
-- [ ] 3 clases a mayores 
+- [ ] constructor_form.js
 	
+- [ ] colocador_valores.js 
+
+- [ ] constructor_validaciones.js
+
 #### js_base
 
 - [ ] EntidadAbstracta 
@@ -72,7 +76,11 @@
 
 ### TODO LIST
 
-- Preparar estructura def_html_nombreentidad
+- Hacer clase constructor_form para la construcción del formulario a partir de la estructura de datos de definición html del formulario.
+
+- Hacer clase colocador_valores para la colocación de los valores de los atributos para las acciones de EDIT, DELETE y SHOWCURRENT
+
+- Hacer clase constructor_validaciones para la construcción de las validaciones de campo y submit en los formularios para las acciones.
 
 - Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
@@ -88,7 +96,7 @@
 
 - Revisar DOM_class
 
-- Modificar idioma.js para textareas, radio,select, checkbox o lo que haga falta
+- Modificar idioma.js para radio,select, checkbox o lo que haga falta
 
 - Hacer tests y pruebas para lo de la fecha
 
