@@ -104,12 +104,12 @@ General    Todo esto es de la ET2, modificar como toque
 }
 
 .errorcampo {
-  border: 1px solid red;
+  border: 5px solid red;
   display: inline-block;
 }
 
 .exitocampo {
-  border: 1px solid green;
+  border: 5px solid green; /*NO LO VEO BIEN VALE?*/
   display: inline-block;
 }
 

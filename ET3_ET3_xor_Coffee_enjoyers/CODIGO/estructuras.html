@@ -3,7 +3,6 @@ PLACEHOLDER estructuras.html, buscar icono
 
 
 def_html_nombreentidad = {
-    entidad: "", //nombre de la entidad
     atributos: [], //lista de los atributos
     atributo: { //definicion de cada atributo
         tag: "", //el tag html (input,select,textarea,radio,checkbox)
@@ -12,13 +11,14 @@ def_html_nombreentidad = {
         multiple: false, //si da opciones, si es multiple optativo
         esPK: true,  //es PK en la tabla?
         esAutoIncremental: true, //es autoincremental?
-        esEspecial : true,
+        esEspecial : true, //es para los especiales a la hora de ponerlo en la tabla, no en el form, mejor no ponerlo creo
         size: "", //para el tamaño del input optativo
         rows : "", //para textarea optativo
         cols : "", //para textarea optativo
     }
     //algo para representar los atributos especiales? si? esto solo para form y especial y lo que sea con tabla en entidad?
     //si esta en datos especiales que este aqui tambien? como hacer los file, directamente a especiales o mejor no?
+    //datos especiales para cosas como las fechas que no las pone directamente? o mejor no? distinto de especiales de tabla
 };
 
 //pasar a las estructuras lo necesario de las clases entidad y que herede de Abstracta, si es necesario algo especifico crear clase entidad que herede de esto

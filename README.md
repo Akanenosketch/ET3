@@ -6,59 +6,59 @@
 
 #### css
 
-- [ ] IU.css 
+- [ ] IU.css
 
 #### iconos
 
-- [x] Acciones: Add,delete,edit,search,showcurrent,test 
+- [x] Acciones: Add,delete,edit,search,showcurrent,test
 
-- [X] Para forms: back,file 
+- [X] Para forms: back,file
 
-- [ ] Para el index: añadir al menos 2 mas para API y estructuras 
+- [ ] Para el index: añadir al menos 2 mas para API y estructuras
 
 #### js_app
 
-- [ ] estructura_analisis.js  
- 
-- [ ] analisis 
+- [ ] estructura_analisis_preparation.js
+
+- [ ] analisis_preparation.js
+
+- [x] test_analisis_preparation.js
 
 - [ ] estructura_project.js
 
-- [ ] project 
+- [ ] project.js
+
+- [x] test_project.js (poner un test para fechas?)
 
 - [ ] estructura_characteristic.js
- 
-- [ ] characteristic 
 
-- [x] test_analisis 
- 
-- [ ] test_project 
- 
-- [ ] test_characteristic 
+- [ ] characteristic.js
 
-- [ ] Textos_ES 
- 
-- [ ] Textos_EN 
- 
+- [ ] test_characteristic.js
+
+- [ ] Textos_ES.js
+
+- [ ] Textos_EN.js
+
 - [ ] constructor_form.js
-	
-- [ ] colocador_valores.js 
+
+- [ ] colocador_valores.js
 
 - [ ] constructor_validaciones.js
 
 #### js_base
 
-- [ ] EntidadAbstracta 
+- [ ] EntidadAbstracta.js
 
 #### js_core
 
-- [ ] DOM_class [ ]
+- [ ] DOM_class.js
  
-- [x] ExternalAccess (NO TOCAR)
+- [x] ExternalAccess.js (NO TOCAR)
 
-- [ ] Test_class [ ]
+- [ ] Tests_class.js
   
-- [ ] Validaciones [ ]
+- [ ] Validaciones_Atomicas.js
  
 #### Locale
 
@@ -68,7 +68,7 @@
 
 - [ ] index.html
 
-- [x] ET3_Datos_NombreGrupo.js (falta poner las horas)
+- [x] ET3_Datos_ET3_xor_Coffee_enjoyers.js (falta poner las horas)
 
 - [ ] estructuras.html 
 
@@ -84,11 +84,7 @@
 
 - Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
-- Reorganizar arbol de clases para meter lo nuevo
-
-- Implementar createForm() en EntidadAbstracta
-
-- Refactorizar entidades ET2, mover metodos a EntidadAbstracta
+- Refactorizar entidades ET2
 
 - Que se pueda meter cualquier tipo de input en los forms
 
@@ -165,7 +161,7 @@ Utilizar la clase test para que verifique el formato de test y pruebas y ejecute
 
 Debe utilizarse la clase validacionesatomicas para la implementación de los métodos estándar de validación de campo que se indican en la definición de la ET2.
 
-Implementar un método createForm() en la clase EntidadAbstracta (y métodos accesorios si es necesario) que, a partir de los datos de las estructuras de datos, genere los formularios de ADD, SEARCH, EDIT, DELETE y SHOWCURRENT, compruebe la información introducida en los campos del formulario y si es correcta permita realizar la llamada a BACK. Este método debe permitir que si existe un método cargar_formulario_html() en la clase de la entidad se ejecute y cargue el contenido html del formulario y si no existe se cree dinámicamente el formulario a partir de la estructura de datos con la información html de cada campo del formulario.
+~~Implementar un método createForm() en la clase EntidadAbstracta (y métodos accesorios si es necesario) que, a partir de los datos de las estructuras de datos, genere los formularios de ADD, SEARCH, EDIT, DELETE y SHOWCURRENT, compruebe la información introducida en los campos del formulario y si es correcta permita realizar la llamada a BACK. Este método debe permitir que si existe un método cargar_formulario_html() en la clase de la entidad se ejecute y cargue el contenido html del formulario y si no existe se cree dinámicamente el formulario a partir de la estructura de datos con la información html de cada campo del formulario.~~
 
 Debe permitirse una modificación especial del valor de presentación de un atributo en la tabla de presentación mediante un método que se declare en la clase de la entidad. 
 

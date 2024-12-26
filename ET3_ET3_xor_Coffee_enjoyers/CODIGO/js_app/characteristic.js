@@ -1,3 +1,3 @@
-class characteristic { 
+class characteristic extends estructura_characteristic{ 
 
 } 

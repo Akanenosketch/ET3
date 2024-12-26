@@ -1,6 +1,6 @@
-class analysis_preparation extends EntidadAbstracta { //Cambiar par que herede de estreuctura y estructura de Entidad?
+class analysis_preparation extends estructura_analysis_preparation {
 
-//mantener columnas a mostrar, pero no datos especiales y entidad
+	//mantener columnas a mostrar, pero no datos especiales y entidad
 	constructor() { //mantener,tal vez mover columnas y datos especiales a estructura
 		super();
 		this.entidad = 'analysis_preparation';
@@ -11,8 +11,7 @@ class analysis_preparation extends EntidadAbstracta { //Cambiar par que herede d
 
 
 	//Creacion del formulario
-
-//mantener
+	//comentar
 	cargar_formulario_html() {
 		// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
 		let formulario = `
@@ -62,25 +61,13 @@ class analysis_preparation extends EntidadAbstracta { //Cambiar par que herede d
 			<br>
 		`;
 		document.getElementById("IU_form").innerHTML = formulario;
-	} 
-	
-
-
-	//CREATE FORMS, mover a entidad abstracta en 1
-
-
-
-
-
-
-
-
+	}
 
 	//COMPROBACIONES, hacerlas dinamicas (como)
 
 
 	//`id_analysis_preparation` int(11) NOT NULL AUTOINCREMENT,dígitos min 1 max 11 
-	
+
 	comprobar_id_analysis_preparation_SEARCH() {
 		return this.check_atributo_SEARCH('id_analysis_preparation', 11, "^[1-9][0-9]*$");
 	}
@@ -137,7 +124,7 @@ class analysis_preparation extends EntidadAbstracta { //Cambiar par que herede d
 	//metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
 	cambiardatosespecialestabla(atributo, valoratributo) { //mantener aqui mejor
 		if (atributo == 'file_analysis_preparation') {
-			if (valoratributo == '') return  `<a class="no_file_found"></a>`; //por definicion de la entidad, debe haber fichero
+			if (valoratributo == '') return `<a class="no_file_found"></a>`; //por definicion de la entidad, debe haber fichero
 			let texto = valoratributo;
 			texto += `<a id="link_file_analysis_preparation`;
 			texto += `_`;
@@ -181,7 +168,7 @@ class analysis_preparation extends EntidadAbstracta { //Cambiar par que herede d
 		}
 	}
 
-	
+
 
 	ponerEditAReadonly() { //poner en entidad y dinamicamente segun sean PK
 		document.getElementById('file_analysis_preparation').setAttribute('readonly', true);
@@ -198,9 +185,9 @@ class analysis_preparation extends EntidadAbstracta { //Cambiar par que herede d
 		document.getElementById('link_file_analysis_preparation').href += parametros.file_analysis_preparation;
 	}
 
-	
 
-	
 
-	
+
+
+
 }

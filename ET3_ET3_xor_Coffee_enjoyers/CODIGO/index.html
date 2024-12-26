@@ -12,24 +12,35 @@
 	<script type="text/javascript" src="./js_app/Textos_ES.js"></script>
 	<script type="text/javascript" src="./js_app/Textos_EN.js"></script>
 
+	<!-- clases auxiliares -->
 	<script type="text/javascript" src="./js_core/Validaciones_Atomicas.js"></script>
 	<script type="text/javascript" src="./js_core/ExternalAccess.js"></script>
+	<script type="text/javascript" src="./js_app/colocador_valores.js"></script>
+	<script type="text/javascript" src="./js_app/constructor_form.js"></script>
+	<script type="text/javascript" src="./js_app/constructor_validaciones.js"></script>
+
+	<!-- arbol de clases de entidades -->
 	<script type="text/javascript" src="./js_core/Tests_class.js"></script>
 	<script type="text/javascript" src="./js_core/DOM_class.js"></script>
-
 	<script type="text/javascript" src="./js_base/EntidadAbstracta.js"></script>
 
+	<script type="text/javascript" src="./js_app/estructura_analysis_preparation.js"></script>
 	<script type="text/javascript" src="./js_app/analysis_preparation.js"></script>
+
+	<script type="text/javascript" src="./js_app/estructura_project.js"></script>
 	<script type="text/javascript" src="./js_app/project.js"></script>
+
+	<script type="text/javascript" src="./js_app/estructura_characteristic.js"></script>
+	<script type="text/javascript" src="./js_app/characteristic.js"></script>
+
+	<!-- Tests de entidades -->
 	<script type="text/javascript" src="./js_app/tests_analysis_preparation.js"></script>
 	<script type="text/javascript" src="./js_app/tests_project.js"></script>
-
-
-
+	<script type="text/javascript" src="./js_app/tests_characteristic.js"></script>
 
 	<!-- Hace falta cargar los html del API y estructuras?-->
 
-	<!-- Creo que hace falta cargar el de datos-->
+	<!-- Fichero de datos-->
 	<script type="text/javascript" src="./ET3_Datos_ET3_xor_Coffee_enjoyers.js"></script>
 
 	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
@@ -40,15 +51,15 @@
 
 	<header id='header_page' class='bordeado'>
 		<spam class="text_titulo_app"></spam>
-	
+
 		<!-- Select para cambiar idiomas -->
 		<select id="languageSelect" onchange="setLang(this.value);">
 			<option value="ES" class="idiomaES"></option>
 			<option value="EN" class="idiomaEN"></option>
 		</select>
-	
+
 		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
-	</header>	
+	</header>
 
 	<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();"></span></nav>
 
@@ -57,8 +68,9 @@
 			<li class="opcionmenu"><span class="text_project" onclick="validar = new project();"></span></li>
 			<li class="opcionmenu"><span class="text_analysis_prep"
 					onclick="validar = new analysis_preparation();"></span></li>
-			<li class="opcionmenu"><span class="text_characteristic" onclick="validar = new characteristic();">Traduceme</span></li>
-			
+			<li class="opcionmenu"><span class="text_characteristic"
+					onclick="validar = new characteristic();">Traduceme</span></li>
+
 		</ol>
 	</aside>
 
@@ -71,8 +83,8 @@
 		<div id="id_tabla_datos">
 
 			<div id="addysearch">
-				<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm_ADD();" />
-				<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm_SEARCH();" />
+				<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm('ADD');" />
+				<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm('SEARCH');" />
 
 				<select id="seleccioncolumnas" size="2" multiple>
 				</select>

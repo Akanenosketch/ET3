@@ -1,24 +1,57 @@
 class EntidadAbstracta extends DOM_class {
 
+	//done
 	constructor() {
 		super();
 	}
 
+	//done
 	inicializar() {
-
-		if (eval(this.datosespecialestabla)) { }
-		else {
+		if (eval(this.datosespecialestabla) == undefined) {
 			this.datosespecialestabla = Array();
 		}
 
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
+		this.constructor_form = new constructor_form();
+		this.constructor_validaciones = new constructor_validaciones();
+		this.colocador_valores = new colocador_valores();
 
 		this.cerrar_test()
 		this.SEARCH();
-
-
 	}
+
+
+	//version preliminar YA OPERATIVA
+	createForm(accion, parametros) {
+		//Recrear el formulario limpio
+		this.accion = accion; //borrar luego es para los comprobar de ahora
+		this.cargar_formulario();
+		// poner titulo al formulario
+		this.ponerTituloForm(accion);
+		//Elimina campos no necesarios
+		this.eliminarCamposForm(accion); //en clase entidad, mirar para hacerlo dinamico
+		//Muestra los valores actuales del formulario
+		if (accion == "SHOWCURRENT" || accion == "DELETE" || accion == "EDIT") {
+			this.mostrarAtributosForm(parametros); //wn clase entidad, definitivamente moverlo aqui de alguna forma
+
+		}
+		//Colocar Validaciones
+		this.colocarvalidaciones(accion);
+		if (accion == "EDIT") {
+			this.ponerEditAReadonly(); //unificar con el de elete y show, que genere un array de cuales a readonly a partir de estructura (o todos si delet) y luego ponga el array
+		}
+		if (accion == "SHOWCURRENT" || accion == "DELETE") this.ponernoactivoform();
+		//Añadir boton para submit
+		this.colocarboton(accion);
+		//Poner onsubmit y action al formulario
+		this.colocarOnSubmitForm(accion);
+		this.colocarActionForm(accion);
+		// pongo visible el formulario
+		this.mostrarForm();
+	}
+
+
 
 
 	//Ahora mismo la traduccion de placeholders falla pq no tiene clases
@@ -28,200 +61,37 @@ class EntidadAbstracta extends DOM_class {
 	Para los de validaciones especiales si
 	*/
 
-	crearTablaDatos() { //Mover a DOM class?
 
-		document.getElementById("id_tabla_datos").style.display = 'block';
+	/* Metodos auxiliares de createForm */
 
-		//construir tabla
-		this.hacertabla();
-		//construir select
-		this.construirSelect();
-
-		//ocultar segun columnasamostrar
-		if (this.datos != "") { this.mostrarocultarcolumnas() };
-
-	}
-
+	//done
 	cargar_formulario() {
-
-		if (eval(this.cargar_formulario_html)) {
+		if (eval(this.cargar_formulario_html)) { //si existe, en clase entidad
 			this.cargar_formulario_html();
 		}
 		else {
-			if (eval(this.cargar_formulario_dinamico)) {
+			if (eval(this.cargar_formulario_dinamico)) { //siempre existira
 				this.cargar_formulario_dinamico();
 			}
 			else {
 				alert('no existe formulario');
 			}
 		}
-
 	}
 
-	async SEARCH() {
-
-		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
-			.then((respuesta) => {
-
-				//limpiar el formulario
-				this.cargar_formulario_html();
-				//quito los class de la muestra de filas
-				document.getElementById('muestradatostabla').removeAttribute('class'); //QUE HACE ESTO?
-
-				//poner el div del formulario no visible
-				document.getElementById("div_IU_form").style.display = 'none';
-
-				this.datos = respuesta['resource'];
-				this.atributos = Object.keys(respuesta['criteriosbusqueda']);
-
-				this.crearTablaDatos();
-
-				setLang();
-
-			});
-
+	cargar_formulario_dinamico() {
+		return;
 	}
 
-	async ADD() {
-
-		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'ADD')
-			.then((respuesta) => {
-
-				if (respuesta['ok']) {
-
-					//limpiar el formulario
-					this.cargar_formulario();
-
-					//poner el div del formulario no visible
-					document.getElementById("div_IU_form").style.display = 'none';
-
-					this.SEARCH();
-
-				}
-				else {
-
-					// mostrar mensaje error accion
-					// alert('error : '+respuesta['code']);
-
-					// Usando modal
-					this.abrirModalError(respuesta['code']);
-				}
-
-			});
-
-	}
-
-	async DELETE() {
-
-		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'DELETE')
-			.then((respuesta) => {
-
-				if (respuesta['ok']) {
-
-					//limpiar el formulario
-					this.cargar_formulario();
-
-					//poner el div del formulario no visible
-					document.getElementById("div_IU_form").style.display = 'none';
-
-					this.SEARCH();
-				}
-				else {
-
-					// mostrar mensaje error accion
-					// alert('error : '+respuesta['code']);
-
-					// Usando modal
-					this.abrirModalError(respuesta['code']);
-				}
-
-			});
-
-	}
-
-	async EDIT() {
-
-		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'EDIT')
-			.then((respuesta) => {
-
-				if (respuesta['ok']) {
-
-					//limpiar el formulario
-					this.cargar_formulario();
-
-					//poner el div del formulario no visible
-					document.getElementById("div_IU_form").style.display = 'none';
-
-					this.SEARCH();
-
-				}
-				else {
-
-					// mostrar mensaje error accion
-					// alert('error : '+respuesta['code']);
-
-					// Usando modal
-					this.abrirModalError(respuesta['code']);
-				}
-
-			});
-
-	}
-
-	cambiacolumnastabla(atributo) { //Mover a dom class?
-
-		document.querySelector("th[class='" + atributo + "']").style.display = 'none';
-
-	}
-
-	check_submit(accion) {
-		let result = true;
-		if (accion == "SEARCH") {
-			accion = "_SEARCH";
-		} else {
-			accion = "";
-		}
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			//	if (campos[i].type != "submit") { //los elementos son los campos Y el boton de submit
-			if (eval('this.comprobar_' + campos[i].id + accion) != undefined) { //en edit hay a la vez file y nuevo_file, y no hay comprobar de file
-				result = eval('this.comprobar_' + campos[i].id + accion + '()') == true && result;
-			}
-		}
-		return result;
+	//done
+	ponerTituloForm(accion) {
+		document.getElementById('class_contenido_titulo_form').className = 'text_contenido_titulo_form_' + this.entidad + '_' + accion;
 	}
 
 
-	colocarboton(accion) {
-		//Crea un div para el boton y lo appendea al form
-		let divboton = document.createElement('div');
-		divboton.id = 'div_boton';
-		document.getElementById('IU_form').append(divboton);
-		//crea el boton como tipo submit
-		let boton = document.createElement('button');
-		boton.id = 'submit_button';
-		boton.type = 'submit';
-		//Crea la imagen de la accion, la añade al boton, y añade el boton al div en el formulario
-		let img = document.createElement('img');
-		img.src = './iconos/' + accion + '.png';
-		boton.append(img);
-		document.getElementById('div_boton').append(boton);
-	}
-
-	rellenarvaloresform(parametros) {
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			if (document.getElementById(campos[i].id).type != 'file') {
-				document.getElementById(campos[i].id).value = parametros[campos[i].id];
-			}
-		}
-	}
-
+	//clase aparte y cambiar para los que no sean
 	colocarvalidaciones(accion) {
+		if (accion == "DELETE" || accion == "SHOWCURRENT") return "b";
 		let evento;
 		//obtener campos del formulario
 		let campos = document.forms['IU_form'].elements;
@@ -242,19 +112,70 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
-	ponernoactivoform() {
+
+	//borrar luego de hacerlo dinamico
+	check_submit(accion) {
+		let result = true;
+		if (accion == "SEARCH") {
+			accion = "_SEARCH";
+		} else {
+			accion = "";
+		}
 		//obtener campos del formulario
 		let campos = document.forms['IU_form'].elements;
+		//recorrer todos los campos
+		for (let i = 0; i < campos.length; i++) {
+			//	if (campos[i].type != "submit") { //los elementos son los campos Y el boton de submit
+			if (eval('this.comprobar_' + campos[i].id + accion) != undefined) { //en edit hay a la vez file y nuevo_file, y no hay comprobar de file
+				result = eval('this.comprobar_' + campos[i].id + accion + '()') == true && result;
+			}
+		}
+		return result;
+	}
+
+	//done creo?
+	colocarboton(accion) {
+		if (accion == "SHOWCURRENT") return accion;
+		//Crea un div para el boton y lo appendea al form
+		let divboton = document.createElement('div');
+		divboton.id = 'div_boton';
+		document.getElementById('IU_form').append(divboton);
+		//crea el boton como tipo submit
+		let boton = document.createElement('button');
+		boton.id = 'submit_button';
+		boton.type = 'submit';
+		//Crea la imagen de la accion, la añade al boton, y añade el boton al div en el formulario
+		let img = document.createElement('img');
+		img.src = './iconos/' + accion + '.png';
+		boton.append(img);
+		document.getElementById('div_boton').append(boton);
+	}
+
+	//hacer clase aparte, se invoca desde la entidad por los especiales
+	rellenarvaloresform(parametros) {
+		//obtener campos del formulario
+		let campos = document.forms['IU_form'].elements;
+		//recorrer todos los campos
+		for (let i = 0; i < campos.length; i++) {
+			if (document.getElementById(campos[i].id).type != 'file') {
+				document.getElementById(campos[i].id).value = parametros[campos[i].id];
+			}
+		}
+	}
+
+
+	ponernoactivoform() {
+		//obtener campos del formulario
+		let campos = document.forms['IU_form'].elements; //generar este array campos a partir de lo dinamico para el edit
 		//recorrer todos los campos
 		for (let i = 0; i < campos.length; i++) {
 			document.getElementById(campos[i].id).setAttribute('readonly', true);
 		}
 	}
 
-	ponerTituloForm(accion) {
-		document.getElementById('class_contenido_titulo_form').className = 'text_contenido_titulo_form_' + this.entidad + '_' + accion;
-	}
 
+
+	//refactorizar seguramente
 	colocarOnSubmitForm(accion) {
 		switch (accion) {
 			case 'EDIT':
@@ -273,15 +194,18 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
+	//done
 	colocarActionForm(accion) {
 		if (accion != "SHOWCURRENT") document.getElementById("IU_form").setAttribute('action', "javascript:validar." + accion + "();");
 	}
 
+	//done
 	mostrarForm() {
 		document.getElementById("div_IU_form").style.display = 'block';
 	}
 
 
+	//borrar luego
 	check_atributo(id, minsize, maxsize, regex) { //hacer estos distinto, segun estructura
 		let codigoError = this.entidad + "__" + id;
 		if (!(this.validaciones.min_size(id, minsize))) {
@@ -300,6 +224,7 @@ class EntidadAbstracta extends DOM_class {
 		return true;
 	}
 
+	//borrar luego
 	check_atributo_SEARCH(id, maxsize, regex) {
 		if (!this.validaciones.max_size(id, 0)) { //si no esta vacia
 			let codigoError = this.entidad + "__" + id;
@@ -315,6 +240,8 @@ class EntidadAbstracta extends DOM_class {
 		this.mostrar_exito_campo(id);
 		return true;
 	}
+
+	//borrar luego
 
 	check_atributo_file(id, accion, max_size_file, types_file, min_size_name, max_size_name, regex) {
 		let codigoError = this.entidad + "__" + id;
@@ -353,107 +280,74 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 
-	createForm_ADD() {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) {
-			this.cargar_formulario_html();
-			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
-			this.accion = 'ADD';
+
+
+
+
+	//Accesos al back 
+
+	//done?
+	async SEARCH() {
+		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
+			.then((respuesta) => {
+				//limpiar el formulario
+				this.cargar_formulario();
+				//poner el div del formulario no visible
+				document.getElementById("div_IU_form").style.display = 'none';
+
+				//quito los class de la muestra de filas
+				document.getElementById('muestradatostabla').removeAttribute('class'); //Elimina la clase RECORDSET_VACIO 
+
+
+				this.datos = respuesta['resource'];
+				this.atributos = Object.keys(respuesta['criteriosbusqueda']);
+
+				this.crearTablaDatos();
+
+				setLang();
+			});
+	}
+
+	//done
+	async ADD() {
+		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'ADD')
+			.then((respuesta) => {
+				this.actuarRespuesta(respuesta);
+			});
+	}
+
+	//done
+	async DELETE() {
+		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'DELETE')
+			.then((respuesta) => {
+				this.actuarRespuesta(respuesta);
+			});
+	}
+
+	//done
+	async EDIT() {
+		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'EDIT')
+			.then((respuesta) => {
+				this.actuarRespuesta(respuesta);
+			});
+	}
+
+
+	/* Metodos auxiliares llamadas al back*/
+
+	//done
+	actuarRespuesta(respuesta) {
+		if (respuesta['ok']) {
+			//limpiar el formulario, necesario para que mande un form vacio al search
+			this.cargar_formulario();
+			//poner el div del formulario no visible
+			document.getElementById("div_IU_form").style.display = 'none';
+			this.SEARCH();
 		}
-		// poner titulo al formulario
-		this.ponerTituloForm("ADD");
-		//Elimina campos no necesarios
-		this.eliminarCamposForm("ADD");
-		//Colocar Validaciones
-		this.colocarvalidaciones('ADD');
-		//Añadir boton para submit
-		this.colocarboton('ADD');
-		//Poner onsubmit y action al formulario
-		this.colocarOnSubmitForm("ADD");
-		this.colocarActionForm("ADD");
-		//Mostrar el formulario
-		this.mostrarForm();
-	}
-
-	createForm_SEARCH() {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
-		// poner titulo al formulario
-		this.ponerTituloForm("SEARCH");
-		//Elimina campos no necesarios
-		this.eliminarCamposForm("SEARCH");
-		//Colocar Validaciones 		
-		this.colocarvalidaciones('SEARCH');
-		//Añadir boton para submit
-		this.colocarboton('SEARCH');
-		//Poner onsubmit y action al formulario
-		this.colocarOnSubmitForm("SEARCH");
-		this.colocarActionForm("SEARCH");
-		//Mostrar el formulario
-		this.mostrarForm();
-	}
-
-	createForm_EDIT(parametros) {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) {
-			this.cargar_formulario_html();
-			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
-			this.accion = 'EDIT';
+		else {
+			// mostrar mensaje error accion usando modal
+			this.abrirModalError(respuesta['code']);
 		}
-		// poner titulo al formulario
-		this.ponerTituloForm("EDIT");
-		// relleno los valores de los atributos
-		this.mostrarAtributosForm(parametros);
-		// coloco las validaciones
-		this.colocarvalidaciones('EDIT');
-		// desactivo los campos necesarios
-		this.ponerEditAReadonly();
-		// coloco el boton
-		this.colocarboton('EDIT');
-		// pongo valores a los onsubmit y action
-		this.colocarOnSubmitForm("EDIT");
-		this.colocarActionForm("EDIT");
-		// pongo visible el formulario
-		this.mostrarForm();
 	}
-
-	createForm_DELETE(parametros) {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
-		// poner titulo al formulario
-		this.ponerTituloForm("DELETE");
-		//Elimina campos no necesarios 
-		this.eliminarCamposForm("DELETE");
-		//Muestra los valores actuales del formulario
-		this.mostrarAtributosForm(parametros);
-		// pongo no activos todos los campos
-		this.ponernoactivoform();
-		// coloco el boton
-		this.colocarboton('DELETE');
-		// pongo valores a los onsubmit y action
-		this.colocarOnSubmitForm("DELETE");
-		this.colocarActionForm("DELETE");
-		// pongo visible el formulario
-		this.mostrarForm();
-	}
-
-	createForm_SHOWCURRENT(parametros) {
-		//Recrear el formulario limpio
-		if (eval(this.cargar_formulario_html)) this.cargar_formulario_html();
-		// poner titulo al formulario
-		this.ponerTituloForm("SHOWCURRENT");
-		//Elimina campos no necesarios 
-		this.eliminarCamposForm("SHOWCURRENT");
-		//Muestra los valores actuales del formulario
-		this.mostrarAtributosForm(parametros);
-		// pongo no activos todos los campos
-		this.ponernoactivoform();
-		// pongo valores a los onsubmit y action
-		this.colocarOnSubmitForm("SHOWCURRENT");
-		this.colocarActionForm("SHOWCURRENT");
-		// pongo visible el formulario
-		this.mostrarForm();
-	}
-
 
 }

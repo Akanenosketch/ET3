@@ -51,6 +51,20 @@ class DOM_class extends test {
         }
     }
 
+    cambiacolumnastabla(atributo) { 
+		document.querySelector("th[class='" + atributo + "']").style.display = 'none';
+	}
+
+	crearTablaDatos() { 
+		document.getElementById("id_tabla_datos").style.display = 'block';
+		//construir tabla
+		this.hacertabla();
+		//construir select
+		this.construirSelect();
+		//ocultar segun columnasamostrar
+		if (this.datos != "") { this.mostrarocultarcolumnas() };
+	}
+
     /**Construye el select de seleccion de columnas */
     construirSelect() {
         document.getElementById("seleccioncolumnas").innerHTML = '';
@@ -146,7 +160,7 @@ class DOM_class extends test {
         let columna = document.createElement('td');
         let opcion = document.createElement('img');
         opcion.src = "./iconos/" + accion + '.png';
-        let textoonclick = "validar.createForm_" + accion + "(" + parametros + ");"
+        let textoonclick = "validar.createForm('"+accion+"'," + parametros + ");"
         opcion.setAttribute('onclick', textoonclick);
         columna.appendChild(opcion);
         return columna.outerHTML;
@@ -154,17 +168,14 @@ class DOM_class extends test {
     }
 
 
-    cerrar_formulario() {
-
+    cerrar_formulario() { //se usa en algun momento?
         document.getElementById("IU_form").innerHTML = '';
         document.getElementById("IU_form").setAttribute('onsubmit', "");
         document.getElementById("IU_form").setAttribute('action', "");
         document.getElementById("div_IU_form").style.display = 'none';
-
     }
 
     cerrar_test() {
-
         document.getElementById('div_IU_test').style.display = 'none'; //Para ocultarlo
         //Para limpiarlo
         document.getElementById('resultadodef').innerHTML = '';
@@ -173,11 +184,9 @@ class DOM_class extends test {
         document.getElementById('tablaresultadosprueba').innerHTML = '';
         document.getElementById('resultadotest').innerHTML = '';
         document.getElementById('salidaresultadosprueba').innerHTML = '';
-
     }
 
     cerrar_tabla() {
-
         document.getElementById("titulostablacabecera").innerHTML = '';
         document.getElementById("muestradatostabla").innerHTML = '';
         document.getElementById("id_tabla_datos").style.display = 'none';
@@ -185,7 +194,6 @@ class DOM_class extends test {
 
         this.ocultar_boton_test();
         this.cerrar_test();
-
     }
 
     ocultar_boton_test() {

@@ -1,4 +1,4 @@
-class project extends EntidadAbstracta {
+class project extends estructura_project {
 
 	constructor() {
 		super();
@@ -104,16 +104,6 @@ class project extends EntidadAbstracta {
 		`;
 		document.getElementById("IU_form").innerHTML = formulario;
 	}
-
-
-	//CREATE FORMS
-
-
-
-
-
-
-
 
 
 	//COMPROBACIONES
@@ -312,7 +302,7 @@ class project extends EntidadAbstracta {
 		}
 	}
 
-	fechaValida(fecha) { 
+	fechaValida(fecha) {
 		let fechaf = fecha.split("/");
 		let year = parseInt(fechaf[2]);
 		if (year == 0) return false; //En el calendario gregoriano no hay año 0
