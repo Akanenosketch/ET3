@@ -1,17 +1,16 @@
 class analysis_preparation extends estructura_analysis_preparation {
 
-	//mantener columnas a mostrar, pero no datos especiales y entidad
-	constructor() { //mantener,tal vez mover columnas y datos especiales a estructura
+	//done
+	constructor() { 
 		super();
-		this.entidad = 'analysis_preparation';
 		this.columnasamostrar = Array("id_analysis_preparation", "name_analysis_preparation", "file_analysis_preparation");
-		this.datosespecialestabla = Array("file_analysis_preparation"); //esto era muestra especial creo
+		this.datosespecialestabla = Array("file_analysis_preparation"); 
 		this.inicializar();
 	}
 
 
 	//Creacion del formulario
-	//comentar
+	/*
 	cargar_formulario_html() {
 		// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
 		let formulario = `
@@ -61,7 +60,27 @@ class analysis_preparation extends estructura_analysis_preparation {
 			<br>
 		`;
 		document.getElementById("IU_form").innerHTML = formulario;
-	}
+	}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Ajustar a partir de aqui
+
+
+
+
+
+
 
 	//COMPROBACIONES, hacerlas dinamicas (como)
 

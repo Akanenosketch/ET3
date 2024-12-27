@@ -10,7 +10,7 @@
 
 #### iconos
 
-- [x] Acciones: Add,delete,edit,search,showcurrent,test
+- [X] Acciones: Add,delete,edit,search,showcurrent,test
 
 - [X] Para forms: back,file
 
@@ -22,13 +22,13 @@
 
 - [ ] analisis_preparation.js
 
-- [x] test_analisis_preparation.js
+- [X] test_analisis_preparation.js
 
 - [ ] estructura_project.js
 
 - [ ] project.js
 
-- [x] test_project.js (poner un test para fechas?)
+- [X] test_project.js (poner un test para fechas?)
 
 - [ ] estructura_characteristic.js
 
@@ -40,7 +40,7 @@
 
 - [ ] Textos_EN.js
 
-- [ ] constructor_form.js
+- [X] constructor_form.js (hacer con JS mejor)
 
 - [ ] colocador_valores.js
 
@@ -54,11 +54,11 @@
 
 - [ ] DOM_class.js
  
-- [x] ExternalAccess.js (NO TOCAR)
+- [X] ExternalAccess.js (NO TOCAR)
 
 - [ ] Tests_class.js
   
-- [ ] Validaciones_Atomicas.js
+- [X] Validaciones_Atomicas.js
  
 #### Locale
 
@@ -68,7 +68,7 @@
 
 - [ ] index.html
 
-- [x] ET3_Datos_ET3_xor_Coffee_enjoyers.js (falta poner las horas)
+- [X] ET3_Datos_ET3_xor_Coffee_enjoyers.js (falta poner las horas)
 
 - [ ] estructuras.html 
 
@@ -76,7 +76,7 @@
 
 ### TODO LIST
 
-- Hacer clase constructor_form para la construcción del formulario a partir de la estructura de datos de definición html del formulario.
+- ReHacer clase constructor_form con JS.
 
 - Hacer clase colocador_valores para la colocación de los valores de los atributos para las acciones de EDIT, DELETE y SHOWCURRENT
 
@@ -86,29 +86,19 @@
 
 - Refactorizar entidades ET2
 
-- Que se pueda meter cualquier tipo de input en los forms
-
-- Completar Validaciones_Atomicas para cualquier input
-
 - Revisar DOM_class
 
-- Modificar idioma.js para radio,select, checkbox o lo que haga falta
+- Modificar idioma.js para radio,select, checkbox o lo que haga falta (no va a hacer falta)
 
 - Hacer tests y pruebas para lo de la fecha
 
 - Reescribir Test class para usar lo nuevo
 
-- Rellenar estructura_nombreentidad.js para Analisis
+- Rellenar estructura_nombreentidad.js para Analisis (1/2)
 
-- Rellenar estructura_nombreentidad.js para Proyecto
+- Rellenar estructura_nombreentidad.js para Proyecto (1/2)
 
-- Rellenar estructura_nombreentidad.js para Characteristic
-
-- Crear clase para construir form dinamico
-
-- Crear clase para colocar valores
-
-- Crear clase para crear validaciones
+- Rellenar estructura_nombreentidad.js para Characteristic (0/2)
 
 - Crear API.html
 
@@ -140,8 +130,9 @@
 
 - Traducir el array de datos
 
--Rehacer lo necesario para que use la estructura
+- Rehacer lo necesario para que use la estructura
 
+- Paginacion a mayores? Me da que no
 
 
 *Enunciado : https://docs.google.com/document/d/1Kl11WnqrlurwHtuUmPAz4m8kH6adguH33vzfODUaae8/edit?tab=t.0*

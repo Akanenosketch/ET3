@@ -10,10 +10,12 @@ class EntidadAbstracta extends DOM_class {
 		if (eval(this.datosespecialestabla) == undefined) {
 			this.datosespecialestabla = Array();
 		}
-
+		if (eval(this.columnasamostrar) == undefined) {
+			this.columnasamostrar = Array();
+		}
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
-		this.constructor_form = new constructor_form();
+		this.constructor_form = new constructor_form( eval("this.def_html_" + this.entidad));
 		this.constructor_validaciones = new constructor_validaciones();
 		this.colocador_valores = new colocador_valores();
 
@@ -26,7 +28,7 @@ class EntidadAbstracta extends DOM_class {
 	createForm(accion, parametros) {
 		//Recrear el formulario limpio
 		this.accion = accion; //borrar luego es para los comprobar de ahora
-		this.cargar_formulario();
+		this.cargar_formulario(accion);
 		// poner titulo al formulario
 		this.ponerTituloForm(accion);
 		//Elimina campos no necesarios
@@ -49,13 +51,13 @@ class EntidadAbstracta extends DOM_class {
 		this.colocarActionForm(accion);
 		// pongo visible el formulario
 		this.mostrarForm();
+		setLang();
 	}
 
 
 
 
-	//Ahora mismo la traduccion de placeholders falla pq no tiene clases
-
+	
 	/*
 	Atributo en la estructura para los que sean de mostrado especial o algo = que la funcion invoque a una funcion de su clase 
 	Para los de validaciones especiales si
@@ -65,13 +67,13 @@ class EntidadAbstracta extends DOM_class {
 	/* Metodos auxiliares de createForm */
 
 	//done
-	cargar_formulario() {
+	cargar_formulario(accion) {
 		if (eval(this.cargar_formulario_html)) { //si existe, en clase entidad
 			this.cargar_formulario_html();
 		}
 		else {
 			if (eval(this.cargar_formulario_dinamico)) { //siempre existira
-				this.cargar_formulario_dinamico();
+				this.cargar_formulario_dinamico(accion);
 			}
 			else {
 				alert('no existe formulario');
@@ -79,8 +81,11 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
-	cargar_formulario_dinamico() {
-		return;
+	//done
+	cargar_formulario_dinamico(accion) {
+		let formulario = this.constructor_form.crearForm();
+		if(accion == "SEARCH") this.constructor_form.SearchPH(formulario);
+		document.getElementById("IU_form").innerHTML = formulario;
 	}
 
 	//done
@@ -113,43 +118,7 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 
-	//borrar luego de hacerlo dinamico
-	check_submit(accion) {
-		let result = true;
-		if (accion == "SEARCH") {
-			accion = "_SEARCH";
-		} else {
-			accion = "";
-		}
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			//	if (campos[i].type != "submit") { //los elementos son los campos Y el boton de submit
-			if (eval('this.comprobar_' + campos[i].id + accion) != undefined) { //en edit hay a la vez file y nuevo_file, y no hay comprobar de file
-				result = eval('this.comprobar_' + campos[i].id + accion + '()') == true && result;
-			}
-		}
-		return result;
-	}
 
-	//done creo?
-	colocarboton(accion) {
-		if (accion == "SHOWCURRENT") return accion;
-		//Crea un div para el boton y lo appendea al form
-		let divboton = document.createElement('div');
-		divboton.id = 'div_boton';
-		document.getElementById('IU_form').append(divboton);
-		//crea el boton como tipo submit
-		let boton = document.createElement('button');
-		boton.id = 'submit_button';
-		boton.type = 'submit';
-		//Crea la imagen de la accion, la añade al boton, y añade el boton al div en el formulario
-		let img = document.createElement('img');
-		img.src = './iconos/' + accion + '.png';
-		boton.append(img);
-		document.getElementById('div_boton').append(boton);
-	}
 
 	//hacer clase aparte, se invoca desde la entidad por los especiales
 	rellenarvaloresform(parametros) {
@@ -164,6 +133,7 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 
+	//cambiar
 	ponernoactivoform() {
 		//obtener campos del formulario
 		let campos = document.forms['IU_form'].elements; //generar este array campos a partir de lo dinamico para el edit
@@ -173,6 +143,26 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
+
+
+	//done 
+	colocarboton(accion) {
+		if (accion != "SHOWCURRENT") {
+			//Crea un div para el boton y lo appendea al form
+			let divboton = document.createElement('div');
+			divboton.id = 'div_boton';
+			document.getElementById('IU_form').append(divboton);
+			//crea el boton como tipo submit
+			let boton = document.createElement('button');
+			boton.id = 'submit_button';
+			boton.type = 'submit';
+			//Crea la imagen de la accion, la añade al boton, y añade el boton al div en el formulario
+			let img = document.createElement('img');
+			img.src = './iconos/' + accion + '.png';
+			boton.append(img);
+			document.getElementById('div_boton').append(boton);
+		}
+	}
 
 
 	//refactorizar seguramente
@@ -204,6 +194,33 @@ class EntidadAbstracta extends DOM_class {
 		document.getElementById("div_IU_form").style.display = 'block';
 	}
 
+
+
+
+
+
+
+
+
+	//borrar luego de hacerlo dinamico
+	check_submit(accion) {
+		let result = true;
+		if (accion == "SEARCH") {
+			accion = "_SEARCH";
+		} else {
+			accion = "";
+		}
+		//obtener campos del formulario
+		let campos = document.forms['IU_form'].elements;
+		//recorrer todos los campos
+		for (let i = 0; i < campos.length; i++) {
+			//	if (campos[i].type != "submit") { //los elementos son los campos Y el boton de submit
+			if (eval('this.comprobar_' + campos[i].id + accion) != undefined) { //en edit hay a la vez file y nuevo_file, y no hay comprobar de file
+				result = eval('this.comprobar_' + campos[i].id + accion + '()') == true && result;
+			}
+		}
+		return result;
+	}
 
 	//borrar luego
 	check_atributo(id, minsize, maxsize, regex) { //hacer estos distinto, segun estructura
@@ -284,7 +301,9 @@ class EntidadAbstracta extends DOM_class {
 
 
 
-	//Accesos al back 
+
+
+	/*Accesos al back */
 
 	//done?
 	async SEARCH() {
@@ -349,5 +368,4 @@ class EntidadAbstracta extends DOM_class {
 			this.abrirModalError(respuesta['code']);
 		}
 	}
-
 }

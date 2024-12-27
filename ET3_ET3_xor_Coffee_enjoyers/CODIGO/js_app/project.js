@@ -1,8 +1,8 @@
 class project extends estructura_project {
 
+	//done
 	constructor() {
 		super();
-		this.entidad = 'project';
 		this.columnasamostrar = Array("id_project", "name_project", "start_date_project", "end_date_project", "file_project");
 		this.datosespecialestabla = Array("start_date_project", "end_date_project", "file_project");
 		this.inicializar();
@@ -11,7 +11,7 @@ class project extends estructura_project {
 
 	//Creacion del formulario
 
-
+/*
 	cargar_formulario_html() {
 		// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
 		let formulario = `
@@ -104,6 +104,23 @@ class project extends estructura_project {
 		`;
 		document.getElementById("IU_form").innerHTML = formulario;
 	}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Ajustar a partir de aqui
+
+
 
 
 	//COMPROBACIONES
