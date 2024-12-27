@@ -134,7 +134,6 @@ class constructor_form {
 
         for (let i = 0; i < datos.valores.length; i++) {
             opcion = document.createElement('option');
-            opcion.className = "option" + datos.valores[i];
             opcion.innerHTML = datos.valores[i];
             opcion.setAttribute("value", datos.valores[i]);
             select.appendChild(opcion);
@@ -163,7 +162,27 @@ class constructor_form {
 
     SearchPH() {
         //cojer los de PH y ponerles _SEARCH
-        let hijos =document.getElementById("IU_form").childNodes();
+        let inputs =document.getElementById("IU_form").getElementsByTagName("input");
+        let texts =document.getElementById("IU_form").getElementsByTagName("textarea");
         //Para cada hijo si la clase es PH_ añadirle _SEARCH al final
+        for (var i = 0; i < inputs.length; i++) {
+            var list = inputs[i].classList;
+            for (var j = 0; j < list.length; j++) {
+                if (list[j] == "PH_"+inputs[i].getAttribute("id")) {
+                    inputs[i].classList.remove("PH_"+inputs[i].getAttribute("id"));
+                    inputs[i].className = "PH_" + inputs[i].getAttribute("id") + "_SEARCH";
+               }
+            }
+        }
+        for (var i = 0; i < texts.length; i++) {
+            var list = texts[i].classList;
+            for (var j = 0; j < list.length; j++) {
+                if (list[j] == "PH_"+texts[i].getAttribute("id")) {
+                    texts[i].classList.remove("PH_"+texts[i].getAttribute("id"));
+                    texts[i].className = "PH_" + texts[i].getAttribute("id") + "_SEARCH";
+               }
+            }
+        }
+      
     }
 }

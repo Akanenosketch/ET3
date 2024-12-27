@@ -40,7 +40,7 @@
 
 - [ ] Textos_EN.js
 
-- [X] constructor_form.js (hacer con JS mejor)
+- [X] constructor_form.js 
 
 - [ ] colocador_valores.js
 
@@ -76,7 +76,7 @@
 
 ### TODO LIST
 
-- Mirar si al select se le meten titles y eso y ademas para search en el constructor form
+- Mirar si al select se le meten titles y eso 
 
 - Hacer los br de separacion en form con css?
 
