@@ -1,180 +1,169 @@
-class constructor_form { //HACER CON JS NO EN TEXTO CREO, aparte de eso esta ya
-    //done
+class constructor_form { 
+    
     constructor(estructura) {
         this.def_html = estructura;
     }
 
-    //done
     crearForm() {
-        let formulario = "<br><br>";
+        let formulario = document.getElementById("IU_form");
+        formulario.appendChild(document.createElement("br"));
+        formulario.appendChild(document.createElement("br"));
+
         for (let i = 0; i < this.def_html.atributos.length; i++) {
-            formulario += this.crearFormAtributo(this.def_html.atributos[i]);
-            formulario += "<br><br>";
+            this.crearFormAtributo(this.def_html.atributos[i]);
+            formulario.appendChild(document.createElement("br"));
+            formulario.appendChild(document.createElement("br"));
         }
-        formulario += "<br>";
-        return formulario;
+        formulario.appendChild(document.createElement("br"));
     }
 
-    //done
     crearFormAtributo(atributo) {
-        let form = "";
+        let formulario = document.getElementById("IU_form");
         let datos = this.def_html[atributo];
+
         switch (datos["tag"]) {
             case "INPUT":
-                form += this.crearInput(datos, atributo);
+                this.crearInput(datos, atributo);
                 break;
             case "TEXTAREA":
-                form += this.crearTextarea(datos, atributo);
+                formulario.appendChild(this.crearLabel(atributo));
+                formulario.appendChild(this.crearTextarea(datos, atributo));
+                formulario.appendChild(this.crearSpanError(atributo));
                 break;
             case "SELECT":
-                form += this.crearSelect(datos, atributo);
+                formulario.appendChild(this.crearLabel(atributo));
+                formulario.appendChild(this.crearSelect(datos, atributo));
+                formulario.appendChild(this.crearSpanError(atributo));
                 break;
             default: break;
         }
-        return form;
     }
 
-    //hacer radio y checkbox o mejor no?
     crearInput(datos, atributo) {
-        let input = "";
+        let formulario = document.getElementById("IU_form");
+        let input = document.createElement("input");
         switch (datos["type"]) {
             case "file":
-                input += this.crearLabel(atributo);
+                formulario.appendChild(this.crearLabel(atributo));
+                input.setAttribute("type", "text");
+                input.setAttribute("id", atributo);
+                input.setAttribute("name", atributo);
+                input.setAttribute("class", "PH_" + atributo);
+                if (eval(datos["size"])) input.setAttribute("size", datos["size"]);
 
-                input += '<input type="text" id="';
-                input += atributo;
-                input += '" name="';
-                input += atributo;
-                input += '" class="PH_';
-                input += atributo;
-                input += '" ';
-                if (eval(datos["size"])) input += 'size="' + datos["size"] + '" ';
-                input += '></input>';
+                let a = document.createElement("a");
+                a.setAttribute("id", "link_" + atributo);
+                a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo);
+                let img = document.createElement("img");
+                img.setAttribute("src", "./iconos/FILE.png");
+                a.appendChild(img);
+                formulario.appendChild(input);
 
+                formulario.appendChild(this.crearSpanError(atributo));
+                formulario.appendChild(a);
 
-                input += '<a id="link_';
-                input += atributo;
-                input += '" href="http://193.147.87.202/ET2/filesuploaded/files_';
-                input += atributo;
-                input += '/"><img src="./iconos/FILE.png" /></a>';
+                formulario.appendChild(document.createElement("br"));
+                formulario.appendChild(document.createElement("br"));
 
-                input += this.crearSpanError(atributo);
-                input += "<br><br>";
                 let nuevo = 'nuevo_' + atributo;
+                formulario.appendChild(this.crearLabel(nuevo));
 
-                input += this.crearLabel(nuevo);
+                input = document.createElement("input");
 
-                input += '<input type="file" id="';
-                input += nuevo;
-                input += '" name="';
-                input += nuevo;
-                input += '" class="PH_';
-                input += nuevo;
-                input += '" ';
-                input += '></input>';
 
-                input += this.crearSpanError(nuevo);
+                input.setAttribute("type", "file");
+                input.setAttribute("id", nuevo);
+                input.setAttribute("name", nuevo);
+                input.setAttribute("class", "PH_" + nuevo);
+                formulario.appendChild(input);
+
+                formulario.appendChild(this.crearSpanError(nuevo));
                 break;
             case "number":
             case "date":
             case "password":
             case "text":
-                input += this.crearLabel(atributo);
+                formulario.appendChild(this.crearLabel(atributo));
 
-                input += '<input type="';
-                input += datos["type"];
-                input += '" id="';
-                input += atributo;
-                input += '" name="';
-                input += atributo;
-                input += '" class="PH_';
-                input += atributo;
-                input += '" ';
-                if (eval(datos["size"])) input += 'size="' + datos["size"] + '" ';
-                input += '></input>';
+                input.setAttribute("type", datos["type"]);
+                input.setAttribute("id", atributo);
+                input.setAttribute("name", atributo);
+                input.setAttribute("class", "PH_" + atributo);
+                if (eval(datos["size"])) input.setAttribute("size", datos["size"]);
 
-                input += this.crearSpanError(atributo);
+
+                formulario.appendChild(input);
+                formulario.appendChild(this.crearSpanError(atributo));
                 break;
             case "radio": break;
             case "checkbox": break;
             default: break;
         }
-        return input;
     }
 
-    //done
     crearTextarea(datos, atributo) {
-        let text = '';
-        text += this.crearLabel(atributo);
+        let text = document.createElement("textarea");
+        text.setAttribute("id", atributo);
+        text.setAttribute("name", atributo);
+        text.className = "PH_" + atributo;
+        text.setAttribute("type", "text");
+        if (eval(datos["rows"])) text.setAttribute("rows", datos["rows"]);
+        if (eval(datos["cols"])) text.setAttribute("cols", datos["cols"]);
 
-        text += '<textarea type="text"';
-        text += '" id="';
-        text += atributo;
-        text += '" name="';
-        text += atributo;
-        text += '" class="PH_';
-        text += atributo;
-        text += '" ';
-        if (eval(datos["rows"])) text += 'rows="' + datos["rows"] + '" ';
-        if (eval(datos["cols"])) text += 'cols="' + datos["cols"] + '" ';
-        text += '></textarea>';
-
-        text += this.crearSpanError(atributo);
         return text;
     }
 
-    //done
     crearSelect(datos, atributo) {
-        let select = '';
-        select += this.crearLabel(atributo);
+        let select = document.createElement("select");
+        select.setAttribute("id", atributo);
+        select.setAttribute("name", atributo);
+        select.className = "PH_" + atributo;
 
-        select += '<select id="';
-        select += atributo;
-        select += '" name="';
-        select += atributo;
-        select += '" class="PH_';
-        select += atributo;
-        select += '" ';
-        if (datos["multiple"]) select += 'size ="2" multiple';
-        select += '>';
-        if (!datos["multiple"]) select += '<option value="" class="SelectDefault">Select</option>';
-        for (let i = 0; i < datos.valores.length; i++) {
-            select += '<option value="' + datos.valores[i] + '" class="option' + datos.valores[i] + '">' + datos.valores[i] + '</option>';
+        if (datos["multiple"]) {
+            select.setAttribute("size", 2);
+            select.setAttribute("multiple", "");
         }
-        select += '</select>';
-        select += this.crearSpanError(atributo);
+
+        let opcion = document.createElement("option");
+        if (!datos["multiple"]) {
+            opcion.setAttribute("value", "");
+            opcion.className = "SelectDefault";
+            opcion.innerHTML = "Select";
+        }
+        select.appendChild(opcion);
+
+        for (let i = 0; i < datos.valores.length; i++) {
+            opcion = document.createElement('option');
+            opcion.className = "option" + datos.valores[i];
+            opcion.innerHTML = datos.valores[i];
+            opcion.setAttribute("value", datos.valores[i]);
+            select.appendChild(opcion);
+        }
+
         return select;
     }
 
-    //done
     crearLabel(atributo) {
-        let label = '<label id="label_';
-        label += atributo;
-        label += '" class ="label_';
-        label += atributo;
-        label += '" for="';
-        label += atributo;
-        label += '" >';
-        label += atributo;
-        label += '</label >';
+        let label = document.createElement("label");
+        label.setAttribute("id", "label_" + atributo);
+        label.className = "label_" + atributo;
+        label.setAttribute("for", atributo);
+        label.innerHTML = atributo;
         return label;
     }
 
-    //done
     crearSpanError(atributo) {
-        let span = '<span id="div_error_';
-        span += atributo;
-        span += '"><a id="error_';
-        span += atributo;
-        span += '"></a></span>';
+        let span = document.createElement("span");
+        span.setAttribute("id", "div_error_" + atributo);
+        let a = document.createElement("a");
+        a.setAttribute("id", "error_" + atributo);
+        span.appendChild(a);
         return span;
     }
 
-    //hacer
-    SearchPH(formulario) {
-        let form = formulario;
+    SearchPH() {
         //cojer los de PH y ponerles _SEARCH
-
-        return form;
+        let hijos =document.getElementById("IU_form").childNodes();
+        //Para cada hijo si la clase es PH_ añadirle _SEARCH al final
     }
 }

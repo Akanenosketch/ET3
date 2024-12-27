@@ -15,7 +15,7 @@ class EntidadAbstracta extends DOM_class {
 		}
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
-		this.constructor_form = new constructor_form( eval("this.def_html_" + this.entidad));
+		this.constructor_form = new constructor_form(eval("this.def_html_" + this.entidad));
 		this.constructor_validaciones = new constructor_validaciones();
 		this.colocador_valores = new colocador_valores();
 
@@ -57,7 +57,7 @@ class EntidadAbstracta extends DOM_class {
 
 
 
-	
+
 	/*
 	Atributo en la estructura para los que sean de mostrado especial o algo = que la funcion invoque a una funcion de su clase 
 	Para los de validaciones especiales si
@@ -83,9 +83,9 @@ class EntidadAbstracta extends DOM_class {
 
 	//done
 	cargar_formulario_dinamico(accion) {
-		let formulario = this.constructor_form.crearForm();
-		if(accion == "SEARCH") this.constructor_form.SearchPH(formulario);
-		document.getElementById("IU_form").innerHTML = formulario;
+		document.getElementById("IU_form").innerHTML = '';
+		this.constructor_form.crearForm();
+		if (accion == "SEARCH") this.constructor_form.SearchPH();
 	}
 
 	//done

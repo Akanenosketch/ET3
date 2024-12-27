@@ -36,13 +36,14 @@ class validacionesatomicas {
 
 	evaluar_tam(id, parametro, mayor) {
 		let elemento = document.getElementById(id);
-		switch (elemento.tagName) { 
+		switch (elemento.tagName) {
 			case 'INPUT':
 			case 'TEXTAREA':
 				switch (elemento.type) {
 					case "number":
 					case "date":
 					case "password":
+					case "text":
 					case 'textarea':
 						let valorelemento = elemento.value;
 						return mayor ? valorelemento.length <= parametro : valorelemento.length >= parametro;

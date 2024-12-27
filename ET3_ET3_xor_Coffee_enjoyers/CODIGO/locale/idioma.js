@@ -78,7 +78,9 @@ function setLang(lang = '') {
 
         for (var i = 0; i < options.length; i++) {
             if (options[i].className == clave) {
-                options[i].label = traduccion[clave];
+                //options[i].label = traduccion[clave]; NO IMPLEMENTADO EN FIREFOX
+                options[i].innerHTML = traduccion[clave];
+                traducido = true;
             }
         }
         

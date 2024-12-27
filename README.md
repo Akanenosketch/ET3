@@ -76,7 +76,9 @@
 
 ### TODO LIST
 
-- ReHacer clase constructor_form con JS.
+- Mirar si al select se le meten titles y eso y ademas para search en el constructor form
+
+- Hacer los br de separacion en form con css?
 
 - Hacer clase colocador_valores para la colocación de los valores de los atributos para las acciones de EDIT, DELETE y SHOWCURRENT
 
