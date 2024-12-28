@@ -183,6 +183,9 @@ class constructor_form {
                }
             }
         }
+        let select = document.getElementsByClassName("SelectDefault");
+        select.classList.remove("SelectDefault");
+        select.className = "SelectDefault_SEARCH";
       
     }
 }

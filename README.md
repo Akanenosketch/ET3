@@ -18,19 +18,19 @@
 
 #### js_app
 
-- [ ] estructura_analisis_preparation.js
+- [X] estructura_analisis_preparation.js
 
 - [ ] analisis_preparation.js
 
 - [X] test_analisis_preparation.js
 
-- [ ] estructura_project.js
+- [X] estructura_project.js
 
 - [ ] project.js
 
 - [X] test_project.js (poner un test para fechas?)
 
-- [ ] estructura_characteristic.js
+- [X] estructura_characteristic.js
 
 - [ ] characteristic.js
 
@@ -62,7 +62,7 @@
  
 #### Locale
 
-- [X] idioma.js (posiblemente necesite actualizarse para radio y checkbox y select)
+- [X] idioma.js 
 
 #### Otros
 
@@ -76,7 +76,11 @@
 
 ### TODO LIST
 
-- Mirar si al select se le meten titles y eso 
+- traducir SelectDefault para opcion default de select ("SelectDefault_SEARCH"vacio en search , "SelectDefault"  Select/Escoja o algo )
+
+- Meter traducciones de characteristic
+
+- Añadir metodo especial de validacion de empty para el add en todo
 
 - Hacer los br de separacion en form con css?
 
@@ -95,12 +99,6 @@
 - Hacer tests y pruebas para lo de la fecha
 
 - Reescribir Test class para usar lo nuevo
-
-- Rellenar estructura_nombreentidad.js para Analisis (1/2)
-
-- Rellenar estructura_nombreentidad.js para Proyecto (1/2)
-
-- Rellenar estructura_nombreentidad.js para Characteristic (0/2)
 
 - Crear API.html
 
@@ -152,7 +150,7 @@
 
 Utilizar la clase test para que verifique el formato de test y pruebas y ejecute todas las pruebas de test de las definiciones de test definidas para cada atributo (incluidas las de fichero) y saque su resultado en un componente modal con scroll para ser visualizado por el usuario. La acción de test debe estar disponible como en la ET2 en la parte superior del index cuando se entra en la gestión de una entidad.
 
-Debe utilizarse la clase validacionesatomicas para la implementación de los métodos estándar de validación de campo que se indican en la definición de la ET2.
+~~Debe utilizarse la clase validacionesatomicas para la implementación de los métodos estándar de validación de campo que se indican en la definición de la ET2.~~
 
 ~~Implementar un método createForm() en la clase EntidadAbstracta (y métodos accesorios si es necesario) que, a partir de los datos de las estructuras de datos, genere los formularios de ADD, SEARCH, EDIT, DELETE y SHOWCURRENT, compruebe la información introducida en los campos del formulario y si es correcta permita realizar la llamada a BACK. Este método debe permitir que si existe un método cargar_formulario_html() en la clase de la entidad se ejecute y cargue el contenido html del formulario y si no existe se cree dinámicamente el formulario a partir de la estructura de datos con la información html de cada campo del formulario.~~
 
@@ -164,7 +162,7 @@ Debe hacerse los ficheros de definición de test y de pruebas para los campos de
 
 En general, debe permitirse en la clase entidad la personalización de la misma para poder adecuar fuera del estándar el comportamiento de la entidad.
 
-Debe existir una clase para la construcción del formulario a partir de la estructura de datos de definición html del formulario.
+~~Debe existir una clase para la construcción del formulario a partir de la estructura de datos de definición html del formulario.~~
 
 Debe existir una clase para la colocación de los valores de los atributos para las acciones de EDIT, DELETE y SHOWCURRENT
 

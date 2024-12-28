@@ -9,65 +9,6 @@ class analysis_preparation extends estructura_analysis_preparation {
 	}
 
 
-	//Creacion del formulario
-	/*
-	cargar_formulario_html() {
-		// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
-		let formulario = `
-			<label id="label_id_analysis_preparation" class="label_id_analysis_preparation" for="id_analysis_preparation">id_analysis_preparation</label>
-			<input type='text' id='id_analysis_preparation' name='id_analysis_preparation' size="11"></input>
-			<span id="div_error_id_analysis_preparation"><a id="error_id_analysis_preparation"></a></span>
-			
-			<br>
-			<br>
-
-			<label id="label_name_analysis_preparation" class="label_name_analysis_preparation" for="name_analysis_preparation">name_analysis_preparation</label>
-			<input type='text' id='name_analysis_preparation' name='name_analysis_preparation' size="100"></input>
-			<span id="div_error_name_analysis_preparation"><a id="error_name_analysis_preparation"></a></span>
-					
-			<br>
-			<br>
-			
-			<label id="label_bib_analysis_preparation" class="label_bib_analysis_preparation" for="bib_analysis_preparation">bib_analysis_preparation</label>
-			<textarea type='text' id='bib_analysis_preparation' name='bib_analysis_preparation' cols="50" rows="4"></textarea>
-			<span id="div_error_bib_analysis_preparation"><a id="error_bib_analysis_preparation"></a></span>
-			
-			<br>
-			<br>
-
-			<label id="label_description_analysis_preparation" class="label_description_analysis_preparation" for="description_analysis_preparation">description_analysis_preparation</label>
-			<textarea rows="50" cols="100" type='text' id='description_analysis_preparation' name='description_analysis_preparation'></textarea>
-			<span id="div_error_description_analysis_preparation"><a id="error_description_analysis_preparation"></a></span>
-			
-			<br>
-			<br>
-
-			<label id="label_file_analysis_preparation" class="label_file_analysis_preparation" for="file_analysis_preparation">file_analysis_preparation</label>
-			<input type='text' id='file_analysis_preparation' name='file_analysis_preparation' size="100"></input>
-			<span id="div_error_file_analysis_preparation"><a id="error_file_analysis_preparation"></a></span>			
-			<a id="link_file_analysis_preparation" href="http://193.147.87.202/ET2/filesuploaded/files_file_analysis_preparation/"><img src="./iconos/FILE.png" /></a>
-				
-			<br>
-			<br>
-
-			<label id="label_nuevo_file_analysis_preparation" class="label_nuevo_file_analysis_preparation" for="nuevo_file_analysis_preparation">Nueva file_analysis_preparation</label>
-			<input type='file' id='nuevo_file_analysis_preparation' name='nuevo_file_analysis_preparation'></input>
-			<span id="div_error_nuevo_file_analysis_preparation"><a id="error_nuevo_file_analysis_preparation"></a></span>
-
-		
-			<br>
-			<br>
-			<br>
-		`;
-		document.getElementById("IU_form").innerHTML = formulario;
-	}*/
-
-
-
-
-
-
-
 
 
 
