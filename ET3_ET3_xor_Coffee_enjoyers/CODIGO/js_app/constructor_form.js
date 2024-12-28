@@ -1,5 +1,5 @@
-class constructor_form { 
-    
+class constructor_form {
+
     constructor(estructura) {
         this.def_html = estructura;
     }
@@ -160,32 +160,74 @@ class constructor_form {
         return span;
     }
 
+
+    eliminarCampos(accion) {
+        for (let atributo of this.def_html.atributos) {
+            switch (accion) {
+                case 'ADD':
+                    //Autoincremental
+                    if (this.def_html[atributo].esAutoIncremental) {
+                        this.eliminarCampo(atributo);
+                    } else if (this.def_html[atributo].tag == "INPUT" && this.def_html[atributo].type == "file") { //Ficheros
+                        //no deberia haber ficheros autoincrementables, pero si los hay no peta
+                        this.eliminarCampo(atributo);
+                        document.getElementById('link_' + atributo).remove();
+
+                    }
+                    break;
+                case 'SEARCH':
+                    if (this.def_html[atributo].tag == "INPUT" && this.def_html[atributo].type == "file") { //Ficheros
+                        this.eliminarCampo("nuevo_" + atributo);
+                        document.getElementById('link_' + atributo).remove();
+                    }
+                    break;
+                case 'DELETE':
+                case 'SHOWCURRENT':
+                    if (this.def_html[atributo].tag == "INPUT" && this.def_html[atributo].type == "file") { //Ficheros
+                        this.eliminarCampo("nuevo_" + atributo);
+                    }
+                    break;
+                case 'EDIT':
+                default:
+                    break;
+            }
+        }
+
+    }
+
+    eliminarCampo(id) {
+        document.getElementById('label_' + id).remove();
+        document.getElementById(id).remove();
+        document.getElementById('div_error_' + id).remove();
+    }
+
     SearchPH() {
         //cojer los de PH y ponerles _SEARCH
-        let inputs =document.getElementById("IU_form").getElementsByTagName("input");
-        let texts =document.getElementById("IU_form").getElementsByTagName("textarea");
+        let inputs = document.getElementById("IU_form").getElementsByTagName("input");
+        let texts = document.getElementById("IU_form").getElementsByTagName("textarea");
         //Para cada hijo si la clase es PH_ añadirle _SEARCH al final
         for (var i = 0; i < inputs.length; i++) {
             var list = inputs[i].classList;
             for (var j = 0; j < list.length; j++) {
-                if (list[j] == "PH_"+inputs[i].getAttribute("id")) {
-                    inputs[i].classList.remove("PH_"+inputs[i].getAttribute("id"));
+                if (list[j] == "PH_" + inputs[i].getAttribute("id")) {
+                    inputs[i].classList.remove("PH_" + inputs[i].getAttribute("id"));
                     inputs[i].className = "PH_" + inputs[i].getAttribute("id") + "_SEARCH";
-               }
+                }
             }
         }
         for (var i = 0; i < texts.length; i++) {
             var list = texts[i].classList;
             for (var j = 0; j < list.length; j++) {
-                if (list[j] == "PH_"+texts[i].getAttribute("id")) {
-                    texts[i].classList.remove("PH_"+texts[i].getAttribute("id"));
+                if (list[j] == "PH_" + texts[i].getAttribute("id")) {
+                    texts[i].classList.remove("PH_" + texts[i].getAttribute("id"));
                     texts[i].className = "PH_" + texts[i].getAttribute("id") + "_SEARCH";
-               }
+                }
             }
         }
         let select = document.getElementsByClassName("SelectDefault");
-        select.classList.remove("SelectDefault");
-        select.className = "SelectDefault_SEARCH";
-      
+        if (select.length > 0) {
+            select.classList.remove("SelectDefault");
+            select.className = "SelectDefault_SEARCH";
+        }
     }
 }

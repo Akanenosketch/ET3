@@ -51,19 +51,19 @@ class DOM_class extends test {
         }
     }
 
-    cambiacolumnastabla(atributo) { 
-		document.querySelector("th[class='" + atributo + "']").style.display = 'none';
-	}
+    cambiacolumnastabla(atributo) {
+        document.querySelector("th[class='" + atributo + "']").style.display = 'none';
+    }
 
-	crearTablaDatos() { 
-		document.getElementById("id_tabla_datos").style.display = 'block';
-		//construir tabla
-		this.hacertabla();
-		//construir select
-		this.construirSelect();
-		//ocultar segun columnasamostrar
-		if (this.datos != "") { this.mostrarocultarcolumnas() };
-	}
+    crearTablaDatos() {
+        document.getElementById("id_tabla_datos").style.display = 'block';
+        //construir tabla
+        this.hacertabla();
+        //construir select
+        this.construirSelect();
+        //ocultar segun columnasamostrar
+        if (this.datos != "") { this.mostrarocultarcolumnas() };
+    }
 
     /**Construye el select de seleccion de columnas */
     construirSelect() {
@@ -73,7 +73,7 @@ class DOM_class extends test {
             optionselect = document.createElement('option');
             optionselect.className = atributo;
             optionselect.innerHTML = atributo;
-            optionselect.setAttribute("onclick", "validar.modificarcolumnasamostrar('" + atributo + "');"); 
+            optionselect.setAttribute("onclick", "validar.modificarcolumnasamostrar('" + atributo + "');");
             optionselect.selected = this.columnasamostrar.includes(atributo);
             document.getElementById("seleccioncolumnas").append(optionselect);
         }
@@ -114,10 +114,9 @@ class DOM_class extends test {
                 textolineadatos += '<tr style="background-color:grey;">';
 
                 for (let clave in this.datos[i]) {
-
+                    let valorcolumna;
                     if (this.datosespecialestabla.includes(clave)) {
-                        let valorcolumna = this.cambiardatosespecialestabla(clave, this.datos[i][clave]);
-                        textolineadatos += '<td class="tabla-td-' + clave + '">' + valorcolumna + '</td>';
+                        valorcolumna = this.cambiardatosespecialestabla(clave, this.datos[i][clave]);
                     }
                     else {
                         // limpieza codigo no deseado incrustado html y script
@@ -135,17 +134,17 @@ class DOM_class extends test {
                             });
                             return sanitizedObj;
                         }
-                        let valorE = san(this.datos[i][clave]);
-                        textolineadatos += '<td class="tabla-td-' + clave + '">' + valorE + '</td>';
-                    } //se podria simplificar este else con el if
+                        valorcolumna = san(this.datos[i][clave]);
+                    }
+                    textolineadatos += '<td class="tabla-td-' + clave + '">' + valorcolumna + '</td>';
+
                 }
                 // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)
-                let lineaedit = this.crearboton(this.entidad, 'EDIT', JSON.stringify(this.datos[i]));
-                let lineadelete = this.crearboton(this.entidad, 'DELETE', JSON.stringify(this.datos[i]));
-                let lineashowcurrent = this.crearboton(this.entidad, 'SHOWCURRENT', JSON.stringify(this.datos[i]));
+                let lineaedit = this.crearboton('EDIT', JSON.stringify(this.datos[i]));
+                let lineadelete = this.crearboton('DELETE', JSON.stringify(this.datos[i]));
+                let lineashowcurrent = this.crearboton('SHOWCURRENT', JSON.stringify(this.datos[i]));
 
                 textolineadatos += lineaedit + lineadelete + lineashowcurrent;
-
                 textolineadatos += '</tr>';
 
             }
@@ -156,19 +155,18 @@ class DOM_class extends test {
     }
 
 
-    crearboton(entidad, accion, parametros) { //por que tiene entidad?
+    crearboton(accion, parametros) {
         let columna = document.createElement('td');
         let opcion = document.createElement('img');
         opcion.src = "./iconos/" + accion + '.png';
-        let textoonclick = "validar.createForm('"+accion+"'," + parametros + ");"
+        let textoonclick = "validar.createForm('" + accion + "'," + parametros + ");"
         opcion.setAttribute('onclick', textoonclick);
         columna.appendChild(opcion);
         return columna.outerHTML;
-
     }
 
 
-    cerrar_formulario() { //se usa en algun momento?
+    cerrar_formulario() {
         document.getElementById("IU_form").innerHTML = '';
         document.getElementById("IU_form").setAttribute('onsubmit', "");
         document.getElementById("IU_form").setAttribute('action', "");

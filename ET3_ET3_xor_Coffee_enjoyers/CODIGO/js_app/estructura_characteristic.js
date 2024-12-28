@@ -4,7 +4,7 @@ class estructura_characteristic extends EntidadAbstracta {
         super();
         this.entidad = 'characteristic';
 		
-        this.def_html_characterictic = {
+        this.def_html_characteristic = {
             atributos: ["id_characteristic", "name_characteristic", "data_type_characteristic","category_characteristic","description_characteristic",  "bibref_characteristic", "file_characteristic"],
     
             "id_characteristic": {

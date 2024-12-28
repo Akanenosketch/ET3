@@ -52,7 +52,7 @@
 
 #### js_core
 
-- [ ] DOM_class.js
+- [X] DOM_class.js (previsiblemente si no se hace paginacion)
  
 - [X] ExternalAccess.js (NO TOCAR)
 
@@ -98,7 +98,7 @@
 
 - Hacer tests y pruebas para lo de la fecha
 
-- Reescribir Test class para usar lo nuevo
+- Reescribir Test class para usar lo nuevo (metodos de test_Entidad)
 
 - Crear API.html
 
@@ -127,8 +127,6 @@
 - HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
 
 - Organizar la muestra del array de datos
-
-- Traducir el array de datos
 
 - Rehacer lo necesario para que use la estructura
 

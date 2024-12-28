@@ -281,36 +281,6 @@ class project extends estructura_project {
 
 
 
-	eliminarCamposForm(accion) { //Hacerlo dinamico a partir de la estructura en EntidadAbstracta
-		switch (accion) {
-			case 'ADD':
-				//Ficheros
-				document.getElementById('label_file_project').remove();
-				document.getElementById('file_project').remove();
-				document.getElementById('link_file_project').remove();
-				document.getElementById('div_error_file_project').remove();
-				//Autoincremental
-				document.getElementById('label_id_project').remove();
-				document.getElementById('id_project').remove();
-				document.getElementById('div_error_id_project').remove();
-				break;
-			case 'SEARCH':
-				document.getElementById('label_nuevo_file_project').remove();
-				document.getElementById('nuevo_file_project').remove();
-				document.getElementById('div_error_nuevo_file_project').remove();
-				document.getElementById('link_file_project').remove();
-				break;
-			case 'DELETE':
-			case 'SHOWCURRENT':
-				document.getElementById('label_nuevo_file_project').remove();
-				document.getElementById('nuevo_file_project').remove();
-				document.getElementById('div_error_nuevo_file_project').remove();
-				break;
-			case 'EDIT':
-			default:
-				break;
-		}
-	}
 
 
 

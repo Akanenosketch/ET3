@@ -32,18 +32,23 @@ class EntidadAbstracta extends DOM_class {
 		// poner titulo al formulario
 		this.ponerTituloForm(accion);
 		//Elimina campos no necesarios
-		this.eliminarCamposForm(accion); //en clase entidad, mirar para hacerlo dinamico
+		this.eliminarCamposForm(accion);
 		//Muestra los valores actuales del formulario
-		if (accion == "SHOWCURRENT" || accion == "DELETE" || accion == "EDIT") {
-			this.mostrarAtributosForm(parametros); //wn clase entidad, definitivamente moverlo aqui de alguna forma
+		this.mostrarAtributosForm(accion,parametros); 
+		
 
-		}
+		
+		
 		//Colocar Validaciones
 		this.colocarvalidaciones(accion);
+
+		
 		if (accion == "EDIT") {
 			this.ponerEditAReadonly(); //unificar con el de elete y show, que genere un array de cuales a readonly a partir de estructura (o todos si delet) y luego ponga el array
 		}
 		if (accion == "SHOWCURRENT" || accion == "DELETE") this.ponernoactivoform();
+		
+		
 		//Añadir boton para submit
 		this.colocarboton(accion);
 		//Poner onsubmit y action al formulario
@@ -53,15 +58,6 @@ class EntidadAbstracta extends DOM_class {
 		this.mostrarForm();
 		setLang();
 	}
-
-
-
-
-
-	/*
-	Atributo en la estructura para los que sean de mostrado especial o algo = que la funcion invoque a una funcion de su clase 
-	Para los de validaciones especiales si
-	*/
 
 
 	/* Metodos auxiliares de createForm */
@@ -83,9 +79,9 @@ class EntidadAbstracta extends DOM_class {
 
 	//done
 	cargar_formulario_dinamico(accion) {
-		document.getElementById("IU_form").innerHTML = '';
+		document.getElementById("IU_form").innerHTML = ''; //limpia el form
 		this.constructor_form.crearForm();
-		if (accion == "SEARCH") this.constructor_form.SearchPH();
+		if (accion == "SEARCH") this.constructor_form.SearchPH(); //cambia las classes 
 	}
 
 	//done
@@ -93,6 +89,41 @@ class EntidadAbstracta extends DOM_class {
 		document.getElementById('class_contenido_titulo_form').className = 'text_contenido_titulo_form_' + this.entidad + '_' + accion;
 	}
 
+	//done
+	eliminarCamposForm(accion) {
+		if (eval(this.eliminarCamposForm_html)) { //si existe, en clase entidad
+			this.eliminarCamposForm_html(accion);
+		}
+		else { //siempre existira
+			this.eliminarCamposForm_dinamico(accion);
+		}
+	}
+
+	//done
+	eliminarCamposForm_dinamico(accion){
+		this.constructor_form.eliminarCampos(accion);
+	}
+
+	//NOT DONE
+	mostrarAtributosForm(accion,parametros){ //borrar el de clase entidad
+		if (accion == "SHOWCURRENT" || accion == "DELETE" || accion == "EDIT") {
+			//lo de fichero que se haga solo, lo de fechas no lo se, mirar como hacer el de select
+		}	
+	}
+
+	//hacer clase aparte, se invoca desde la entidad por los especiales
+	rellenarvaloresform(parametros) {
+		//obtener campos del formulario
+		let campos = document.forms['IU_form'].elements;
+	
+		//recorrer todos los campos
+		for (let i = 0; i < campos.length; i++) {
+			if (document.getElementById(campos[i].id).type != 'file') {
+				document.getElementById(campos[i].id).value = parametros[campos[i].id];
+
+			}
+		}
+	}
 
 	//clase aparte y cambiar para los que no sean
 	colocarvalidaciones(accion) {
@@ -120,21 +151,10 @@ class EntidadAbstracta extends DOM_class {
 
 
 
-	//hacer clase aparte, se invoca desde la entidad por los especiales
-	rellenarvaloresform(parametros) {
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			if (document.getElementById(campos[i].id).type != 'file') {
-				document.getElementById(campos[i].id).value = parametros[campos[i].id];
-			}
-		}
-	}
 
 
 	//cambiar
-	ponernoactivoform() {
+	ponernoactivoform() { //hacerlo en el constructor form mezclado con el del edit todo en 1
 		//obtener campos del formulario
 		let campos = document.forms['IU_form'].elements; //generar este array campos a partir de lo dinamico para el edit
 		//recorrer todos los campos

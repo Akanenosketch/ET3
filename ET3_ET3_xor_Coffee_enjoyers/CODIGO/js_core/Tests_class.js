@@ -1,5 +1,5 @@
 class test {
-//poner que pueda usar las estructuras sin depender del cargar form
+ 
     constructor() {
         // mostrar boton de test una vez creada la clase de entidad
         this.mostrar_boton_test();
@@ -186,13 +186,9 @@ class test {
         </tr>`;
         let flag = true;
         for (let i = 0; i < this.array_pruebas.length; i++) {
-            //cargo formulario 
-            this.cargar_formulario_html();
+            //cargo formulario , mejor cargar por trozos solo? haria falta limpiar el form
+            this.cargar_formulario();
 
-            // cargo el boton pq sino da un error en la funcion mostrarError
-            let botonsumit = document.createElement('input');
-            botonsumit.id = 'submit_button';
-            document.getElementById('IU_form').append(botonsumit);
 
             var campotest = this.array_pruebas[i][1];
             var numdeftest = this.array_pruebas[i][2];
@@ -203,8 +199,6 @@ class test {
 
             // recupero el test correspondiente a la prueba que realizo
             var def = this.devolver_def(numdeftest);
-
-            // creo objeto html sino cargo el formulario (para crear cada elemento dinamicamente dentro del form)           
 
             //meto valor en objeto (esto depende del tipo de elemento de formulario)
             document.getElementById(campotest).value = valortest;

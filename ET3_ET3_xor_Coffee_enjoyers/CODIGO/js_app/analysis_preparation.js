@@ -96,37 +96,7 @@ class analysis_preparation extends estructura_analysis_preparation {
 		}
 	}
 
-	eliminarCamposForm(accion) { //mover a entidad dinamico, que lea lo que eliminar de la struct (o directamente que no se cree? si se crea todo borrar, si se crean partes no)
-		switch (accion) {
-			case 'ADD':
-				//Ficheros
-				document.getElementById('label_file_analysis_preparation').remove();
-				document.getElementById('file_analysis_preparation').remove();
-				document.getElementById('link_file_analysis_preparation').remove();
-				document.getElementById('div_error_file_analysis_preparation').remove();
-
-				//Autoincremental
-				document.getElementById('label_id_analysis_preparation').remove();
-				document.getElementById('id_analysis_preparation').remove();
-				document.getElementById('div_error_id_analysis_preparation').remove();
-				break;
-			case 'SEARCH':
-				document.getElementById('label_nuevo_file_analysis_preparation').remove();
-				document.getElementById('nuevo_file_analysis_preparation').remove();
-				document.getElementById('div_error_nuevo_file_analysis_preparation').remove();
-				document.getElementById('link_file_analysis_preparation').remove();
-				break;
-			case 'DELETE':
-			case 'SHOWCURRENT':
-				document.getElementById('label_nuevo_file_analysis_preparation').remove();
-				document.getElementById('nuevo_file_analysis_preparation').remove();
-				document.getElementById('div_error_nuevo_file_analysis_preparation').remove();
-				break;
-			case 'EDIT':
-			default:
-				break;
-		}
-	}
+	
 
 
 
@@ -139,10 +109,10 @@ class analysis_preparation extends estructura_analysis_preparation {
 
 	}
 
-	mostrarAtributosForm(parametros) { //mantener
+	mostrarAtributosForm(accion,parametros) { //mantener
 		this.rellenarvaloresform(parametros);
 		// añado el nombre de fichero a la ruta de href que tengo en el hiperenlace del fichero
-		document.getElementById('link_file_analysis_preparation').href += parametros.file_analysis_preparation;
+		//document.getElementById('link_file_analysis_preparation').href += parametros.file_analysis_preparation;
 	}
 
 
