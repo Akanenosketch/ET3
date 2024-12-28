@@ -7,6 +7,13 @@ let textos_EN = {
     "idiomaES" : "Spanish",
     "idiomaEN" : "English",
 
+    //Textos datos generales
+    'Nombre Grupo'        : 'Group Name',
+    'Entrega'             : 'Assignment',
+    'Horas Totales'       : 'Total Hours',
+    'Nombre Integrante'   : 'Member Name',
+    'Horas'               : 'Hours Worked',
+
     //textos titulos index
     'text_titulo_app'   : 'IU ET2 Interface',
     'text_titulo_menu'  : 'Menu',
@@ -15,6 +22,7 @@ let textos_EN = {
     //Opciones de menu
     'text_project'      : 'Project',
     'text_analysis_prep': 'Analysis Preparation',
+    'text_characteristic': 'Characteristic',
 
     //textos titulos pagina entidades
     'text_titulo_page_project'              : 'Project Management',
