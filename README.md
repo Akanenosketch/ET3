@@ -32,7 +32,7 @@
 
 - [X] estructura_characteristic.js
 
-- [X] characteristic.js  (arreglar)
+- [X] characteristic.js
 
 - [ ] test_characteristic.js
 
@@ -75,8 +75,6 @@
 - [ ] API.html 
 
 ### TODO LIST
-
-- Arreglar el select autoReplicante
 
 - Comprobar si los problemas del file son cosa del back
 
