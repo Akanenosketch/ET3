@@ -1,6 +1,5 @@
 class analysis_preparation extends estructura_analysis_preparation {
 
-	//done
 	constructor() {
 		super();
 		this.columnasamostrar = Array("id_analysis_preparation", "name_analysis_preparation", "file_analysis_preparation");
@@ -8,9 +7,10 @@ class analysis_preparation extends estructura_analysis_preparation {
 		this.inicializar();
 	}
 
+	/*Metodos de personalizacion */
 
 	//metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
-	cambiardatosespecialestabla(atributo, valoratributo) { //mantener aqui mejor
+	cambiardatosespecialestabla(atributo, valoratributo) {
 		if (atributo == 'file_analysis_preparation') {
 			if (valoratributo == '') return `<a class="no_file_found"></a>`; //por definicion de la entidad, debe haber fichero
 			let texto = valoratributo;
@@ -27,7 +27,6 @@ class analysis_preparation extends estructura_analysis_preparation {
 	validacionesespeciales(atributo, prueba) {
 		if (atributo == 'nuevo_file_analysis_preparation') {
 			if (prueba == 'empty') return document.getElementById(atributo).files.length != 0;
-
 		}
 	}
 }

@@ -53,7 +53,7 @@ class constructor_form {
 
                 let a = document.createElement("a");
                 a.setAttribute("id", "link_" + atributo);
-                a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo+"/");
+                a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo + "/");
                 let img = document.createElement("img");
                 img.setAttribute("src", "./iconos/FILE.png");
                 a.appendChild(img);
@@ -127,7 +127,7 @@ class constructor_form {
         let opcion = document.createElement("option");
         if (!datos["multiple"]) {
             opcion.setAttribute("value", "");
-            opcion.setAttribute("id", "SelectDefault");
+            opcion.setAttribute("id", "SelectDefault_"+atributo);
             opcion.className = "SelectDefault";
             opcion.innerHTML = "Select";
         }
@@ -223,7 +223,7 @@ class constructor_form {
     desactivarCampo(id) {
         let campo = this.def_html[id];
         if (campo.tag == "SELECT") { //no permite readonly
-            if (campo.multiple) { 
+            if (campo.multiple) {
                 let onchange = `
                 let options = document.getElementById(id).getElementsByTagName("option");
                 for (option of options) {
@@ -231,11 +231,11 @@ class constructor_form {
                     option.setAttribute("selected", "");
                 }    
                 ;`;
-                document.getElementById(id).onchange= onchange;
+                document.getElementById(id).onchange = onchange;
             }
 
             let options = document.getElementById(id).getElementsByTagName("option");
-            for (option of options) {
+            for (let option of options) {
                 if (!option.selected) {
                     option.setAttribute("disabled", "");
                 }
@@ -245,7 +245,7 @@ class constructor_form {
         }
 
     }
-    
+
     SearchPH() {
         //cojer los de PH y ponerles _SEARCH
         let inputs = document.getElementById("IU_form").getElementsByTagName("input");
@@ -270,9 +270,10 @@ class constructor_form {
             }
         }
         let select = document.getElementsByClassName("SelectDefault");
-        if (select.length > 0) {
-            select.classList.remove("SelectDefault");
-            select.className = "SelectDefault_SEARCH";
+
+        for (let i = 0; i < select.length; i++) {
+            select[i].classList.remove("SelectDefault");
+            select[i].className = "SelectDefault_SEARCH";
         }
     }
 }

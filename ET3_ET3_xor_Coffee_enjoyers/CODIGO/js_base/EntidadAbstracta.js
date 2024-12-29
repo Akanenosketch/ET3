@@ -1,11 +1,9 @@
 class EntidadAbstracta extends DOM_class {
 
-	//done
 	constructor() {
 		super();
 	}
 
-	//done NO
 	inicializar() {
 		if (eval(this.datosespecialestabla) == undefined) {
 			this.datosespecialestabla = Array();
@@ -16,13 +14,12 @@ class EntidadAbstracta extends DOM_class {
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
 		this.constructor_form = new constructor_form(eval("this.def_html_" + this.entidad));
-		this.constructor_validaciones = new constructor_validaciones(eval("this.def_test_" + this.entidad),this);
-		this.colocador_valores = new colocador_valores(eval("this.def_html_" + this.entidad),this);
+		this.constructor_validaciones = new constructor_validaciones(eval("this.def_test_" + this.entidad), this);
+		this.colocador_valores = new colocador_valores(eval("this.def_html_" + this.entidad), this);
 
 		this.cerrar_test()
 		this.SEARCH();
 	}
-
 
 	createForm(accion, parametros) {
 		//Recrear el formulario limpio
@@ -50,7 +47,6 @@ class EntidadAbstracta extends DOM_class {
 
 	/* Metodos auxiliares de createForm */
 
-	//done
 	cargar_formulario(accion) {
 		if (eval(this.cargar_formulario_html)) { //si existe, en clase entidad
 			this.cargar_formulario_html();
@@ -65,42 +61,26 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
-	//done
 	cargar_formulario_dinamico(accion) {
 		document.getElementById("IU_form").innerHTML = ''; //limpia el form
 		this.constructor_form.crearForm();
 		if (accion == "SEARCH") this.constructor_form.SearchPH(); //cambia las classes 
 	}
 
-	//done
 	ponerTituloForm(accion) {
 		document.getElementById('class_contenido_titulo_form').className = 'text_contenido_titulo_form_' + this.entidad + '_' + accion;
 	}
 
-	//done
 	eliminarCamposForm(accion) {
-		if (eval(this.eliminarCamposForm_html)) { //si existe, en clase entidad
-			this.eliminarCamposForm_html(accion);
-		}
-		else { //siempre existira
-			this.eliminarCamposForm_dinamico(accion);
-		}
-	}
-
-	//done
-	eliminarCamposForm_dinamico(accion) {
 		this.constructor_form.eliminarCampos(accion);
 	}
 
-	//done
 	mostrarAtributosForm(accion, parametros) { //borrar el de clase entidad
 		if (accion == "SHOWCURRENT" || accion == "DELETE" || accion == "EDIT") {
 			this.colocador_valores.colocarValoresForm(parametros);
 		}
 	}
 
-
-	//done
 	colocarvalidaciones(accion) {
 		if (accion != "DELETE" && accion != "SHOWCURRENT") {
 			let evento;
@@ -119,19 +99,14 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
-	//done
-	comprobar(id,accion){
-		return this.constructor_validaciones.check(id,accion);
+	comprobar(id, accion) {
+		return this.constructor_validaciones.check(id, accion);
 	}
 
-	//done
 	ponernoactivo(accion) {
 		this.constructor_form.ponernoactivoform(accion);
 	}
 
-
-
-	//done 
 	colocarboton(accion) {
 		if (accion != "SHOWCURRENT") {
 			//Crea un div para el boton y lo appendea al form
@@ -150,14 +125,12 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
-
-	//done
 	colocarOnSubmitForm(accion) {
 		switch (accion) {
 			case 'EDIT':
 			case 'ADD':
 			case 'SEARCH':
-				document.getElementById("IU_form").setAttribute('onsubmit', 'return validar.comprobar_submit("'+accion+'");');
+				document.getElementById("IU_form").setAttribute('onsubmit', 'return validar.comprobar_submit("' + accion + '");');
 				break;
 			case 'DELETE':
 			case 'SHOWCURRENT':
@@ -168,17 +141,14 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
-	//done
-	comprobar_submit(accion){
+	comprobar_submit(accion) {
 		return this.constructor_validaciones.check_submit(accion);
 	}
 
-	//done
 	colocarActionForm(accion) {
 		if (accion != "SHOWCURRENT") document.getElementById("IU_form").setAttribute('action', "javascript:validar." + accion + "();");
 	}
 
-	//done
 	mostrarForm() {
 		document.getElementById("div_IU_form").style.display = 'block';
 	}
@@ -186,7 +156,6 @@ class EntidadAbstracta extends DOM_class {
 
 	/*Accesos al back */
 
-	//done
 	async SEARCH() {
 		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
 			.then((respuesta) => {
@@ -208,7 +177,6 @@ class EntidadAbstracta extends DOM_class {
 			});
 	}
 
-	//done
 	async ADD() {
 		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'ADD')
 			.then((respuesta) => {
@@ -216,7 +184,6 @@ class EntidadAbstracta extends DOM_class {
 			});
 	}
 
-	//done
 	async DELETE() {
 		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'DELETE')
 			.then((respuesta) => {
@@ -224,7 +191,6 @@ class EntidadAbstracta extends DOM_class {
 			});
 	}
 
-	//done
 	async EDIT() {
 		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'EDIT')
 			.then((respuesta) => {
@@ -235,7 +201,6 @@ class EntidadAbstracta extends DOM_class {
 
 	/* Metodos auxiliares llamadas al back*/
 
-	//done
 	actuarRespuesta(respuesta) {
 		if (respuesta['ok']) {
 			//limpiar el formulario, necesario para que mande un form vacio al search

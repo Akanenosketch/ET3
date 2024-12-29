@@ -1,6 +1,5 @@
 class project extends estructura_project {
 
-	//done
 	constructor() {
 		super();
 		this.columnasamostrar = Array("id_project", "name_project", "start_date_project", "end_date_project", "file_project");
@@ -8,14 +7,13 @@ class project extends estructura_project {
 		this.inicializar();
 	}
 
-
+	/*Metodos de personalizacion */
 
 	mostrardatosespecialesForm(atributo, valoratributo) {
 		if (atributo == 'start_date_project' || atributo == 'end_date_project') {
 			document.getElementById(atributo).value = this.cambiardatosespecialestabla(atributo, valoratributo);
 		}
 	}
-
 
 	//metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
 	cambiardatosespecialestabla(atributo, valoratributo) {
@@ -41,8 +39,8 @@ class project extends estructura_project {
 	validacionesespeciales(atributo, prueba) {
 		if (atributo == 'nuevo_file_project') {
 			if (prueba == 'empty') return document.getElementById(atributo).files.length != 0;
-
 		}
+
 
 		if (atributo == 'start_date_project') {
 			if (prueba == 'fechavalida') return this.fechaValida(document.getElementById(atributo).value);
@@ -54,6 +52,8 @@ class project extends estructura_project {
 				return this.fechasOrdenadas(document.getElementById(atributo).value, fechaO);
 			}
 		}
+
+
 		if (atributo == 'end_date_project') {
 			if (prueba == 'fechavalida') return this.fechaValida(document.getElementById(atributo).value);
 
@@ -66,6 +66,7 @@ class project extends estructura_project {
 		}
 	}
 
+	/*Metodos auxiliares de validaciones especiales*/
 	fechaValida(fecha) {
 		let fechaf = fecha.split("/");
 		let year = parseInt(fechaf[2]);

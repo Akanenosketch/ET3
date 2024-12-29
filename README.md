@@ -28,11 +28,11 @@
 
 - [X] project.js
 
-- [X] test_project.js (poner un test para fechas?)
+- [ ] test_project.js (poner un test para fechas)
 
 - [X] estructura_characteristic.js
 
-- [ ] characteristic.js
+- [X] characteristic.js  (arreglar)
 
 - [ ] test_characteristic.js
 
@@ -52,7 +52,7 @@
 
 #### js_core
 
-- [X] DOM_class.js (previsiblemente si no se hace paginacion)
+- [] DOM_class.js (previsiblemente si no se hace paginacion)
  
 - [X] ExternalAccess.js (NO TOCAR)
 
@@ -76,19 +76,19 @@
 
 ### TODO LIST
 
+- Arreglar el select autoReplicante
+
+- Comprobar si los problemas del file son cosa del back
+
 - traducir SelectDefault para opcion default de select ("SelectDefault_SEARCH"vacio en search , "SelectDefault"  Select/Escoja o algo )
 
 - Meter traducciones de characteristic
-
-- Revisar todo hasta ahora
 
 - Hacer los br de separacion en form con css?
 
 - Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
 - Revisar DOM_class
-
-- Modificar idioma.js para radio,select, checkbox o lo que haga falta (no va a hacer falta)
 
 - Hacer tests y pruebas para lo de la fecha
 
@@ -101,8 +101,6 @@
 - Crear estructuras.html
 
 - Poner estructuras.html en index
-
-- Desarrollar characteristic 
 
 - Desarrollar characteristic tests
 
@@ -122,9 +120,7 @@
 
 - Organizar la muestra del array de datos
 
-- Rehacer lo necesario para que use la estructura
-
-- Paginacion a mayores? Me da que no
+- Paginacion a mayores? Me da que si
 
 
 *Enunciado : https://docs.google.com/document/d/1Kl11WnqrlurwHtuUmPAz4m8kH6adguH33vzfODUaae8/edit?tab=t.0*
@@ -146,9 +142,9 @@ Utilizar la clase test para que verifique el formato de test y pruebas y ejecute
 
 ~~Implementar un método createForm() en la clase EntidadAbstracta (y métodos accesorios si es necesario) que, a partir de los datos de las estructuras de datos, genere los formularios de ADD, SEARCH, EDIT, DELETE y SHOWCURRENT, compruebe la información introducida en los campos del formulario y si es correcta permita realizar la llamada a BACK. Este método debe permitir que si existe un método cargar_formulario_html() en la clase de la entidad se ejecute y cargue el contenido html del formulario y si no existe se cree dinámicamente el formulario a partir de la estructura de datos con la información html de cada campo del formulario.~~
 
-Debe permitirse una modificación especial del valor de presentación de un atributo en la tabla de presentación mediante un método que se declare en la clase de la entidad. 
+~~Debe permitirse una modificación especial del valor de presentación de un atributo en la tabla de presentación mediante un método que se declare en la clase de la entidad.~~
 
-Debe permitirse una validación especial de valores de campos que no corresponda con las estándar definidas en la ET2 que se coloque en la clase de la entidad y que pueda ser invocada en las pruebas de la entidad.
+~~Debe permitirse una validación especial de valores de campos que no corresponda con las estándar definidas en la ET2 que se coloque en la clase de la entidad y que pueda ser invocada en las pruebas de la entidad.~~
 
 Debe hacerse los ficheros de definición de test y de pruebas para los campos de los formularios correspondiente al nuevo código desarrollado.
 
@@ -178,7 +174,7 @@ Debe existir un fichero IU.css en el directorio /css que contenga todas las regl
 
 Objetivos
 
-1) Debe funcionar para cualquier tabla de una base de datos. Toda la información necesaria debe estar en las estructuras de datos definidas.
+1) ~~Debe funcionar para cualquier tabla de una base de datos. Toda la información necesaria debe estar en las estructuras de datos definidas.~~
 
 2) Deben poder definirse definiciones de test y pruebas de test para todos los campos de la tabla incluyendo los campos de tipo file.
 

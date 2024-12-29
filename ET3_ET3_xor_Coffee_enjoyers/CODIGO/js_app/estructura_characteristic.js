@@ -138,7 +138,7 @@ class estructura_characteristic extends EntidadAbstracta {
                         especial: false
                     },
                     "format": {
-                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_\`{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
+                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
                         codigo: "characteristic__bibref_characteristic__format_KO",
                         especial: false
                     }
@@ -151,7 +151,7 @@ class estructura_characteristic extends EntidadAbstracta {
                         especial: true
                     },
                     "max_size_file": {
-                        valor: 2000000,
+                        valor: 200000,
                         codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
                         especial: false
                     },
@@ -243,7 +243,7 @@ class estructura_characteristic extends EntidadAbstracta {
                         especial: false
                     },
                     "format": {
-                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_\`{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
+                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
                         codigo: "characteristic__bibref_characteristic__format_KO",
                         especial: false
                     }
@@ -251,7 +251,7 @@ class estructura_characteristic extends EntidadAbstracta {
 
                 "nuevo_file_characteristic": {
                     "max_size_file": {
-                        valor: 2000000,
+                        valor: 200000,
                         codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
                         especial: false
                     },
@@ -341,7 +341,7 @@ class estructura_characteristic extends EntidadAbstracta {
                         especial: false
                     },
                     "format": {
-                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_\`{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
+                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
                         codigo: "characteristic__bibref_characteristic__format_KO",
                         especial: false
                     }

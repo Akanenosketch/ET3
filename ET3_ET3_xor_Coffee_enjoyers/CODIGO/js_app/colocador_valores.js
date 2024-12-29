@@ -24,8 +24,17 @@ class colocador_valores {
                         document.getElementById(atributo).value = parametros[atributo];
                         break;
                     case "SELECT":
-                        for (let dato in parametros[atributo]) {
-                            document.getElementById(dato).selected = true;
+                        if (this.def_html[atributo].multiple) {
+
+                            for (let dato of parametros[atributo]) {
+                                document.getElementById(dato).selected = true;
+                            }
+
+                        } else {
+                            document.getElementById("SelectDefault_"+atributo).setAttribute("disabled", "");
+
+                            document.getElementById(parametros[atributo]).selected = true;
+
                         }
                         break;
                     default:
