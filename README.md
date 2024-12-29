@@ -20,13 +20,13 @@
 
 - [X] estructura_analisis_preparation.js
 
-- [ ] analisis_preparation.js
+- [X] analisis_preparation.js
 
 - [X] test_analisis_preparation.js
 
 - [X] estructura_project.js
 
-- [ ] project.js
+- [X] project.js
 
 - [X] test_project.js (poner un test para fechas?)
 
@@ -42,13 +42,13 @@
 
 - [X] constructor_form.js 
 
-- [ ] colocador_valores.js
+- [X] colocador_valores.js
 
-- [ ] constructor_validaciones.js
+- [X] constructor_validaciones.js 
 
 #### js_base
 
-- [ ] EntidadAbstracta.js
+- [X] EntidadAbstracta.js
 
 #### js_core
 
@@ -80,17 +80,11 @@
 
 - Meter traducciones de characteristic
 
-- Añadir metodo especial de validacion de empty para el add en todo
+- Revisar todo hasta ahora
 
 - Hacer los br de separacion en form con css?
 
-- Hacer clase colocador_valores para la colocación de los valores de los atributos para las acciones de EDIT, DELETE y SHOWCURRENT
-
-- Hacer clase constructor_validaciones para la construcción de las validaciones de campo y submit en los formularios para las acciones.
-
 - Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
-
-- Refactorizar entidades ET2
 
 - Revisar DOM_class
 
@@ -162,9 +156,9 @@ En general, debe permitirse en la clase entidad la personalización de la misma 
 
 ~~Debe existir una clase para la construcción del formulario a partir de la estructura de datos de definición html del formulario.~~
 
-Debe existir una clase para la colocación de los valores de los atributos para las acciones de EDIT, DELETE y SHOWCURRENT
+~~Debe existir una clase para la colocación de los valores de los atributos para las acciones de EDIT, DELETE y SHOWCURRENT~~
 
-Debe existir una clase para la construcción de las validaciones de campo y submit en los formularios para las acciones.
+~~Debe existir una clase para la construcción de las validaciones de campo y submit en los formularios para las acciones.~~
 
 ~~En la página index.html, al abrirse, debe mostrarse (no estático en html) la información de un fichero ET3_Datos_NombreGrupo.js con una variable de tipo array con el nombre def_grupo_nombreGrupo con la siguiente información (este fichero debe estar a nivel de index.html) :~~
 

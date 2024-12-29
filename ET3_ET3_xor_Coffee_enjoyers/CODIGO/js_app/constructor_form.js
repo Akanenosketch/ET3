@@ -53,7 +53,7 @@ class constructor_form {
 
                 let a = document.createElement("a");
                 a.setAttribute("id", "link_" + atributo);
-                a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo);
+                a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo+"/");
                 let img = document.createElement("img");
                 img.setAttribute("src", "./iconos/FILE.png");
                 a.appendChild(img);
@@ -127,6 +127,7 @@ class constructor_form {
         let opcion = document.createElement("option");
         if (!datos["multiple"]) {
             opcion.setAttribute("value", "");
+            opcion.setAttribute("id", "SelectDefault");
             opcion.className = "SelectDefault";
             opcion.innerHTML = "Select";
         }
@@ -135,6 +136,7 @@ class constructor_form {
         for (let i = 0; i < datos.valores.length; i++) {
             opcion = document.createElement('option');
             opcion.innerHTML = datos.valores[i];
+            opcion.setAttribute("id", datos.valores[i]);
             opcion.setAttribute("value", datos.valores[i]);
             select.appendChild(opcion);
         }
@@ -201,6 +203,49 @@ class constructor_form {
         document.getElementById('div_error_' + id).remove();
     }
 
+    ponernoactivoform(accion) {
+        if (accion == "DELETE" || accion == "EDIT" || accion == "SHOWCURRENT") {
+            //obtener campos del formulario
+            let campos = document.forms['IU_form'].elements;
+            //recorrer todos los campos
+            for (let i = 0; i < campos.length; i++) {
+                if (accion != "EDIT" || this.requiereReadOnlyEDIT(campos[i].id)) {
+                    this.desactivarCampo(campos[i].id);
+                }
+            }
+        }
+    }
+
+    requiereReadOnlyEDIT(id) { //PK, autoincremental, o files
+        return (this.def_html[id] != undefined && (this.def_html[id].esAutoIncremental || this.def_html[id].esPK || (this.def_html[id].tag == "INPUT" && this.def_html[id].type == "file")));
+    }
+
+    desactivarCampo(id) {
+        let campo = this.def_html[id];
+        if (campo.tag == "SELECT") { //no permite readonly
+            if (campo.multiple) { 
+                let onchange = `
+                let options = document.getElementById(id).getElementsByTagName("option");
+                for (option of options) {
+                if (!option.disabled) {
+                    option.setAttribute("selected", "");
+                }    
+                ;`;
+                document.getElementById(id).onchange= onchange;
+            }
+
+            let options = document.getElementById(id).getElementsByTagName("option");
+            for (option of options) {
+                if (!option.selected) {
+                    option.setAttribute("disabled", "");
+                }
+            }
+        } else {
+            document.getElementById(id).setAttribute('readonly', true);
+        }
+
+    }
+    
     SearchPH() {
         //cojer los de PH y ponerles _SEARCH
         let inputs = document.getElementById("IU_form").getElementsByTagName("input");

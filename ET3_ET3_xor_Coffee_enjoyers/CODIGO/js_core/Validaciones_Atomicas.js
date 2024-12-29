@@ -15,16 +15,16 @@ class validacionesatomicas {
 		return this.evaluar_regex(valor, expreg);
 	}
 
-	max_size_file(objfile, maxsize) {
-		return objfile.size < maxsize;
+	max_size_file(id, maxsize) {
+		return document.getElementById(id).files[0].size < maxsize;
 	}
 
-	type_file(objfile, array_tipos) {
-		return array_tipos.includes(objfile.type);
+	type_file(id, array_tipos) {
+		return array_tipos.includes(document.getElementById(id).files[0].type);
 	}
 
-	format_name_file(objfile, expreg) {
-		let valor = objfile.name;
+	format_name_file(id, expreg) {
+		let valor = document.getElementById(id).files[0].name;
 		return this.evaluar_regex(valor, expreg);
 	}
 

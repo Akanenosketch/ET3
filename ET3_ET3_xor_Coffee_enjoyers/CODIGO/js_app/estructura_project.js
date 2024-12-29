@@ -224,7 +224,7 @@ class estructura_project extends EntidadAbstracta {
 						especial: false
 					},
 					"format": {
-						valor: `^[A-Za-z ñÑ!"'(),-.:;?^_\`{\|}~¿»¡«]*$`,
+						valor: `^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$`,
 						codigo: "project__code_project__format_KO",
 						especial: false
 					}
@@ -242,7 +242,7 @@ class estructura_project extends EntidadAbstracta {
 						especial: false
 					},
 					"format": {
-						valor: `^[A-Za-zñÑ!"'(),-.:;?^_\`{\|}~¿»¡«]*$`,
+						valor: `^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$`,
 						codigo: "project__acronym_project__format_KO",
 						especial: false
 					}
@@ -416,7 +416,7 @@ class estructura_project extends EntidadAbstracta {
 						especial: false
 					},
 					"format": {
-						valor: `^[A-Za-z ñÑ!"'(),-.:;?^_\`{\|}~¿»¡«]*$`,
+						valor: `^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$`,
 						codigo: "project__code_project__format_KO",
 						especial: false
 					}
@@ -434,7 +434,7 @@ class estructura_project extends EntidadAbstracta {
 						especial: false
 					},
 					"format": {
-						valor: `^[A-Za-zñÑ!"'(),-.:;?^_\`{\|}~¿»¡«]*$`,
+						valor: `^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$`,
 						codigo: "project__acronym_project__format_KO",
 						especial: false
 					}
@@ -571,7 +571,7 @@ class estructura_project extends EntidadAbstracta {
 						especial: false
 					},
 					"format": {
-						valor: `^[A-Za-z ñÑ!"'(),-.:;?^_\`{\|}~¿»¡«]*$`,
+						valor: `^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$`,
 						codigo: "project__code_project__format_KO",
 						especial: false
 					}
@@ -584,7 +584,7 @@ class estructura_project extends EntidadAbstracta {
 						especial: false
 					},
 					"format": {
-						valor: `^[A-Za-zñÑ!"'(),-.:;?^_\`{\|}~¿»¡«]*$`,
+						valor: `^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$`,
 						codigo: "project__acronym_project__format_KO",
 						especial: false
 					}

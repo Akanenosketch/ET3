@@ -5,7 +5,7 @@ class EntidadAbstracta extends DOM_class {
 		super();
 	}
 
-	//done
+	//done NO
 	inicializar() {
 		if (eval(this.datosespecialestabla) == undefined) {
 			this.datosespecialestabla = Array();
@@ -16,39 +16,27 @@ class EntidadAbstracta extends DOM_class {
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
 		this.constructor_form = new constructor_form(eval("this.def_html_" + this.entidad));
-		this.constructor_validaciones = new constructor_validaciones();
-		this.colocador_valores = new colocador_valores();
+		this.constructor_validaciones = new constructor_validaciones(eval("this.def_test_" + this.entidad),this);
+		this.colocador_valores = new colocador_valores(eval("this.def_html_" + this.entidad),this);
 
 		this.cerrar_test()
 		this.SEARCH();
 	}
 
 
-	//version preliminar YA OPERATIVA
 	createForm(accion, parametros) {
 		//Recrear el formulario limpio
-		this.accion = accion; //borrar luego es para los comprobar de ahora
 		this.cargar_formulario(accion);
 		// poner titulo al formulario
 		this.ponerTituloForm(accion);
 		//Elimina campos no necesarios
 		this.eliminarCamposForm(accion);
 		//Muestra los valores actuales del formulario
-		this.mostrarAtributosForm(accion,parametros); 
-		
-
-		
-		
+		this.mostrarAtributosForm(accion, parametros);
 		//Colocar Validaciones
 		this.colocarvalidaciones(accion);
-
-		
-		if (accion == "EDIT") {
-			this.ponerEditAReadonly(); //unificar con el de elete y show, que genere un array de cuales a readonly a partir de estructura (o todos si delet) y luego ponga el array
-		}
-		if (accion == "SHOWCURRENT" || accion == "DELETE") this.ponernoactivoform();
-		
-		
+		//pone a readonly lo necesario
+		this.ponernoactivo(accion);
 		//Añadir boton para submit
 		this.colocarboton(accion);
 		//Poner onsubmit y action al formulario
@@ -100,67 +88,45 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 	//done
-	eliminarCamposForm_dinamico(accion){
+	eliminarCamposForm_dinamico(accion) {
 		this.constructor_form.eliminarCampos(accion);
 	}
 
-	//NOT DONE
-	mostrarAtributosForm(accion,parametros){ //borrar el de clase entidad
+	//done
+	mostrarAtributosForm(accion, parametros) { //borrar el de clase entidad
 		if (accion == "SHOWCURRENT" || accion == "DELETE" || accion == "EDIT") {
-			//lo de fichero que se haga solo, lo de fechas no lo se, mirar como hacer el de select
-		}	
-	}
-
-	//hacer clase aparte, se invoca desde la entidad por los especiales
-	rellenarvaloresform(parametros) {
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-	
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			if (document.getElementById(campos[i].id).type != 'file') {
-				document.getElementById(campos[i].id).value = parametros[campos[i].id];
-
-			}
+			this.colocador_valores.colocarValoresForm(parametros);
 		}
 	}
 
-	//clase aparte y cambiar para los que no sean
+
+	//done
 	colocarvalidaciones(accion) {
-		if (accion == "DELETE" || accion == "SHOWCURRENT") return "b";
-		let evento;
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			if (document.getElementById(campos[i].id).tagName == 'TEXTAREA' || ((document.getElementById(campos[i].id).tagName == 'INPUT') && (document.getElementById(campos[i].id).type !== 'file'))) {
-				evento = 'onblur';
-			}
-			else {
-				evento = 'onchange';
-			}
-			if (accion == 'SEARCH') {
-				document.getElementById(campos[i].id).setAttribute(evento, 'validar.comprobar_' + campos[i].id + '_' + accion + '();');
-			}
-			else {
-				document.getElementById(campos[i].id).setAttribute(evento, 'validar.comprobar_' + campos[i].id + '();');
+		if (accion != "DELETE" && accion != "SHOWCURRENT") {
+			let evento;
+			//obtener campos del formulario
+			let campos = document.forms['IU_form'].elements;
+			//recorrer todos los campos
+			for (let i = 0; i < campos.length; i++) {
+				if (document.getElementById(campos[i].id).tagName == 'TEXTAREA' || ((document.getElementById(campos[i].id).tagName == 'INPUT') && (document.getElementById(campos[i].id).type !== 'file'))) {
+					evento = 'onblur';
+				}
+				else {
+					evento = 'onchange';
+				}
+				document.getElementById(campos[i].id).setAttribute(evento, 'validar.comprobar("' + campos[i].id + '","' + accion + '");');
 			}
 		}
 	}
 
+	//done
+	comprobar(id,accion){
+		return this.constructor_validaciones.check(id,accion);
+	}
 
-
-
-
-
-	//cambiar
-	ponernoactivoform() { //hacerlo en el constructor form mezclado con el del edit todo en 1
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements; //generar este array campos a partir de lo dinamico para el edit
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			document.getElementById(campos[i].id).setAttribute('readonly', true);
-		}
+	//done
+	ponernoactivo(accion) {
+		this.constructor_form.ponernoactivoform(accion);
 	}
 
 
@@ -185,15 +151,13 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 
-	//refactorizar seguramente
+	//done
 	colocarOnSubmitForm(accion) {
 		switch (accion) {
 			case 'EDIT':
 			case 'ADD':
-				document.getElementById("IU_form").setAttribute('onsubmit', "return validar.comprobar_submit();");
-				break;
 			case 'SEARCH':
-				document.getElementById("IU_form").setAttribute('onsubmit', "return validar.comprobar_submit_SEARCH();");
+				document.getElementById("IU_form").setAttribute('onsubmit', 'return validar.comprobar_submit("'+accion+'");');
 				break;
 			case 'DELETE':
 			case 'SHOWCURRENT':
@@ -202,6 +166,11 @@ class EntidadAbstracta extends DOM_class {
 			default:
 				break;
 		}
+	}
+
+	//done
+	comprobar_submit(accion){
+		return this.constructor_validaciones.check_submit(accion);
 	}
 
 	//done
@@ -215,117 +184,9 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 
-
-
-
-
-
-
-
-	//borrar luego de hacerlo dinamico
-	check_submit(accion) {
-		let result = true;
-		if (accion == "SEARCH") {
-			accion = "_SEARCH";
-		} else {
-			accion = "";
-		}
-		//obtener campos del formulario
-		let campos = document.forms['IU_form'].elements;
-		//recorrer todos los campos
-		for (let i = 0; i < campos.length; i++) {
-			//	if (campos[i].type != "submit") { //los elementos son los campos Y el boton de submit
-			if (eval('this.comprobar_' + campos[i].id + accion) != undefined) { //en edit hay a la vez file y nuevo_file, y no hay comprobar de file
-				result = eval('this.comprobar_' + campos[i].id + accion + '()') == true && result;
-			}
-		}
-		return result;
-	}
-
-	//borrar luego
-	check_atributo(id, minsize, maxsize, regex) { //hacer estos distinto, segun estructura
-		let codigoError = this.entidad + "__" + id;
-		if (!(this.validaciones.min_size(id, minsize))) {
-			this.mostrar_error_campo(id, codigoError + '__min_size_KO');
-			return codigoError + '__min_size_KO';
-		}
-		if (!(this.validaciones.max_size(id, maxsize))) {
-			this.mostrar_error_campo(id, codigoError + '__max_size_KO');
-			return codigoError + '__max_size_KO';
-		}
-		if (!(this.validaciones.format(id, regex))) {
-			this.mostrar_error_campo(id, codigoError + '__format_KO');
-			return codigoError + '__format_KO';
-		}
-		this.mostrar_exito_campo(id);
-		return true;
-	}
-
-	//borrar luego
-	check_atributo_SEARCH(id, maxsize, regex) {
-		if (!this.validaciones.max_size(id, 0)) { //si no esta vacia
-			let codigoError = this.entidad + "__" + id;
-			if (!(this.validaciones.max_size(id, maxsize))) {
-				this.mostrar_error_campo(id, codigoError + '__max_size_KO');
-				return codigoError + '__max_size_KO';
-			}
-			if (!(this.validaciones.format(id, regex))) {
-				this.mostrar_error_campo(id, codigoError + '__format_KO');
-				return codigoError + '__format_KO';
-			}
-		}
-		this.mostrar_exito_campo(id);
-		return true;
-	}
-
-	//borrar luego
-
-	check_atributo_file(id, accion, max_size_file, types_file, min_size_name, max_size_name, regex) {
-		let codigoError = this.entidad + "__" + id;
-		if (document.getElementById(id).files.length == 0) {
-			if (accion == 'EDIT') {
-				return true;
-			}
-			if (accion == "ADD") {
-				this.mostrar_error_campo(id, codigoError + '__empty_KO');
-				return codigoError + '__empty_KO';
-			}
-		}
-		let mifichero = document.getElementById(id).files[0];
-		if (!(this.validaciones.max_size_file(mifichero, max_size_file))) {
-			this.mostrar_error_campo(id, codigoError + '__max_size_file_KO');
-			return codigoError + '__max_size_file_KO';
-		}
-		if (!(this.validaciones.type_file(mifichero, types_file))) {
-			this.mostrar_error_campo(id, codigoError + '__type_file_KO');
-			return codigoError + '__type_file_KO';
-		}
-		if (!this.validaciones.min_size(id, min_size_name)) {
-			this.mostrar_error_campo(id, codigoError + '__min_size_KO');
-			return codigoError + '__min_size_KO';
-		}
-		if (!this.validaciones.max_size(id, max_size_name)) {
-			this.mostrar_error_campo(id, codigoError + '__max_size_KO');
-			return codigoError + '__max_size_KO';
-		}
-		if (!(this.validaciones.format_name_file(mifichero, regex))) {
-			this.mostrar_error_campo(id, codigoError + '__format_name_file_KO');
-			return codigoError + '__format_name_file_KO';
-		}
-		this.mostrar_exito_campo(id);
-		return true;
-	}
-
-
-
-
-
-
-
-
 	/*Accesos al back */
 
-	//done?
+	//done
 	async SEARCH() {
 		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
 			.then((respuesta) => {

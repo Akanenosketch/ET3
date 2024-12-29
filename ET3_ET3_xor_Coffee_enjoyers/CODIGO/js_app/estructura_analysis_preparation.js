@@ -103,7 +103,7 @@ class estructura_analysis_preparation extends EntidadAbstracta {
                         especial: false
                     },
                     "format": {
-                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_\`{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
+                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
                         codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
                         especial: false
                     }
@@ -192,7 +192,7 @@ class estructura_analysis_preparation extends EntidadAbstracta {
                         especial: false
                     },
                     "format": {
-                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_\`{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
+                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
                         codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
                         especial: false
                     }
@@ -274,7 +274,7 @@ class estructura_analysis_preparation extends EntidadAbstracta {
                         especial: false
                     },
                     "format": {
-                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_\`{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
+                        valor: `^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$`,
                         codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
                         especial: false
                     }
