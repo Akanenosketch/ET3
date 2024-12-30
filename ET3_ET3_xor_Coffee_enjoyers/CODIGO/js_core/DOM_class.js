@@ -59,6 +59,8 @@ class DOM_class extends test {
         document.getElementById("id_tabla_datos").style.display = 'block';
         //construir tabla
         this.hacertabla();
+        //hacer las opciones de pagina
+        this.levantarPaginacion();
         //construir select
         this.construirSelect();
         //ocultar segun columnasamostrar
@@ -154,6 +156,28 @@ class DOM_class extends test {
         setLang();
     }
 
+    levantarPaginacion() {
+        let filaFinal = parseInt(this.tamPagina) + parseInt(this.empiezaFila);
+        if (filaFinal > this.filasTotales) filaFinal = this.filasTotales;
+        document.getElementById("PaginaActual").innerHTML = this.empiezaFila + "-" + filaFinal + " ";
+        document.getElementById("FilasTotales").innerHTML = " " + this.filasTotales;
+        if (this.empiezaFila > 0) { //hay pagina menor al haber tuplas sin mostrar
+            let filaInicial = parseInt(this.empiezaFila) - parseInt(this.tamPagina);
+            if (filaInicial < 0) filaInicial = 0;
+            let textoonclick = "validar.SEARCH(" + filaInicial + ");"
+            document.getElementById("botonANT").setAttribute('onclick', textoonclick);
+            document.getElementById("botonANT").style.visibility = "visible";
+        } else {
+            document.getElementById("botonANT").style.visibility = "hidden";
+        }
+        if (filaFinal < this.filasTotales) { //hay pagina mayor
+            let textoonclick = "validar.SEARCH(" + filaFinal + ");"
+            document.getElementById("botonSIG").setAttribute('onclick', textoonclick);
+            document.getElementById("botonSIG").style.visibility = "visible";
+        } else {
+            document.getElementById("botonSIG").style.visibility = "hidden";
+        }
+    }
 
     crearboton(accion, parametros) {
         let columna = document.createElement('td');

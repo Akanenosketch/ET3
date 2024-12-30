@@ -7,6 +7,9 @@ let textos_EN = {
     "idiomaES" : "Spanish",
     "idiomaEN" : "English",
 
+    //paginacion
+    "preposicionPag" : "entries out of",
+    
     //Textos datos generales
     'Nombre Grupo'        : 'Group Name',
     'Entrega'             : 'Assignment',

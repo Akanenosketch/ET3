@@ -156,8 +156,9 @@ class EntidadAbstracta extends DOM_class {
 
 	/*Accesos al back */
 
-	async SEARCH() {
-		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
+	async SEARCH(empieza = 0,filas=250) {
+		let datosextra = { "empieza": empieza, "filas": filas };
+		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH', datosextra)
 			.then((respuesta) => {
 				//limpiar el formulario
 				this.cargar_formulario();
@@ -167,7 +168,9 @@ class EntidadAbstracta extends DOM_class {
 				//quito los class de la muestra de filas
 				document.getElementById('muestradatostabla').removeAttribute('class'); //Elimina la clase RECORDSET_VACIO 
 
-
+				this.empiezaFila = respuesta['empieza'];
+				this.tamPagina = datosextra["filas"];
+				this.filasTotales = respuesta['total'];
 				this.datos = respuesta['resource'];
 				this.atributos = Object.keys(respuesta['criteriosbusqueda']);
 
@@ -207,7 +210,7 @@ class EntidadAbstracta extends DOM_class {
 			this.cargar_formulario();
 			//poner el div del formulario no visible
 			document.getElementById("div_IU_form").style.display = 'none';
-			this.SEARCH();
+			this.SEARCH(this.empiezaFila,this.tamPagina);
 		}
 		else {
 			// mostrar mensaje error accion usando modal
