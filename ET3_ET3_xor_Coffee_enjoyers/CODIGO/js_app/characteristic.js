@@ -49,8 +49,8 @@ class characteristic extends estructura_characteristic {
             }
             if (prueba == "selectValidoSEARCH") {
                 let values = [];
-                for (let i = 0; i < this.def_html_characteristic["data_type_characteristic"].valores.length; i++) {
-                    values.push(this.def_html_characteristic["data_type_characteristic"].valores[i]);
+                for (let i = 0; i < this.def_html_characteristic["category_characteristic"].valores.length; i++) {
+                    values.push(this.def_html_characteristic["category_characteristic"].valores[i]);
                 } //copia en vez de tomar el array porque va a ser modificado
                 values.push("");
                 return this.selectValido("category_characteristic", values);

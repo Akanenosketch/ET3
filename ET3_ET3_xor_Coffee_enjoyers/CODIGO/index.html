@@ -2,8 +2,9 @@
 <html>
 
 <head>
-
+	<title class="text_titulo_app"></title>
 	<meta charset="UTF-8">
+
 	<!-- Igual el linkeo este hay que cambiarlo no estoy seguro, solo le cambie el nombre del archivo -->
 	<link rel="stylesheet" type="text/css" href="./css/IU.css" media="screen" />
 
@@ -38,8 +39,6 @@
 	<script type="text/javascript" src="./js_app/tests_project.js"></script>
 	<script type="text/javascript" src="./js_app/tests_characteristic.js"></script>
 
-	<!-- Hace falta cargar los html del API y estructuras?-->
-
 	<!-- Fichero de datos-->
 	<script type="text/javascript" src="./ET3_Datos_ET3_xor_Coffee_enjoyers.js"></script>
 
@@ -69,7 +68,7 @@
 			<li class="opcionmenu"><span class="text_analysis_prep"
 					onclick="validar = new analysis_preparation();"></span></li>
 			<li class="opcionmenu"><span class="text_characteristic"
-					onclick="validar = new characteristic();">Traduceme</span></li>
+					onclick="validar = new characteristic();"></span></li>
 
 		</ol>
 	</aside>
@@ -181,7 +180,6 @@
 	<!-- Modal para mostrar los errores de accion -->
 	<div id="error_action_modal">
 		<span id="error_action_msg"></span>
-		<!--<img src="./iconos/BACK.png" onclick="cerrarModalError();" />-->
 		<button onclick="validar.cerrarModalError()">X</button>
 	</div>
 

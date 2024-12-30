@@ -42,7 +42,7 @@ class DOM_class extends test {
     mostrarocultarcolumnas() {
         for (let columna of this.atributos) {
             if (!this.columnasamostrar.includes(columna)) {
-                document.querySelector("th[class='" + columna + "']").style.display = 'none';
+                this.cambiacolumnastabla(columna);
                 let arraytds = document.querySelectorAll("td[class='tabla-td-" + columna + "']");
                 for (let i = 0; i < arraytds.length; i++) {
                     arraytds[i].style.display = 'none';

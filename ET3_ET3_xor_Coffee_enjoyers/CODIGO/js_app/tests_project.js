@@ -229,7 +229,26 @@ let def_tests_project = Array(
     Array("project", "nuevo_file_project", 107, "Cumple tamaño de nombre minimo 7",                                                     "EDIT", 'project__nuevo_file_project__min_size_KO',         'El nombre del Nuevo Archivo es demasiado corto, debe tener al menos longitud 7.'),
     Array("project", "nuevo_file_project", 108, "Cumple tamaño de nombre maximo 100",                                                   "EDIT", 'project__nuevo_file_project__max_size_KO',         'El nombre del Nuevo Archivo supera el tamaño permitido, debe tener como mucho longitud 100.'),
     Array("project", "nuevo_file_project", 109, "Cumple todo",                                                                          "EDIT", true,                                               'El Nuevo Archivo es correcto'),
-    Array("project", "nuevo_file_project", 110, "Cumple ser un fichero vacio",                                                          "EDIT", true,                                               'El Nuevo Archivo es correcto')
+    Array("project", "nuevo_file_project", 110, "Cumple ser un fichero vacio",                                                          "EDIT", true,                                               'El Nuevo Archivo es correcto'),
+
+
+    //Pruebas especiales fechas
+    //Campo = `start_date_project` date NOT NULL, fecha válida con formato dd/mm/aaaa 
+
+    //ADD
+    Array("project", "start_date_project", 111, "Cumple no ser superior a end_date_project", "ADD",  'project__start_date_project__superior_KO', 'La Fecha de Inicio no puede ser superior a la Fecha de Fin.'),
+
+    //EDIT
+    Array("project", "start_date_project", 112, "Cumple no ser superior a end_date_project", "EDIT", 'project__start_date_project__superior_KO', 'La Fecha de Inicio no puede ser superior a la Fecha de Fin.'),
+
+
+    //Campo = `end_date_project` date NOT NULL, fecha válida con formato dd/mm/aaaa y superior a start_date_project
+
+    //ADD
+    Array("project", "end_date_project", 113, "Cumple no ser inferior a start_date_project", "ADD",  'project__end_date_project__inferior_KO',   'La Fecha de Fin no puede ser inferior a la Fecha de Inicio'),
+
+    //EDIT
+    Array("project", "end_date_project", 114, "Cumple no ser inferior a start_date_project", "EDIT", 'project__end_date_project__inferior_KO',   'La Fecha de Fin no puede ser inferior a la Fecha de Inicio')
 );
 
 let pruebas_project = Array(
@@ -249,8 +268,8 @@ let pruebas_project = Array(
     Array("project", "id_project", 2, 4, "SEARCH", "11.9",  "project__id_project__format_KO"),
     Array("project", "id_project", 2, 5, "SEARCH", "11/9",  "project__id_project__format_KO"),
     Array("project", "id_project", 2, 6, "SEARCH", "-1",    "project__id_project__format_KO"),
-    Array("project", "id_project", 2, 7, "SEARCH", "0",     "project__id_project__format_KO"),
-    Array("project", "id_project", 2, 8, "SEARCH", "01",    "project__id_project__format_KO"),
+    Array("project", "id_project", 2, 7, "SEARCH", "-0",    "project__id_project__format_KO"),
+    Array("project", "id_project", 2, 8, "SEARCH", "-01",   "project__id_project__format_KO"),
     
     Array("project", "id_project", 3, 9,  "SEARCH", "2".repeat(1),  true),
     Array("project", "id_project", 3, 10, "SEARCH", "2".repeat(11), true),
@@ -819,8 +838,8 @@ let pruebas_project = Array(
     Array("project", "id_sampling_methodology", 92, 413, "SEARCH", "11.9",  "project__id_sampling_methodology__format_KO"),
     Array("project", "id_sampling_methodology", 92, 414, "SEARCH", "11/9",  "project__id_sampling_methodology__format_KO"),
     Array("project", "id_sampling_methodology", 92, 415, "SEARCH", "-1",    "project__id_sampling_methodology__format_KO"),
-    Array("project", "id_sampling_methodology", 92, 416, "SEARCH", "0",     "project__id_sampling_methodology__format_KO"),
-    Array("project", "id_sampling_methodology", 92, 417, "SEARCH", "01",    "project__id_sampling_methodology__format_KO"),
+    Array("project", "id_sampling_methodology", 92, 416, "SEARCH", "-0",     "project__id_sampling_methodology__format_KO"),
+    Array("project", "id_sampling_methodology", 92, 417, "SEARCH", "-01",    "project__id_sampling_methodology__format_KO"),
     
     Array("project", "id_sampling_methodology", 93, 418, "SEARCH", "2".repeat(1),  true),
     Array("project", "id_sampling_methodology", 93, 419, "SEARCH", "2".repeat(11), true),
@@ -864,7 +883,7 @@ let pruebas_file_project = Array(
     //ADD
     Array("project", "nuevo_file_project", 97, 441, "ADD", "Existe", Array(), "project__nuevo_file_project__empty_KO"),
     
-    Array("project", "nuevo_file_project", 98, 443, "ADD", "max_size_file", Array("filename",Array("application/pdf"),3000000), "project__nuevo_file_project__max_size_file_KO"),
+    Array("project", "nuevo_file_project", 98, 442, "ADD", "max_size_file", Array("filename",Array("application/pdf"),3000000), "project__nuevo_file_project__max_size_file_KO"),
     Array("project", "nuevo_file_project", 98, 443, "ADD", "max_size_file", Array("filename",Array("application/pdf"),2000000), "project__nuevo_file_project__max_size_file_KO"),
     Array("project", "nuevo_file_project", 98, 444, "ADD", "max_size_file", Array("filename",Array("application/pdf"),2000001), "project__nuevo_file_project__max_size_file_KO"),
     
@@ -945,4 +964,25 @@ let pruebas_file_project = Array(
     Array("project", "nuevo_file_project", 110, 506, "EDIT", "OK", Array("a".repeat(8),Array("application/pdf"),1234),                                                          true),
     Array("project", "nuevo_file_project", 110, 507, "EDIT", "OK", Array("a".repeat(100),Array("application/pdf"),1234),                                                        true),
     Array("project", "nuevo_file_project", 110, 508, "EDIT", "OK", Array("a".repeat(99),Array("application/pdf"),1234),                                                         true)
+);
+
+let pruebas_esp_project = Array(
+    //Formato test:Array(Entidad,Campo,Numero Test,Numero Prueba, Accion,Valor, Mensaje Respuesta, Campo Auxiliar,Valor Auxiliar)
+
+    //Campo = `start_date_project` date NOT NULL, fecha válida con formato dd/mm/aaaa 
+
+    //ADD
+    Array("project", "start_date_project", 111, 509, "ADD", "11/11/1111",  "project__start_date_project__superior_KO","end_date_project","11/11/1110"),
+
+    //EDIT
+    Array("project", "start_date_project", 112, 510, "EDIT", "11/11/1111", "project__start_date_project__superior_KO","end_date_project","11/11/1110"),
+
+    //Campo = `end_date_project` date NOT NULL, fecha válida con formato dd/mm/aaaa y superior a start_date_project
+
+    //ADD
+    Array("project", "end_date_project", 113, 511, "ADD", "11/11/1110",  "project__end_date_project__inferior_KO","start_date_project","11/11/1111"),
+
+    //EDIT
+    Array("project", "end_date_project", 114, 512, "EDIT", "11/11/1110", "project__end_date_project__inferior_KO","start_date_project","11/11/1111")
+    
 );

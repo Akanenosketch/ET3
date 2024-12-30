@@ -124,8 +124,8 @@ let pruebas_analysis_preparation = Array(
     Array("analysis_preparation", "id_analysis_preparation", 2, 4, "SEARCH", "11.9",  "analysis_preparation__id_analysis_preparation__format_KO"),
     Array("analysis_preparation", "id_analysis_preparation", 2, 5, "SEARCH", "11/9",  "analysis_preparation__id_analysis_preparation__format_KO"),
     Array("analysis_preparation", "id_analysis_preparation", 2, 6, "SEARCH", "-1",    "analysis_preparation__id_analysis_preparation__format_KO"),
-    Array("analysis_preparation", "id_analysis_preparation", 2, 7, "SEARCH", "0",     "analysis_preparation__id_analysis_preparation__format_KO"),
-    Array("analysis_preparation", "id_analysis_preparation", 2, 8, "SEARCH", "01",    "analysis_preparation__id_analysis_preparation__format_KO"),
+    Array("analysis_preparation", "id_analysis_preparation", 2, 7, "SEARCH", "-0",     "analysis_preparation__id_analysis_preparation__format_KO"),
+    Array("analysis_preparation", "id_analysis_preparation", 2, 8, "SEARCH", "-01",    "analysis_preparation__id_analysis_preparation__format_KO"),
     
     Array("analysis_preparation", "id_analysis_preparation", 3, 9,  "SEARCH", "2".repeat(1),  true),
     Array("analysis_preparation", "id_analysis_preparation", 3, 10, "SEARCH", "2".repeat(11), true),
@@ -430,4 +430,8 @@ let pruebas_file_analysis_preparation = Array(
     Array("analysis_preparation", "nuevo_file_analysis_preparation", 53, 226, "EDIT", "OK", Array("a".repeat(8),Array("application/pdf"),1234),                                                          true),
     Array("analysis_preparation", "nuevo_file_analysis_preparation", 53, 227, "EDIT", "OK", Array("a".repeat(100),Array("application/pdf"),1234),                                                        true),
     Array("analysis_preparation", "nuevo_file_analysis_preparation", 53, 228, "EDIT", "OK", Array("a".repeat(99),Array("application/pdf"),1234),                                                         true)
+);
+
+let pruebas_esp_analysis_preparation = Array(
+    //vacio
 );

@@ -115,3 +115,7 @@ let pruebas_file_characteristic = Array(
     //EDIT
     
 );
+
+let pruebas_esp_characteristic = Array(
+    //vacio
+);

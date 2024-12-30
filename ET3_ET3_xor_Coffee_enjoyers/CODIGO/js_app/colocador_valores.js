@@ -10,40 +10,43 @@ class colocador_valores {
 
         //Recorrer campos 
         for (let atributo of this.def_html.atributos) {
-            if (this.def_html[atributo].esEspecial) {
-                this.that.mostrardatosespecialesForm(atributo, parametros[atributo]);
-            } else {
-                switch (this.def_html[atributo].tag) {
-                    case "INPUT":
-                        if (this.def_html[atributo].type == "file") {
-                            document.getElementById('link_' + atributo).href += parametros[atributo];
-                        }
-                        document.getElementById(atributo).value = parametros[atributo];
-                        break;
-                    case "TEXTAREA":
-                        document.getElementById(atributo).value = parametros[atributo];
-                        break;
-                    case "SELECT":
-                        if (this.def_html[atributo].multiple) {
-
-                            for (let dato of parametros[atributo]) {
-                                document.getElementById(dato).selected = true;
-                            }
-
-                        } else {
-                            document.getElementById("SelectDefault_"+atributo).setAttribute("disabled", "");
-
-                            document.getElementById(parametros[atributo]).selected = true;
-
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
+            this.colocarValor(atributo, parametros[atributo]);
         }
     }
 
+    colocarValor(atributo, valor,esTest = false) {
+        if (this.def_html[atributo].esEspecial && !esTest) { //esTest es un apaño para el test de forma que se pueda usar la funcion para testing sin problemas al formatear fechas
+            this.that.mostrardatosespecialesForm(atributo, valor);
+        } else {
+            switch (this.def_html[atributo].tag) {
+                case "INPUT":
+                    if (this.def_html[atributo].type == "file") {
+                        document.getElementById('link_' + atributo).href += valor;
+                    }
+                    document.getElementById(atributo).value = valor;
+                    break;
+                case "TEXTAREA":
+                    document.getElementById(atributo).value = valor;
+                    break;
+                case "SELECT":
+                    if (this.def_html[atributo].multiple) {
+
+                        for (let dato of valor) {
+                            document.getElementById(dato).selected = true;
+                        }
+
+                    } else {
+                        document.getElementById("SelectDefault_" + atributo).setAttribute("disabled", "");
+
+                        document.getElementById(valor).selected = true;
+
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
 
 } 

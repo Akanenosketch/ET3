@@ -28,7 +28,7 @@
 
 - [X] project.js
 
-- [ ] test_project.js (poner un test para fechas)
+- [X] test_project.js
 
 - [X] estructura_characteristic.js
 
@@ -52,11 +52,11 @@
 
 #### js_core
 
-- [] DOM_class.js (previsiblemente si no se hace paginacion)
+- [X] DOM_class.js (previsiblemente si no se hace paginacion)
  
 - [X] ExternalAccess.js (NO TOCAR)
 
-- [ ] Tests_class.js
+- [X] Tests_class.js
   
 - [X] Validaciones_Atomicas.js
  
@@ -76,21 +76,19 @@
 
 ### TODO LIST
 
-- Comprobar si los problemas del file son cosa del back
+- Traducir para test lo nuevo (CampoAux, ValorAux)
 
 - traducir SelectDefault para opcion default de select ("SelectDefault_SEARCH"vacio en search , "SelectDefault"  Select/Escoja o algo )
 
 - Meter traducciones de characteristic
 
+- Comprobar si los problemas del file son cosa del back
+
 - Hacer los br de separacion en form con css?
 
 - Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
-- Revisar DOM_class
-
-- Hacer tests y pruebas para lo de la fecha
-
-- Reescribir Test class para usar lo nuevo (metodos de test_Entidad)
+- Revisar que no haya metodos que no se usan (habia algunos en la ET2)
 
 - Crear API.html
 
@@ -106,11 +104,11 @@
 
 - Desarrollar characteristic traducciones
 
-- Refactorizar index.html
-
-- HACER CSS PARA MODAL Y DEMAS
+- Refactorizar index.html si hace falta
 
 - Mostrar tests con scroll y modal
+
+- HACER CSS PARA MODAL Y DEMAS
 
 - HACER CSS PARA COLORES Y PRESENTACION
 
@@ -118,7 +116,7 @@
 
 - Organizar la muestra del array de datos
 
-- Paginacion a mayores? Me da que si
+- Paginacion a mayores? xd
 
 
 *Enunciado : https://docs.google.com/document/d/1Kl11WnqrlurwHtuUmPAz4m8kH6adguH33vzfODUaae8/edit?tab=t.0*
@@ -134,7 +132,7 @@
 
 ~~Una vez que se establezca la estructura de datos, esta debe poder rellenarse con la información necesaria para cada tabla a gestionar en la interfaz.~~
 
-Utilizar la clase test para que verifique el formato de test y pruebas y ejecute todas las pruebas de test de las definiciones de test definidas para cada atributo (incluidas las de fichero) y saque su resultado en un componente modal con scroll para ser visualizado por el usuario. La acción de test debe estar disponible como en la ET2 en la parte superior del index cuando se entra en la gestión de una entidad.
+~~Utilizar la clase test para que verifique el formato de test y pruebas y ejecute todas las pruebas de test de las definiciones de test definidas para cada atributo (incluidas las de fichero)~~ y saque su resultado en un componente modal con scroll para ser visualizado por el usuario. La acción de test debe estar disponible como en la ET2 en la parte superior del index cuando se entra en la gestión de una entidad.
 
 ~~Debe utilizarse la clase validacionesatomicas para la implementación de los métodos estándar de validación de campo que se indican en la definición de la ET2.~~
 
@@ -146,7 +144,7 @@ Utilizar la clase test para que verifique el formato de test y pruebas y ejecute
 
 Debe hacerse los ficheros de definición de test y de pruebas para los campos de los formularios correspondiente al nuevo código desarrollado.
 
-En general, debe permitirse en la clase entidad la personalización de la misma para poder adecuar fuera del estándar el comportamiento de la entidad.
+~~En general, debe permitirse en la clase entidad la personalización de la misma para poder adecuar fuera del estándar el comportamiento de la entidad.~~
 
 ~~Debe existir una clase para la construcción del formulario a partir de la estructura de datos de definición html del formulario.~~
 
@@ -174,7 +172,7 @@ Objetivos
 
 1) ~~Debe funcionar para cualquier tabla de una base de datos. Toda la información necesaria debe estar en las estructuras de datos definidas.~~
 
-2) Deben poder definirse definiciones de test y pruebas de test para todos los campos de la tabla incluyendo los campos de tipo file.
+2) ~~Deben poder definirse definiciones de test y pruebas de test para todos los campos de la tabla incluyendo los campos de tipo file.~~
 
 3) ~~La realización de los test debe realizarse en index.html~~
 
@@ -184,4 +182,4 @@ Objetivos
 
 6) ~~Los datos del grupo mostrados en la página index.html debe leerse el fichero ET3_Datos_NombreGrupo.js~~
 
-7) Debe utilizarse todo lo desarrollado para implementar los test y la gestión y acceso a BACK de las tablas analysis_preparation, project y characteristic (definida al final del documento), los cuales deben ser accesibles desde index.html.
+7) ~~Debe utilizarse todo lo desarrollado para implementar los test y la gestión y acceso a BACK de las tablas analysis_preparation, project y characteristic (definida al final del documento), los cuales deben ser accesibles desde index.html.~~
