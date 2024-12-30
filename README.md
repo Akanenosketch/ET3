@@ -80,16 +80,6 @@
 
 - traducir SelectDefault para opcion default de select ("SelectDefault_SEARCH"vacio en search , "SelectDefault"  Select/Escoja o algo )
 
-- Meter traducciones de characteristic
-
-- Comprobar si los problemas del file son cosa del back
-
-- Hacer los br de separacion en form con css?
-
-- Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
-
-- Revisar que no haya metodos que no se usan (habia algunos en la ET2)
-
 - Crear API.html
 
 - Poner API.html en index
@@ -117,6 +107,15 @@
 - Organizar la muestra del array de datos
 
 - Paginacion a mayores? xd
+
+- Comprobar si los problemas del file son cosa del back
+
+- Hacer los br de separacion en form con css?
+
+- Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
+
+- Revisar que no haya metodos que no se usan (habia algunos en la ET2)
+
 
 
 *Enunciado : https://docs.google.com/document/d/1Kl11WnqrlurwHtuUmPAz4m8kH6adguH33vzfODUaae8/edit?tab=t.0*

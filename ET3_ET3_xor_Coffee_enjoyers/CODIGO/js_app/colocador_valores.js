@@ -14,14 +14,18 @@ class colocador_valores {
         }
     }
 
-    colocarValor(atributo, valor,esTest = false) {
+    colocarValor(atributo, valor, esTest = false) {
         if (this.def_html[atributo].esEspecial && !esTest) { //esTest es un apaño para el test de forma que se pueda usar la funcion para testing sin problemas al formatear fechas
             this.that.mostrardatosespecialesForm(atributo, valor);
         } else {
             switch (this.def_html[atributo].tag) {
                 case "INPUT":
                     if (this.def_html[atributo].type == "file") {
-                        document.getElementById('link_' + atributo).href += valor;
+                        if (valor == "") { //si no hay archivo que nu muestre link, por definicion de entidades siempre hay archivo
+                            document.getElementById('link_' + atributo).remove();
+                        } else {
+                            document.getElementById('link_' + atributo).href += valor;
+                        }
                     }
                     document.getElementById(atributo).value = valor;
                     break;
@@ -36,10 +40,8 @@ class colocador_valores {
                         }
 
                     } else {
-                        document.getElementById("SelectDefault_" + atributo).setAttribute("disabled", "");
-
+                        document.getElementById("SelectDefault_" + atributo).remove();
                         document.getElementById(valor).selected = true;
-
                     }
                     break;
                 default:

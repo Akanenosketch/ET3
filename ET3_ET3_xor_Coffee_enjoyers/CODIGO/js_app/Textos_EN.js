@@ -15,7 +15,7 @@ let textos_EN = {
     'Horas'               : 'Hours Worked',
 
     //textos titulos index
-    'text_titulo_app'   : 'IU ET2 Interface',
+    'text_titulo_app'   : 'IU ET3 Interface',
     'text_titulo_menu'  : 'Menu',
     'text_titulo_pie'   : 'Footer',
 
