@@ -20,8 +20,8 @@ let textos_ES = {
     'text_titulo_pie'   : 'Pie de Página',
 
     //Opciones de menu
-    'text_project'      : 'Proyecto',
-    'text_analysis_prep': 'Preparacion Analisis',
+    'text_project'       : 'Proyecto',
+    'text_analysis_prep' : 'Preparacion Analisis',
     'text_characteristic': 'Característica',
 
     //textos titulos pagina entidades
@@ -103,7 +103,7 @@ let textos_ES = {
     'file_analysis_preparation'         : 'Archivo Analisis',
 
 
-    /*LABELS*/ //Tienen que ir despues de los atributos, si hay fors en los labels se traduce con los codigos de los id de inputs
+    /*LABELS*/ //Tienen que ir despues de los atributos, si hay fors en los labels se traduce con los codigos de los id de inputs, no importa mucho pq son iguales los textos de momento
 
 
     // labels project
@@ -325,7 +325,7 @@ let textos_ES = {
     'id_sampling_methodology_es_nulo_KO': 'Se ha producido un error grave,asegurese de que el campo Id Metodologia de Muestreo no este vacio',
 
     //tipo incorrecto de fichero en ADD o EDIT
-    'ERROR_UPLOAD_file_project_KO'      : 'Se ha producido un error grave,asegurese de que el archivo subido sea del tipo correcto (.pdf,.doc o .docx)',
+    'ERROR_UPLOAD_file_project_KO'      : 'Se ha producido un error grave,asegurese de que el archivo subido sea correcto',
     
     /*
     A pesar del nombre, no es un error al forzar el atributo a nulo en ADD o EDIT, el back acepta ficheros nulos en ambas entidades.
@@ -344,7 +344,7 @@ let textos_ES = {
     'bib_analysis_preparation_es_nulo_KO'           : 'Se ha producido un error grave,asegurese de que el campo Bibliografia no este vacio',
     
     //tipo incorrecto de fichero en ADD o EDIT
-    'ERROR_UPLOAD_file_analysis_preparation_KO'     : 'Se ha producido un error grave,asegurese de que el archivo subido sea del tipo correcto (.pdf,.doc o .docx)',
+    'ERROR_UPLOAD_file_analysis_preparation_KO'     : 'Se ha producido un error grave,asegurese de que el archivo subido sea correcto',
     
     //no se si existe este error, existe el equivalente en project pero no parece que exista para analysis_preparation, no salta en los testeos
     'file_analysis_preparation_es_nulo_KO'          : 'Se ha producido un error critico, los datos que intenta editar no son editables', 

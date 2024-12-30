@@ -20,8 +20,8 @@ let textos_EN = {
     'text_titulo_pie'   : 'Footer',
 
     //Opciones de menu
-    'text_project'      : 'Project',
-    'text_analysis_prep': 'Analysis Preparation',
+    'text_project'       : 'Project',
+    'text_analysis_prep' : 'Analysis Preparation',
     'text_characteristic': 'Characteristic',
 
     //textos titulos pagina entidades
@@ -325,7 +325,7 @@ let textos_EN = {
     'id_sampling_methodology_es_nulo_KO': 'An error has occurred,check field Sampling Methodology ID is not empty ',
 
     //tipo incorrecto de fichero en ADD o EDIT
-    'ERROR_UPLOAD_file_project_KO'      : 'An error has occurred,check New Project File is  an allowed type (.pdf,.doc or .docx)',
+    'ERROR_UPLOAD_file_project_KO'      : 'An error has occurred,check New Project File is correct',
     
     /*
     A pesar del nombre, no es un error al forzar el atributo a nulo en ADD o EDIT, el back acepta ficheros nulos en ambas entidades.
@@ -344,7 +344,7 @@ let textos_EN = {
     'bib_analysis_preparation_es_nulo_KO'           : 'An error has occurred,check field Bibliography is not empty',
     
     //tipo incorrecto de fichero en ADD o EDIT
-    'ERROR_UPLOAD_file_analysis_preparation_KO'     : 'An error has occurred,check New Analysis File is  an allowed type (.pdf,.doc or .docx)',
+    'ERROR_UPLOAD_file_analysis_preparation_KO'     : 'An error has occurred,check New Analysis File is correct',
     
     //no se si existe este error, existe el equivalente en project pero no parece que exista para analysis_preparation, no salta en los testeos
     'file_analysis_preparation_es_nulo_KO'          : 'A critical error has occurred, the current data is not editable', 

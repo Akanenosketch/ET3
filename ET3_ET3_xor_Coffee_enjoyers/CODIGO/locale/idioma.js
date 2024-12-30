@@ -80,7 +80,6 @@ function setLang(lang = '') {
             if (options[i].className == clave) {
                 //options[i].label = traduccion[clave]; NO IMPLEMENTADO EN FIREFOX
                 options[i].innerHTML = traduccion[clave];
-                traducido = true;
             }
         }
         
