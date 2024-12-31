@@ -5,7 +5,10 @@ let textos_ES = {
 
     //Idiomas
     "idiomaES" : "Español",
-    "idiomaEN" : "Inglés",
+    "idiomaEN" : "Ingles",
+    
+    //paginacion
+    "preposicionPag" : "entradas de",
 
     //Textos datos generales
     'Nombre Grupo'        : 'Nombre Grupo',
@@ -15,7 +18,7 @@ let textos_ES = {
     'Horas'               : 'Horas',
 
     //textos titulos index
-    'text_titulo_app'   : 'Interfaz ET2 IU',
+    'text_titulo_app'   : 'Interfaz ET3 IU',
     'text_titulo_menu'  : 'Menú',
     'text_titulo_pie'   : 'Pie de Página',
 

@@ -62,11 +62,12 @@
 		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
 	</header>
 
-	<!--<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();"></span></nav>-->
-	<nav class='navbar'>
-		<button id="menu-toggle" class="menu-btn" onclick="menu_work();">☰</button>
+	<nav class='bordeado'>
+		<span class="text_titulo_menu" onclick="menu_work();"></span>
+		<a href="API.html"><img id="botonAPI" src=".\iconos\API-dark-32.png"></a>
+		<a href="estructuras.html"><img id="botonESTRUCTURAS" src=".\iconos\estructuras-black-32.png" ></a>
 	</nav>
-	
+
 	<aside id='div-menu'>
 		<ol>
 			<li class="opcionmenu"><span class="text_project" onclick="validar = new project();"></span></li>
@@ -92,6 +93,12 @@
 
 				<select id="seleccioncolumnas" size="2" multiple>
 				</select>
+
+				<img id="botonANT" width="16" height="16" src="./iconos/IZQ.png">
+				<span id="PaginaActual"></span>
+				<span id="preposicionPag"class="preposicionPag"></span>
+				<span id="FilasTotales"></span>
+				<img id="botonSIG" width="16" height="16" src="./iconos/DER.png">
 
 			</div>
 
