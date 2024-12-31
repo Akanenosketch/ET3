@@ -48,6 +48,44 @@
 
 <body onload="">
 
+	<div class="contenidoForm" id='div_IU_test'>
+
+		<div class="" id="contenidoTests">
+			<h1 id="res_estructura_tests"></h1>
+			<p id="resultadodef"></p>
+			<table border="1">
+				<tbody id="tablaresultadostest">
+				</tbody>
+			</table>
+		</div>
+
+		<div class="" id="contenidoPruebas">
+			<h1 id="res_estructura_pruebas"></h1>
+			<p id="resultadoprueba"></p>
+			<div id="div_tabla_prueba">
+				<table id="tabla_prueba" border="1">
+					<tbody id="tablaresultadosprueba">
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="" id="resultadopruebas">
+			<h1 id="res_pruebas"></h1>
+			<p id="resultadotest"></p>
+			<div id="div_resultado_prueba">
+				<table id="resultado_prueba" border="1">
+					<tbody id="salidaresultadosprueba">
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+
+		<img src="./iconos/BACK.png" onclick="validar.cerrar_test();" />
+
+	</div>
+
 	<header id='header_page' class='bordeado'>
 
 
@@ -131,43 +169,7 @@
 	</div>
 
 
-	<div class="contenidoForm" id='div_IU_test'>
-
-		<div class="" id="contenidoTests">
-			<h1 id="res_estructura_tests"></h1>
-			<p id="resultadodef"></p>
-			<table border="1">
-				<tbody id="tablaresultadostest">
-				</tbody>
-			</table>
-		</div>
-
-		<div class="" id="contenidoPruebas">
-			<h1 id="res_estructura_pruebas"></h1>
-			<p id="resultadoprueba"></p>
-			<div id="div_tabla_prueba">
-				<table id="tabla_prueba" border="1">
-					<tbody id="tablaresultadosprueba">
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="" id="resultadopruebas">
-			<h1 id="res_pruebas"></h1>
-			<p id="resultadotest"></p>
-			<div id="div_resultado_prueba">
-				<table id="resultado_prueba" border="1">
-					<tbody id="salidaresultadosprueba">
-					</tbody>
-				</table>
-
-			</div>
-		</div>
-
-		<img src="./iconos/BACK.png" onclick="validar.cerrar_test();" />
-
-	</div>
+	
 
 
 
@@ -245,11 +247,6 @@
 		}
 		document.getElementById('salidaDatosEntregaPersonas').innerHTML += datosPersona;
 		setLang('');
-
-		function toggleMenu() {
-			const dropdown = document.getElementById('dropdown');
-			dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-		}
 	</script>
 
 </body>
