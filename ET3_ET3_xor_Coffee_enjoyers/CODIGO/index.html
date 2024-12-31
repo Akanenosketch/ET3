@@ -88,6 +88,23 @@
 
 	<header id='header_page' class='bordeado'>
 
+		<nav class='navbar'>
+			<button id="menu-toggle" class="menu-btn" onclick="menu_work();">☰</button>
+			<a href="API.html"><img id="botonAPI" src=".\iconos\API-dark-32.png"></a>
+			<a href="estructuras.html"><img id="botonESTRUCTURAS" src=".\iconos\estructuras-black-32.png"></a>
+		</nav>
+
+		<aside id='div-menu'>
+			<h2>Menú</h2>
+			<ol class="no-style">
+				<li class="opcionmenu"><span class="text_project" onclick="validar = new project(); closeMenu();"></span></li>
+				<li class="opcionmenu"><span class="text_analysis_prep"
+						onclick="validar = new analysis_preparation(); closeMenu();"></span></li>
+				<li class="opcionmenu"><span class="text_characteristic"
+						onclick="validar = new characteristic(); closeMenu();"></span>
+				</li>
+			</ol>
+		</aside>
 
 		<spam class="text_titulo_app"></spam>
 
@@ -98,24 +115,11 @@
 		</select>
 
 		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
+
+
 	</header>
 
-	<nav class='bordeado'>
-		<button id="menu-toggle" class="menu-btn" onclick="menu_work();">☰</button>
-		<a href="API.html"><img id="botonAPI" src=".\iconos\API-dark-32.png"></a>
-		<a href="estructuras.html"><img id="botonESTRUCTURAS" src=".\iconos\estructuras-black-32.png" ></a>
-	</nav>
 
-	<aside id='div-menu'>
-		<ol>
-			<li class="opcionmenu"><span class="text_project" onclick="validar = new project();"></span></li>
-			<li class="opcionmenu"><span class="text_analysis_prep"
-					onclick="validar = new analysis_preparation();"></span></li>
-			<li class="opcionmenu"><span class="text_characteristic" onclick="validar = new characteristic();"></span>
-			</li>
-
-		</ol>
-	</aside>
 
 	<section id="workspace" class='bordeado'>
 
@@ -134,7 +138,7 @@
 
 				<img id="botonANT" width="16" height="16" src="./iconos/IZQ.png">
 				<span id="PaginaActual"></span>
-				<span id="preposicionPag"class="preposicionPag"></span>
+				<span id="preposicionPag" class="preposicionPag"></span>
 				<span id="FilasTotales"></span>
 				<img id="botonSIG" width="16" height="16" src="./iconos/DER.png">
 
@@ -169,7 +173,7 @@
 	</div>
 
 
-	
+
 
 
 
@@ -247,6 +251,27 @@
 		}
 		document.getElementById('salidaDatosEntregaPersonas').innerHTML += datosPersona;
 		setLang('');
+		
+
+		// Función para cerrar el menú
+function closeMenu() {
+    const menu = document.getElementById('div-menu');
+    if (menu) {
+        menu.style.display = 'none';
+    }
+}
+
+// Cerrar el menú si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('div-menu');
+    const menuToggleButton = document.getElementById('menu-toggle');
+
+    // Si el clic no fue dentro del menú ni en el botón para abrir el menú, cerramos el menú
+    if (!menu.contains(event.target) && event.target !== menuToggleButton) {
+        closeMenu();
+    }
+});
+
 	</script>
 
 </body>
