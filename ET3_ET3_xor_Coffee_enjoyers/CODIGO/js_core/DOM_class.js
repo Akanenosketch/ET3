@@ -60,7 +60,7 @@ class DOM_class extends test {
         //construir tabla
         this.hacertabla();
         //hacer las opciones de pagina
-        this.levantarPaginacion();
+        this.hacerPaginacion();
         //construir select
         this.construirSelect();
         //ocultar segun columnasamostrar
@@ -156,7 +156,21 @@ class DOM_class extends test {
         setLang();
     }
 
+    hacerPaginacion() {
+        if (this.datos != "") { //hay datos
+            this.levantarPaginacion();
+        }
+        else {
+            document.getElementById("preposicionPag").style.visibility = "hidden";
+            document.getElementById("PaginaActual").innerHTML = "";
+            document.getElementById("FilasTotales").innerHTML = "";
+            document.getElementById("botonANT").style.visibility = "hidden";
+            document.getElementById("botonSIG").style.visibility = "hidden";
+        }
+    }
     levantarPaginacion() {
+        document.getElementById("preposicionPag").style.visibility = "visible";
+
         let filaFinal = parseInt(this.tamPagina) + parseInt(this.empiezaFila);
         if (filaFinal > this.filasTotales) filaFinal = this.filasTotales;
         document.getElementById("PaginaActual").innerHTML = this.empiezaFila + "-" + filaFinal + " ";

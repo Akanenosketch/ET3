@@ -106,8 +106,6 @@
 
 - Organizar la muestra del array de datos
 
-- Paginacion a mayores? xd
-
 - Comprobar si los problemas del file son cosa del back
 
 - Hacer los br de separacion en form con css?
