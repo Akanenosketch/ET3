@@ -45,6 +45,13 @@ let textos_EN = {
     'text_contenido_titulo_form_analysis_preparation_SHOWCURRENT'   : 'Analysis Preparation Show Form',
     'text_contenido_titulo_form_analysis_preparation_DELETE'        : 'Analysis Preparation Delete Form',
 
+    /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
+
+    
+    //opciones menu
+    'estructura_project'       : 'Project',
+    'estructura_analysis_prep' : 'Analysis Pretaration',
+    'estructura_characteristic': 'Characteristic',
 
     /*TRADUCCIONES PARA TEST*/ 
 
@@ -105,6 +112,15 @@ let textos_EN = {
     'bib_analysis_preparation'          : 'Bibliography',
     'file_analysis_preparation'         : 'Analysis File',
 
+    // atributos characteristic
+    'id_characteristic'           : 'Characteristic ID',
+    'name_characteristic'         : 'Characteristic Name',
+    'description_characteristic'  : 'Description',
+    'data_type_characteristic'    : 'Data Type',
+    'category_characteristic'     : 'Category',
+    'bibref_characteristic'       : 'Bibliographic Reference',
+    'file_characteristic'         : 'Characteristic File',
+
 
     /*LABELS*/ //Tienen que ir despues de los atributos, si hay fors en los labels se traduce con los codigos de los id de inputs
 
@@ -131,6 +147,16 @@ let textos_EN = {
     'label_file_analysis_preparation'       : 'Analysis File',
     'label_nuevo_file_analysis_preparation' : 'New Analysis File',
 
+    // labels characteristic
+    'label_id_characteristic'         : 'Characteristic ID',
+    'label_name_characteristic'       : 'Characteristic Name',
+    'label_description_characteristic': 'Description',
+    'label_data_type_characteristic'  : 'Data Type',
+    'label_category_characteristic'   : 'Category',
+    'label_bibref_characteristic'     : 'Bibliographic Reference',
+    'label_file_characteristic'       : 'Characteristic File',
+    'label_nuevo_file_characteristic' : 'New Characteristic File',
+    
 
     /*PLACEHOLDERS*/
 
@@ -354,6 +380,9 @@ let textos_EN = {
 
 
     /*OTROS*/
+
+    //el administrador no te deja borrar la tupla
+    "admin_no_te_lo_deja_borrar_KO":"An error has ocurred, the administrator did not give you the permissions to delete stuff",
 
     //no hay fichero, no deberia pasar
     "no_file_found"     : "file not found",

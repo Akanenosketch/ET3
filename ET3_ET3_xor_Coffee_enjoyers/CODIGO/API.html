@@ -48,8 +48,77 @@
 </head>
 
 <body onload="">
-    <h1>Página de API</h1>
-    <h2>pendiente de hacer</h2>
+    <header id='header_page' class='bordeado'>
+        <spam class="text_titulo_app"></spam>
+
+        <!-- Select para cambiar idiomas -->
+        <select id="languageSelect" onchange="setLang(this.value);">
+            <option value="ES" class="idiomaES"></option>
+            <option value="EN" class="idiomaEN"></option>
+        </select>
+    </header>
+
+    <nav class='bordeado'>
+        <img src=".\iconos\menu-32.png" onclick="menu_work();">
+        <a href="index.html"><img id="botonINDEX" src=".\iconos\index-black-32.png"></a>
+        <a href="API.html"><img id="botonAPI" src=".\iconos\API-dark-32.png"></a>
+        <a href="estructuras.html"><img id="botonESTRUCTURAS" src=".\iconos\estructuras-black-32.png" ></a>
+
+    </nav>
+
+    <aside id='div-menu'>
+        <ol>
+            <li class="opcionmenu"><span class="estructura_project" onclick=""></span></li>
+            <li class="opcionmenu"><span class="estructura_analysis_prep"></span></li>
+            <li class="opcionmenu"><span class="estructura_characteristic"></span>
+            </li>
+
+        </ol>
+    </aside>
+
+    <section id="workspace" class='bordeado'>
+
+        <div id='title_page' class='bordeado'>
+            <spam id="text_title_page" class="">titulo de pagina de entidad</spam>
+        </div>
+
+        <div id="id_tabla_datos">
+            
+
+            </div>
+
+            <table id="tabladatosalumnos">
+                <thead id="titulostablacabecera"></thead>
+                <tbody id="muestradatostabla"></tbody>
+            </table>
+
+
+        </div>
+
+    </section>
+
+
+
+    <footer class='bordeado'>
+        <spam class="text_titulo_pie"></spam>
+        <div id="divTablasDatosEntrega">
+            <table>
+                <tbody id="salidaDatosEntrega">
+                </tbody>
+            </table>
+            <table>
+                <tbody id="salidaDatosEntregaPersonas">
+                </tbody>
+            </table>
+
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+
+        setLang('');
+
+    </script>
 </body>
 
 </html>
