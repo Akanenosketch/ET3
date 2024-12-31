@@ -5,7 +5,7 @@ let textos_ES = {
 
     //Idiomas
     "idiomaES" : "Español",
-    "idiomaEN" : "Ingles",
+    "idiomaEN" : "Inglés",
 
     //Textos datos generales
     'Nombre Grupo'        : 'Nombre Grupo',

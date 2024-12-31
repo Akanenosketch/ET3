@@ -3,16 +3,104 @@
 General    Todo esto es de la ET2, modificar como toque
 
 */
-
-.bordeado{
-	border-width: 1;
-	border-style: solid;
+#header_page {
+    font-size: 60;
+    text-align: center;
 }
 
-#header_page{
-	font-size: 60;
-	text-align: center;
+.bordeado {
+    border-width: 1;
+    border-style: solid;
 }
+
+.navbar {
+    width: 100%;
+    height: 30px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .text_titulo_app {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .div-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .menu-toggle {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* Selector de idioma */
+#languageSelect {
+    appearance: none; /* Oculta el estilo por defecto */
+    background-color: orange;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    outline: none;
+    cursor: pointer;
+    margin: 1rem;
+    transition: all 0.3s ease;
+}
+
+#languageSelect:hover {
+    background-color: #e69500; /* Cambio de color al pasar el cursor */
+    scale: 1.05;
+}
+
+#languageSelect:active {
+    scale: 0.95; /* Reduce ligeramente el tamaño al hacer clic */
+}
+
+#languageSelect option {
+    background-color: white; /* Fondo para las opciones */
+    color: black;
+    font-weight: 100;
+}
+
+/*.div-menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.div-menu.open{
+    height: 90px;
+}
+
+.div-menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}*/
+
 
 /*
  
@@ -158,3 +246,4 @@ seleccion columnas
     display: block;
 }
 
+/* Responsive */

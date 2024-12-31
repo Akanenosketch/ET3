@@ -49,6 +49,8 @@
 <body onload="">
 
 	<header id='header_page' class='bordeado'>
+
+
 		<spam class="text_titulo_app"></spam>
 
 		<!-- Select para cambiar idiomas -->
@@ -60,15 +62,18 @@
 		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
 	</header>
 
-	<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();"></span></nav>
-
+	<!--<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();"></span></nav>-->
+	<nav class='navbar'>
+		<button id="menu-toggle" class="menu-btn" onclick="menu_work();">☰</button>
+	</nav>
+	
 	<aside id='div-menu'>
 		<ol>
 			<li class="opcionmenu"><span class="text_project" onclick="validar = new project();"></span></li>
 			<li class="opcionmenu"><span class="text_analysis_prep"
 					onclick="validar = new analysis_preparation();"></span></li>
-			<li class="opcionmenu"><span class="text_characteristic"
-					onclick="validar = new characteristic();"></span></li>
+			<li class="opcionmenu"><span class="text_characteristic" onclick="validar = new characteristic();"></span>
+			</li>
 
 		</ol>
 	</aside>
@@ -234,6 +239,10 @@
 		document.getElementById('salidaDatosEntregaPersonas').innerHTML += datosPersona;
 		setLang('');
 
+		function toggleMenu() {
+			const dropdown = document.getElementById('dropdown');
+			dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+		}
 	</script>
 
 </body>
