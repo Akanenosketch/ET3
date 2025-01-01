@@ -2,7 +2,8 @@ let textos_ES = {
 
     /*TITULOS*/
 
-
+    "base_de_datos" : "Base de Datos",
+    "API": "API",
     //Idiomas
     "idiomaES" : "Español",
     "idiomaEN" : "Ingles",

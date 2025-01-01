@@ -90,6 +90,38 @@ def_test_nombreentidad = { //todo obligatorio
 
     <body onload="">
         <header id='header_page' class='bordeado'>
+
+            <nav class='navbar'>
+                <svg id="menu-btn" class="menu-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" onclick="menu_work();">
+                    <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                </svg>
+                  
+                <a href="API.html"><img id="botonAPI" src=".\iconos\API-dark-32.png"></a>
+                <a href="estructuras.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" id="botonESTRUCTURAS">
+                      <path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875Z" />
+                      <path d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 0 0 1.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 0 0 1.897 1.384C6.809 12.164 9.315 12.75 12 12.75Z" />
+                      <path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 15.914 9.315 16.5 12 16.5Z" />
+                      <path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 19.664 9.315 20.25 12 20.25Z" />
+                    </svg>
+                  </a>
+                              
+            </nav>
+    
+            <aside id='div-menu'>
+                <h2>Menú</h2>
+                <ol class="no-style">
+                    <li class="opcionmenu"><span class="text_project"
+                            onclick="validar = new project(); closeMenu();"></span></li>
+                    <li class="opcionmenu"><span class="text_analysis_prep"
+                            onclick="validar = new analysis_preparation(); closeMenu();"></span></li>
+                    <li class="opcionmenu"><span class="text_characteristic"
+                            onclick="validar = new characteristic(); closeMenu();"></span>
+                    </li>
+                </ol>
+    
+            </aside>
+    
             <spam class="text_titulo_app"></spam>
     
             <!-- Select para cambiar idiomas -->
@@ -97,25 +129,11 @@ def_test_nombreentidad = { //todo obligatorio
                 <option value="ES" class="idiomaES"></option>
                 <option value="EN" class="idiomaEN"></option>
             </select>
+    
+            <img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
+    
+    
         </header>
-    
-        <nav class='bordeado'>
-            <img src=".\iconos\menu-32.png" onclick="menu_work();">
-            <a href="index.html"><img id="botonINDEX" src=".\iconos\index-black-32.png"></a>
-            <a href="API.html"><img id="botonAPI" src=".\iconos\API-dark-32.png"></a>
-            <a href="estructuras.html"><img id="botonESTRUCTURAS" src=".\iconos\estructuras-black-32.png" ></a>
-
-        </nav>
-    
-        <aside id='div-menu'>
-            <ol>
-                <li class="opcionmenu"><span class="estructura_project" onclick=""></span></li>
-                <li class="opcionmenu"><span class="estructura_analysis_prep"></span></li>
-                <li class="opcionmenu"><span class="estructura_characteristic"></span>
-                </li>
-    
-            </ol>
-        </aside>
     
         <section id="workspace" class='bordeado'>
     
