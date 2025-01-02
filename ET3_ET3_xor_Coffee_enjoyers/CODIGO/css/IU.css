@@ -16,6 +16,23 @@
 }
 
 
+#footer_page {
+    margin-top: 237.5px;
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    padding: 10px 20px; /* Reduce el padding para ahorrar espacio */
+    background-color: white;
+    box-shadow: 0px -3px 5px 0px rgba(99, 98, 98, 0.75); /* Sombra hacia arriba */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    text-align: center; /* Centra el contenido del footer */
+    position: relative; /* Hace que el footer esté al final del contenido */
+    bottom: 0;
+}
+
+
+
+
+
+
 
 footer {
     margin-top: 20px;
