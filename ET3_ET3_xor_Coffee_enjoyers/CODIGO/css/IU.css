@@ -8,17 +8,23 @@
 
 #header_page {
     font-size: 36px;
-    text-align: center;
+    padding-left: 60px;
     position: relative;
-    margin-top: 20px; /* Ajusta este valor según el espacio que necesites */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0px 3px 5px 0px rgba(99, 98, 98, 0.75);
 }
 
-footer{
-    margin-top: 20px; /* Ajusta este valor según el espacio que necesites */
+
+
+footer {
+    margin-top: 20px;
+    /* Ajusta este valor según el espacio que necesites */
 }
 
 .navbar {
     position: absolute;
+    color: black;
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
@@ -31,12 +37,11 @@ footer{
     /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 
-
 .navbar a {
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-size: 15px;
-    color: #000000;
+    color: black;
     display: flex;
     align-items: center;
     /* Alinea el texto verticalmente con el SVG */
@@ -55,6 +60,48 @@ footer{
     margin-right: 15px;
     /* Espacio entre el SVG y el texto */
 }
+
+.text_titulo_app {
+    color: black;
+    padding-top: 50%;
+}
+
+.opciones {
+    position: absolute;
+    left: 350px;
+    color: black;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-around;
+    /* Aumenta el espacio entre los elementos */
+    align-items: center;
+    width: 1000px;
+    /* Ocupa un mayor ancho disponible */
+}
+
+.opciones a {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: black;
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+    /* Aumenta el espacio entre las opciones */
+}
+
+.opciones a:hover {
+    color: #d98400;
+    scale: 1.05;
+}
+
+.opciones svg {
+    height: 30px;
+    width: auto;
+    margin-right: 15px;
+}
+
 
 
 
@@ -107,13 +154,17 @@ h2 {
 #botonAPI {
     cursor: pointer;
     height: 35px;
+    padding-left: 20px;
 }
 
-#botonESTRUCTURAS {
-    cursor: pointer;
-    height: 25px;
-    color: #000000;
+/* Al pasar el ratón sobre el contenedor conjuntoAPI */
+.conjuntoAPI:hover .path-4,
+.conjuntoAPI:hover .path-5,
+.conjuntoAPI:hover .path-6 {
+    fill: #d98400;
+    /* Cambia el color al que prefieras */
 }
+
 
 #div-menu .opcionmenu {
     padding: 12px 24px;
@@ -175,7 +226,7 @@ h2 {
     justify-content: center;
 }
 
-label {
+.theme-label {
     width: 50px;
     height: 30px;
     border-radius: 999px;
@@ -198,13 +249,6 @@ label {
     transform: translate(10%, -50%);
 }*/
 
-input[type=checkbox]:checked+.display label .circle {
-    left: 100%;
-    transform: translate(-110%, -50%);
-    background: #2C2C2F;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
-        -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
-}
 
 /* Formularios */
 .div_IU_form,
@@ -249,31 +293,57 @@ input[type=checkbox]:checked+.display label .circle {
     justify-content: center;
 }
 
-input {
+.toggle {
     display: none;
 }
 
 /* Modo oscuro */
 .darkmode {
-    background-color: #121212;
+    background-color: #2c2c2c;
     color: #ffffff;
 }
 
-.darkmode .menu-btn{
-    color: white;
+.darkmode #header_page {
+    background-color: #2c2c2c;
 }
 
-.darkmode #botonAPI,
-.darkmode #botonESTRUCTURAS {
-    filter: invert(1); /* Invierte los colores de los íconos */
+.darkmode .menu-btn {
+    color: #cfcfcf;
 }
 
-.darkmode .menu-btn:hover{
+.darkmode .text_titulo_app {
+    color: #cfcfcf;
+}
+
+.darkmode .path-1,
+.darkmode .path-2,
+.darkmode .path-3 {
+    fill: #2c2c2c;
+}
+
+.darkmode .path-4,
+.darkmode .path-5,
+.darkmode .path-6 {
+    fill: #cfcfcf;
+}
+
+.darkmode .conjuntoESTRUCTURAS:hover,
+.darkmode .conjuntoESTRUCTURAS:hover svg {
+    color: #d98400; /* Cambia el color del texto y el SVG */
+    fill: #d98400;  /* Cambia el color de relleno del SVG */
+}
+
+
+.conjuntoESTRUCTURAS:hover {
+    color: #d98400;
+}
+
+.darkmode .menu-btn:hover {
     color: #d98400;
 }
 
 .darkmode a {
-    color: #ffffff;
+    color: #cfcfcf;
     /* Texto blanco en el modo oscuro */
     text-decoration: none;
     /* Elimina el subrayado */
@@ -292,9 +362,9 @@ input {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 15px;
+    width: 17.5px;
     /* Ajusta el tamaño del sol */
-    height: 15px;
+    height: 17.5px;
     /* Ajusta el tamaño del sol */
     transform: translate(-50%, -50%);
     /* Centra el sol */
@@ -311,10 +381,15 @@ input {
     /* Centra la luna */
 }
 
+/* Posición inicial del sol y la luna */
+
+
+
 /* Cuando el checkbox está marcado (modo oscuro) */
 input[type="checkbox"]:checked+.display label .circle .sun {
     opacity: 0;
 }
+
 
 input[type="checkbox"]:checked+.display label .circle .moon {
     opacity: 1;
@@ -327,6 +402,8 @@ input[type="checkbox"]:checked+.display label .circle .moon {
     border-radius: 50%;
     background: white;
     position: absolute;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
+    -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
     top: 50%;
     left: 0%;
     transform: translate(10%, -50%);
@@ -337,5 +414,153 @@ input[type="checkbox"]:checked+.display label .circle .moon {
 input[type="checkbox"]:checked+.display label .circle {
     left: 100%;
     transform: translate(-110%, -50%);
-    background: #2C2C2F;
+    background: #2c2c2c;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
+    -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
 }
+
+
+/* Contenedor de las tablas */
+#divTablasDatosEntrega {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.darkmode #divTablasDatosEntrega {
+    margin: 20px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla general */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Estilos para las celdas de las tablas */
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fondo de las cabeceras */
+th {
+    background-color: #d98400;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo para las filas alternadas */
+tr:nth-child() {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f0e9de;
+}
+
+/* Estilos específicos para las columnas */
+.nombre-grupo {
+    font-size: 16px;
+}
+
+.entrega,
+.horas-totales,
+.horas,
+.nombre-integrante {
+    font-size: 14px;
+}
+
+/* Espaciado entre tablas */
+#salidaDatosEntrega,
+#salidaDatosEntregaPersonas {
+    margin-bottom: 20px;
+}
+
+
+/* Pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    #header_page {
+        font-size: 28px;
+        padding-left: 20px;
+    }
+
+    .navbar {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .opciones {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+    }
+
+    .opciones a {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    #div-menu {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    #languageSelect {
+        position: static;
+        margin: 10px 0;
+    }
+
+    .contenidoForm,
+    .contenidoTest {
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+    .navbar {
+        width: auto;
+    }
+
+    .opciones {
+        width: auto;
+    }
+
+    .contenidoForm,
+    .contenidoTest {
+        width: 90%;
+    }
+}
+
