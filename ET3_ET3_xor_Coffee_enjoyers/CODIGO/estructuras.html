@@ -1,183 +1,257 @@
-<!--
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title class="text_titulo_app"></title>
+    <meta charset="UTF-8">
+
+    <!-- Igual el linkeo este hay que cambiarlo no estoy seguro, solo le cambie el nombre del archivo -->
+    <link rel="stylesheet" type="text/css" href="./css/IU.css" media="screen" />
 
 
-def_html_nombreentidad = {
-    atributos: [], //lista de los atributos
-    atributo: { //definicion de cada atributo
-        tag: "", //el tag html (input,select,textarea)
-        type: "", //el tipo de input optativo
-        valores: [], //valores posibles si es select, optativo
-        multiple: false, //si da opciones y es multiple, optativo
-        esPK: true,  //es PK en la tabla?
-        esAutoIncremental: true, //es autoincremental?
-        esEspecial : true, //es para los especiales a la hora de ponerlo en la tabla, no en el form, mejor no ponerlo creo
-        size: "", //para el tamaño del input optativo
-        rows : "", //para textarea optativo
-        cols : "", //para textarea optativo
-    }
-    //algo para representar los atributos especiales? si? esto solo para form y especial y lo que sea con tabla en entidad?
-    //si esta en datos especiales que este aqui tambien? como hacer los file, directamente a especiales o mejor no?
-    //datos especiales para cosas como las fechas que no las pone directamente? o mejor no? distinto de especiales de tabla
-};
+    <!-- ficheros de idiomas -->
+    <script type="text/javascript" src="./locale/idioma.js"></script>
+    <script type="text/javascript" src="./js_app/Textos_ES.js"></script>
+    <script type="text/javascript" src="./js_app/Textos_EN.js"></script>
 
-//pasar a las estructuras lo necesario de las clases entidad y que herede de Abstracta, si es necesario algo especifico crear clase entidad que herede de esto
+    <!-- clases auxiliares -->
+    <script type="text/javascript" src="./js_core/Validaciones_Atomicas.js"></script>
+    <script type="text/javascript" src="./js_core/ExternalAccess.js"></script>
+    <script type="text/javascript" src="./js_app/colocador_valores.js"></script>
+    <script type="text/javascript" src="./js_app/constructor_form.js"></script>
+    <script type="text/javascript" src="./js_app/constructor_validaciones.js"></script>
 
+    <!-- arbol de clases de entidades -->
+    <script type="text/javascript" src="./js_core/Tests_class.js"></script>
+    <script type="text/javascript" src="./js_core/DOM_class.js"></script>
+    <script type="text/javascript" src="./js_base/EntidadAbstracta.js"></script>
 
+    <script type="text/javascript" src="./js_app/estructura_analysis_preparation.js"></script>
+    <script type="text/javascript" src="./js_app/analysis_preparation.js"></script>
 
-def_test_nombreentidad = { //todo obligatorio
-    accion: { //ADD, EDIT o SEARCH, para SHOWCURRENT y DELETE no hay validaciones
-        atributo: { //el atributo a probar
-            prueba: { //el nombre de la prueba a realizar
-                valor : "",//el maximo para un max_size o el regex para formato
-                codigo: "",//el codigo de error
-                especial : false //indica si es prueba especial/estandar (al hacer test que invoque validaciones atomicas o metodo especifco)
-            }   
-        }//la de empty de fichero cuenta como especial
-        //rehacer tests para pasarle que pruebae es? mejor no
-    }
-}
+    <script type="text/javascript" src="./js_app/estructura_project.js"></script>
+    <script type="text/javascript" src="./js_app/project.js"></script>
 
-    Por ahora esto ha sido copiado del index, luego será cambiado para adaptarlo a lo que se necesite
-    -->
-    <!DOCTYPE html>
-    <html>
-    
-    <head>
-    
-        <meta charset="UTF-8">
-        <!-- Igual el linkeo este hay que cambiarlo no estoy seguro, solo le cambie el nombre del archivo -->
-        <link rel="stylesheet" type="text/css" href="./css/IU.css" media="screen" />
-    
-        <!-- ficheros de idiomas -->
-        <script type="text/javascript" src="./locale/idioma.js"></script>
-        <script type="text/javascript" src="./js_app/Textos_ES.js"></script>
-        <script type="text/javascript" src="./js_app/Textos_EN.js"></script>
-    
-        <!-- clases auxiliares -->
-        <script type="text/javascript" src="./js_core/Validaciones_Atomicas.js"></script>
-        <script type="text/javascript" src="./js_core/ExternalAccess.js"></script>
-        <script type="text/javascript" src="./js_app/colocador_valores.js"></script>
-        <script type="text/javascript" src="./js_app/constructor_form.js"></script>
-        <script type="text/javascript" src="./js_app/constructor_validaciones.js"></script>
-    
-        <!-- arbol de clases de entidades -->
-        <script type="text/javascript" src="./js_core/Tests_class.js"></script>
-        <script type="text/javascript" src="./js_core/DOM_class.js"></script>
-        <script type="text/javascript" src="./js_base/EntidadAbstracta.js"></script>
-    
-        <script type="text/javascript" src="./js_app/estructura_analysis_preparation.js"></script>
-        <script type="text/javascript" src="./js_app/analysis_preparation.js"></script>
-    
-        <script type="text/javascript" src="./js_app/estructura_project.js"></script>
-        <script type="text/javascript" src="./js_app/project.js"></script>
-    
-        <script type="text/javascript" src="./js_app/estructura_characteristic.js"></script>
-        <script type="text/javascript" src="./js_app/characteristic.js"></script>
-    
-        <!-- Tests de entidades -->
-        <script type="text/javascript" src="./js_app/tests_analysis_preparation.js"></script>
-        <script type="text/javascript" src="./js_app/tests_project.js"></script>
-        <script type="text/javascript" src="./js_app/tests_characteristic.js"></script>
-    
-        <!-- Hace falta cargar los html del API y estructuras?-->
-    
-        <!-- Fichero de datos-->
-        <script type="text/javascript" src="./ET3_Datos_ET3_xor_Coffee_enjoyers.js"></script>
-    
-        <!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    </head>
+    <script type="text/javascript" src="./js_app/estructura_characteristic.js"></script>
+    <script type="text/javascript" src="./js_app/characteristic.js"></script>
 
-    <body onload="">
-        <header id='header_page' class='bordeado'>
+    <!-- Tests de entidades -->
+    <script type="text/javascript" src="./js_app/tests_analysis_preparation.js"></script>
+    <script type="text/javascript" src="./js_app/tests_project.js"></script>
+    <script type="text/javascript" src="./js_app/tests_characteristic.js"></script>
 
-            <nav class='navbar'>
-                <svg id="menu-btn" class="menu-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" onclick="menu_work();">
-                    <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+    <!-- Fichero de datos-->
+    <script type="text/javascript" src="./ET3_Datos_ET3_xor_Coffee_enjoyers.js"></script>
+
+    <!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body onload="" class="darkmode">
+
+    <header id='header_page' class='bordeado'>
+
+        <nav class='navbar'>
+            <svg id="menu-btn" class="menu-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="currentColor" onclick="menu_work();">
+                <path fill-rule="evenodd"
+                    d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                    clip-rule="evenodd" />
+            </svg>
+        </nav>
+
+        <aside id='div-menu'>
+            <h2>Menú</h2>
+            <ol class="no-style">
+                <li class="opcionmenu"><span class="text_project"
+                        onclick="validar = showEstructuraProject(); menu_work();"></span></li>
+                <li class="opcionmenu"><span class="text_analysis_prep"
+                        onclick="validar = showEstructuraAnalysisPrep(); menu_work();"></span></li>
+                <li class="opcionmenu"><span class="text_characteristic"
+                        onclick="validar = showEstructuraProject(); menu_work();"></span>
+                </li>
+            </ol>
+
+        </aside>
+
+        <spam class="text_titulo_app"></spam>
+
+        <div class="opciones">
+            <a href="API.html" class="conjuntoAPI">
+                <svg id="botonAPI" width="800px" height="800px" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="path-1" d="M432.4 453.5l-17 46.7h34.4z" fill="#FFFFFF" />
+                    <path class="path-2"
+                        d="M725.3 259.7H312.2c-16.5 0-30 13.5-30 30v413.1c0 16.5 13.5 30 30 30h413.1c16.5 0 30-13.5 30-30V289.7c0-16.6-13.5-30-30-30z m-98.8 164.5h25.4V550h-25.4V424.2z m-116.5 0h40.8c15.5 0 25.5 0.6 30.2 1.9 7.2 1.9 13.2 6 18.1 12.3 4.9 6.3 7.3 14.5 7.3 24.5 0 7.7-1.4 14.2-4.2 19.5s-6.4 9.4-10.7 12.4c-4.3 3-8.7 5-13.2 6-6.1 1.2-14.8 1.8-26.4 1.8h-16.6V550H510V424.2z m-90.7 0h26.9L496.5 550h-27.6l-11-28.6h-50.3L397.2 550h-27l49.1-125.8z m229.1 273.3H352.6c-19.4 0-35.1-15.7-35.1-35.1v-295c0-5.5 4.5-10 10-10s10 4.5 10 10v295c0 8.3 6.8 15.1 15.1 15.1h295.8c5.5 0 10 4.5 10 10s-4.4 10-10 10z"
+                        fill="#FFFFFF" />
+                    <path class="path-3"
+                        d="M569.4 479.2c3.4-1.3 6-3.4 7.9-6.2 1.9-2.8 2.9-6.1 2.9-9.8 0-4.6-1.3-8.4-4-11.3-2.7-3-6.1-4.8-10.2-5.6-3-0.6-9.1-0.9-18.3-0.9h-12.3v35.7h13.9c10 0.1 16.7-0.6 20.1-1.9z"
+                        fill="#FFFFFF" />
+                    <path class="path-4"
+                        d="M648.4 677.5H352.6c-8.3 0-15.1-6.8-15.1-15.1v-295c0-5.5-4.5-10-10-10s-10 4.5-10 10v295c0 19.4 15.7 35.1 35.1 35.1h295.8c5.5 0 10-4.5 10-10s-4.4-10-10-10z"
+                        fill="#000000" />
+                    <path class="path-5"
+                        d="M865 386.5c11 0 20-9 20-20s-9-20-20-20h-69.7v-56.8c0-38.6-31.4-70-70-70h-27.8v-67.3c0-11-9-20-20-20s-20 9-20 20v67.3H611v-67.3c0-11-9-20-20-20s-20 9-20 20v67.3h-46.5v-67.3c0-11-9-20-20-20s-20 9-20 20v67.3H438v-67.3c0-11-9-20-20-20s-20 9-20 20v67.3h-85.8c-38.6 0-70 31.4-70 70v56.8h-69.7c-11 0-20 9-20 20s9 20 20 20h69.7V433h-69.7c-11 0-20 9-20 20s9 20 20 20h69.7v46.5h-69.7c-11 0-20 9-20 20s9 20 20 20h69.7V606h-69.7c-11 0-20 9-20 20s9 20 20 20h69.7v56.8c0 38.6 31.4 70 70 70H343v72.5c0 11 9 20 20 20s20-9 20-20v-72.5h46.5v72.5c0 11 9 20 20 20s20-9 20-20v-72.5H516v72.5c0 11 9 20 20 20s20-9 20-20v-72.5h46.5v72.5c0 11 9 20 20 20s20-9 20-20v-72.5h82.8c38.6 0 70-31.4 70-70V646H865c11 0 20-9 20-20s-9-20-20-20h-69.7v-46.5H865c11 0 20-9 20-20s-9-20-20-20h-69.7V473H865c11 0 20-9 20-20s-9-20-20-20h-69.7v-46.5H865zM755.3 702.7c0 16.5-13.5 30-30 30H312.2c-16.5 0-30-13.5-30-30v-413c0-16.5 13.5-30 30-30h413.1c16.5 0 30 13.5 30 30v413z"
+                        fill="#000000" />
+                    <path class="path-6"
+                        d="M407.6 521.4h50.3l11 28.6h27.6l-50.4-125.8h-26.9l-49 125.8h27l10.4-28.6z m24.8-67.9l17.3 46.7h-34.3l17-46.7zM535.4 502.6H552c11.5 0 20.3-0.6 26.4-1.8 4.5-1 8.9-3 13.2-6 4.3-3 7.9-7.1 10.7-12.4s4.2-11.8 4.2-19.5c0-10-2.4-18.2-7.3-24.5-4.9-6.3-10.9-10.4-18.1-12.3-4.7-1.3-14.8-1.9-30.2-1.9H510V550h25.4v-47.4z m0-57.1h12.3c9.2 0 15.2 0.3 18.3 0.9 4.1 0.7 7.5 2.6 10.2 5.6 2.7 3 4 6.8 4 11.3 0 3.7-1 7-2.9 9.8-1.9 2.8-4.6 4.9-7.9 6.2-3.4 1.3-10.1 2-20.1 2h-13.9v-35.8zM626.5 424.2h25.4V550h-25.4z"
+                        fill="#000000" />
                 </svg>
-                  
-                <a href="API.html"><img id="botonAPI" src=".\iconos\API-dark-32.png"></a>
-                <a href="estructuras.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" id="botonESTRUCTURAS">
-                      <path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875Z" />
-                      <path d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 0 0 1.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 0 0 1.897 1.384C6.809 12.164 9.315 12.75 12 12.75Z" />
-                      <path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 15.914 9.315 16.5 12 16.5Z" />
-                      <path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 19.664 9.315 20.25 12 20.25Z" />
-                    </svg>
-                  </a>
-                              
-            </nav>
-    
-            <aside id='div-menu'>
-                <h2>Menú</h2>
-                <ol class="no-style">
-                    <li class="opcionmenu"><span class="text_project"
-                            onclick="validar = new project(); closeMenu();"></span></li>
-                    <li class="opcionmenu"><span class="text_analysis_prep"
-                            onclick="validar = new analysis_preparation(); closeMenu();"></span></li>
-                    <li class="opcionmenu"><span class="text_characteristic"
-                            onclick="validar = new characteristic(); closeMenu();"></span>
-                    </li>
-                </ol>
-    
-            </aside>
-    
-            <spam class="text_titulo_app"></spam>
-    
-            <!-- Select para cambiar idiomas -->
-            <select id="languageSelect" onchange="setLang(this.value);">
-                <option value="ES" class="idiomaES"></option>
-                <option value="EN" class="idiomaEN"></option>
-            </select>
-    
-            <img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
-    
-    
-        </header>
-    
-        <section id="workspace" class='bordeado'>
-    
-            <div id='title_page' class='bordeado'>
-                <spam id="text_title_page" class="">titulo de pagina de entidad</spam>
-            </div>
-    
-            <div id="id_tabla_datos">
-                
-    
-                </div>
-    
-                <table id="tabladatosalumnos">
-                    <thead id="titulostablacabecera"></thead>
-                    <tbody id="muestradatostabla"></tbody>
-                </table>
+                <span class="API"></span>
+            </a>
+            <a href="index.html" class="conjuntoINDEX">
+                <svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <path class="path-7"
+                        d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z"
+                        fill="#000000" />
+                </svg>
+                <span class="pagina_principal"></span>
+            </a>
+        </div>
 
-    
-            </div>
-    
-        </section>
-    
-    
-    
-        <footer class='bordeado'>
-            <spam class="text_titulo_pie"></spam>
-            <div id="divTablasDatosEntrega">
-                <table>
-                    <tbody id="salidaDatosEntrega">
-                    </tbody>
-                </table>
-                <table>
-                    <tbody id="salidaDatosEntregaPersonas">
-                    </tbody>
-                </table>
-    
-            </div>
-        </footer>
-    
-        <script type="text/javascript">
+        <!-- Select para cambiar idiomas -->
+        <select id="languageSelect" onchange="setLang(this.value);">
+            <option value="ES" class="idiomaES"></option>
+            <option value="EN" class="idiomaEN"></option>
+        </select>
 
-            setLang('');
-    
-        </script>
-    </body>
+        <img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" />
 
-    </html>
+
+    </header>
+
+    <div id="workspace" class="bordeado">
+        <div id='title_page' class='bordeado'>
+            <spam id="text_title_page" class="text_title_page_default_structures"></spam>
+        </div>
+
+        <div id="structInfo">
+            <span class="InfoText"></span>
+        </div>
+    </div>
+
+
+    <footer class='bordeado'>
+        <spam class="text_titulo_pie"></spam>
+    </footer>
+
+
+    <input type="checkbox" class="toggle" id="themeToggle" onclick="toggleTheme()">
+    <div class="display">
+        <label for="themeToggle" class="theme-label">
+            <div class="circle">
+                <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                </svg>
+                <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+        </label>
+    </div>
+
+    <script type="text/javascript">
+
+        function evento(event) {
+            const menu = document.getElementById('div-menu');
+            const menuToggleButton = document.getElementById('menu-btn');
+
+            // Si el clic no fue dentro del menú ni en el botón para abrir el menú, cerramos el menú
+            if (!menu.contains(event.target) && event.target !== menuToggleButton) {
+                menu_work();
+            }
+        }
+
+        function menu_work() {
+            if (document.getElementById('div-menu').style.display == 'none') {
+                document.getElementById('div-menu').style.display = 'block';
+                // Cerrar el menú si se hace clic fuera de él
+                document.addEventListener('click', evento);
+
+            }
+            else {
+                document.getElementById('div-menu').style.display = 'none';
+                document.removeEventListener('click', evento);
+
+            }
+        }
+
+        setLang('');
+
+
+        // Función para cerrar el menú
+        function closeMenu() {
+            const menu = document.getElementById('div-menu');
+            if (menu) {
+                menu.style.display = 'none';
+            }
+        }
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('div-menu');
+            const menuToggleButton = document.getElementById('menu-btn');
+
+            // Si el clic no fue dentro del menú ni en el botón para abrir el menú, cerramos el menú
+            if (!menu.contains(event.target) && event.target !== menuToggleButton) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('themeToggle');
+            const body = document.body;
+
+            // Establecer modo claro por defecto
+            body.classList.remove('darkmode');
+            body.classList.add('lightmode');
+
+            // Sincronizar el estado del toggle
+            toggle.checked = false; // Asegurarse de que el botón esté en la posición "apagado"
+        });
+
+
+        function toggleTheme() {
+            const body = document.body;
+            const isDarkMode = body.classList.contains('darkmode');
+
+            if (isDarkMode) {
+                body.classList.remove('darkmode');
+                body.classList.add('lightmode');
+            } else {
+                body.classList.remove('lightmode');
+                body.classList.add('darkmode');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('themeToggle');
+            const body = document.body;
+
+            // Establecer el estado inicial del toggle
+            toggle.checked = body.classList.contains('darkmode');
+        });
+
+        // Posiblemente se moverán a un arhcivo aparte
+        function showEstructuraProject() {
+            document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + this.entidad;
+        }
+
+        function showEstructuraAnalysisPrep() {
+            document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + this.entidad;
+        }
+
+        function showEstructuraCharacteristic() {
+            document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + this.entidad;
+        }
+
+
+    </script>
+
+</body>
+
+
+</html>

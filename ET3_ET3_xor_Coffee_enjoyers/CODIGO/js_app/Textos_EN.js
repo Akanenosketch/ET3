@@ -2,8 +2,9 @@ let textos_EN = {
     
     /*TITULOS*/
 
-    "base_de_datos" : "Data Base",
+    "base_de_datos" : "Structure",
     "API": "API",
+    "pagina_principal": "Home Page",
 
     //Idiomas
     "idiomaES" : "Spanish",
@@ -32,6 +33,7 @@ let textos_EN = {
     //textos titulos pagina entidades
     'text_titulo_page_project'              : 'Project Management',
     'text_titulo_page_analysis_preparation' : 'Analysis Preparation Management',
+    'text_titulo_page_characteristic'       : 'Characteristic Management',
 
     //Titulos de forms project 
     'text_contenido_titulo_form_project_ADD'        : 'Project Add Form',
@@ -47,13 +49,23 @@ let textos_EN = {
     'text_contenido_titulo_form_analysis_preparation_SHOWCURRENT'   : 'Analysis Preparation Show Form',
     'text_contenido_titulo_form_analysis_preparation_DELETE'        : 'Analysis Preparation Delete Form',
 
+    //Titulos de los forms characteristic
+    'text_contenido_titulo_form_characteristic_ADD'        : 'Characteristic Add Form',
+    'text_contenido_titulo_form_characteristic_SEARCH'     : 'Characteristic Search Form',
+    'text_contenido_titulo_form_characteristic_EDIT'       : 'Characteristic Edit Form',
+    'text_contenido_titulo_form_characteristic_SHOWCURRENT': 'Characteristic Show Form',
+    'text_contenido_titulo_form_characteristic_DELETE'     : 'Characteristic Delete Form',
+
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
-    
-    //opciones menu
-    'estructura_project'       : 'Project',
-    'estructura_analysis_prep' : 'Analysis Pretaration',
-    'estructura_characteristic': 'Characteristic',
+    'InfoText':'Choose one of the entities from the side menu to learn more about its structure',
+
+    //Titulos
+    'text_title_page_default_structures'               : 'Structures',
+    'text_titulo_page_estructura_project'              : 'Project Structure',
+    'text_titulo_page_estructura_analysis_preparation' : 'Analysis Preparation Structure',
+    'text_titulo_page_estructura_characteristic'       : 'Characteristic Structure',
+
 
     /*TRADUCCIONES PARA TEST*/ 
 

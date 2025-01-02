@@ -2,8 +2,10 @@ let textos_ES = {
 
     /*TITULOS*/
 
-    "base_de_datos" : "Base de Datos",
+    "base_de_datos" : "Estructura",
     "API": "API",
+    "pagina_principal": "Página Principal",
+    
     //Idiomas
     "idiomaES" : "Español",
     "idiomaEN" : "Ingles",
@@ -31,6 +33,7 @@ let textos_ES = {
     //textos titulos pagina entidades
     'text_titulo_page_project'              : 'Gestión de Proyecto',
     'text_titulo_page_analysis_preparation' : 'Gestión de Preparacion Análisis',
+    'text_titulo_page_characteristic'       : 'Gestión de Característica',
 
     //Titulos de forms project 
     'text_contenido_titulo_form_project_ADD'        : 'Formulario Alta Proyecto',
@@ -46,8 +49,22 @@ let textos_ES = {
     'text_contenido_titulo_form_analysis_preparation_SHOWCURRENT'   : 'Formulario Muestra Preparacion Análisis',
     'text_contenido_titulo_form_analysis_preparation_DELETE'        : 'Formulario Borrado Preparacion Análisis',
 
+    //Titulos de los forms characteristic
+    'text_contenido_titulo_form_characteristic_ADD'        : 'Formulario Alta Característica',
+    'text_contenido_titulo_form_characteristic_SEARCH'     : 'Formulario Busqueda Característica',
+    'text_contenido_titulo_form_characteristic_EDIT'       : 'Formulario Modificación Característica',
+    'text_contenido_titulo_form_characteristic_SHOWCURRENT': 'Formulario Muestra Característica',
+    'text_contenido_titulo_form_characteristic_DELETE'     : 'Formulario Borrado Característica',
+
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
+    'InfoText':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
+
+    //Titulos
+    'text_title_page_default_structures'               : 'Estructuras',
+    'text_titulo_page_estructura_project'              : 'Estructura de Proyecto',
+    'text_titulo_page_estructura_analysis_preparation' : 'Estructura de Preparacion Análisis',
+    'text_titulo_page_estructura_characteristic'       : 'Estructura de Característica',
 
     //opciones menu
     'estructura_project'       : 'Proyecto',
