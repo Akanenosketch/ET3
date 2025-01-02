@@ -290,7 +290,7 @@ h2 {
 
 /* Fondo del formulario */
 .contenidoForm {
-    background: linear-gradient(to right, #f8f9fa, #e2e3e5);
+    background: #e2e3e5;
     position: relative;
     z-index: 20;
     border-radius: 12px;
@@ -415,6 +415,7 @@ h2 {
 /* Solo cuando .errorcampo está presente en los campos */
 .contenidoForm input[type="text"].errorcampo,
 .contenidoForm input[type="file"].errorcampo,
+.contenidoForm select.errorcampo,
 .contenidoForm textarea.errorcampo {
     border: 2px solid red;
     background-color: #fce8e8;
@@ -427,6 +428,7 @@ h2 {
 
 .contenidoForm input[type="text"].exitocampo,
 .contenidoForm input[type="file"].exitocampo,
+.contenidoForm select.exitocampo,
 .contenidoForm textarea.exitocampo {
     border: 2px solid green;
     background-color: #e8fce8;
@@ -539,9 +541,6 @@ h2 {
     /* Centra la luna */
 }
 
-/* Posición inicial del sol y la luna */
-
-
 
 /* Cuando el checkbox está marcado (modo oscuro) */
 input[type="checkbox"]:checked+.display label .circle .sun {
@@ -644,3 +643,90 @@ tr:hover {
 #salidaDatosEntregaPersonas {
     margin-bottom: 20px;
 }
+
+/* Estilos para el formulario en modo oscuro */
+.darkmode .contenidoForm {
+    background: #2c2c2c;
+    border: 3px solid #e69500;
+    color: #f5f5f5; /* Color de texto claro */
+    box-shadow: 0 4px 10px rgba(231, 149, 0, 0.2); /* Sombra naranja tenue */
+}
+
+
+.darkmode .contenidoForm label {
+    color: #f5f5f5; /* Color de las etiquetas en blanco */
+}
+
+.darkmode .contenidoForm input[type="text"],
+.darkmode .contenidoForm input[type="file"],
+.darkmode .contenidoForm textarea,
+.darkmode .contenidoForm select {
+    background-color: #444444;
+    border: 2px solid #666666;
+    color: #f5f5f5;
+}
+
+.darkmode .contenidoForm input[type="text"]:focus,
+.darkmode .contenidoForm input[type="file"]:focus,
+.darkmode .contenidoForm textarea:focus,
+.darkmode .contenidoForm select:focus {
+    border-color: #e69500;
+    outline: none;
+    background-color: #555555;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+}
+
+.darkmode #submit_button {
+    background-color: #e69500;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.darkmode #submit_button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+.darkmode .class_titulo_form {
+    background: #e69500;
+    color: #f5f5f5;
+}
+
+/* Estilo de los botones y enlaces en el modo oscuro */
+.darkmode .contenidoForm a {
+    color: #ffcc00;
+    transition: color 0.3s ease;
+}
+
+.darkmode .contenidoForm a:hover {
+    color: #e6b800;
+}
+
+/* Estilo de los campos con error */
+.darkmode .contenidoForm input[type="text"].errorcampo,
+.darkmode .contenidoForm input[type="file"].errorcampo,
+.darkmode .contenidoForm select.errorcampo,
+.darkmode .contenidoForm textarea.errorcampo {
+    border: 2px solid red;
+    background-color: #3e3e3e;
+    color: #f5f5f5;
+}
+
+.darkmode .contenidoForm input[type="text"].exitocampo,
+.darkmode .contenidoForm input[type="file"].exitocampo,
+.darkmode .contenidoForm select.exitocampo,
+.darkmode .contenidoForm textarea.exitocampo {
+    border: 2px solid green;
+    background-color: #4e4e4e;
+    color: #f5f5f5;
+}
+
+/* Fondo de las tablas en el modo oscuro */
+.darkmode #divTablasDatosEntrega {
+    background-color: #2c2c2c;
+}
+
+
