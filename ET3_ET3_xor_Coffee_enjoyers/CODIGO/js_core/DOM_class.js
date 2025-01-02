@@ -227,6 +227,7 @@ class DOM_class extends test {
         document.getElementById("muestradatostabla").innerHTML = '';
         document.getElementById("id_tabla_datos").style.display = 'none';
         document.getElementById("title_page").style.display = 'none';
+        document.getElementById("divTablasDatosEntrega").style.display = "block";
 
         this.ocultar_boton_test();
         this.cerrar_test();

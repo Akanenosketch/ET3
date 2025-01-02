@@ -5,6 +5,8 @@ class EntidadAbstracta extends DOM_class {
 	}
 
 	inicializar() {
+		document.getElementById("divTablasDatosEntrega").style.display = "none";
+
 		if (eval(this.datosespecialestabla) == undefined) {
 			this.datosespecialestabla = Array();
 		}

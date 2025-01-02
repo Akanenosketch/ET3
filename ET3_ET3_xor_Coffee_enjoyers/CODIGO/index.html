@@ -102,11 +102,11 @@
 			<h2>Menú</h2>
 			<ol class="no-style">
 				<li class="opcionmenu"><span class="text_project"
-						onclick="validar = new project(); closeMenu(); ocultarTabla();"></span></li>
+						onclick="validar = new project(); menu_work(); "></span></li>
 				<li class="opcionmenu"><span class="text_analysis_prep"
-						onclick="validar = new analysis_preparation(); closeMenu(); ocultarTabla();"></span></li>
+						onclick="validar = new analysis_preparation(); menu_work(); "></span></li>
 				<li class="opcionmenu"><span class="text_characteristic"
-						onclick="validar = new characteristic(); closeMenu(); ocultarTabla();"></span>
+						onclick="validar = new characteristic(); menu_work(); "></span>
 				</li>
 			</ol>
 
@@ -165,7 +165,7 @@
 	<section id="workspace" class='bordeado'>
 
 		<div id='title_page' class='bordeado'>
-			<spam id="text_title_page" class="">titulo de pagina de entidad</spam>
+			<spam id="text_title_page" class=""></spam>
 		</div>
 
 		<div id="id_tabla_datos">
@@ -201,7 +201,7 @@
 
 		<div class="contenidoForm" id="contenidoForm">
 			<div class="class_titulo_form">
-				<spam id="class_contenido_titulo_form" class="">titulo para el formulario de entidad</spam>
+				<spam id="class_contenido_titulo_form" class=""></spam>
 			</div>
 
 			<form id='IU_form' name='IU_form' method='POST' enctype="multipart/form-data" class="formulario">
@@ -257,12 +257,27 @@
 
 	<script type="text/javascript">
 
+		function evento(event) {
+			const menu = document.getElementById('div-menu');
+			const menuToggleButton = document.getElementById('menu-btn');
+
+			// Si el clic no fue dentro del menú ni en el botón para abrir el menú, cerramos el menú
+			if (!menu.contains(event.target) && event.target !== menuToggleButton) {
+				menu_work();
+			}
+		}
+
 		function menu_work() {
 			if (document.getElementById('div-menu').style.display == 'none') {
 				document.getElementById('div-menu').style.display = 'block';
+				// Cerrar el menú si se hace clic fuera de él
+				document.addEventListener('click', evento);
+
 			}
 			else {
 				document.getElementById('div-menu').style.display = 'none';
+				document.removeEventListener('click', evento);
+
 			}
 		}
 		document.getElementById('div-menu').style.display = 'none';
@@ -307,24 +322,6 @@
 		setLang('');
 
 
-		// Función para cerrar el menú
-		function closeMenu() {
-			const menu = document.getElementById('div-menu');
-			if (menu) {
-				menu.style.display = 'none';
-			}
-		}
-
-		// Cerrar el menú si se hace clic fuera de él
-		document.addEventListener('click', function (event) {
-			const menu = document.getElementById('div-menu');
-			const menuToggleButton = document.getElementById('menu-btn');
-
-			// Si el clic no fue dentro del menú ni en el botón para abrir el menú, cerramos el menú
-			if (!menu.contains(event.target) && event.target !== menuToggleButton) {
-				closeMenu();
-			}
-		});
 
 		document.addEventListener('DOMContentLoaded', () => {
 			const toggle = document.getElementById('themeToggle');
@@ -359,17 +356,6 @@
 			// Establecer el estado inicial del toggle
 			toggle.checked = body.classList.contains('darkmode');
 		});
-
-		function ocultarTabla() {
-			const tabla = document.getElementById("divTablasDatosEntrega");
-			if (tabla) {
-				tabla.style.display = "none";
-			}
-		}
-
-
-
-
 	</script>
 
 </body>

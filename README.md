@@ -76,6 +76,8 @@
 
 ### TODO LIST
 
+- Arreglar modal
+
 - Traducir para test lo nuevo (CampoAux, ValorAux)
 
 - traducir SelectDefault para opcion default de select ("SelectDefault_SEARCH"vacio en search , "SelectDefault"  Select/Escoja o algo )
