@@ -129,7 +129,7 @@ class constructor_form {
             opcion.setAttribute("value", "");
             opcion.setAttribute("id", "SelectDefault_"+atributo);
             opcion.className = "SelectDefault";
-            opcion.innerHTML = "Select";
+            opcion.innerHTML = "";
         }
         select.appendChild(opcion);
 
@@ -269,11 +269,6 @@ class constructor_form {
                 }
             }
         }
-        let select = document.getElementsByClassName("SelectDefault");
-
-        for (let i = 0; i < select.length; i++) {
-            select[i].classList.remove("SelectDefault");
-            select[i].className = "SelectDefault_SEARCH";
-        }
+      
     }
 }

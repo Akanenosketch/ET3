@@ -36,9 +36,9 @@
 
 - [ ] test_characteristic.js
 
-- [ ] Textos_ES.js
+- [ ] Textos_ES.js (faltan los de APi y estructuras)
 
-- [ ] Textos_EN.js
+- [ ] Textos_EN.js (faltan los de APi y estructuras)
 
 - [X] constructor_form.js 
 
@@ -52,9 +52,9 @@
 
 #### js_core
 
-- [X] DOM_class.js (previsiblemente si no se hace paginacion)
+- [X] DOM_class.js 
  
-- [X] ExternalAccess.js (NO TOCAR)
+- [X] ExternalAccess.js 
 
 - [X] Tests_class.js
   
@@ -78,10 +78,6 @@
 
 - Arreglar modal
 
-- Traducir para test lo nuevo (CampoAux, ValorAux)
-
-- traducir SelectDefault para opcion default de select ("SelectDefault_SEARCH"vacio en search , "SelectDefault"  Select/Escoja o algo )
-
 - Crear API.html
 
 - Poner API.html en index
@@ -94,25 +90,13 @@
 
 - Desarrollar characteristic pruebas
 
-- Desarrollar characteristic traducciones
-
 - Refactorizar index.html si hace falta
-
-- Mostrar tests con scroll y modal
 
 - HACER CSS PARA MODAL Y DEMAS
 
 - HACER CSS PARA COLORES Y PRESENTACION
 
 - HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
-
-- Organizar la muestra del array de datos
-
-- Comprobar si los problemas del file son cosa del back
-
-- Hacer los br de separacion en form con css?
-
-- Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
 - Revisar que no haya metodos que no se usan (habia algunos en la ET2)
 
@@ -131,7 +115,7 @@
 
 ~~Una vez que se establezca la estructura de datos, esta debe poder rellenarse con la información necesaria para cada tabla a gestionar en la interfaz.~~
 
-~~Utilizar la clase test para que verifique el formato de test y pruebas y ejecute todas las pruebas de test de las definiciones de test definidas para cada atributo (incluidas las de fichero)~~ y saque su resultado en un componente modal con scroll para ser visualizado por el usuario. La acción de test debe estar disponible como en la ET2 en la parte superior del index cuando se entra en la gestión de una entidad.
+~~Utilizar la clase test para que verifique el formato de test y pruebas y ejecute todas las pruebas de test de las definiciones de test definidas para cada atributo (incluidas las de fichero) y saque su resultado en un componente modal con scroll para ser visualizado por el usuario. La acción de test debe estar disponible como en la ET2 en la parte superior del index cuando se entra en la gestión de una entidad.~~
 
 ~~Debe utilizarse la clase validacionesatomicas para la implementación de los métodos estándar de validación de campo que se indican en la definición de la ET2.~~
 

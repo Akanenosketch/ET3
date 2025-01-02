@@ -1,5 +1,7 @@
 let textos_EN = {
     
+    "SelectDefault" : "Select",
+
     /*TITULOS*/
 
     "base_de_datos" : "Structure",
@@ -61,11 +63,22 @@ let textos_EN = {
     'InfoText':'Choose one of the entities from the side menu to learn more about its structure',
 
     //Titulos
-    'text_title_page_default_structures'               : 'Structures',
+    'text_title_page_default_structures'               : 'Structures Used',
     'text_titulo_page_estructura_project'              : 'Project Structure',
     'text_titulo_page_estructura_analysis_preparation' : 'Analysis Preparation Structure',
     'text_titulo_page_estructura_characteristic'       : 'Characteristic Structure',
 
+    /*TRADUCCIONES PARA API.HTML*/
+
+    'InfoTextAPI':'Choose one of the options from the side menu to learn more about the functions used',
+    
+    //Titulos
+    'text_title_page_default_API'  : 'API Used',
+
+    //Opciones Menu
+    'opt_funciones_test'     : 'Tests',
+    'opt_funciones_tabla'    : 'Table Presentation',
+    'opt_funciones_form'     : 'Form Creation',
 
     /*TRADUCCIONES PARA TEST*/ 
 
@@ -95,7 +108,9 @@ let textos_EN = {
     'Respuesta Test'    : 'Test Response',
     'Respuesta esperada': 'Expected Response',
     'Resultado'         : 'Result',
-
+    'CampoAux'          : 'Aux.Field',
+    'ValorAux'          : 'Aux.Value',
+    
     //Valores resultado tests
     'CORRECTO'  : 'CORRECT',
     'CORRECTA'  : 'CORRECT',
@@ -217,7 +232,27 @@ let textos_EN = {
     'PH_description_analysis_preparation_SEARCH'   : 'Up to 5000 letters including spaces',
     'PH_bib_analysis_preparation_SEARCH'           : 'Up to 200 letters including ñ, accents, spaces or punctuation',
     'PH_file_analysis_preparation_SEARCH'          : 'Up to 100 letters including dots (file extension optional)',
-   
+
+    //Placeholders atributos characteristic
+
+    'PH_id_characteristic'          : '',
+    'PH_name_characteristic'        : '8-100 letters including spaces',
+    //'PH_data_type_characteristic'   : '',
+    //'PH_category_characteristic'    : '',
+    'PH_description_characteristic' : '80-5000 letters including spaces',
+    'PH_bibref_characteristic'      : '16-200 letters including ñ, accents, spaces or punctuation',
+    'PH_file_characteristic'        : '',
+    'PH_nuevo_file_characteristic'  : 'File .pdf, .doc o .docx max 200KB size; filename 7-100 letters or dots',
+            
+    //SEARCH
+    'PH_id_characteristic_SEARCH'          : 'Up to 11 digits',
+    'PH_name_characteristic_SEARCH'        : 'Up to 100 letters including spaces',
+   // 'PH_data_type_characteristic_SEARCH'   : '',
+   // 'PH_category_characteristic_SEARCH'    : '',
+    'PH_bibref_characteristic_SEARCH'      : 'Up to 200 letters including ñ, accents, spaces or punctuation',
+    'PH_description_characteristic_SEARCH' : 'Up to 5000 letters including spaces',
+    'PH_file_characteristic_SEARCH'        : 'Up to 100 letters including dots (file extension optional)',
+    
 
     /*MENSAJES DE ERROR*/
 
@@ -242,7 +277,7 @@ let textos_EN = {
 
     //id_project
     'project__id_project__max_size_KO': 'Project ID is too long, must be length 11 at most.',
-    'project__id_project__format_KO'  : 'Project ID has invalid format, must have only digits with no leading 0s.',
+    'project__id_project__format_KO'  : 'Project ID has invalid format, must have only digits.',
 
     //name_project
     'project__name_project__min_size_KO': 'Project Name is too short, must be length 15 at least.',
@@ -289,7 +324,7 @@ let textos_EN = {
     //id_sampling_methodology
     'project__id_sampling_methodology__min_size_KO': 'Sampling Methodology ID cannot be empty, must be length 1 at least',
     'project__id_sampling_methodology__max_size_KO': 'Sampling Methodology ID is too long, must be length 11 at most.',
-    'project__id_sampling_methodology__format_KO'  : 'Sampling Methodology ID has invalid format, must have only digits with no leading 0s.',
+    'project__id_sampling_methodology__format_KO'  : 'Sampling Methodology ID has invalid format, must have only digits.',
 
     //file_project
     'project__file_project__max_size_KO': 'Project File name is too long, must be length 100 at most.',
@@ -318,7 +353,7 @@ let textos_EN = {
     
     //id_analysis_preparation
     'analysis_preparation__id_analysis_preparation__max_size_KO': 'Analysis ID is too long, must be length 11 at most',
-    'analysis_preparation__id_analysis_preparation__format_KO'  : 'Analysis ID has invalid format, must have only digits with no leading 0s.',
+    'analysis_preparation__id_analysis_preparation__format_KO'  : 'Analysis ID has invalid format, must have only digits.',
     
     //name_analysis_preparation
     'analysis_preparation__name_analysis_preparation__min_size_KO': 'Analysis Name is too short, must be length 8 at least.',
@@ -348,6 +383,62 @@ let textos_EN = {
     'analysis_preparation__nuevo_file_analysis_preparation__max_size_KO'        : 'New Analysis File name is too long, must be length 100 at most.',
     
     
+    /*characteristic*/ 
+
+    //Mensajes de OK
+    'characteristic__id_characteristic__OK'          : 'Valid Characteristic ID',
+    'characteristic__name_characteristic__OK'        : 'Valid Characteristic Name',
+    'characteristic__description_characteristic__OK' : 'Valid Description',
+    'characteristic__data_type_characteristic__OK'   : 'Valid Data Type',
+    'characteristic__category_characteristic__OK'    : 'Valid Category',
+    'characteristic__file_characteristic__OK'        : 'Valid New Characteristic File',
+    'characteristic__bibref_characteristic__OK'      : 'Valid Bibliography',
+    'characteristic__nuevo_file_characteristic__OK'  : 'Valid New Characteristic File',
+
+    //Mensajes de error
+    
+    //id_characteristic
+    'characteristic__id_characteristic__max_size_KO': 'Characteristic ID is too long, must be length 11 at most.',
+    'characteristic__id_characteristic__format_KO'  : 'Characteristic ID has invalid format, must have only digits. ',
+
+    //name_characteristic
+    'characteristic__name_characteristic__min_size_KO': 'Characteristic Name is too short, must be length 8 at least.',
+    'characteristic__name_characteristic__max_size_KO': 'Characteristic Name is too long, must be length 100 at most.',
+    'characteristic__name_characteristic__format_KO'  : 'Characteristic Name has invalid format, must have only letters or spaces without accents or ñ.',
+    
+    //description_characteristic
+    'characteristic__description_characteristic__min_size_KO': 'Description is too short, must be length 80 at least.',
+    'characteristic__description_characteristic__max_size_KO': 'Description is too long, must be length 5000 at most.',
+    'characteristic__description_characteristic__format_KO'  : 'Description has invalid format, must have only letters or spaces without accents or ñ.',
+
+    //data_type_characteristic
+    'characteristic__data_type_characteristic__valid_KO'        : 'Selected Option is Invalid',
+    "characteristic__data_type_characteristic__valid_SEARCH_KO" : 'Selected Option is Invalid',
+
+    //category_characteristic
+    'characteristic__category_characteristic__valid_KO'        : 'Selected Option is Invalid',
+    "characteristic__category_characteristic__valid_SEARCH_KO" : 'Selected Option is Invalid',
+
+    //bibref_characteristic
+    'characteristic__bibref_characteristic__min_size_KO': 'Bibliography is too short, must be length 16 at least.',
+    'characteristic__bibref_characteristic__max_size_KO': 'Bibliography is too long, must be length 200 at most.',
+    'characteristic__bibref_characteristic__format_KO'  : 'Bibliography has invalid format, must have only letters, accents, ñ, spaces or punctuation.',
+    
+    //file_characteristic
+    'characteristic__file_characteristic__max_size_KO':'Characteristic File name is too long, must be length 100 at most.',
+    'characteristic__file_characteristic__format_KO'  :'Characteristic File name has invalid format, must have only letters or dots without accents,ñ and punctuation.',
+
+    //nuevo_file_characteristic
+    'characteristic__nuevo_file_characteristic__empty_KO'           : 'New Characteristic File cannot be empty, a file must be sent.',
+    'characteristic__nuevo_file_characteristic__max_size_file_KO'   : 'New Characteristic File is too big, size must be less than 200 KB.',
+    'characteristic__nuevo_file_characteristic__type_file_KO'       : 'New Characteristic File is not of an allowed type, must be .pdf,.doc or .docx',
+    'characteristic__nuevo_file_characteristic__format_name_file_KO': 'New Characteristic File name has invalid format, must have only letters or dots without accents, ñ, spaces or punctuation.',
+    'characteristic__nuevo_file_characteristic__min_size_KO'        : 'New Characteristic File name is too short, must be length 7 at least.',
+    'characteristic__nuevo_file_characteristic__max_size_KO'        : 'New Characteristic File name is too long, must be length 100 at most.',
+
+
+
+
     /*MENSAJES DE ERROR DEL BACK*/
     /*Todos menos file_project_es_nulo_KO, SQL_KO y RECORDSET_VACIO no pueden ocurrir con las comprobaciones activas, y file_project_es_nulo_KO solo puede ocurrir si hay tuplas ilegales (sin fichero, en contra de la definicion) en el back*/ 
         
@@ -391,6 +482,25 @@ let textos_EN = {
     
     //no se si existe este error, existe el equivalente en project pero no parece que exista para analysis_preparation, no salta en los testeos
     'file_analysis_preparation_es_nulo_KO'          : 'A critical error has occurred, the current data is not editable', 
+
+    //characteristic
+   
+    //atributo forzado a nulo en EDIT o DELETE
+    'id_characteristic_es_nulo_KO'          : 'An error has occurred,check field Characteristic ID is not empty',
+
+    //atributo forzado a nulo en ADD o EDIT
+    'name_characteristic_es_nulo_KO'        : 'An error has occurred,check field Name Characteristic is not empty',
+    'description_characteristic_es_nulo_KO' : 'An error has occurred,check field Description is not empty',
+    'bibref_characteristic_es_nulo_KO'      : 'An error has occurred,check field Bibliography is not empty',
+    'data_type_characteristic_es_nulo_KO'   : 'An error has occurred,check field Data Type is not empty',
+    'category_characteristic_es_nulo_KO'    : 'An error has occurred,check field Category is not empty',
+    
+    //tipo incorrecto de fichero en ADD o EDIT
+    'ERROR_UPLOAD_file_characteristic_KO'   : 'An error has occurred,check New Characteristic File is correct',
+    
+    //no se si existe este error, existe el equivalente en project pero no parece que exista para characteristic, no salta en los testeos
+    'file_characteristic_es_nulo_KO'        : 'A critical error has occurred, the current data is not editable', 
+
 
 
     /*OTROS*/

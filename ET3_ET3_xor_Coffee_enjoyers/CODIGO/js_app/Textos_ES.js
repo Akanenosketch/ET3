@@ -1,11 +1,13 @@
 let textos_ES = {
 
+    "SelectDefault" : "Escoja",
+
     /*TITULOS*/
 
     "base_de_datos" : "Estructura",
     "API": "API",
     "pagina_principal": "Página Principal",
-    
+
     //Idiomas
     "idiomaES" : "Español",
     "idiomaEN" : "Ingles",
@@ -58,19 +60,26 @@ let textos_ES = {
 
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
-    'InfoText':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
+    'InfoTextStruct':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
 
     //Titulos
-    'text_title_page_default_structures'               : 'Estructuras',
+    'text_title_page_default_structures'               : 'Estructuras Empleadas',
     'text_titulo_page_estructura_project'              : 'Estructura de Proyecto',
     'text_titulo_page_estructura_analysis_preparation' : 'Estructura de Preparacion Análisis',
     'text_titulo_page_estructura_characteristic'       : 'Estructura de Característica',
 
-    //opciones menu
-    'estructura_project'       : 'Proyecto',
-    'estructura_analysis_prep' : 'Preparacion Análisis',
-    'estructura_characteristic': 'Característica',
+    /*TRADUCCIONES PARA API.HTML*/
 
+    'InfoTextAPI':'Seleccione una de las opciones en el menú lateral para conocer más sobre las funciones empleadas',
+    
+    //Titulos
+    'text_title_page_default_API'  : 'API Empleada',
+
+    //Opciones Menu
+    'opt_funciones_test'      : 'Tests',
+    'opt_funciones_tabla'    : 'Presentación de Tablas',
+    'opt_funciones_form'     : 'Creación de Formularios',
+    
     /*TRADUCCIONES PARA TEST*/ 
 
 
@@ -99,6 +108,8 @@ let textos_ES = {
     'Respuesta Test'    : 'Respuesta Test',
     'Respuesta esperada': 'Respuesta esperada',
     'Resultado'         : 'Resultado',
+    'CampoAux'          : 'Campo Aux.',
+    'ValorAux'          : 'Valor Aux.',
 
     //Valores resultado tests
     'CORRECTO'  : 'CORRECTO',
@@ -176,7 +187,6 @@ let textos_ES = {
     'label_nuevo_file_characteristic' : 'Nuevo Archivo',
 
 
-
     /*PLACEHOLDERS*/
 
 
@@ -223,6 +233,26 @@ let textos_ES = {
     'PH_bib_analysis_preparation_SEARCH'           : 'Hasta 200 letras pudiendo incluir ñ, acentos, espacios y puntuacion',
     'PH_file_analysis_preparation_SEARCH'          : 'Hasta 100 letras pudiendo incluir puntos (extension de archivo optativa)',
    
+    //Placeholders atributos characteristic
+
+    'PH_id_characteristic'          : '',
+    'PH_name_characteristic'        : '8-100 letras pudiendo incluir espacios',
+    //'PH_data_type_characteristic'   : '',
+    //'PH_category_characteristic'    : '',
+    'PH_description_characteristic' : '80-5000 letras pudiendo incluir espacios',
+    'PH_bibref_characteristic'      : '16-200 letras pudiendo incluir ñ, acentos, espacios y puntuacion',
+    'PH_file_characteristic'        : '',
+    'PH_nuevo_file_characteristic'  : 'Archivo .pdf, .doc o .docx de 200KB maximo; nombre de archivo 7-100 letras y puntos',
+        
+    //SEARCH
+    'PH_id_characteristic_SEARCH'          : 'Hasta 11 digitos',
+    'PH_name_characteristic_SEARCH'        : 'Hasta 100 letras pudiendo incluir espacios',
+    //'PH_data_type_characteristic_SEARCH'   : '',
+    //'PH_category_characteristic_SEARCH'    : '',
+    'PH_bibref_characteristic_SEARCH'      : 'Hasta 200 letras pudiendo incluir ñ, acentos, espacios y puntuacion',
+    'PH_description_characteristic_SEARCH' : 'Hasta 5000 letras pudiendo incluir espacios',
+    'PH_file_characteristic_SEARCH'        : 'Hasta 100 letras pudiendo incluir puntos (extension de archivo optativa)',
+       
 
     /*MENSAJES DE ERROR*/
 
@@ -247,7 +277,7 @@ let textos_ES = {
 
     //id_project
     'project__id_project__max_size_KO': 'El Identificador supera el tamaño permitido, debe tener como mucho longitud 11.',
-    'project__id_project__format_KO'  : 'El Identificador no cumple el formato correcto, debe estar compuesto unicamente por digitos sin 0s a la izquierda.',
+    'project__id_project__format_KO'  : 'El Identificador no cumple el formato correcto, debe estar compuesto unicamente por digitos ',
 
     //name_project
     'project__name_project__min_size_KO': 'El Nombre Proyecto es demasiado corto, debe tener al menos longitud 15.',
@@ -294,7 +324,7 @@ let textos_ES = {
     //id_sampling_methodology
     'project__id_sampling_methodology__min_size_KO': 'El Id Metodología de Muestreo no puede estar vacio, debe tener al menos longitud 1.',
     'project__id_sampling_methodology__max_size_KO': 'El Id Metodología de Muestreo supera el tamaño permitido, debe tener como mucho longitud 11.',
-    'project__id_sampling_methodology__format_KO'  : 'El Id Metodología de Muestreo no cumple el formato correcto, debe estar compuesto unicamente por digitos sin 0s a la izquierda.',
+    'project__id_sampling_methodology__format_KO'  : 'El Id Metodología de Muestreo no cumple el formato correcto, debe estar compuesto unicamente por digitos',
 
     //file_project
     'project__file_project__max_size_KO': 'El nombre del Archivo Proyecto supera el tamaño permitido, debe tener como mucho longitud 100.',
@@ -323,7 +353,7 @@ let textos_ES = {
     
     //id_analysis_preparation
     'analysis_preparation__id_analysis_preparation__max_size_KO': 'El Identificador supera el tamaño permitido, debe tener como mucho longitud 11.',
-    'analysis_preparation__id_analysis_preparation__format_KO'  : 'El Identificador no cumple el formato correcto, debe estar compuesto unicamente por digitos sin 0s a la izquierda.',
+    'analysis_preparation__id_analysis_preparation__format_KO'  : 'El Identificador no cumple el formato correcto, debe estar compuesto unicamente por digitos ',
 
     //name_analysis_preparation
     'analysis_preparation__name_analysis_preparation__min_size_KO': 'El Nombre Análisis es demasiado corto, debe tener al menos longitud 8.',
@@ -352,7 +382,63 @@ let textos_ES = {
     'analysis_preparation__nuevo_file_analysis_preparation__min_size_KO'        : 'El nombre del Nuevo Archivo es demasiado corto, debe tener al menos longitud 7.',
     'analysis_preparation__nuevo_file_analysis_preparation__max_size_KO'        : 'El nombre del Nuevo Archivo supera el tamaño permitido, debe tener como mucho longitud 100.',
     
+
+    /*characteristic*/ 
+
+    //Mensajes de OK
+    'characteristic__id_characteristic__OK'          : 'El Identificador es correcto',
+    'characteristic__name_characteristic__OK'        : 'El Nombre Caracteristica es correcto',
+    'characteristic__description_characteristic__OK' : 'La Descripción es correcta',
+    'characteristic__data_type_characteristic__OK'   : 'El Tipo de dato es correcto',
+    'characteristic__category_characteristic__OK'    : 'La Categoria es correcta',
+    'characteristic__file_characteristic__OK'        : 'El Archivo Caracteristica es correcto',
+    'characteristic__bibref_characteristic__OK'      : 'La Bibliografía es correcta',
+    'characteristic__nuevo_file_characteristic__OK'  : 'El Nuevo Archivo es correcto',
+
+    //Mensajes de error
     
+    //id_characteristic
+    'characteristic__id_characteristic__max_size_KO': 'El Identificador supera el tamaño permitido, debe tener como mucho longitud 11.',
+    'characteristic__id_characteristic__format_KO'  : 'El Identificador no cumple el formato correcto, debe estar compuesto unicamente por digitos ',
+
+    //name_characteristic
+    'characteristic__name_characteristic__min_size_KO': 'El Nombre Caracteristica es demasiado corto, debe tener al menos longitud 8.',
+    'characteristic__name_characteristic__max_size_KO': 'El Nombre Caracteristica supera el tamaño permitido, debe tener como mucho longitud 100.',
+    'characteristic__name_characteristic__format_KO'  : 'El Nombre Caracteristica no cumple el formato correcto, debe contener solo letras y espacios sin acentos ni ñ.',
+
+    //description_characteristic
+    'characteristic__description_characteristic__min_size_KO': 'La Descripción es demasiado corta, debe tener al menos longitud 80.',
+    'characteristic__description_characteristic__max_size_KO': 'La Descripción supera el tamaño permitido, debe tener como mucho longitud 5000.',
+    'characteristic__description_characteristic__format_KO'  : 'La Descripción no cumple el formato correcto, debe contener solo letras y espacios sin acentos ni ñ.',
+
+    //data_type_characteristic
+    'characteristic__data_type_characteristic__valid_KO'        : 'La opcion seleccionada no es valida',
+    "characteristic__data_type_characteristic__valid_SEARCH_KO" : 'La opcion seleccionada no es valida',
+
+    //category_characteristic
+    'characteristic__category_characteristic__valid_KO'        : 'La opcion seleccionada no es valida',
+    "characteristic__category_characteristic__valid_SEARCH_KO" : 'La opcion seleccionada no es valida',
+
+    //bibref_characteristic
+    'characteristic__bibref_characteristic__min_size_KO': 'La Bibliografía es demasiado corta, debe tener al menos longitud 16.',
+    'characteristic__bibref_characteristic__max_size_KO': 'La Bibliografía supera el tamaño permitido, debe tener como mucho longitud 200.',
+    'characteristic__bibref_characteristic__format_KO'  : 'La Bibliografía no cumple el formato correcto, debe contener solo caracteres alfabéticos con acentos, ñ, espacios y signos de puntuación.',
+    
+    //file_characteristic
+    'characteristic__file_characteristic__max_size_KO':'El nombre del Archivo Caracteristica supera el tamaño permitido, debe tener como mucho longitud 100.',
+    'characteristic__file_characteristic__format_KO'  :'El nombre del Archivo Caracteristica no cumple el formato correcto, debe contener solo letras y puntos sin acentos ni ñ ni espacios ni signos de puntuacion.',
+
+    //nuevo_file_characteristic
+    'characteristic__nuevo_file_characteristic__empty_KO'           : 'El Nuevo Archivo no puede estar vacio, debe enviarse un archivo',
+    'characteristic__nuevo_file_characteristic__max_size_file_KO'   : 'El Nuevo Archivo supera el tamaño permitido, debe pesar menos de 200 KB.',
+    'characteristic__nuevo_file_characteristic__type_file_KO'       : 'El Nuevo Archivo no es del tipo correcto, debe ser .pdf,.doc o .docx',
+    'characteristic__nuevo_file_characteristic__format_name_file_KO': 'El nombre del Nuevo Archivo no cumple el formato correcto, debe contener solo letras y puntos sin acentos ni ñ ni espacios ni signos de puntuacion.',
+    'characteristic__nuevo_file_characteristic__min_size_KO'        : 'El nombre del Nuevo Archivo es demasiado corto, debe tener al menos longitud 7.',
+    'characteristic__nuevo_file_characteristic__max_size_KO'        : 'El nombre del Nuevo Archivo supera el tamaño permitido, debe tener como mucho longitud 100.',
+
+
+    
+
     /*MENSAJES DE ERROR DEL BACK*/
     /*Todos menos file_project_es_nulo_KO, SQL_KO y RECORDSET_VACIO no pueden ocurrir con las comprobaciones activas, y file_project_es_nulo_KO solo puede ocurrir si hay tuplas ilegales (sin fichero, en contra de la definicion) en el back*/ 
         
@@ -396,6 +482,25 @@ let textos_ES = {
     
     //no se si existe este error, existe el equivalente en project pero no parece que exista para analysis_preparation, no salta en los testeos
     'file_analysis_preparation_es_nulo_KO'          : 'Se ha producido un error critico, los datos que intenta editar no son editables', 
+
+    //characteristic
+   
+    //atributo forzado a nulo en EDIT o DELETE
+    'id_characteristic_es_nulo_KO'          : 'Se ha producido un error grave,asegurese de que el campo Identificador no este vacio',
+
+    //atributo forzado a nulo en ADD o EDIT
+    'name_characteristic_es_nulo_KO'        : 'Se ha producido un error grave,asegurese de que el campo Nombre Caracteristica no este vacio',
+    'description_characteristic_es_nulo_KO' : 'Se ha producido un error grave,asegurese de que el campo Descripción no este vacio',
+    'bibref_characteristic_es_nulo_KO'      : 'Se ha producido un error grave,asegurese de que el campo Bibliografía no este vacio',
+    'data_type_characteristic_es_nulo_KO'   : 'Se ha producido un error grave,asegurese de que el campo Tipo de Dato no este vacio',
+    'category_characteristic_es_nulo_KO'    : 'Se ha producido un error grave,asegurese de que el campo Categoria no este vacio',
+    
+    //tipo incorrecto de fichero en ADD o EDIT
+    'ERROR_UPLOAD_file_characteristic_KO'   : 'Se ha producido un error grave,asegurese de que el archivo subido sea correcto',
+    
+    //no se si existe este error, existe el equivalente en project pero no parece que exista para characteristic, no salta en los testeos
+    'file_characteristic_es_nulo_KO'        : 'Se ha producido un error critico, los datos que intenta editar no son editables', 
+
 
 
     /*OTROS*/

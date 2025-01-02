@@ -49,9 +49,9 @@
 
 <body onload="" class="darkmode">
 
-    <header id='header_page' class='bordeado'>
+    <header id="header_page" class="bordeado">
 
-        <nav class='navbar'>
+        <nav class="navbar">
             <svg id="menu-btn" class="menu-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                 fill="currentColor" onclick="menu_work();">
                 <path fill-rule="evenodd"
@@ -60,15 +60,15 @@
             </svg>
         </nav>
 
-        <aside id='div-menu'>
+        <aside id="div-menu">
             <h2>Menú</h2>
             <ol class="no-style">
                 <li class="opcionmenu"><span class="text_project"
-                        onclick="validar = showEstructuraProject(); menu_work();"></span></li>
+                        onclick="validar = showEstructura('project'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="text_analysis_prep"
-                        onclick="validar = showEstructuraAnalysisPrep(); menu_work();"></span></li>
+                        onclick="validar = showEstructura('analysis_preparation'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="text_characteristic"
-                        onclick="validar = showEstructuraProject(); menu_work();"></span>
+                        onclick="validar = showEstructura('characteristic'); menu_work();"></span>
                 </li>
             </ol>
 
@@ -121,17 +121,120 @@
     </header>
 
     <div id="workspace" class="bordeado">
-        <div id='title_page' class='bordeado'>
+        <div id="title_page" class="bordeado">
             <spam id="text_title_page" class="text_title_page_default_structures"></spam>
         </div>
 
         <div id="structInfo">
-            <span class="InfoText"></span>
+            <span id="InfoText">Información sobre la estructura [estructura] </span>
+            <pre>	
+                this.def_html_project = {
+                    atributos: ["id_project", "name_project", "start_date_project", "end_date_project", "responsable_project", "organization_project", "code_project", "acronym_project", "id_sampling_methodology", "description_project", "file_project"],
+        
+                    "id_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: true,
+                        esAutoIncremental: true,
+                        esEspecial: false,
+                        size: 11
+                    },
+        
+                    "name_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        size: 100
+                    },
+        
+                    "start_date_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: true,
+                        size: 10
+                    },
+        
+                    "end_date_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: true,
+                        size: 10
+                    },
+        
+                    "responsable_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        size: 60
+                    },
+        
+                    "organization_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        size: 100
+                    },
+        
+                    "code_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        size: 50
+                    },
+        
+                    "acronym_project": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        size: 15
+                    },
+        
+                    "id_sampling_methodology": {
+                        tag: "INPUT",
+                        type: "text",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        size: 11
+                    },
+        
+                    "description_project": {
+                        tag: "TEXTAREA",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        rows: 5,
+                        cols: 100
+                    },
+        
+                    "file_project": {
+                        tag: "INPUT",
+                        type: "file",
+                        esPK: false,
+                        esAutoIncremental: false,
+                        esEspecial: false,
+                        size: 100
+                    }
+                };</pre>
         </div>
     </div>
 
 
-    <footer class='bordeado'>
+    <footer class="bordeado">
         <spam class="text_titulo_pie"></spam>
     </footer>
 
@@ -156,8 +259,8 @@
     <script type="text/javascript">
 
         function evento(event) {
-            const menu = document.getElementById('div-menu');
-            const menuToggleButton = document.getElementById('menu-btn');
+            const menu = document.getElementById("div-menu");
+            const menuToggleButton = document.getElementById("menu-btn");
 
             // Si el clic no fue dentro del menú ni en el botón para abrir el menú, cerramos el menú
             if (!menu.contains(event.target) && event.target !== menuToggleButton) {
@@ -166,48 +269,28 @@
         }
 
         function menu_work() {
-            if (document.getElementById('div-menu').style.display == 'none') {
-                document.getElementById('div-menu').style.display = 'block';
+            if (document.getElementById("div-menu").style.display == "none") {
+                document.getElementById("div-menu").style.display = "block";
                 // Cerrar el menú si se hace clic fuera de él
-                document.addEventListener('click', evento);
+                document.addEventListener("click", evento);
 
             }
             else {
-                document.getElementById('div-menu').style.display = 'none';
-                document.removeEventListener('click', evento);
+                document.getElementById("div-menu").style.display = "none";
+                document.removeEventListener("click", evento);
 
             }
         }
+        document.getElementById("div-menu").style.display = "none";
 
-        setLang('');
 
-
-        // Función para cerrar el menú
-        function closeMenu() {
-            const menu = document.getElementById('div-menu');
-            if (menu) {
-                menu.style.display = 'none';
-            }
-        }
-
-        // Cerrar el menú si se hace clic fuera de él
-        document.addEventListener('click', function (event) {
-            const menu = document.getElementById('div-menu');
-            const menuToggleButton = document.getElementById('menu-btn');
-
-            // Si el clic no fue dentro del menú ni en el botón para abrir el menú, cerramos el menú
-            if (!menu.contains(event.target) && event.target !== menuToggleButton) {
-                closeMenu();
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggle = document.getElementById('themeToggle');
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("themeToggle");
             const body = document.body;
 
             // Establecer modo claro por defecto
-            body.classList.remove('darkmode');
-            body.classList.add('lightmode');
+            body.classList.remove("darkmode");
+            body.classList.add("lightmode");
 
             // Sincronizar el estado del toggle
             toggle.checked = false; // Asegurarse de que el botón esté en la posición "apagado"
@@ -216,38 +299,35 @@
 
         function toggleTheme() {
             const body = document.body;
-            const isDarkMode = body.classList.contains('darkmode');
+            const isDarkMode = body.classList.contains("darkmode");
 
             if (isDarkMode) {
-                body.classList.remove('darkmode');
-                body.classList.add('lightmode');
+                body.classList.remove("darkmode");
+                body.classList.add("lightmode");
             } else {
-                body.classList.remove('lightmode');
-                body.classList.add('darkmode');
+                body.classList.remove("lightmode");
+                body.classList.add("darkmode");
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggle = document.getElementById('themeToggle');
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("themeToggle");
             const body = document.body;
 
             // Establecer el estado inicial del toggle
-            toggle.checked = body.classList.contains('darkmode');
+            toggle.checked = body.classList.contains("darkmode");
         });
 
         // Posiblemente se moverán a un arhcivo aparte
-        function showEstructuraProject() {
-            document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + this.entidad;
+        function showEstructura(entity){
+            document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + entity;
+
+            document.getElementById("structInfo").innerHTML=``;
+
+            setLang('');
         }
 
-        function showEstructuraAnalysisPrep() {
-            document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + this.entidad;
-        }
-
-        function showEstructuraCharacteristic() {
-            document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + this.entidad;
-        }
-
+        setLang('');
 
     </script>
 
