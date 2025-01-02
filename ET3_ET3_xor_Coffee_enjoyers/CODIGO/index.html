@@ -102,11 +102,11 @@
 			<h2>Menú</h2>
 			<ol class="no-style">
 				<li class="opcionmenu"><span class="text_project"
-						onclick="validar = new project(); closeMenu();"></span></li>
+						onclick="validar = new project(); closeMenu(); ocultarTabla();"></span></li>
 				<li class="opcionmenu"><span class="text_analysis_prep"
-						onclick="validar = new analysis_preparation(); closeMenu();"></span></li>
+						onclick="validar = new analysis_preparation(); closeMenu(); ocultarTabla();"></span></li>
 				<li class="opcionmenu"><span class="text_characteristic"
-						onclick="validar = new characteristic(); closeMenu();"></span>
+						onclick="validar = new characteristic(); closeMenu(); ocultarTabla();"></span>
 				</li>
 			</ol>
 
@@ -213,19 +213,20 @@
 
 	</div>
 
+	<div id="divTablasDatosEntrega">
+		<table>
+			<tbody id="salidaDatosEntrega">
+			</tbody>
+		</table>
+		<table>
+			<tbody id="salidaDatosEntregaPersonas">
+			</tbody>
+		</table>
+
+	</div>
+
 	<footer class='bordeado'>
 		<spam class="text_titulo_pie"></spam>
-		<div id="divTablasDatosEntrega">
-			<table>
-				<tbody id="salidaDatosEntrega">
-				</tbody>
-			</table>
-			<table>
-				<tbody id="salidaDatosEntregaPersonas">
-				</tbody>
-			</table>
-
-		</div>
 	</footer>
 
 	<!-- Overlay para acompañar el modal -->
@@ -358,6 +359,14 @@
 			// Establecer el estado inicial del toggle
 			toggle.checked = body.classList.contains('darkmode');
 		});
+
+		function ocultarTabla() {
+			const tabla = document.getElementById("divTablasDatosEntrega");
+			if (tabla) {
+				tabla.style.display = "none";
+			}
+		}
+
 
 
 
