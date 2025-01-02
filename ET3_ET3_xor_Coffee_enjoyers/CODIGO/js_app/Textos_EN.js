@@ -63,11 +63,22 @@ let textos_EN = {
     'InfoText':'Choose one of the entities from the side menu to learn more about its structure',
 
     //Titulos
-    'text_title_page_default_structures'               : 'Structures',
+    'text_title_page_default_structures'               : 'Structures Used',
     'text_titulo_page_estructura_project'              : 'Project Structure',
     'text_titulo_page_estructura_analysis_preparation' : 'Analysis Preparation Structure',
     'text_titulo_page_estructura_characteristic'       : 'Characteristic Structure',
 
+    /*TRADUCCIONES PARA API.HTML*/
+
+    'InfoTextAPI':'Choose one of the options from the side menu to learn more about the functions used',
+    
+    //Titulos
+    'text_title_page_default_API'  : 'API Used',
+
+    //Opciones Menu
+    'opt_funciones_test'     : 'Tests',
+    'opt_funciones_tabla'    : 'Table Presentation',
+    'opt_funciones_form'     : 'Form Creation',
 
     /*TRADUCCIONES PARA TEST*/ 
 

@@ -60,15 +60,26 @@ let textos_ES = {
 
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
-    'InfoText':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
+    'InfoTextStruct':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
 
     //Titulos
-    'text_title_page_default_structures'               : 'Estructuras',
+    'text_title_page_default_structures'               : 'Estructuras Empleadas',
     'text_titulo_page_estructura_project'              : 'Estructura de Proyecto',
     'text_titulo_page_estructura_analysis_preparation' : 'Estructura de Preparacion Análisis',
     'text_titulo_page_estructura_characteristic'       : 'Estructura de Característica',
 
+    /*TRADUCCIONES PARA API.HTML*/
 
+    'InfoTextAPI':'Seleccione una de las opciones en el menú lateral para conocer más sobre las funciones empleadas',
+    
+    //Titulos
+    'text_title_page_default_API'  : 'API Empleada',
+
+    //Opciones Menu
+    'opt_funciones_test'      : 'Tests',
+    'opt_funciones_tabla'    : 'Presentación de Tablas',
+    'opt_funciones_form'     : 'Creación de Formularios',
+    
     /*TRADUCCIONES PARA TEST*/ 
 
 
@@ -233,7 +244,7 @@ let textos_ES = {
     'PH_file_characteristic'        : '',
     'PH_nuevo_file_characteristic'  : 'Archivo .pdf, .doc o .docx de 200KB maximo; nombre de archivo 7-100 letras y puntos',
         
-        //SEARCH
+    //SEARCH
     'PH_id_characteristic_SEARCH'          : 'Hasta 11 digitos',
     'PH_name_characteristic_SEARCH'        : 'Hasta 100 letras pudiendo incluir espacios',
     //'PH_data_type_characteristic_SEARCH'   : '',
