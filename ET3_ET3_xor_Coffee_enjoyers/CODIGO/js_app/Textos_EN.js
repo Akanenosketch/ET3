@@ -401,29 +401,29 @@ let textos_EN = {
     'characteristic__description_characteristic__format_KO'  : 'Description has invalid format, must have only letters or spaces without accents or ñ.',
 
     //data_type_characteristic
-    'characteristic__data_type_characteristic__valid_KO'        : 'La opcion seleccionada no es valida',
-    "characteristic__data_type_characteristic__valid_SEARCH_KO" : 'La opcion seleccionada no es valida',
+    'characteristic__data_type_characteristic__valid_KO'        : 'Selected Option is Invalid',
+    "characteristic__data_type_characteristic__valid_SEARCH_KO" : 'Selected Option is Invalid',
 
     //category_characteristic
-    'characteristic__category_characteristic__valid_KO'        : 'La opcion seleccionada no es valida',
-    "characteristic__category_characteristic__valid_SEARCH_KO" : 'La opcion seleccionada no es valida',
+    'characteristic__category_characteristic__valid_KO'        : 'Selected Option is Invalid',
+    "characteristic__category_characteristic__valid_SEARCH_KO" : 'Selected Option is Invalid',
 
     //bibref_characteristic
-    'characteristic__bibref_characteristic__min_size_KO': 'La Bibliografía es demasiado corta, debe tener al menos longitud 16.',
-    'characteristic__bibref_characteristic__max_size_KO': 'La Bibliografía supera el tamaño permitido, debe tener como mucho longitud 200.',
-    'characteristic__bibref_characteristic__format_KO'  : 'La Bibliografía no cumple el formato correcto, debe contener solo caracteres alfabéticos con acentos, ñ, espacios y signos de puntuación.',
+    'characteristic__bibref_characteristic__min_size_KO': 'Bibliography is too short, must be length 16 at least.',
+    'characteristic__bibref_characteristic__max_size_KO': 'Bibliography is too long, must be length 200 at most.',
+    'characteristic__bibref_characteristic__format_KO'  : 'Bibliography has invalid format, must have only letters, accents, ñ, spaces or punctuation.',
     
     //file_characteristic
-    'characteristic__file_characteristic__max_size_KO':'El nombre del Archivo Caracteristica supera el tamaño permitido, debe tener como mucho longitud 100.',
-    'characteristic__file_characteristic__format_KO'  :'El nombre del Archivo Caracteristica no cumple el formato correcto, debe contener solo letras y puntos sin acentos ni ñ ni espacios ni signos de puntuacion.',
+    'characteristic__file_characteristic__max_size_KO':'Characteristic File name is too long, must be length 100 at most.',
+    'characteristic__file_characteristic__format_KO'  :'Characteristic File name has invalid format, must have only letters or dots without accents,ñ and punctuation.',
 
     //nuevo_file_characteristic
-    'characteristic__nuevo_file_characteristic__empty_KO'           : 'El Nuevo Archivo no puede estar vacio, debe enviarse un archivo',
-    'characteristic__nuevo_file_characteristic__max_size_file_KO'   : 'El Nuevo Archivo supera el tamaño permitido, debe pesar menos de 200 KB.',
-    'characteristic__nuevo_file_characteristic__type_file_KO'       : 'El Nuevo Archivo no es del tipo correcto, debe ser .pdf,.doc o .docx',
-    'characteristic__nuevo_file_characteristic__format_name_file_KO': 'El nombre del Nuevo Archivo no cumple el formato correcto, debe contener solo letras y puntos sin acentos ni ñ ni espacios ni signos de puntuacion.',
-    'characteristic__nuevo_file_characteristic__min_size_KO'        : 'El nombre del Nuevo Archivo es demasiado corto, debe tener al menos longitud 7.',
-    'characteristic__nuevo_file_characteristic__max_size_KO'        : 'El nombre del Nuevo Archivo supera el tamaño permitido, debe tener como mucho longitud 100.',
+    'characteristic__nuevo_file_characteristic__empty_KO'           : 'New Characteristic File cannot be empty, a file must be sent.',
+    'characteristic__nuevo_file_characteristic__max_size_file_KO'   : 'New Characteristic File is too big, size must be less than 200 KB.',
+    'characteristic__nuevo_file_characteristic__type_file_KO'       : 'New Characteristic File is not of an allowed type, must be .pdf,.doc or .docx',
+    'characteristic__nuevo_file_characteristic__format_name_file_KO': 'New Characteristic File name has invalid format, must have only letters or dots without accents, ñ, spaces or punctuation.',
+    'characteristic__nuevo_file_characteristic__min_size_KO'        : 'New Characteristic File name is too short, must be length 7 at least.',
+    'characteristic__nuevo_file_characteristic__max_size_KO'        : 'New Characteristic File name is too long, must be length 100 at most.',
 
 
 
