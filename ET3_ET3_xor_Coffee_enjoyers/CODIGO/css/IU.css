@@ -33,7 +33,7 @@ footer {
     /* Distribuye los elementos con espacio entre ellos */
     align-items: center;
     /* Alinea verticalmente los elementos */
-    width: 35%;
+    width: 50px;
     /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 
@@ -48,7 +48,7 @@ footer {
 }
 
 .navbar a:hover {
-    color: #d98400;
+    color: #e69500;
     scale: 1.05;
 }
 
@@ -92,7 +92,7 @@ footer {
 }
 
 .opciones a:hover {
-    color: #d98400;
+    color: #e69500;
     scale: 1.05;
 }
 
@@ -123,6 +123,14 @@ h2 {
     padding: 0.5rem;
 }
 
+#botonTEST{
+    height: 40px;
+}
+
+#botonTEST:hover {
+    background-image: url("./iconos/SHOWCURRENT.png"); /* Imagen al hacer hover */
+}
+
 /* Menú lateral */
 #div-menu {
     display: none;
@@ -141,13 +149,26 @@ h2 {
     transition: all 0.3s ease;
 }
 
+#div_IU_test {
+    display: none; /* Ocultamos el modal por defecto */
+    position: fixed; /* Fijamos la posición */
+    top: 50%; /* Centrado en la pantalla */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Para centrarlo correctamente */
+    background-color: white; /* Fondo blanco */
+    padding: 20px; /* Espaciado */
+    z-index: 1000; /* Asegura que el modal esté por encima del contenido */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 .menu-btn {
     cursor: pointer;
     height: 30px;
 }
 
 .menu-btn:hover {
-    color: #d98400;
+    color: #e69500;
     scale: 1.15;
 }
 
@@ -161,7 +182,7 @@ h2 {
 .conjuntoAPI:hover .path-4,
 .conjuntoAPI:hover .path-5,
 .conjuntoAPI:hover .path-6 {
-    fill: #d98400;
+    fill: #e69500;
     /* Cambia el color al que prefieras */
 }
 
@@ -198,7 +219,7 @@ h2 {
 }
 
 #languageSelect:hover {
-    background-color: #d98400;
+    background-color: #e69500;
     scale: 1.05;
 }
 
@@ -261,36 +282,171 @@ h2 {
     z-index: 1001;
 }
 
-.contenidoForm,
-.contenidoTest {
-    background: rgba(217, 213, 213, 0.95);
-    position: absolute;
-    z-index: 20;
-    border-radius: 8px;
-    width: 75%;
-    height: 75%;
-    margin: 5% auto;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
 .formulario {
     top: 20px;
     position: relative;
     left: 20px;
 }
 
-.class_titulo_form {
+/* Fondo del formulario */
+.contenidoForm {
+    background: linear-gradient(to right, #f8f9fa, #e2e3e5);
     position: relative;
+    z-index: 20;
+    border-radius: 12px;
+    width: 75%;
+    height: 75%;
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contenidoForm span[id^="div_error_"] {
+    color: #d9534f;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+
+
+/* Títulos y encabezados */
+.class_titulo_form {
     height: 80px;
-    background: #ffff99;
+    background: #e69500;
     color: #333;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas de los campos */
+.contenidoForm label {
+    display: block;          /* Hace que las etiquetas estén en bloque */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;   /* Espacio debajo de la etiqueta */
+    color: #333;
+}
+
+/* Estilo para los campos de entrada */
+.contenidoForm input[type="text"],
+.contenidoForm input[type="file"],
+.contenidoForm textarea,
+.contenidoForm select {
+    display: block;          /* Asegura que los campos de entrada estén en bloques */
+    padding: 0.8rem;
+    margin: 0.8rem 0;        /* Espacio entre los campos */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Efectos de hover/focus */
+.contenidoForm input[type="text"]:focus,
+.contenidoForm input[type="file"]:focus,
+.contenidoForm textarea:focus,
+.contenidoForm select:focus {
+    border-color: #e69500;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+}
+
+/* Espaciado y diseño para los botones */
+#div_boton {
+    margin-top: 20px;        /* Espacio antes del botón */
+    display: flex;
+    justify-content: center; /* Centra el botón */
+    align-items: center;     /* Centra verticalmente el botón */
+}
+
+/* Estilo para el botón */
+#submit_button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #e69500;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;             /* Asegura que el botón ocupe todo el ancho disponible */
+}
+
+/* Hover para el botón */
+#submit_button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* Estilo de la imagen dentro del botón */
+#div_boton img {
+    height: 25px;
+    width: 25px;
+    margin: 0; /* Elimina cualquier margen extra que pueda estar desplazando la imagen */
+}
+
+/* Enlaces dentro del formulario */
+.contenidoForm a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contenidoForm a:hover {
+    color: #e6b800;
+}
+
+/* Campos de error */
+/* Solo cuando .errorcampo está presente en los campos */
+/* Solo cuando .errorcampo está presente en los campos */
+.contenidoForm input[type="text"].errorcampo,
+.contenidoForm input[type="file"].errorcampo,
+.contenidoForm textarea.errorcampo {
+    border: 2px solid red;
+    background-color: #fce8e8;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+
+
+.contenidoForm input[type="text"].exitocampo,
+.contenidoForm input[type="file"].exitocampo,
+.contenidoForm textarea.exitocampo {
+    border: 2px solid green;
+    background-color: #e8fce8;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+/* Espaciado y diseño del formulario */
+#formulario {
+    position: relative;
+    padding: 1rem;
+}
+
+/* Estilo para los textos dentro del formulario */
+#textoFormulario {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    display: block;
 }
 
 .toggle {
@@ -329,19 +485,19 @@ h2 {
 
 .darkmode .conjuntoESTRUCTURAS:hover,
 .darkmode .conjuntoESTRUCTURAS:hover svg {
-    color: #d98400;
+    color: #e69500;
     /* Cambia el color del texto y el SVG */
-    fill: #d98400;
+    fill: #e69500;
     /* Cambia el color de relleno del SVG */
 }
 
 
 .conjuntoESTRUCTURAS:hover {
-    color: #d98400;
+    color: #e69500;
 }
 
 .darkmode .menu-btn:hover {
-    color: #d98400;
+    color: #e69500;
 }
 
 .darkmode a {
@@ -457,7 +613,7 @@ td {
 
 /* Fondo de las cabeceras */
 th {
-    background-color: #d98400;
+    background-color: #e69500;
     color: white;
     font-weight: bold;
 }
@@ -487,15 +643,4 @@ tr:hover {
 #salidaDatosEntrega,
 #salidaDatosEntregaPersonas {
     margin-bottom: 20px;
-}
-
-.errorcampo {
-    border: 5px solid red;
-    display: inline-block;
-}
-
-.exitocampo {
-    border: 5px solid green;
-    /*NO LO VEO BIEN VALE?*/
-    display: inline-block;
 }
