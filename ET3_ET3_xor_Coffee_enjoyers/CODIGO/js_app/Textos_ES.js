@@ -1,5 +1,7 @@
 let textos_ES = {
 
+    "SelectDefault" : "Escoja",
+
     /*TITULOS*/
 
     "base_de_datos" : "Estructura",
@@ -95,6 +97,8 @@ let textos_ES = {
     'Respuesta Test'    : 'Respuesta Test',
     'Respuesta esperada': 'Respuesta esperada',
     'Resultado'         : 'Resultado',
+    'CampoAux'          : 'Campo Aux.',
+    'ValorAux'          : 'Valor Aux.',
 
     //Valores resultado tests
     'CORRECTO'  : 'CORRECTO',
@@ -222,8 +226,8 @@ let textos_ES = {
 
     'PH_id_characteristic'          : '',
     'PH_name_characteristic'        : '8-100 letras pudiendo incluir espacios',
-    'PH_data_type_characteristic'   : '',
-    'PH_category_characteristic'    : '',
+    //'PH_data_type_characteristic'   : '',
+    //'PH_category_characteristic'    : '',
     'PH_description_characteristic' : '80-5000 letras pudiendo incluir espacios',
     'PH_bibref_characteristic'      : '16-200 letras pudiendo incluir ñ, acentos, espacios y puntuacion',
     'PH_file_characteristic'        : '',
@@ -232,8 +236,8 @@ let textos_ES = {
         //SEARCH
     'PH_id_characteristic_SEARCH'          : 'Hasta 11 digitos',
     'PH_name_characteristic_SEARCH'        : 'Hasta 100 letras pudiendo incluir espacios',
-    'PH_data_type_characteristic_SEARCH'   : '',
-    'PH_category_characteristic_SEARCH'    : '',
+    //'PH_data_type_characteristic_SEARCH'   : '',
+    //'PH_category_characteristic_SEARCH'    : '',
     'PH_bibref_characteristic_SEARCH'      : 'Hasta 200 letras pudiendo incluir ñ, acentos, espacios y puntuacion',
     'PH_description_characteristic_SEARCH' : 'Hasta 5000 letras pudiendo incluir espacios',
     'PH_file_characteristic_SEARCH'        : 'Hasta 100 letras pudiendo incluir puntos (extension de archivo optativa)',
@@ -467,6 +471,25 @@ let textos_ES = {
     
     //no se si existe este error, existe el equivalente en project pero no parece que exista para analysis_preparation, no salta en los testeos
     'file_analysis_preparation_es_nulo_KO'          : 'Se ha producido un error critico, los datos que intenta editar no son editables', 
+
+    //characteristic
+   
+    //atributo forzado a nulo en EDIT o DELETE
+    'id_characteristic_es_nulo_KO'          : 'Se ha producido un error grave,asegurese de que el campo Identificador no este vacio',
+
+    //atributo forzado a nulo en ADD o EDIT
+    'name_characteristic_es_nulo_KO'        : 'Se ha producido un error grave,asegurese de que el campo Nombre Caracteristica no este vacio',
+    'description_characteristic_es_nulo_KO' : 'Se ha producido un error grave,asegurese de que el campo Descripción no este vacio',
+    'bibref_characteristic_es_nulo_KO'      : 'Se ha producido un error grave,asegurese de que el campo Bibliografía no este vacio',
+    'data_type_characteristic_es_nulo_KO'   : 'Se ha producido un error grave,asegurese de que el campo Tipo de Dato no este vacio',
+    'category_characteristic_es_nulo_KO'    : 'Se ha producido un error grave,asegurese de que el campo Categoria no este vacio',
+    
+    //tipo incorrecto de fichero en ADD o EDIT
+    'ERROR_UPLOAD_file_characteristic_KO'   : 'Se ha producido un error grave,asegurese de que el archivo subido sea correcto',
+    
+    //no se si existe este error, existe el equivalente en project pero no parece que exista para characteristic, no salta en los testeos
+    'file_characteristic_es_nulo_KO'        : 'Se ha producido un error critico, los datos que intenta editar no son editables', 
+
 
 
     /*OTROS*/

@@ -36,9 +36,9 @@
 
 - [ ] test_characteristic.js
 
-- [ ] Textos_ES.js
+- [ ] Textos_ES.js (faltan los de APi y estructuras)
 
-- [ ] Textos_EN.js
+- [ ] Textos_EN.js (faltan los de APi y estructuras)
 
 - [X] constructor_form.js 
 
@@ -52,9 +52,9 @@
 
 #### js_core
 
-- [X] DOM_class.js (previsiblemente si no se hace paginacion)
+- [X] DOM_class.js 
  
-- [X] ExternalAccess.js (NO TOCAR)
+- [X] ExternalAccess.js 
 
 - [X] Tests_class.js
   
@@ -78,10 +78,6 @@
 
 - Arreglar modal
 
-- Traducir para test lo nuevo (CampoAux, ValorAux)
-
-- traducir SelectDefault para opcion default de select ("SelectDefault_SEARCH"vacio en search , "SelectDefault"  Select/Escoja o algo )
-
 - Crear API.html
 
 - Poner API.html en index
@@ -94,19 +90,13 @@
 
 - Desarrollar characteristic pruebas
 
-- Desarrollar characteristic traducciones
-
 - Refactorizar index.html si hace falta
-
-- Mostrar tests con scroll y modal
 
 - HACER CSS PARA MODAL Y DEMAS
 
 - HACER CSS PARA COLORES Y PRESENTACION
 
 - HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
-
-- Hacer los br de separacion en form con css?
 
 - Revisar que no haya metodos que no se usan (habia algunos en la ET2)
 

@@ -1,5 +1,7 @@
 let textos_EN = {
     
+    "SelectDefault" : "Select",
+
     /*TITULOS*/
 
     "base_de_datos" : "Structure",
@@ -95,7 +97,9 @@ let textos_EN = {
     'Respuesta Test'    : 'Test Response',
     'Respuesta esperada': 'Expected Response',
     'Resultado'         : 'Result',
-
+    'CampoAux'          : 'Aux.Field',
+    'ValorAux'          : 'Aux.Value',
+    
     //Valores resultado tests
     'CORRECTO'  : 'CORRECT',
     'CORRECTA'  : 'CORRECT',
@@ -222,8 +226,8 @@ let textos_EN = {
 
     'PH_id_characteristic'          : '',
     'PH_name_characteristic'        : '8-100 letters including spaces',
-    'PH_data_type_characteristic'   : '',
-    'PH_category_characteristic'    : '',
+    //'PH_data_type_characteristic'   : '',
+    //'PH_category_characteristic'    : '',
     'PH_description_characteristic' : '80-5000 letters including spaces',
     'PH_bibref_characteristic'      : '16-200 letters including ñ, accents, spaces or punctuation',
     'PH_file_characteristic'        : '',
@@ -232,8 +236,8 @@ let textos_EN = {
     //SEARCH
     'PH_id_characteristic_SEARCH'          : 'Up to 11 digits',
     'PH_name_characteristic_SEARCH'        : 'Up to 100 letters including spaces',
-    'PH_data_type_characteristic_SEARCH'   : '',
-    'PH_category_characteristic_SEARCH'    : '',
+   // 'PH_data_type_characteristic_SEARCH'   : '',
+   // 'PH_category_characteristic_SEARCH'    : '',
     'PH_bibref_characteristic_SEARCH'      : 'Up to 200 letters including ñ, accents, spaces or punctuation',
     'PH_description_characteristic_SEARCH' : 'Up to 5000 letters including spaces',
     'PH_file_characteristic_SEARCH'        : 'Up to 100 letters including dots (file extension optional)',
@@ -467,6 +471,25 @@ let textos_EN = {
     
     //no se si existe este error, existe el equivalente en project pero no parece que exista para analysis_preparation, no salta en los testeos
     'file_analysis_preparation_es_nulo_KO'          : 'A critical error has occurred, the current data is not editable', 
+
+    //characteristic
+   
+    //atributo forzado a nulo en EDIT o DELETE
+    'id_characteristic_es_nulo_KO'          : 'An error has occurred,check field Characteristic ID is not empty',
+
+    //atributo forzado a nulo en ADD o EDIT
+    'name_characteristic_es_nulo_KO'        : 'An error has occurred,check field Name Characteristic is not empty',
+    'description_characteristic_es_nulo_KO' : 'An error has occurred,check field Description is not empty',
+    'bibref_characteristic_es_nulo_KO'      : 'An error has occurred,check field Bibliography is not empty',
+    'data_type_characteristic_es_nulo_KO'   : 'An error has occurred,check field Data Type is not empty',
+    'category_characteristic_es_nulo_KO'    : 'An error has occurred,check field Category is not empty',
+    
+    //tipo incorrecto de fichero en ADD o EDIT
+    'ERROR_UPLOAD_file_characteristic_KO'   : 'An error has occurred,check New Characteristic File is correct',
+    
+    //no se si existe este error, existe el equivalente en project pero no parece que exista para characteristic, no salta en los testeos
+    'file_characteristic_es_nulo_KO'        : 'A critical error has occurred, the current data is not editable', 
+
 
 
     /*OTROS*/
