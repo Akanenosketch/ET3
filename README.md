@@ -106,13 +106,7 @@
 
 - HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
 
-- Organizar la muestra del array de datos
-
-- Comprobar si los problemas del file son cosa del back
-
 - Hacer los br de separacion en form con css?
-
-- Poner placeholders en el indice para lo que meta de prueba nuevo rodeiro
 
 - Revisar que no haya metodos que no se usan (habia algunos en la ET2)
 
