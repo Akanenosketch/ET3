@@ -17,6 +17,8 @@ class test {
         document.getElementById('div_IU_test').style.display = 'block';
         document.getElementById('tablaresultadosprueba').innerHTML = '';//limpiar tabla definicion pruebas
         document.getElementById('salidaresultadosprueba').innerHTML = '';//limpia tabla de pruebas
+        document.getElementById('modal_action_overlay').style.display = 'block';
+    
         this.crearArrays();
     }
 

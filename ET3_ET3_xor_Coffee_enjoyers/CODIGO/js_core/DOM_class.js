@@ -220,6 +220,8 @@ class DOM_class extends test {
         document.getElementById('tablaresultadosprueba').innerHTML = '';
         document.getElementById('resultadotest').innerHTML = '';
         document.getElementById('salidaresultadosprueba').innerHTML = '';
+        document.getElementById('modal_action_overlay').style.display = 'none';
+    
     }
 
     cerrar_tabla() {
