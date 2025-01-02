@@ -18,25 +18,20 @@
 
 #footer_page {
     margin-top: 237.5px;
-    font-size: 16px; /* Ajusta el tamaño de la fuente */
-    padding: 10px 20px; /* Reduce el padding para ahorrar espacio */
+    font-size: 16px;
+    /* Ajusta el tamaño de la fuente */
+    padding: 10px 20px;
+    /* Reduce el padding para ahorrar espacio */
     background-color: white;
-    box-shadow: 0px -3px 5px 0px rgba(99, 98, 98, 0.75); /* Sombra hacia arriba */
-    width: 100%; /* Asegura que ocupe todo el ancho */
-    text-align: center; /* Centra el contenido del footer */
-    position: relative; /* Hace que el footer esté al final del contenido */
+    box-shadow: 0px -3px 5px 0px rgba(99, 98, 98, 0.75);
+    /* Sombra hacia arriba */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho */
+    text-align: center;
+    /* Centra el contenido del footer */
+    position: relative;
+    /* Hace que el footer esté al final del contenido */
     bottom: 0;
-}
-
-
-
-
-
-
-
-footer {
-    margin-top: 20px;
-    /* Ajusta este valor según el espacio que necesites */
 }
 
 .navbar {
@@ -119,10 +114,35 @@ footer {
     margin-right: 15px;
 }
 
+#textoInicio {
+    font-family: 'Arial', sans-serif;
+    /* Fuente moderna */
+    font-size: 1.5rem;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Texto en negrita */
+    color: #ffffff;
+    /* Texto blanco */
+    background: linear-gradient(135deg, #e69500, #e9a72c);
+    /* Degradado verde */
+    padding: 20px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    text-align: center;
+    /* Centrar el texto */
+    margin: 20px auto;
+    /* Centrar horizontalmente y agregar margen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra para destacar */
+    width: fit-content;
+    /* Ajusta el ancho al contenido */
+}
 
 
 
 h2 {
+    text-align: center;
     background-color: #e69500;
     color: white;
     font-size: 1.5rem;
@@ -511,6 +531,10 @@ h2 {
     background-color: #2c2c2c;
 }
 
+.darkmode #footer_page {
+    background-color: #2c2c2c;
+}
+
 .darkmode .menu-btn {
     color: #cfcfcf;
 }
@@ -587,12 +611,10 @@ h2 {
     /* Centra la luna */
 }
 
-
 /* Cuando el checkbox está marcado (modo oscuro) */
 input[type="checkbox"]:checked+.display label .circle .sun {
     opacity: 0;
 }
-
 
 input[type="checkbox"]:checked+.display label .circle .moon {
     opacity: 1;
@@ -643,12 +665,13 @@ input[type="checkbox"]:checked+.display label .circle {
 /* Tabla general */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
     margin-top: 10px;
 }
 
+
 /* Estilos para las celdas de las tablas */
-th,
+
 td {
     padding: 10px;
     text-align: left;
@@ -656,12 +679,33 @@ td {
     font-family: 'Arial', sans-serif;
 }
 
-/* Fondo de las cabeceras */
+tr:last-child td:first-child {
+    border-bottom-left-radius: 8px; /* Solo la primera celda de la última fila recibe el borde redondeado en la esquina inferior izquierda */
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 8px; /* Solo la última celda de la última fila recibe el borde redondeado en la esquina inferior derecha */
+}
+
+
+
 th {
+    padding: 10px;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
     background-color: #e69500;
     color: white;
     font-weight: bold;
 }
+
+tr:first-child th:first-child {
+    border-top-left-radius: 8px; /* Solo la primera celda de la primera fila de encabezado recibe el borde redondeado en la esquina superior izquierda */
+}
+
+tr:first-child th:last-child {
+    border-top-right-radius: 8px; /* Solo la última celda de la primera fila de encabezado recibe el borde redondeado en la esquina superior derecha */
+}
+
 
 /* Estilo para las filas alternadas */
 tr:nth-child() {

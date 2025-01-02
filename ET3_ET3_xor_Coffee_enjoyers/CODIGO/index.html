@@ -213,9 +213,9 @@
 
 	</div>
 
-	<div class="textoInicio">
+	<h1 id="textoInicio">
 		Bienvenidos esto es la interfaz de la ET3 de nuestro grupo
-	</div>
+	</h1>
 
 	<div id="divTablasDatosEntrega">
 		<table>
@@ -284,6 +284,7 @@
 
 			}
 		}
+
 		document.getElementById('div-menu').style.display = 'none';
 		document.getElementById('div_IU_form').style.display = 'none';
 		document.getElementById('id_tabla_datos').style.display = 'none';
@@ -296,7 +297,7 @@
 
 		let datos = eval("def_grupo_ET3_xor_Coffee_enjoyers");
 		document.getElementById('divTablasDatosEntrega').style.display = 'block';
-		let headersEntrega = `<tr>
+		let headersEntrega = `<tr class="parteSuperior1">
         	<th class="Nombre Grupo">Nombre Grupo</th>
         	<th class="Entrega">Entrega</th>
         	<th class="Horas Totales">Horas Totales</th>
