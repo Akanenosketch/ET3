@@ -329,8 +329,10 @@ h2 {
 
 .darkmode .conjuntoESTRUCTURAS:hover,
 .darkmode .conjuntoESTRUCTURAS:hover svg {
-    color: #d98400; /* Cambia el color del texto y el SVG */
-    fill: #d98400;  /* Cambia el color de relleno del SVG */
+    color: #d98400;
+    /* Cambia el color del texto y el SVG */
+    fill: #d98400;
+    /* Cambia el color de relleno del SVG */
 }
 
 
@@ -403,7 +405,7 @@ input[type="checkbox"]:checked+.display label .circle .moon {
     background: white;
     position: absolute;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
-    -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
+        -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
     top: 50%;
     left: 0%;
     transform: translate(10%, -50%);
@@ -416,7 +418,7 @@ input[type="checkbox"]:checked+.display label .circle {
     transform: translate(-110%, -50%);
     background: #2c2c2c;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
-    -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
+        -10px -10px 30px rgba(0, 0, 0, 0.5) inset;
 }
 
 
@@ -487,80 +489,13 @@ tr:hover {
     margin-bottom: 20px;
 }
 
-
-/* Pantallas pequeñas (teléfonos) */
-@media (max-width: 768px) {
-    #header_page {
-        font-size: 28px;
-        padding-left: 20px;
-    }
-
-    .navbar {
-        position: static;
-        flex-direction: column;
-        align-items: flex-start;
-        width: auto;
-    }
-
-    .navbar a {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    .opciones {
-        position: static;
-        flex-direction: column;
-        align-items: flex-start;
-        width: auto;
-    }
-
-    .opciones a {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-
-    #div-menu {
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-        padding: 10px;
-    }
-
-    #languageSelect {
-        position: static;
-        margin: 10px 0;
-    }
-
-    .contenidoForm,
-    .contenidoTest {
-        width: 90%;
-        height: auto;
-        padding: 1rem;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 5px;
-    }
+.errorcampo {
+    border: 5px solid red;
+    display: inline-block;
 }
 
-/* Pantallas medianas (tabletas) */
-@media (max-width: 1024px) {
-    .navbar {
-        width: auto;
-    }
-
-    .opciones {
-        width: auto;
-    }
-
-    .contenidoForm,
-    .contenidoTest {
-        width: 90%;
-    }
+.exitocampo {
+    border: 5px solid green;
+    /*NO LO VEO BIEN VALE?*/
+    display: inline-block;
 }
-
