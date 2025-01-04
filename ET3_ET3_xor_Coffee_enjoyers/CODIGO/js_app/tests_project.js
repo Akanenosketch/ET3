@@ -223,14 +223,14 @@ let def_tests_project = Array(
 
 
     //EDIT
-    Array("project", "nuevo_file_project", 104, "Cumple tamaño de fichero menor a 2000000 Bytes (2 MB)",                                "EDIT", 'project__nuevo_file_project__max_size_file_KO',    'El Nuevo Archivo supera el tamaño permitido, debe pesar menos de 2 MB.'),
-    Array("project", "nuevo_file_project", 105, "Cumple tipo correcto de fichero (.pdf, .doc, .docx)",                                  "EDIT", 'project__nuevo_file_project__type_file_KO',        'El Nuevo Archivo no es del tipo correcto, debe ser .pdf,.doc o .docx'),
-    Array("project", "nuevo_file_project", 106, "Cumple tener solo caracteres alfabeticos y puntos sin acentos,ñ o espacios de nombre", "EDIT", 'project__nuevo_file_project__format_name_file_KO', 'El nombre del Nuevo Archivo no cumple el formato correcto, debe contener solo letras y puntos sin acentos ni ñ ni espacios ni signos de puntuacion.'),
-    Array("project", "nuevo_file_project", 107, "Cumple tamaño de nombre minimo 7",                                                     "EDIT", 'project__nuevo_file_project__min_size_KO',         'El nombre del Nuevo Archivo es demasiado corto, debe tener al menos longitud 7.'),
-    Array("project", "nuevo_file_project", 108, "Cumple tamaño de nombre maximo 100",                                                   "EDIT", 'project__nuevo_file_project__max_size_KO',         'El nombre del Nuevo Archivo supera el tamaño permitido, debe tener como mucho longitud 100.'),
-    Array("project", "nuevo_file_project", 109, "Cumple todo",                                                                          "EDIT", true,                                               'El Nuevo Archivo es correcto'),
-    Array("project", "nuevo_file_project", 110, "Cumple ser un fichero vacio",                                                          "EDIT", true,                                               'El Nuevo Archivo es correcto'),
-
+    Array("project", "nuevo_file_project", 104, "Cumple ser un fichero vacio",                                                          "EDIT", true,                                               'El Nuevo Archivo es correcto'),
+    Array("project", "nuevo_file_project", 105, "Cumple tamaño de fichero menor a 2000000 Bytes (2 MB)",                                "EDIT", 'project__nuevo_file_project__max_size_file_KO',    'El Nuevo Archivo supera el tamaño permitido, debe pesar menos de 2 MB.'),
+    Array("project", "nuevo_file_project", 106, "Cumple tipo correcto de fichero (.pdf, .doc, .docx)",                                  "EDIT", 'project__nuevo_file_project__type_file_KO',        'El Nuevo Archivo no es del tipo correcto, debe ser .pdf,.doc o .docx'),
+    Array("project", "nuevo_file_project", 107, "Cumple tener solo caracteres alfabeticos y puntos sin acentos,ñ o espacios de nombre", "EDIT", 'project__nuevo_file_project__format_name_file_KO', 'El nombre del Nuevo Archivo no cumple el formato correcto, debe contener solo letras y puntos sin acentos ni ñ ni espacios ni signos de puntuacion.'),
+    Array("project", "nuevo_file_project", 108, "Cumple tamaño de nombre minimo 7",                                                     "EDIT", 'project__nuevo_file_project__min_size_KO',         'El nombre del Nuevo Archivo es demasiado corto, debe tener al menos longitud 7.'),
+    Array("project", "nuevo_file_project", 109, "Cumple tamaño de nombre maximo 100",                                                   "EDIT", 'project__nuevo_file_project__max_size_KO',         'El nombre del Nuevo Archivo supera el tamaño permitido, debe tener como mucho longitud 100.'),
+    Array("project", "nuevo_file_project", 110, "Cumple todo",                                                                          "EDIT", true,                                               'El Nuevo Archivo es correcto'),
+    
 
     //Pruebas especiales fechas
     //Campo = `start_date_project` date NOT NULL, fecha válida con formato dd/mm/aaaa 

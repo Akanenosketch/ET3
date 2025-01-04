@@ -34,7 +34,7 @@
 
 - [X] characteristic.js
 
-- [ ] test_characteristic.js
+- [X] test_characteristic.js
 
 - [ ] Textos_ES.js (faltan los de APi y estructuras)
 
@@ -76,26 +76,16 @@
 
 ### TODO LIST
 
-- Arreglar modal
-
 - Crear API.html
 
-- Poner API.html en index
-
 - Crear estructuras.html
-
-- Poner estructuras.html en index
-
-- Desarrollar characteristic tests
-
-- Desarrollar characteristic pruebas
 
 - Refactorizar index.html si hace falta
 
 - HACER CSS PARA MODAL Y DEMAS
 
 - HACER CSS PARA COLORES Y PRESENTACION
-
+ 
 - HACER CSS PARA QUE LA TABLA NO SE SALGA DE PANTALLA
 
 - Revisar que no haya metodos que no se usan (habia algunos en la ET2)
@@ -159,7 +149,7 @@ Objetivos
 
 3) ~~La realización de los test debe realizarse en index.html~~
 
-4) Debe utilizar los códigos definidos en textos_ES y textos_EN para la información de interfaz.
+4) ~~Debe utilizar los códigos definidos en textos_ES y textos_EN para la información de interfaz.~~
 
 5) Las acciones deben estar representadas por iconos. 
 

@@ -1,6 +1,7 @@
 let textos_EN = {
     
     "SelectDefault" : "Select",
+    "textoInicio" : "Welcome, this is our group´s ET3 Interface",
 
     /*TITULOS*/
 

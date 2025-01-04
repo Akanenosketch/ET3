@@ -1,7 +1,7 @@
 let textos_ES = {
 
     "SelectDefault" : "Escoja",
-
+    "textoInicio" : "Bienvenidos, esto es la interfaz de la ET3 de nuestro grupo",
     /*TITULOS*/
 
     "base_de_datos" : "Estructura",
