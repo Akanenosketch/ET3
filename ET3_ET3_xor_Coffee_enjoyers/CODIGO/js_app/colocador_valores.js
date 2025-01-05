@@ -14,8 +14,8 @@ class colocador_valores {
         }
     }
 
-    colocarValor(atributo, valor, esTest = false) {
-        if (this.def_html[atributo].esEspecial && !esTest) { //esTest es un apaño para el test de forma que se pueda usar la funcion para testing sin problemas al formatear fechas
+    colocarValor(atributo, valor) {
+        if (this.def_html[atributo].esEspecial) {
             this.that.mostrardatosespecialesForm(atributo, valor);
         } else {
             switch (this.def_html[atributo].tag) {

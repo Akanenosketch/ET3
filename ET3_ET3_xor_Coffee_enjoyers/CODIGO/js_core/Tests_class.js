@@ -249,7 +249,7 @@ class test {
             var def = this.devolver_def(numdeftest);
 
             //meto valor en campo
-            this.colocador_valores.colocarValor(campotest, valortest,true);
+            document.getElementById(campotest).value = valortest;
 
             //llamo a la funcion de validacion del campo según su accion
             let resultadotest = this.comprobar(campotest, acciontest);
@@ -393,10 +393,9 @@ class test {
             var def = this.devolver_def(numdeftest);
 
             //meto valor en campo
-            this.colocador_valores.colocarValor(campotest, valortest,true);
-
+            document.getElementById(campotest).value = valortest;
             //meto valor auxiliar en campo auxiliar
-            this.colocador_valores.colocarValor(campoAux, valorAux,true);
+            document.getElementById(campoAux).value = valorAux;
 
             //llamo a la funcion de validacion del campo según su accion
             let resultadotest = this.comprobar(campotest, acciontest);
