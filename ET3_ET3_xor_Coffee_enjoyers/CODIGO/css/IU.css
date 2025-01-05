@@ -150,6 +150,69 @@ h2 {
 }
 
 
+/* Estilo específico para el select con id 'seleccioncolumnas' */
+#seleccioncolumnas {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 250px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.darkmode #seleccioncolumnas{
+    background-color: #2c2c2c;
+}
+
+
+/* Cambio de color al pasar el ratón sobre el select */
+#seleccioncolumnas:hover {
+    border-color: orange;
+    box-shadow: 0 2px 5px rgba(255, 165, 0, 0.7); /* Sombra naranja al pasar el ratón */
+}
+
+/* Estilo cuando el select está enfocado */
+#seleccioncolumnas:focus {
+    outline: none;
+    /* Elimina el borde azul */
+    border-color: orange;
+    /* Puedes elegir el color que prefieras para el borde */
+    box-shadow: none;
+    /* Elimina la sombra del foco */
+}
+
+
+/* Estilo específico para las opciones dentro del select */
+#seleccioncolumnas option {
+    padding: 5px 10px;
+    transition: background-color 0.2s ease;
+    background-color: #f9f9f9;
+}
+
+.darkmode #seleccioncolumnas option{
+    background-color: #2c2c2c;
+    color: white;
+}
+
+/* Cambio de fondo cuando se pasa el ratón sobre una opción */
+#seleccioncolumnas option:hover {
+    background-color: orange;
+}
+
+/* Estilo para las opciones seleccionadas */
+#seleccioncolumnas option:checked {
+    background-color: rgb(235, 174, 61);
+    color: #2c2c2c;
+}
+
+/* Estilo cuando el select está en modo 'multiple' y se seleccionan varias opciones */
+#seleccioncolumnas option:checked:hover {
+    background-color: orange;
+}
+
 .opcionmenu {
     list-style: none;
     background-color: #e69500;
@@ -157,14 +220,77 @@ h2 {
     padding: 0.5rem;
 }
 
-#botonTEST {
-    height: 40px;
+.botonDELETE{
+    cursor: pointer;
 }
 
-/*Que?*/
+.botonDELETE:hover {
+    scale: 1.05;
+}
+
+.botonDELETE:hover path {
+    stroke: orange;
+}
+
+.botonSHOWCURRENT{
+    cursor: pointer;
+    stroke: black;
+}
+
+.botonSHOWCURRENT:hover {
+    scale: 1.05;
+}
+
+.botonSHOWCURRENT:hover path {
+    stroke: orange;
+}
+
+.botonEDIT{
+    cursor: pointer;
+}
+
+.botonEDIT:hover {
+    scale: 1.05;
+}
+
+.botonEDIT:hover path {
+    stroke: orange;
+}
+
+.botonFILE{
+    cursor: pointer;
+}
+
+.botonFILE:hover {
+    scale: 1.05;
+}
+
+.botonFILE:hover path {
+    stroke: orange;
+}
+
+#botonTEST {
+    cursor: pointer;
+}
+
 #botonTEST:hover {
-    background-image: url("./iconos/SHOWCURRENT.png");
-    /* Imagen al hacer hover */
+    scale: 1.05;
+}
+
+#botonTEST:hover path {
+    fill: orange;
+}
+
+.darkmode #botonTEST path {
+    fill: #cfcfcf;
+}
+
+.darkmode #botonTEST:hover {
+    scale: 1.05;
+}
+
+.darkmode #botonTEST:hover path {
+    fill: orange;
 }
 
 /* Menú lateral */
@@ -227,6 +353,18 @@ h2 {
 .menu-btn:hover {
     color: #e69500;
     scale: 1.15;
+}
+
+#botonBACK {
+    cursor: pointer;
+}
+
+#botonBACK:hover {
+    scale: 1.05;
+}
+
+#botonBACK:hover path {
+    fill: orange;
 }
 
 #botonAPI {
@@ -539,6 +677,127 @@ h2 {
     color: #cfcfcf;
 }
 
+.darkmode #botonBACK path {
+    fill: #cfcfcf;
+}
+
+.darkmode #botonBACK:hover {
+    scale: 1.05;
+}
+
+.darkmode #botonBACK:hover path {
+    fill: orange;
+}
+
+.darkmode #botonADD path {
+    stroke: #cfcfcf;
+}
+
+.darkmode #botonADD:hover {
+    scale: 1.05;
+}
+
+.darkmode #botonADD:hover path {
+    stroke: orange;
+}
+
+#botonADD:hover {
+    scale: 1.05;
+}
+
+#botonADD:hover path {
+    stroke: orange;
+}
+
+/* Estilo en modo oscuro */
+.darkmode #botonSEARCH path {
+    fill: #cfcfcf;
+    /* Color en modo oscuro */
+}
+
+.darkmode #botonSEARCH circle {
+    stroke: #cfcfcf;
+    /* Color del borde en modo oscuro */
+}
+
+.darkmode #botonSEARCH:hover {
+    scale: 1.05;
+}
+
+.darkmode #botonSEARCH:hover path {
+    fill: orange;
+    /* Color en modo oscuro */
+}
+
+.darkmode #botonSEARCH:hover circle {
+    stroke: orange;
+    /* Color del borde en modo oscuro */
+}
+
+#botonSEARCH:hover {
+    scale: 1.05;
+}
+
+#botonSEARCH:hover path {
+    fill: orange;
+    /* Color en modo oscuro */
+}
+
+#botonSEARCH:hover circle {
+    stroke: orange;
+    /* Color del borde en modo oscuro */
+}
+
+.darkmode .botonDELETE path{
+    stroke: #cfcfcf;
+}
+
+.darkmode .botonDELETE:hover {
+    scale: 1.05;
+}
+
+.darkmode .botonDELETE:hover path {
+    stroke: orange;
+}
+
+.darkmode .botonSHOWCURRENT path{
+    stroke: #cfcfcf;
+}
+
+.darkmode .botonSHOWCURRENT:hover {
+    scale: 1.05;
+}
+
+.darkmode .botonSHOWCURRENT:hover path {
+    stroke: orange;
+}
+
+.darkmode .botonEDIT path{
+    stroke: #cfcfcf;
+}
+
+.darkmode .botonEDIT:hover {
+    scale: 1.05;
+}
+
+.darkmode .botonEDIT:hover path {
+    stroke: orange;
+}
+
+
+.darkmode .botonFILE path{
+    stroke: #cfcfcf;
+}
+
+.darkmode .botonFILE:hover {
+    scale: 1.05;
+}
+
+.darkmode .botonFILE:hover path {
+    stroke: orange;
+}
+
+
 .darkmode .text_titulo_app {
     color: #cfcfcf;
 }
@@ -669,10 +928,30 @@ table {
     margin-top: 10px;
 }
 
+#muestradatostabla tr{
+    background: none !important;
+}
+
+#title_page {
+    background-color: #f4a200; /* Naranja vibrante */
+    text-align: center;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 90%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#text_title_page {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 
 /* Estilos para las celdas de las tablas */
 
 td {
+    background: none;
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
@@ -680,11 +959,13 @@ td {
 }
 
 tr:last-child td:first-child {
-    border-bottom-left-radius: 8px; /* Solo la primera celda de la última fila recibe el borde redondeado en la esquina inferior izquierda */
+    border-bottom-left-radius: 8px;
+    /* Solo la primera celda de la última fila recibe el borde redondeado en la esquina inferior izquierda */
 }
 
 tr:last-child td:last-child {
-    border-bottom-right-radius: 8px; /* Solo la última celda de la última fila recibe el borde redondeado en la esquina inferior derecha */
+    border-bottom-right-radius: 8px;
+    /* Solo la última celda de la última fila recibe el borde redondeado en la esquina inferior derecha */
 }
 
 
@@ -699,11 +980,13 @@ th {
 }
 
 tr:first-child th:first-child {
-    border-top-left-radius: 8px; /* Solo la primera celda de la primera fila de encabezado recibe el borde redondeado en la esquina superior izquierda */
+    border-top-left-radius: 8px;
+    /* Solo la primera celda de la primera fila de encabezado recibe el borde redondeado en la esquina superior izquierda */
 }
 
 tr:first-child th:last-child {
-    border-top-right-radius: 8px; /* Solo la última celda de la primera fila de encabezado recibe el borde redondeado en la esquina superior derecha */
+    border-top-right-radius: 8px;
+    /* Solo la última celda de la primera fila de encabezado recibe el borde redondeado en la esquina superior derecha */
 }
 
 
@@ -714,6 +997,10 @@ tr:nth-child() {
 
 tr:hover {
     background-color: #f0e9de;
+}
+
+.darkmode tr:hover{
+    background-color: rgb(228, 195, 133);
 }
 
 /* Estilos específicos para las columnas */
