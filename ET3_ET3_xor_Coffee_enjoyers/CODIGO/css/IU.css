@@ -160,10 +160,11 @@ h2 {
     width: 250px;
     box-sizing: border-box;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
-.darkmode #seleccioncolumnas{
+.darkmode #seleccioncolumnas {
     background-color: #2c2c2c;
 }
 
@@ -171,7 +172,8 @@ h2 {
 /* Cambio de color al pasar el ratón sobre el select */
 #seleccioncolumnas:hover {
     border-color: orange;
-    box-shadow: 0 2px 5px rgba(255, 165, 0, 0.7); /* Sombra naranja al pasar el ratón */
+    box-shadow: 0 2px 5px rgba(255, 165, 0, 0.7);
+    /* Sombra naranja al pasar el ratón */
 }
 
 /* Estilo cuando el select está enfocado */
@@ -192,7 +194,7 @@ h2 {
     background-color: #f9f9f9;
 }
 
-.darkmode #seleccioncolumnas option{
+.darkmode #seleccioncolumnas option {
     background-color: #2c2c2c;
     color: white;
 }
@@ -220,7 +222,7 @@ h2 {
     padding: 0.5rem;
 }
 
-.botonDELETE{
+.botonDELETE {
     cursor: pointer;
 }
 
@@ -232,8 +234,11 @@ h2 {
     stroke: orange;
 }
 
-.botonSHOWCURRENT{
+.botonSHOWCURRENT {
     cursor: pointer;
+}
+
+.botonSHOWCURRENT path{
     stroke: black;
 }
 
@@ -245,7 +250,7 @@ h2 {
     stroke: orange;
 }
 
-.botonEDIT{
+.botonEDIT {
     cursor: pointer;
 }
 
@@ -257,7 +262,7 @@ h2 {
     stroke: orange;
 }
 
-.botonFILE{
+.botonFILE {
     cursor: pointer;
 }
 
@@ -290,6 +295,54 @@ h2 {
 }
 
 .darkmode #botonTEST:hover path {
+    fill: orange;
+}
+
+#addysearch {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Espaciado entre los elementos */
+}
+
+.botonesSiguienteAnterior {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Espaciado entre los elementos dentro de botonesSiguienteAnterior */
+}
+
+#botonANT:hover {
+    cursor: pointer;
+}
+
+#botonANT:hover path {
+    fill: orange;
+    scale: 1.05;
+}
+
+#botonSIG:hover {
+    cursor: pointer;
+}
+
+#botonSIG:hover path {
+    fill: orange;
+    scale: 1.05;
+}
+
+.darkmode #botonANT path{
+    fill: #cfcfcf;
+}
+
+.darkmode #botonSIG path{
+    fill: #cfcfcf;
+}
+
+.darkmode #botonANT:hover path{
+    fill: orange;
+}
+
+.darkmode #botonSIG:hover path{
     fill: orange;
 }
 
@@ -748,7 +801,7 @@ h2 {
     /* Color del borde en modo oscuro */
 }
 
-.darkmode .botonDELETE path{
+.darkmode .botonDELETE path {
     stroke: #cfcfcf;
 }
 
@@ -760,7 +813,7 @@ h2 {
     stroke: orange;
 }
 
-.darkmode .botonSHOWCURRENT path{
+.darkmode .botonSHOWCURRENT path {
     stroke: #cfcfcf;
 }
 
@@ -772,7 +825,7 @@ h2 {
     stroke: orange;
 }
 
-.darkmode .botonEDIT path{
+.darkmode .botonEDIT path {
     stroke: #cfcfcf;
 }
 
@@ -785,7 +838,7 @@ h2 {
 }
 
 
-.darkmode .botonFILE path{
+.darkmode .botonFILE path {
     stroke: #cfcfcf;
 }
 
@@ -928,12 +981,13 @@ table {
     margin-top: 10px;
 }
 
-#muestradatostabla tr{
+#muestradatostabla tr {
     background: none !important;
 }
 
 #title_page {
-    background-color: #f4a200; /* Naranja vibrante */
+    background-color: #f4a200;
+    /* Naranja vibrante */
     text-align: center;
     color: #ffffff;
     border-radius: 5px;
@@ -999,7 +1053,7 @@ tr:hover {
     background-color: #f0e9de;
 }
 
-.darkmode tr:hover{
+.darkmode tr:hover {
     background-color: rgb(228, 195, 133);
 }
 
