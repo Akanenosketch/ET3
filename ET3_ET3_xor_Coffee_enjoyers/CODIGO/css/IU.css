@@ -159,9 +159,9 @@
 }
 
 .APIInfo p{
-    padding: 5px;
-    margin-bottom: auto;
-    background-color: #e69500cf;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+    background-color: #e69600ae;
     font-weight: bold;
 
 }
