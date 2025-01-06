@@ -1002,6 +1002,17 @@ table {
     font-weight: bold;
 }
 
+#structInfo {
+    background-color: #f9e2b3cf; /* Naranja vibrante */
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 90%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 /* Estilos para las celdas de las tablas */
 
 td {

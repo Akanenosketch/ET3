@@ -70,15 +70,29 @@ let textos_ES = {
 
     /*TRADUCCIONES PARA API.HTML*/
 
-    'InfoTextAPI':'Seleccione una de las opciones en el menú lateral para conocer más sobre las funciones empleadas',
-    
+    'InfoTextAPI1' : 'En esta página se mostrarán todas las funciones que se han implementado para la realización de este trabajo.',
+    'InfoTextAPI2' : 'Para conocer sobre las funciones implementadas escoja una de las opciones dentro del menú localizado en la parte superior izquierda.',
+    'InfoTextAPI3' : 'El menú consta de las siguientes opciones:',
+    'InfoTextAPItest1' : '',
+    'InfoTextAPItest2' : '',
+    'InfoTextAPItest3' : '',
+    'InfoTextAPItest4' : '',
+    'InfoTextAPItest1' : '',
+    'InfoTextAPItest1' : '',
+    'InfoTextAPItest1' : '',
+    'InfoTextAPItest1' : '',
+
+
     //Titulos
     'text_title_page_default_API'  : 'API Empleada',
+    'text_title_page_test'         : 'Funciones empleadas para Test',
+    'text_title_page_tabla'        : 'Funciones empleadas para Tabla de Presentación',
+    'text_title_page_form'         : 'Funciones empleadas para Creación de Formularios',
 
     //Opciones Menu
     'opt_funciones_test'      : 'Tests',
-    'opt_funciones_tabla'    : 'Presentación de Tablas',
-    'opt_funciones_form'     : 'Creación de Formularios',
+    'opt_funciones_tabla'     : 'Presentación de Tablas',
+    'opt_funciones_form'      : 'Creación de Formularios',
     
     /*TRADUCCIONES PARA TEST*/ 
 
