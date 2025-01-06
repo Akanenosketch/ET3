@@ -227,17 +227,41 @@
 
         */
         // Posiblemente se moverán a un arhcivo aparte
-        function showEstructuraProject(APIElement) {
-            document.getElementById("text_title_page").className = "text_titulo_page_" + APIElement;
+        function showAPI(APIElement) {
+            document.getElementById("text_title_page").className = "text_title_page_" + APIElement;
+            document.getElementById("structInfo").style = 'text-align: left;';
             switch (APIElement) {
                 case 'test':
-                    document.getElementById('structInfo').innerHTML = ``
+                    document.getElementById('structInfo').innerHTML = `
+                    <div class='APIInfo'><p class='func1'><pre class='desc1'></p></pre></div>
+                    <div class='APIInfo'><p class='func2'><pre class='desc2'></p></pre></div>
+                    <div class='APIInfo'><p class='func3'><pre class='desc3'></p></pre></div>
+                    <div class='APIInfo'><p class='func4'><pre class='desc4'></p></pre></div>
+                    <div class='APIInfo'><p class='func5'><pre class='desc5'></p></pre></div>
+                    <div class='APIInfo'><p class='func6'><pre class='desc6'></p></pre></div>
+                    <div class='APIInfo'><p class='func7'><pre class='desc7'></p></pre></div>
+                    <div class='APIInfo'><p class='func8'><pre class='desc8'></p></pre></div>
+                    <div class='APIInfo'><p class='func9'><pre class='desc9'></p></pre></div>
+                    <div class='APIInfo'><p class='func10'><pre class='desc10'></p></pre></div>
+                    <div class='APIInfo'><p class='func11'><pre class='desc11'></p></pre></div>
+                    <div class='APIInfo'><p class='func12'><pre class='desc12'></p></pre></div>
+                    <div class='APIInfo'><p class='func13'><pre class='desc13'></p></pre></div>
+                    <div class='APIInfo'><p class='func14'><pre class='desc14'></p></pre></div>
+                    <div class='APIInfo'><p class='func15'><pre class='desc15'></p></pre></div>
+                    <div class='APIInfo'><p class='func16'><pre class='desc16'></p></pre></div>
+                    <div class='APIInfo'><p class='func17'><pre class='desc17'></p></pre></div>
+                    <div class='APIInfo'><p class='func18'><pre class='desc18'></p></pre></div>
+                    <div class='APIInfo'><p class='func19'><pre class='desc19'></p></pre></div>
+                    <div class='APIInfo'><p class='func20'><pre class='desc20'></p></pre></div>
+                    <div class='APIInfo'><p class='func21'><pre class='desc21'></p></pre></div>
+                    <div class='APIInfo'><p class='func22'><pre class='desc22'></p></pre></div>`;
                     break;
                 case 'tabla':
                     break;
                 case 'form':
                     break;
             }
+            setLang('');
         }
 
         setLang('');
