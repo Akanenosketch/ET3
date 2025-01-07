@@ -120,7 +120,23 @@ let textos_ES = {
     'desc21' : '<b>Parámetros:</b>\n\tfecha1:\n\t\tTipo: String.\n\t\tDescripción: Fecha de inicio de proyecto\n\tfecha2:\n\t\tTipo: String.\n\t\tDescripción: Fecha de fin de proyecto\n<b>Output:</b> Devuelve un valor booleano, indicando si las fechas están ordenadas o no.\n<b>Función:</b> Se encarga de comprobar si la fecha de inicio es menor que la de fin y que la fecha de fin sea mayor que la de inicio, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>project</b>.',
     'func22' : 'selectValido(atributo, valores)',
     'desc22' : '<b>Parámetros:</b>\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Categoría o tipo de dato\n\tvalores:\n\t\tTipo: Array.\n\t\tDescripción: Almacena los valores que son válidos (los que se pueden escoger)\n<b>Output:</b> Devuelve un valor booleano, indicando si el valor escogido está contenido en la lista de valores o no.\n<b>Función:</b> Se encarga de comprobar si el valor escogido o buscado está entre las opciones válidas, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>characteristic</b>.',
-
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
+    'func22':'',
     // Test funciones Presentación de tablas
 
     //textos funciones de formularios
