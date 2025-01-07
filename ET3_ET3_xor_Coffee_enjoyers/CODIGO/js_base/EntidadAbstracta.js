@@ -160,8 +160,8 @@ class EntidadAbstracta extends DOM_class {
 
 	/*Accesos al back */
 
-	async SEARCH(empieza = 0,filas=250) {
-		let datosextra = { "empieza": empieza, "filas": filas };
+	async SEARCH(empieza = 0,filas=25) {
+		let datosextra = { "empieza": empieza, "filaspagina": filas };
 		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH', datosextra)
 			.then((respuesta) => {
 				//limpiar el formulario
@@ -173,7 +173,7 @@ class EntidadAbstracta extends DOM_class {
 				document.getElementById('muestradatostabla').removeAttribute('class'); //Elimina la clase RECORDSET_VACIO 
 
 				this.empiezaFila = respuesta['empieza'];
-				this.tamPagina = datosextra["filas"];
+				this.tamPagina = datosextra["filaspagina"];
 				this.filasTotales = respuesta['total'];
 				this.datos = respuesta['resource'];
 				this.atributos = Object.keys(respuesta['criteriosbusqueda']);
