@@ -229,15 +229,16 @@ let textos_ES = {
 
     //Textos referencia a las clases
 
-    'clase1':'',
-    'clase2':'',
-    'clase3':'',
-    'clase4':'',
-    'clase5':'',
-    'clase6':'',
-    'clase7':'',
-    'clase8':'',
-    'clase9':'',
+    'clase1'   : 'Funciones dentro de EntidadAbstracta.js',
+    'clase2'   : 'Funciones dentro de Test_class.js',
+    'clase3'   : 'Funciones dentro de DOM_class.js',
+    'clase4'   : 'Funciones dentro de constructor_form.js',
+    'clase5'   : 'Funciones dentro de constructor_validaciones.js',
+    'clase6'   : 'Funciones dentro de colocados_valores.js',
+    'clase7'   : 'Funciones dentro de project.js',
+    'clase8'   : 'Funciones dentro de characteristic.js',
+    'clase9'   : 'Funciones dentro de analysis_preparation.js',
+    'clase10'  : 'Funciones dentro de varias clases (project.js/characteristic.js)',
     
     //Titulos
     'text_title_page_default_API'  : 'API Empleada',
