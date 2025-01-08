@@ -400,18 +400,6 @@
 
 
 
-		document.addEventListener('DOMContentLoaded', () => {
-			const toggle = document.getElementById('themeToggle');
-			const body = document.body;
-
-			// Establecer modo claro por defecto
-			body.classList.remove('darkmode');
-			body.classList.add('lightmode');
-
-			// Sincronizar el estado del toggle
-			toggle.checked = false; // Asegurarse de que el botón esté en la posición "apagado"
-		});
-
 
 		function toggleTheme() {
 			const body = document.body;
@@ -438,25 +426,24 @@
 		}
 
 		document.addEventListener('DOMContentLoaded', () => {
-			const body = document.body;
-			const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const toggle = document.getElementById('themeToggle');
+    const actions = ['SEARCH', 'ADD'];
 
-			// Establecer el estado inicial del toggle
-			toggle.checked = body.classList.contains('darkmode');
+    // Establecer modo claro por defecto
+    body.classList.remove('darkmode');
+    body.classList.add('lightmode');
 
-			// Actualizar las imágenes al cargar la página según el modo
-			const isDarkMode = body.classList.contains('darkmode');
-			const actions = ['SEARCH', 'ADD'];
+    // Sincronizar el estado del toggle (asegura que el botón esté en la posición "apagado")
+    toggle.checked = false;
 
-			actions.forEach(action => {
-				const boton = document.getElementById("boton"+action);
-				if (isDarkMode) {
-					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-				} else {
-					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-				}
-			});
-		});
+    // Actualizar las imágenes al cargar la página según el modo (por defecto modo claro)
+    actions.forEach(action => {
+        const boton = document.getElementById("boton" + action);
+        boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+    });
+});
+
 
 
 		function changeImageOnHover(isMouseOver, action) {
