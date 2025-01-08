@@ -199,7 +199,12 @@
 					</g>
 				</svg>
 
-				<svg id="botonSEARCH" width="50px" height="50px" viewBox="0 0 24 24" fill="none"
+				<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm('SEARCH');"
+					onmouseover="changeImageOnHover(true, 'SEARCH');"
+					onmouseout="changeImageOnHover(false, 'SEARCH');" />
+
+
+				<!-- <svg id="botonSEARCH" width="50px" height="50px" viewBox="0 0 24 24" fill="none"
 					xmlns="http://www.w3.org/2000/svg" onclick="validar.createForm('SEARCH');">
 					<g clip-path="url(#clip0_15_152)">
 						<circle cx="10.5" cy="10.5" r="6.5" stroke="#000000" stroke-linejoin="round" />
@@ -212,7 +217,7 @@
 							<rect width="24" height="24" fill="white" />
 						</clipPath>
 					</defs>
-				</svg>
+				</svg> -->
 
 
 				<select id="seleccioncolumnas" size="2" multiple>
@@ -411,7 +416,9 @@
 		function toggleTheme() {
 			const body = document.body;
 			const isDarkMode = body.classList.contains('darkmode');
+			const actions = ['SEARCH', 'ADD'];  // Asegúrate de incluir todas las acciones que uses en tu página
 
+			// Cambiar entre modo claro y oscuro
 			if (isDarkMode) {
 				body.classList.remove('darkmode');
 				body.classList.add('lightmode');
@@ -419,15 +426,69 @@
 				body.classList.remove('lightmode');
 				body.classList.add('darkmode');
 			}
+
+			actions.forEach(action => {
+				const boton = document.getElementById("boton"+action);
+				if (isDarkMode) {
+					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+				} else {
+					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+				}
+			});
 		}
 
 		document.addEventListener('DOMContentLoaded', () => {
-			const toggle = document.getElementById('themeToggle');
 			const body = document.body;
+			const toggle = document.getElementById('themeToggle');
 
 			// Establecer el estado inicial del toggle
 			toggle.checked = body.classList.contains('darkmode');
+
+			// Actualizar las imágenes al cargar la página según el modo
+			const isDarkMode = body.classList.contains('darkmode');
+			const actions = ['SEARCH', 'ADD'];
+
+			actions.forEach(action => {
+				const boton = document.getElementById("boton"+action);
+				if (isDarkMode) {
+					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+				} else {
+					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+				}
+			});
 		});
+
+
+		function changeImageOnHover(isMouseOver, action) {
+			const body = document.body;
+			const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+
+			if (isMouseOver) {
+				// Si el mouse está sobre la imagen, la cambiamos
+				if (body.classList.contains('darkmode')) {
+					boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+					boton.style.width = '40px';
+					boton.style.height = '40px';
+				} else {
+					boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+					boton.style.width = '40px';
+					boton.style.height = '40px';
+				}
+			} else {
+				// Cuando el mouse sale de la imagen, la restauramos según el modo
+				if (body.classList.contains('darkmode')) {
+					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+					boton.style.width = '40px';
+					boton.style.height = '40px';
+				} else {
+					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+					boton.style.width = '40px';
+					boton.style.height = '40px';
+				}
+			}
+		}
+
+
 	</script>
 
 </body>

@@ -140,35 +140,6 @@
 }
 
 
-/* Estilo empleado para el div naranja claro que contiene toda la información en API y estructuras*/
-#structInfo {
-    background-color: #f9e2b3cf;
-    /* Naranja vibrante */
-    text-align: center;
-    color: #000000;
-    border-radius: 5px;
-    margin: 20px auto;
-    padding: 15px;
-    max-width: 90%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo empleado para los textos de API y estructuras*/
-.APIInfo {
-    margin:10px auto;
-}
-
-.APIInfo p{
-    padding: 5px 0px;
-    margin-bottom: 5px;
-    background-color: #e69600ae;
-    font-weight: bold;
-
-}
-
-pre {
-    white-space: pre-wrap;
-}
 
 h2 {
     text-align: center;
@@ -267,7 +238,7 @@ h2 {
     cursor: pointer;
 }
 
-.botonSHOWCURRENT path {
+.botonSHOWCURRENT path{
     stroke: black;
 }
 
@@ -359,19 +330,19 @@ h2 {
     scale: 1.05;
 }
 
-.darkmode #botonANT path {
+.darkmode #botonANT path{
     fill: #cfcfcf;
 }
 
-.darkmode #botonSIG path {
+.darkmode #botonSIG path{
     fill: #cfcfcf;
 }
 
-.darkmode #botonANT:hover path {
+.darkmode #botonANT:hover path{
     fill: orange;
 }
 
-.darkmode #botonSIG:hover path {
+.darkmode #botonSIG:hover path{
     fill: orange;
 }
 
@@ -817,7 +788,7 @@ h2 {
 }
 
 #botonSEARCH:hover {
-    scale: 1.05;
+    transform: scale(1.05);
 }
 
 #botonSEARCH:hover path {
@@ -829,6 +800,8 @@ h2 {
     stroke: orange;
     /* Color del borde en modo oscuro */
 }
+
+
 
 .darkmode .botonDELETE path {
     stroke: #cfcfcf;
