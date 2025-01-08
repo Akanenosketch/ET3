@@ -68,7 +68,9 @@
                 <li class="opcionmenu"><span class="opt_funciones_tabla"
                         onclick="validar = showAPI('tabla'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="opt_funciones_form"
-                        onclick="validar = showAPI('form'); menu_work();"></span>
+                        onclick="validar = showAPI('form'); menu_work();"></span></li>
+                <li class="opcionmenu"><span class="opt_funciones_other"
+                        onclick="validar = showAPI('other'); menu_work();"></span>
                 </li>
             </ol>
 
@@ -261,11 +263,11 @@
                     <div class='APIInfo'><p class='func20'><pre class='desc20'></p></pre></div>
                     <div class='APIInfo'><p class='func21'><pre class='desc21'></p></pre></div>
                     <p class='clase8'></p>
-                    <div class='APIInfo'><p class='func22'><pre class='desc22'></p></pre></div>`;
+                    <div class='APIInfo'><p class='func22'><pre class='desc22'></p></pre></div>
+                    <div class='APIInfo'><p class='func23'><pre class='desc23'></p></pre></div>`;
                     break;
                 case 'tabla':
                     document.getElementById('structInfo').innerHTML = `
-                    <div class='APIInfo'><p class='func23'><pre class='desc23'></p></pre></div>
                     <div class='APIInfo'><p class='func24'><pre class='desc24'></p></pre></div>
                     <div class='APIInfo'><p class='func25'><pre class='desc25'></p></pre></div>
                     <div class='APIInfo'><p class='func26'><pre class='desc26'></p></pre></div>
@@ -280,13 +282,13 @@
                     <div class='APIInfo'><p class='func35'><pre class='desc35'></p></pre></div>
                     <div class='APIInfo'><p class='func36'><pre class='desc36'></p></pre></div>
                     <div class='APIInfo'><p class='func37'><pre class='desc37'></p></pre></div>
-                    <div class='APIInfo'><p class='func38'><pre class='desc38'></p></pre></div>
-                    <div class='APIInfo'><p class='func39'><pre class='desc39'></p></pre></div>
-                    <div class='APIInfo'><p class='func40'><pre class='desc40'></p></pre></div>`;
+                    <div class='APIInfo'><p class='func38'><pre class='desc38'></p></pre></div>`;
                     break;
                 case 'form':
                     document.getElementById('structInfo').innerHTML = `
                     <p class='clase4'></p>
+                    <div class='APIInfo'><p class='func39'><pre class='desc39'></p></pre></div>
+                    <div class='APIInfo'><p class='func40'><pre class='desc40'></p></pre></div>
                     <div class='APIInfo'><p class='func41'><pre class='desc41'></p></pre></div>
                     <div class='APIInfo'><p class='func42'><pre class='desc42'></p></pre></div>
                     <div class='APIInfo'><p class='func43'><pre class='desc43'></p></pre></div>
@@ -318,7 +320,14 @@
                     <div class='APIInfo'><p class='func69'><pre class='desc69'></p></pre></div>
                     <div class='APIInfo'><p class='func70'><pre class='desc70'></p></pre></div>
                     <div class='APIInfo'><p class='func71'><pre class='desc71'></p></pre></div>
-                    <div class='APIInfo'><p class='func72'><pre class='desc72'></p></pre></div>`;
+                    <div class='APIInfo'><p class='func72'><pre class='desc72'></p></pre></div>
+                    <div class='APIInfo'><p class='func73'><pre class='desc73'></p></pre></div>
+                    <div class='APIInfo'><p class='func74'><pre class='desc74'></p></pre></div>
+                    <div class='APIInfo'><p class='func75'><pre class='desc75'></p></pre></div>`;
+                    break;
+                case 'other':
+                    document.getElementById('structInfo').innerHTML = `
+                        <div class='APIInfo'><p>Pending...</p></div>`;
                     break;
             }
             setLang('');
