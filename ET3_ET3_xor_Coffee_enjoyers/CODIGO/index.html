@@ -430,16 +430,8 @@
 
 
 
-		function changeImageOnHover(isMouseOver, action) {
+		function changeImageOnHover(isMouseOver, action,aux = "") {
 			const body = document.body;
-			const botones = document.querySelectorAll(`[id^="boton${action}"]`);  // Obtener todos los botones que empiezan con "boton" + acción
-
-			botones.forEach(boton => {
-				if (isMouseOver) {
-					// Si el mouse está sobre la imagen, la cambiamos
-					if (body.classList.contains('darkmode')) {
-						boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
-					} else {
 						boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
 					}
 					boton.style.width = '40px';
