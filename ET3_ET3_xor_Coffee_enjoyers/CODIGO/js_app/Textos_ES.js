@@ -72,7 +72,6 @@ let textos_ES = {
 
     'InfoTextAPI1' : 'En esta página se mostrarán todas las funciones que se han implementado para la realización de este trabajo.',
     'InfoTextAPI2' : 'Para conocer sobre las funciones implementadas escoja una de las opciones dentro del menú localizado en la parte superior izquierda.',
-    'InfoTextAPI3' : 'El menú consta de las siguientes opciones:',
 
     // Textos funciones test
 
@@ -190,11 +189,11 @@ let textos_ES = {
     'func53' : 'colocarValor(atributo, valor)',
     'desc53' : '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvalor:\n\t\tTipo: String(Puede tomar cualquier tipo)\n\t\tDescripción: Hace referencia al dato asignado a un atributo en específico.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar el valor de un atributo en su correspondiente campo, teniendo en cuenta su tipo y la existencia de un valor o no.',
     'func54' : 'mostrarvaloresespecialesform(atributo, valoratributo)',
-    'desc54' : '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al valor asignado a un atributo.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> .',
+    'desc54' : '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al valor asignado a un atributo.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar los valores especiales dentro del formulario.',
     'func55' : 'inicializar()',
     'desc55' : '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de incializar todo lo necesarios para la creación de formularios, tablas y test.',
     'func56' : 'createForm(accion, parametros)',
-    'desc56' : '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las accione sque se pueden realizar ADD, EDIT, DELETE, SEARCH.\n\tparametros\n\t\tTipo: \n\t\tDescripción: .\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> .',
+    'desc56' : '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las accione sque se pueden realizar ADD, EDIT, DELETE, SEARCH.\n\tparametros\n\t\tTipo: \n\t\tDescripción: .\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a todas las funciones auxiliares necesarias para crear el formulario.',
     'func57' : 'cargar_formulario(accion)',
     'desc57' : '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cargar el formulario y mostrará error en el caso de que no exista un formulario, esta función es llamada por <b>createForm()</b>.',
     'func58' : 'cargar_formulario_dinamico(accion)',
@@ -204,7 +203,7 @@ let textos_ES = {
     'func60' : 'eliminarCamposForm(accion)',
     'desc60' : '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de eliminar los campos no necesario teniendo en cuenta la acción que se está a realizar, esta función es llamada por <b>createForm()</b>.',
     'func61' : 'mostrarAtributosForm(accion, parametros)',
-    'desc61' : '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las accione sque se pueden realizar ADD, EDIT, DELETE, SEARCH.\n\tparametros\n\t\tTipo: \n\t\tDescripción: .\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> .',
+    'desc61' : '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las accione sque se pueden realizar ADD, EDIT, DELETE, SEARCH.\n\tparametros\n\t\tTipo: \n\t\tDescripción: .\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar los atributos necesarios dentro del formulario.',
     'func62' : 'colocarvalidaciones(accion)',
     'desc62' : '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar las validaciones en los correspondientes campos, esta función es llamada por <b>createForm()</b>.',
     'func63' : 'comprobar(id, accion)',
@@ -230,7 +229,7 @@ let textos_ES = {
     'func73' : 'cerrar_formulario()',
     'desc73' : '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cerrar el formulario una ver envíado al back o cuando el usuario lo cancela.',
     'func74' : 'mostrar_error_campo(id, codigoerror)',
-    'desc74' : '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tcodigoerror:\n\t\tTipo: String.\n\t\tDescripción: Se refiere uno de los códigos de error que se pueden producir si no se ponern los valores correctamente.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar error y su correspondiente error en el campo del id proporcionado.',
+    'desc74' : '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tcodigoerror:\n\t\tTipo: String.\n\t\tDescripción: Se refiere uno de los códigos de error que se pueden producir si no se ponen los valores correctamente.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar error y su correspondiente error en el campo del id proporcionado.',
     'func75' : 'mostrar_exito_campo(id)',
     'desc75' : '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de HTML.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función: </b>Se encarga de mostrar que el dato intorducido en un campo es correcto.',
 
@@ -242,7 +241,7 @@ let textos_ES = {
     'func78' : 'toggleTheme()',
     'desc78' : '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de manejar los cambios de modo claro a modo oscuro.',
     'func79' : 'changeImageOnHover(isMouseOver, action)',
-    'desc79' : '<b>Parámetros:</b>isMouseOver:\n\t\tTipo: Booleano.\n\t\tDescripción:  Cambia cuando el ratón está encima de un objeto en específico.\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Parte del nombre de la imagen en cuestión, que hace referencia a la acción que realizas al hacer click en el icono.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el color de los iconos cuando se le pasa el ratón por encima.',
+    'desc79' : '<b>Parámetros:</b>\n\tisMouseOver:\n\t\tTipo: Booleano.\n\t\tDescripción:  Cambia cuando el ratón está encima de un objeto en específico.\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Parte del nombre de la imagen en cuestión, que hace referencia a la acción que realizas al hacer click en el icono.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el color de los iconos cuando se le pasa el ratón por encima.',
     'func80' : 'showAPI(APIElement)',
     'desc80' : '<b>Parámetros:</b>\n\tAPIElement:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las diferentes clasificaciones de las funciones.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar todas las funciones relacionadas a la opción seleccionada en el menú.',
     'func81' : 'showEstructura(entity)',
@@ -254,7 +253,7 @@ let textos_ES = {
     'func84' : 'getCookie(name)',
     'desc84' : '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre de la cookie.\n<b>Output:</b> Devuelve un valor nulo.\n<b>Función:</b> Se encarga de obtener el valor de la cookie en base a su nombre.',
     'func85' : 'peticionBackGeneral(formulario, controlador, action, datosextra = null)',
-    'desc85' : '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescipción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo\n\t\tDescripción: Datos extra.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones del back.',
+    'desc85' : '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescipción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo\n\t\tDescripción: Datos extra.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones al back.',
 
     // Textos de funciones de validación
 
@@ -269,9 +268,9 @@ let textos_ES = {
     'func90' : 'type_file(id, array_tipos)',
     'desc90' : '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tarray_tipos:\n\t\tTipo: Array.\n\t\tDescripción: Hace referencia a los tipos de archivos permitidos (doc, docx, pdf).\n<b>Output:</b> Devuelve un valor booleano confirmando si el tipo de archivo coincide con uno de los tipos de archivos permitidos.\n<b>Función:</b> Se encarga de verificar que el tipo de archivo del archivo adjuntado esté dentro de los tipos de archivo permitidos en la definición de la entidad.',
     'func91' : 'format_name_file(id, expreg)',
-    'desc91' : '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\t\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor del elemento contenido en id.\n<b>Output:</b>Devuleve un valor booleando correspondiente al output de <b>evaluar_regex()</b>, indicando si el valor introducido en el campo id cumpel con el formato indicado o no.\n<b>Función:</b> Se encarga de comprobar si el nombre del fichero adjuntado cumple con el formato establecido o no.',
+    'desc91' : '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor del elemento contenido en id.\n<b>Output:</b>Devuleve un valor booleando correspondiente al output de <b>evaluar_regex()</b>, indicando si el valor introducido en el campo id cumpel con el formato indicado o no.\n<b>Función:</b> Se encarga de comprobar si el nombre del fichero adjuntado cumple con el formato establecido o no.',
     'func92' : 'evaluar_regex(valor, expreg)',
-    'desc92' : '<b>Parámetros:</b>\n\tvalor:\n\t\tTipo: String.\n\t\tDescripción: Hace al valor introducido dentro de un campop de un formulario.\n\t\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor introducido.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>expresionregular.test(valor)</b> indicando si cumple con el regex indicado o no.\n<b>Función:</b> Se encarga de comprobar que el valor introducido cumple con el formato indicado, esta función es llamada por <b>format(id, expreg)</b> y <b>format_name_file(id, expreg)</b>',
+    'desc92' : '<b>Parámetros:</b>\n\tvalor:\n\t\tTipo: String.\n\t\tDescripción: Hace al valor introducido dentro de un campop de un formulario.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor introducido.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>expresionregular.test(valor)</b> indicando si cumple con el regex indicado o no.\n<b>Función:</b> Se encarga de comprobar que el valor introducido cumple con el formato indicado, esta función es llamada por <b>format()</b> y <b>format_name_file()</b>',
     'func93' : 'evaluar_tam(id, parametro, mayor)',
     'desc93' : '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tparametro:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo o mínimo.\n\tmayor:\n\t\tTipo: Booleano.\n\t\tDescripción: Indica si el valor debe de ser mayor/igual o menor al parametro indicado.\n<b>Output:</b> Devuelve un valor booleando indicando si el valor cumple con que sea mayor/igual o menor al parametro indicado.\n<b>Función:</b> Se encarga de comprobar si el valor introducido en el campo id, cumple con el requisisto de tamaño mínimo o de tamaño máximo, esta función es llamada por <b>min_size(id, minsize)</b> y <b>max_size(id, maxsize)</b>.',
 
@@ -283,7 +282,7 @@ let textos_ES = {
     'clase3'   : 'Funciones dentro de DOM_class.js',
     'clase4'   : 'Funciones dentro de constructor_form.js',
     'clase5'   : 'Funciones dentro de constructor_validaciones.js',
-    'clase6'   : 'Funciones dentro de colocados_valores.js',
+    'clase6'   : 'Funciones dentro de colocador_valores.js',
     'clase7'   : 'Funciones dentro de project.js',
     'clase8'   : 'Funciones dentro de characteristic.js',
     'clase9'   : 'Funciones dentro de analysis_preparation.js',
