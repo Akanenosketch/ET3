@@ -52,12 +52,9 @@
     <header id='header_page' class='bordeado'>
 
         <nav class='navbar'>
-            <svg id="menu-btn" class="menu-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                fill="currentColor" onclick="menu_work();">
-                <path fill-rule="evenodd"
-                    d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-                    clip-rule="evenodd" />
-            </svg>
+            <img id="botonMENU" src="./iconos/MENU.png" onclick="menu_work();"
+					onmouseover="changeImageOnHover(true, 'MENU');"
+					onmouseout="changeImageOnHover(false, 'MENU');" />
         </nav>
 
         <aside id='div-menu'>
@@ -185,7 +182,7 @@
 
             // Verificar si está en modo oscuro antes de cambiar
             const isDarkMode = body.classList.contains('darkmode');
-            const actions = ['ESTRUCTURAS', 'HOME'];  // Asegúrate de incluir todas las acciones que usas en tu página
+            const actions = ['ESTRUCTURAS', 'HOME', 'MENU'];  // Asegúrate de incluir todas las acciones que usas en tu página
 
             // Cambiar entre modo claro y oscuro
             if (isDarkMode) {
@@ -215,7 +212,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const body = document.body;
             const toggle = document.getElementById('themeToggle');
-            const actions = ['ESTRUCTURAS', 'HOME'];
+            const actions = ['ESTRUCTURAS', 'HOME', 'MENU'];
 
             // Establecer modo claro por defecto
             body.classList.remove('darkmode');
