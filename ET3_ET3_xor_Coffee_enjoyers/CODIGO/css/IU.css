@@ -1252,10 +1252,7 @@ pre {
 
 /* Estilos para pantallas medianas (960x540 px) */
 @media (max-width: 1920px){
-    /* Reducción de tamaño de los botones, campos de entrada y márgenes */
-    #formulario {
-        padding: 1.5rem;
-    }
+    
 
     #submit_button {
         padding: 1rem 2rem;
@@ -1280,14 +1277,7 @@ pre {
 
 /* Estilos para pantallas pequeñas (960x540 px a 640x480 px) */
 @media (max-width: 960px){
-    /* Agrupación de los elementos de formulario en una sola columna */
-    .contenidoForm input[type="text"],
-    .contenidoForm input[type="file"],
-    .contenidoForm select,
-    .contenidoForm textarea {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+ 
 
     #div-menu {
         width: 100%;
@@ -1345,14 +1335,7 @@ pre {
 /* Estilos para móviles (hasta 640px de ancho) */
 @media (max-width: 640px) {
     /* Agrupamos todos los campos de formulario en una columna */
-    .contenidoForm input[type="text"],
-    .contenidoForm input[type="file"],
-    .contenidoForm select,
-    .contenidoForm textarea {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 1rem;
-    }
+
 
     #submit_button {
         width: 100%;
