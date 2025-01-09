@@ -72,7 +72,6 @@ let textos_ES = {
 
     'InfoTextAPI1' : 'En esta página se mostrarán todas las funciones que se han implementado para la realización de este trabajo.',
     'InfoTextAPI2' : 'Para conocer sobre las funciones implementadas escoja una de las opciones dentro del menú localizado en la parte superior izquierda.',
-    'InfoTextAPI3' : 'El menú consta de las siguientes opciones:',
 
     // Textos funciones test
 
