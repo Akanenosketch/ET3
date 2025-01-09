@@ -16,19 +16,21 @@ class project extends estructura_project {
 	}
 
 	//metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
-	cambiardatosespecialestabla(atributo, valoratributo) {
+	cambiardatosespecialestabla(atributo, valoratributo,i) {
 		if (atributo == 'file_project') {
 			if (valoratributo == '') return `<a class="no_file_found"></a>`;
 	
 			let texto = valoratributo;
 			texto += `<a id="link_file_project_`;
-			texto += valoratributo; // Para evitar ids duplicados
+			texto += i; // Para evitar ids duplicados
 			texto += `" href="http://193.147.87.202/ET2/filesuploaded/files_file_project/`;
 			texto += valoratributo;
-			texto += `">`;
-	
-			texto += `<img src="./iconos/FILE.png" /></a>`;
-			return texto;
+			texto += `" target="_blank">`; // Abre el archivo en una nueva pestaña.
+			texto += `<img id="botonFILE`+i+`" src="./iconos/FILE.png"`
+			texto += `onmouseover="changeImageOnHover(true,'FILE','`+i+`');"`
+			texto +=`onmouseout="changeImageOnHover(false, 'FILE','`+i+`');"`
+			texto += `/></a>`;
+				return texto;
 		}
 	
 		if (atributo == 'start_date_project' || atributo == 'end_date_project') {

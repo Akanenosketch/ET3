@@ -118,7 +118,7 @@ class DOM_class extends test {
                 for (let clave in this.datos[i]) {
                     let valorcolumna;
                     if (this.datosespecialestabla.includes(clave)) {
-                        valorcolumna = this.cambiardatosespecialestabla(clave, this.datos[i][clave]);
+                        valorcolumna = this.cambiardatosespecialestabla(clave, this.datos[i][clave],i);
                     }
                     else {
                         // limpieza codigo no deseado incrustado html y script

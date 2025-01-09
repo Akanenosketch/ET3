@@ -8,22 +8,23 @@ class characteristic extends estructura_characteristic {
     }
 
     /*Metodos de personalizacion */
-
+    
     //metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
-    cambiardatosespecialestabla(atributo, valoratributo) {
+    cambiardatosespecialestabla(atributo, valoratributo,i) {
         if (atributo == 'file_characteristic') {
             if (valoratributo == '') return `<a class="no_file_found"></a>`; //por definicion de la entidad, debe haber fichero
             
             let texto = valoratributo;
             texto += `<a id="link_file_characteristic_`;
-            texto += valoratributo; // Para evitar ids duplicados
+            texto += i; // Para evitar ids duplicados
             texto += `" href="http://193.147.87.202/ET2/filesuploaded/files_file_characteristic/`;
             texto += valoratributo;
-            texto += `">`;
-    
-            texto += `<img src="./iconos/FILE.png" /></a>`;
-            
-            return texto;
+        	texto += `" target="_blank">`; // Abre el archivo en una nueva pestaña.
+			texto += `<img id="botonFILE`+i+`" src="./iconos/FILE.png"`
+			texto += `onmouseover="changeImageOnHover(true,'FILE','`+i+`');"`
+			texto +=`onmouseout="changeImageOnHover(false, 'FILE','`+i+`');"`
+			texto += `/></a>`;
+		    return texto;
         }
     }
     
