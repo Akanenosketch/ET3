@@ -82,23 +82,14 @@
 
         <div class="opciones">
             <a href="estructuras.html" class="conjuntoESTRUCTURAS">
-                <svg id="botonESTRUCTURAS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875Z" />
-                    <path
-                        d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 0 0 1.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 0 0 1.897 1.384C6.809 12.164 9.315 12.75 12 12.75Z" />
-                    <path
-                        d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 15.914 9.315 16.5 12 16.5Z" />
-                    <path
-                        d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 19.664 9.315 20.25 12 20.25Z" />
-                </svg>
+                <img id="botonESTRUCTURAS" src="./iconos/ESTRUCTURAS.png"
+                    onmouseover="changeImageOnHover(true, 'ESTRUCTURAS');"
+                    onmouseout="changeImageOnHover(false, 'ESTRUCTURAS');" />
                 <span class="base_de_datos"></span>
             </a>
             <a href="index.html" class="conjuntoINDEX">
-                <svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                    <path class="path-7"
-                        d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z"
-                        fill="#000000" />
-                </svg>
+                <img id="botonHOME" src="./iconos/HOME.png" onclick="validar.cerrar_tabla();"
+                    onmouseover="changeImageOnHover(true, 'HOME');" onmouseout="changeImageOnHover(false, 'HOME');" />
                 <span class="pagina_principal"></span>
             </a>
         </div>
@@ -191,8 +182,12 @@
 
         function toggleTheme() {
             const body = document.body;
-            const isDarkMode = body.classList.contains('darkmode');
 
+            // Verificar si está en modo oscuro antes de cambiar
+            const isDarkMode = body.classList.contains('darkmode');
+            const actions = ['ESTRUCTURAS', 'HOME'];  // Asegúrate de incluir todas las acciones que usas en tu página
+
+            // Cambiar entre modo claro y oscuro
             if (isDarkMode) {
                 body.classList.remove('darkmode');
                 body.classList.add('lightmode');
@@ -200,15 +195,80 @@
                 body.classList.remove('lightmode');
                 body.classList.add('darkmode');
             }
+
+            // Actualizar las imágenes después de cambiar el tema
+            actions.forEach(action => {
+                const boton = document.getElementById("boton" + action);
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            });
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggle = document.getElementById('themeToggle');
-            const body = document.body;
 
-            // Establecer el estado inicial del toggle
-            toggle.checked = body.classList.contains('darkmode');
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const toggle = document.getElementById('themeToggle');
+            const actions = ['ESTRUCTURAS', 'HOME'];
+
+            // Establecer modo claro por defecto
+            body.classList.remove('darkmode');
+            body.classList.add('lightmode');
+
+            // Sincronizar el estado del toggle (asegura que el botón esté en la posición "apagado")
+            toggle.checked = false;
+
+            actions.forEach(action => {
+                const boton = document.getElementById("boton" + action);
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            });
+
         });
+
+
+
+        function changeImageOnHover(isMouseOver, action) {
+            const body = document.body;
+            const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+
+            if (isMouseOver) {
+                // Si el mouse está sobre la imagen, la cambiamos
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            } else {
+                // Cuando el mouse sale de la imagen, la restauramos según el modo
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            }
+        }
 
         // Posiblemente se moverán a un arhcivo aparte
         function showAPI(APIElement) {
