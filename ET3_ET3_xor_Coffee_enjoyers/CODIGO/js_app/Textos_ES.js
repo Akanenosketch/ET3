@@ -153,7 +153,7 @@ let textos_ES = {
     'func36':'levantarPaginacion()',
     'desc36':'<b>Parámetros/Output:</b>No usa parámetros y su ejecución no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de propiamente crear la paginación, esta función es llamada por <b>hacerPaginacion()</b>.',
     'func37':'crearboton(accion, parametro)',
-    'desc37':'<b>Parámetros:</b>\n\accion:\n\t\tTipo: String\n\t\tDescripción: Hace referencia las acciones que se pueden realizar: DELETE, SHOWCURRENT, EDIT.\n\tparámetros:\n\t\tTipo: String\n\t\tDescipción: Ni puta idea p2.<b>Output:</b> Devulve un HTMLTableCellElement con el svg de los iconos.<b>Función:</b> Se encarga de crear los botones y los iconos correspondientes para las acciones de DELETE, SHOWCURRENT y EDIT.',
+    'desc37':'<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String\n\t\tDescripción: Hace referencia las acciones que se pueden realizar: DELETE, SHOWCURRENT, EDIT.\n\tparámetros:\n\t\tTipo: String\n\t\tDescipción: Ni puta idea p2.<b>Output:</b> Devulve un HTMLTableCellElement con el svg de los iconos.<b>Función:</b> Se encarga de crear los botones y los iconos correspondientes para las acciones de DELETE, SHOWCURRENT y EDIT.',
     'func38':'cerrar_tabla()',
     'desc38':'<b>Parámetros/Output:</b>No usa parámetros y su ejecución no proporciona ningún tipo de output.\n<b>Función:</b> Se oculta la tabla y se oculta el boton de test.',
     
@@ -186,7 +186,7 @@ let textos_ES = {
     'func51':'SearchPH()',
     'desc51':'<b>Parámetros/Output:</b> No usa parámetros y su ejecución no produce ningún tipo de output.\n<b>Función:</b> Se encarga de buscar y de colocar los placeholders para los formularios de SEARCH.',
     'func52':'colocarValoresForm(parametros)',
-    'desc52':'',
+    'desc52':'<b>Parámetros:</b>\n\tparametros:\n\t\tTipo: Array\n\t\tDescripción: Hace referencia <b>Output:</b><b>Función:</b>',
     'func53':'colocarValor(atributo, valor)',
     'desc53':'',
     'func54':'mostrarvaloresespecialesform(atributo, valoratributo)',
@@ -234,6 +234,28 @@ let textos_ES = {
     'func75':'mostrar_exito_campo(id)',
     'desc75':'<b>Parámetros:</b>\n\tid:\n\t\tTipo: String\n\t\tDescripción: Hace referencia a un elemento de HTML.\n<b>Output:</b> La ejecución de esta función no produce ningún tipo de output.\n<b>Función: </b>Se encarga de mostrar que el dato intorducido en un campo es correcto.',
 
+    //Textos para otras funciones
+    'func76':'evento(event)',
+    'desc76':'',
+    'func76':'menu_work()',
+    'desc76':'',
+    'func76':'toggleTheme()',
+    'desc76':'',
+    'func76':'showAPI()',
+    'desc76':'',
+    'func76':'showEstructura(entity)',
+    'desc76':'',
+    'func76':'',
+    'desc76':'',
+    'func76':'',
+    'desc76':'',
+    'func76':'',
+    'desc76':'',
+    'func76':'',
+    'desc76':'',
+    'func76':'',
+    'desc76':'',
+
     //Textos referencia a las clases
 
     'clase1'   : 'Funciones dentro de EntidadAbstracta.js',
@@ -247,7 +269,7 @@ let textos_ES = {
     'clase9'   : 'Funciones dentro de analysis_preparation.js',
     'clase10'  : 'Funciones dentro de varias clases (project.js/characteristic.js)',
     'clase11'  : 'Funciones dentro de varias clases (analysis_preparation.js/project.js/characteristic.js)',
-
+    'clase12'  : 'Funciones dentro de otros archivos (index.html/estructuras.html/API.html)',
     //Titulos
     'text_title_page_default_API'  : 'API Empleada',
     'text_title_page_test'         : 'Funciones empleadas para Test',
