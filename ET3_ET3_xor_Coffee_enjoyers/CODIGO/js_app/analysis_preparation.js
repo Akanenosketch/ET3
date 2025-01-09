@@ -21,7 +21,7 @@ class analysis_preparation extends estructura_analysis_preparation {
 			texto += valoratributo;
 			texto += `" target="_blank">`; // Abre el archivo en una nueva pestaña.
 			texto += `<img id="botonFILE`+i+`" src="./iconos/FILE.png"`
-			texto += `onmouseover="changeImageOnHover(true,'FILE','`+i+`');"`
+			texto += `width=40px height=40px onmouseover="changeImageOnHover(true,'FILE','`+i+`');"`
 			texto +=`onmouseout="changeImageOnHover(false, 'FILE','`+i+`');"`
 			texto += `/></a>`;
 			return texto;

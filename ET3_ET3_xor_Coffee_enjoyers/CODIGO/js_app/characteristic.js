@@ -8,7 +8,7 @@ class characteristic extends estructura_characteristic {
     }
 
     /*Metodos de personalizacion */
-    
+
     //metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
     cambiardatosespecialestabla(atributo, valoratributo,i) {
         if (atributo == 'file_characteristic') {
@@ -21,7 +21,7 @@ class characteristic extends estructura_characteristic {
             texto += valoratributo;
         	texto += `" target="_blank">`; // Abre el archivo en una nueva pestaña.
 			texto += `<img id="botonFILE`+i+`" src="./iconos/FILE.png"`
-			texto += `onmouseover="changeImageOnHover(true,'FILE','`+i+`');"`
+			texto += `width=40px height=40px onmouseover="changeImageOnHover(true,'FILE','`+i+`');"`
 			texto +=`onmouseout="changeImageOnHover(false, 'FILE','`+i+`');"`
 			texto += `/></a>`;
 		    return texto;
