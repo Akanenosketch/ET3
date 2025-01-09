@@ -59,6 +59,8 @@ class constructor_form {
                 img.setAttribute("id", "botonFILE");
                 img.setAttribute('onmouseover', `changeImageOnHover(true,"FILE");`);
                 img.setAttribute('onmouseout', `changeImageOnHover(false, "FILE");`);
+                img.style.width = '40px';
+                img.style.height = '40px';
         
                 a.appendChild(img);
                 formulario.appendChild(input);
