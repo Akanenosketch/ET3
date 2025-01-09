@@ -259,9 +259,9 @@ let textos_ES = {
     // Textos de funciones de validación
 
     'func85':'min_size(id, minsize)',
-    'desc85':'',
+    'desc85':'<b>Parámetros:</b>\n\tid:\n\t\tTipo: String\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tminsize:\n\t\tTipo: Número\n\t\tDescripción: Hace referencia al tamaño mínimo que debe de tener el valor.\n<b>Output:</b> Devuelve un valor booleano corespondiente a la respuesta de <b>evaluar_tam(id, parametro, mayor)</b> indicando si cumple con el tamaño mínimo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño mínimo establecido en los requisitos de ese campo.',
     'func86':'max_size(id, maxsize)',
-    'desc86':'',
+    'desc86':'<b>Parámetros:</b>\n\tid:\n\t\tTipo: String\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tmaxsize:\n\t\tTipo: Número\n\t\tDescripción: Hace referencia al tamaño máximo que puede tener el valor.\n<b>Output:</b> Devuelve un valor booleano corespondiente a la respuesta de <b>evaluar_tam(id, parametro, mayor)</b> indicando si cumple con el tamaño máximo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño máximo establecido en los requisitos de ese campo.',
     'func87':'format(id, expreg)',
     'desc87':'',
     'func88':'max_size_file(id, maxsize)',
@@ -273,7 +273,7 @@ let textos_ES = {
     'func91':'evaluar_regex(valor, expreg)',
     'desc91':'',
     'func92':'evaluar_tam(id, parametro, mayor)',
-    'desc92':'',
+    'desc92':'<b>Parámetros:</b>\n\tid:\n\t\tTipo: String\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tparametro:\n\t\tTipo: Número\n\t\tDescripción: Hace referencia al tamaño máximo o mínimo.\n\tmayor:\n\t\tTipo: Booleano\n\t\tDescripción: Indica si el valor debe de ser mayor/igual o menor al parametro indicado.\n<b>Output:</b> Devuelve un valor booleando indicando si el valor cumple con que sea mayor/igual o menor al parametro indicado.\n<b>Función:</b> Se encarga de comprobar si el valor introducido en el campo id, cumple con el requisisto de tamaño mínimo o de tamaño máximo, esta función es llamada por <b>min_size(id, minsize)</b> y <b>max_size(id, maxsize)</b>.',
 
 
     //Textos referencia a las clases
