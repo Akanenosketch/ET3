@@ -118,7 +118,7 @@ class DOM_class extends test {
                 for (let clave in this.datos[i]) {
                     let valorcolumna;
                     if (this.datosespecialestabla.includes(clave)) {
-                        valorcolumna = this.cambiardatosespecialestabla(clave, this.datos[i][clave],i);
+                        valorcolumna = this.cambiardatosespecialestabla(clave, this.datos[i][clave], i);
                     }
                     else {
                         // limpieza codigo no deseado incrustado html y script
@@ -142,9 +142,9 @@ class DOM_class extends test {
 
                 }
                 // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)
-                let lineaedit = this.crearboton('EDIT', JSON.stringify(this.datos[i]),i);
-                let lineadelete = this.crearboton('DELETE', JSON.stringify(this.datos[i]),i);
-                let lineashowcurrent = this.crearboton('SHOWCURRENT', JSON.stringify(this.datos[i]),i);
+                let lineaedit = this.crearboton('EDIT', JSON.stringify(this.datos[i]), i);
+                let lineadelete = this.crearboton('DELETE', JSON.stringify(this.datos[i]), i);
+                let lineashowcurrent = this.crearboton('SHOWCURRENT', JSON.stringify(this.datos[i]), i);
 
                 textolineadatos += lineaedit + lineadelete + lineashowcurrent;
                 textolineadatos += '</tr>';
@@ -193,19 +193,20 @@ class DOM_class extends test {
         }
     }
 
-    crearboton(accion, parametros,i="") {
+    crearboton(accion, parametros, i = "") {
         let columna = document.createElement('td');
         let opcion = document.createElement('img');
         opcion.src = "./iconos/" + accion + '.png';
-        opcion.id = "boton"+accion+i;
+        opcion.id = "boton" + accion + i;
         let textoonclick = "validar.createForm('" + accion + "'," + parametros + ");"
         opcion.setAttribute('onclick', textoonclick);
-        opcion.setAttribute('onmouseover', `changeImageOnHover(true,"`+accion+`","`+i+`");`);
-        opcion.setAttribute('onmouseout', `changeImageOnHover(false, "`+accion+`","`+i+`");`);
-
+        opcion.setAttribute('onmouseover', `changeImageOnHover(true,"` + accion + `","` + i + `");`);
+        opcion.setAttribute('onmouseout', `changeImageOnHover(false, "` + accion + `","` + i + `");`);
+        opcion.style.width = '40px';
+        opcion.style.height = '40px';
         columna.appendChild(opcion);
-        return columna.outerHTML; 
-    } 
+        return columna.outerHTML;
+    }
 
     /* crearboton(accion, parametros) {
         let columna = document.createElement('td');
