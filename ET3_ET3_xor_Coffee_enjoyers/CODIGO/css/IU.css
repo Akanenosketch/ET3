@@ -1187,3 +1187,43 @@ tr:hover {
     display: none;
     z-index: 9998;
 }
+
+/*Como alguien lo borre de nuevo lo cuelgo con soga y todo*/
+
+/* Estilo empleado para el div naranja claro que contiene toda la información en API y estructuras*/
+#structInfo {
+    background-color: #f9e2b3cf;
+    /* Naranja vibrante */
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 90%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo empleado para los textos de API y estructuras*/
+.clase1, .clase2, .clase3, .clase4, .clase5,
+.clase6, .clase7, .clase8, .clase9, .clase10,
+.clase11, .clase12, .clase13, .clase14, .clase15
+{
+    font-size: large;
+    font-weight: bold;
+}
+
+.APIInfo {
+    margin:10px auto;
+}
+
+.APIInfo p{
+    padding: 5px 0px;
+    margin-bottom: 5px;
+    background-color: #e69600ae;
+    font-weight: bold;
+
+}
+
+pre {
+    white-space: pre-wrap;
+}

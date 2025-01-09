@@ -69,6 +69,8 @@
                         onclick="validar = showAPI('tabla'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="opt_funciones_form"
                         onclick="validar = showAPI('form'); menu_work();"></span></li>
+                <li class="opcionmenu"><span class="opt_funciones_valid"
+                        onclick="validar = showAPI('validaciones'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="opt_funciones_other"
                         onclick="validar = showAPI('other'); menu_work();"></span>
                 </li>
@@ -207,27 +209,7 @@
             // Establecer el estado inicial del toggle
             toggle.checked = body.classList.contains('darkmode');
         });
-        /*
-        funciones de formulario:
-            - todas las de constructor_form
-            - colocar valores
-            - Full entidad abstracta
-            - anotar que al construir el formulario tambien se mete el añadir validaciones
-            - Funciones en total: 
-        funciones de test
-            - constructor validaciones
-            - todo test class
-            - en entidad abstracta las de invocar validaciones
-            - Funciones en total:
-        funciones de presentación de tablas
-            - colocar valores (?)
-            - paginación
-            - mostrar datos especiales (characteristic y project)
-            - muchas de DOM_class
-            - SEARCH/ADD/EDIT/DELETE
-            - Funciones en total:
 
-        */
         // Posiblemente se moverán a un arhcivo aparte
         function showAPI(APIElement) {
             document.getElementById("text_title_page").className = "text_title_page_" + APIElement;
@@ -325,9 +307,31 @@
                     <div class='APIInfo'><p class='func74'><pre class='desc74'></p></pre></div>
                     <div class='APIInfo'><p class='func75'><pre class='desc75'></p></pre></div>`;
                     break;
+                case 'validaciones':
+                    document.getElementById('structInfo').innerHTML = `
+                        <p class='clase14'></p>
+                        <div class='APIInfo'><p class='func85'><pre class='desc85'></p></pre></div>
+                        <div class='APIInfo'><p class='func86'><pre class='desc86'></p></pre></div>
+                        <div class='APIInfo'><p class='func87'><pre class='desc87'></p></pre></div>
+                        <div class='APIInfo'><p class='func88'><pre class='desc88'></p></pre></div>
+                        <div class='APIInfo'><p class='func89'><pre class='desc89'></p></pre></div>
+                        <div class='APIInfo'><p class='func90'><pre class='desc90'></p></pre></div>
+                        <div class='APIInfo'><p class='func91'><pre class='desc91'></p></pre></div>
+                        <div class='APIInfo'><p class='func92'><pre class='desc92'></p></pre></div>`;
+                    break;
                 case 'other':
                     document.getElementById('structInfo').innerHTML = `
-                        <div class='APIInfo'><p>Pending...</p></div>`;
+                        <p class='clase12'></p>
+                        <div class='APIInfo'><p class='func76'><pre class='desc76'></p></pre></div>
+                        <div class='APIInfo'><p class='func77'><pre class='desc77'></p></pre></div>
+                        <div class='APIInfo'><p class='func78'><pre class='desc78'></p></pre></div>
+                        <div class='APIInfo'><p class='func79'><pre class='desc79'></p></pre></div>
+                        <div class='APIInfo'><p class='func80'><pre class='desc80'></p></pre></div>
+                        <div class='APIInfo'><p class='func81'><pre class='desc81'></p></pre></div>
+                        <div class='APIInfo'><p class='func82'><pre class='desc82'></p></pre></div>
+                        <div class='APIInfo'><p class='func83'><pre class='desc83'></p></pre></div>
+                        <p class='clase15'></p>
+                        <div class='APIInfo'><p class='func84'><pre class='desc84'></p></pre></div>`;
                     break;
             }
             setLang('');
