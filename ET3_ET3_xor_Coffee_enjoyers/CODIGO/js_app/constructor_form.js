@@ -39,7 +39,7 @@ class constructor_form {
         }
     }
 
-    /*crearInput(datos, atributo) {
+    crearInput(datos, atributo) {
         let formulario = document.getElementById("IU_form");
         let input = document.createElement("input");
         switch (datos["type"]) {
@@ -99,88 +99,88 @@ class constructor_form {
             case "checkbox": break;
             default: break;
         }
+    }
+
+    /*crearInput(datos, atributo) {
+        let formulario = document.getElementById("IU_form");
+        let input = document.createElement("input");
+    
+        switch (datos["type"]) {
+            case "file":
+                formulario.appendChild(this.crearLabel(atributo));
+                input.setAttribute("type", "text");
+                input.setAttribute("id", atributo);
+                input.setAttribute("name", atributo);
+                input.setAttribute("class", "PH_" + atributo);
+                if (eval(datos["size"])) input.setAttribute("size", datos["size"]);
+    
+                let a = document.createElement("a");
+                a.setAttribute("id", "link_" + atributo);
+                a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo + "/");
+                a.setAttribute("target", "_blank"); // Abre el enlace en una nueva pestaña.
+    
+                // Crear SVG dinámicamente
+                let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute("class", "botonFILE");
+                svg.setAttribute("width", "40px");
+                svg.setAttribute("height", "40px");
+                svg.setAttribute("viewBox", "0 0 24 24");
+                svg.setAttribute("fill", "none");
+                svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    
+                let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("d", "M19 9V17.8C19 18.9201 19 19.4802 18.782 19.908C18.5903 20.2843 18.2843 20.5903 17.908 20.782C17.4802 21 16.9201 21 15.8 21H8.2C7.07989 21 6.51984 21 6.09202 20.782C5.71569 20.5903 5.40973 20.2843 5.21799 19.908C5 19.4802 5 18.9201 5 17.8V6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.0799 3 8.2 3H13M19 9L13 3M19 9H14C13.4477 9 13 8.55228 13 8V3");
+                path.setAttribute("stroke", "#000000");
+                path.setAttribute("stroke-width", "2");
+                path.setAttribute("stroke-linecap", "round");
+                path.setAttribute("stroke-linejoin", "round");
+    
+                svg.appendChild(path);
+                a.appendChild(svg);
+    
+                formulario.appendChild(input);
+                formulario.appendChild(this.crearSpanError(atributo));
+                formulario.appendChild(a);
+    
+                formulario.appendChild(document.createElement("br"));
+                formulario.appendChild(document.createElement("br"));
+    
+                let nuevo = 'nuevo_' + atributo;
+                formulario.appendChild(this.crearLabel(nuevo));
+    
+                input = document.createElement("input");
+                input.setAttribute("type", "file");
+                input.setAttribute("id", nuevo);
+                input.setAttribute("name", nuevo);
+                input.setAttribute("class", "PH_" + nuevo);
+    
+                formulario.appendChild(input);
+                formulario.appendChild(this.crearSpanError(nuevo));
+                break;
+    
+            case "number":
+            case "date":
+            case "password":
+            case "text":
+                formulario.appendChild(this.crearLabel(atributo));
+    
+                input.setAttribute("type", datos["type"]);
+                input.setAttribute("id", atributo);
+                input.setAttribute("name", atributo);
+                input.setAttribute("class", "PH_" + atributo);
+                if (eval(datos["size"])) input.setAttribute("size", datos["size"]);
+    
+                formulario.appendChild(input);
+                formulario.appendChild(this.crearSpanError(atributo));
+                break;
+    
+            case "radio":
+            case "checkbox":
+            default:
+                break;
+        }
     }*/
 
-        crearInput(datos, atributo) {
-            let formulario = document.getElementById("IU_form");
-            let input = document.createElement("input");
-        
-            switch (datos["type"]) {
-                case "file":
-                    formulario.appendChild(this.crearLabel(atributo));
-                    input.setAttribute("type", "text");
-                    input.setAttribute("id", atributo);
-                    input.setAttribute("name", atributo);
-                    input.setAttribute("class", "PH_" + atributo);
-                    if (eval(datos["size"])) input.setAttribute("size", datos["size"]);
-        
-                    let a = document.createElement("a");
-                    a.setAttribute("id", "link_" + atributo);
-                    a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo + "/");
-                    a.setAttribute("target", "_blank"); // Abre el enlace en una nueva pestaña.
-        
-                    // Crear SVG dinámicamente
-                    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-                    svg.setAttribute("class", "botonFILE");
-                    svg.setAttribute("width", "40px");
-                    svg.setAttribute("height", "40px");
-                    svg.setAttribute("viewBox", "0 0 24 24");
-                    svg.setAttribute("fill", "none");
-                    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-        
-                    let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                    path.setAttribute("d", "M19 9V17.8C19 18.9201 19 19.4802 18.782 19.908C18.5903 20.2843 18.2843 20.5903 17.908 20.782C17.4802 21 16.9201 21 15.8 21H8.2C7.07989 21 6.51984 21 6.09202 20.782C5.71569 20.5903 5.40973 20.2843 5.21799 19.908C5 19.4802 5 18.9201 5 17.8V6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.0799 3 8.2 3H13M19 9L13 3M19 9H14C13.4477 9 13 8.55228 13 8V3");
-                    path.setAttribute("stroke", "#000000");
-                    path.setAttribute("stroke-width", "2");
-                    path.setAttribute("stroke-linecap", "round");
-                    path.setAttribute("stroke-linejoin", "round");
-        
-                    svg.appendChild(path);
-                    a.appendChild(svg);
-        
-                    formulario.appendChild(input);
-                    formulario.appendChild(this.crearSpanError(atributo));
-                    formulario.appendChild(a);
-        
-                    formulario.appendChild(document.createElement("br"));
-                    formulario.appendChild(document.createElement("br"));
-        
-                    let nuevo = 'nuevo_' + atributo;
-                    formulario.appendChild(this.crearLabel(nuevo));
-        
-                    input = document.createElement("input");
-                    input.setAttribute("type", "file");
-                    input.setAttribute("id", nuevo);
-                    input.setAttribute("name", nuevo);
-                    input.setAttribute("class", "PH_" + nuevo);
-        
-                    formulario.appendChild(input);
-                    formulario.appendChild(this.crearSpanError(nuevo));
-                    break;
-        
-                case "number":
-                case "date":
-                case "password":
-                case "text":
-                    formulario.appendChild(this.crearLabel(atributo));
-        
-                    input.setAttribute("type", datos["type"]);
-                    input.setAttribute("id", atributo);
-                    input.setAttribute("name", atributo);
-                    input.setAttribute("class", "PH_" + atributo);
-                    if (eval(datos["size"])) input.setAttribute("size", datos["size"]);
-        
-                    formulario.appendChild(input);
-                    formulario.appendChild(this.crearSpanError(atributo));
-                    break;
-        
-                case "radio":
-                case "checkbox":
-                default:
-                    break;
-            }
-        }
-        
 
     crearTextarea(datos, atributo) {
         let text = document.createElement("textarea");
@@ -208,7 +208,7 @@ class constructor_form {
         let opcion = document.createElement("option");
         if (!datos["multiple"]) {
             opcion.setAttribute("value", "");
-            opcion.setAttribute("id", "SelectDefault_"+atributo);
+            opcion.setAttribute("id", "SelectDefault_" + atributo);
             opcion.className = "SelectDefault";
             opcion.innerHTML = "";
         }
@@ -350,6 +350,6 @@ class constructor_form {
                 }
             }
         }
-      
+
     }
 }
