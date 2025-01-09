@@ -425,7 +425,7 @@
 
 			// Verificar si está en modo oscuro antes de cambiar
 			const isDarkMode = body.classList.contains('darkmode');
-			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API'];  // Asegúrate de incluir todas las acciones que usas en tu página
+			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS'];  // Asegúrate de incluir todas las acciones que usas en tu página
 
 			// Cambiar entre modo claro y oscuro
 			if (isDarkMode) {
@@ -455,7 +455,7 @@
 		document.addEventListener('DOMContentLoaded', () => {
 			const body = document.body;
 			const toggle = document.getElementById('themeToggle');
-			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API'];
+			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS'];
 
 			// Establecer modo claro por defecto
 			body.classList.remove('darkmode');
