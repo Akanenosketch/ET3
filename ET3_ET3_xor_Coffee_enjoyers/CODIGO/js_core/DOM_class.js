@@ -142,9 +142,9 @@ class DOM_class extends test {
 
                 }
                 // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)
-                let lineaedit = this.crearboton('EDIT', JSON.stringify(this.datos[i]));
-                let lineadelete = this.crearboton('DELETE', JSON.stringify(this.datos[i]));
-                let lineashowcurrent = this.crearboton('SHOWCURRENT', JSON.stringify(this.datos[i]));
+                let lineaedit = this.crearboton('EDIT', JSON.stringify(this.datos[i]),i);
+                let lineadelete = this.crearboton('DELETE', JSON.stringify(this.datos[i]),i);
+                let lineashowcurrent = this.crearboton('SHOWCURRENT', JSON.stringify(this.datos[i]),i);
 
                 textolineadatos += lineaedit + lineadelete + lineashowcurrent;
                 textolineadatos += '</tr>';
@@ -193,12 +193,16 @@ class DOM_class extends test {
         }
     }
 
-    crearboton(accion, parametros) {
+    crearboton(accion, parametros,i="") {
         let columna = document.createElement('td');
         let opcion = document.createElement('img');
         opcion.src = "./iconos/" + accion + '.png';
+        opcion.id = "boton"+accion+i;
         let textoonclick = "validar.createForm('" + accion + "'," + parametros + ");"
         opcion.setAttribute('onclick', textoonclick);
+        opcion.setAttribute('onmouseover', `changeImageOnHover(true,"`+accion+`","`+i+`");`);
+        opcion.setAttribute('onmouseout', `changeImageOnHover(false, "`+accion+`","`+i+`");`);
+
         columna.appendChild(opcion);
         return columna.outerHTML; 
     } 
