@@ -329,6 +329,7 @@
 				const botones = document.querySelectorAll(`[id^="boton${action}"]`);  // Obtener todos los botones que empiezan con "boton" + acciónacción
 				botones.forEach(boton => {
 					if (body.classList.contains('darkmode')) {
+						boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
 					} else {
 						boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
 					}
