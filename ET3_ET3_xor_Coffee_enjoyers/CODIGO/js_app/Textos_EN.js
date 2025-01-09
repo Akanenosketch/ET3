@@ -61,8 +61,15 @@ let textos_EN = {
 
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
-    'InfoText':'Choose one of the entities from the side menu to learn more about its structure',
+    'InfoTextStruct':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
 
+    //Titulos
+    'text_title_page_default_structures'               : 'Estructuras Empleadas',
+    'text_titulo_page_estructura_project'              : 'Estructura de Proyecto',
+    'text_titulo_page_estructura_analysis_preparation' : 'Estructura de Preparacion Análisis',
+    'text_titulo_page_estructura_characteristic'       : 'Estructura de Característica',
+
+    /*TRADUCCIONES PARA API.HTML*/
 
     'InfoTextAPI1' : 'En esta página se mostrarán todas las funciones que se han implementado para la realización de este trabajo.',
     'InfoTextAPI2' : 'Para conocer sobre las funciones implementadas escoja una de las opciones dentro del menú localizado en la parte superior izquierda.',
@@ -298,10 +305,10 @@ let textos_EN = {
 
     //Opciones Menu
     'opt_funciones_test'      : 'Tests',
-    'opt_funciones_tabla'     : 'Presentación de Tablas',
-    'opt_funciones_form'      : 'Creación de Formularios',
-    'opt_funciones_valid'     : 'Funciones de validaciones',
-    'opt_funciones_other'     : 'Otros',
+    'opt_funciones_tabla'     : 'Table Presentation',
+    'opt_funciones_form'      : 'Form Creation',
+    'opt_funciones_valid'     : 'Validation Functions',
+    'opt_funciones_other'     : 'Other Functions',
 
     /*TRADUCCIONES PARA TEST*/ 
 

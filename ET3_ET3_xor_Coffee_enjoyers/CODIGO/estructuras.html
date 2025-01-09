@@ -53,8 +53,7 @@
 
         <nav class="navbar">
             <img id="botonMENU" src="./iconos/MENU.png" onclick="menu_work();"
-					onmouseover="changeImageOnHover(true, 'MENU');"
-					onmouseout="changeImageOnHover(false, 'MENU');" />
+                onmouseover="changeImageOnHover(true, 'MENU');" onmouseout="changeImageOnHover(false, 'MENU');" />
         </nav>
 
         <aside id="div-menu">
@@ -75,15 +74,13 @@
 
         <div class="opciones">
             <a href="API.html" class="conjuntoAPI">
-                <img id="botonAPI" src="./iconos/API.png"
-					onmouseover="changeImageOnHover(true, 'API');"
-					onmouseout="changeImageOnHover(false, 'API');" />
+                <img id="botonAPI" src="./iconos/API.png" onmouseover="changeImageOnHover(true, 'API');"
+                    onmouseout="changeImageOnHover(false, 'API');"/>
                 <span class="API"></span>
             </a>
             <a href="index.html" class="conjuntoINDEX">
                 <img id="botonHOME" src="./iconos/HOME.png" onclick="validar.cerrar_tabla();"
-					onmouseover="changeImageOnHover(true, 'HOME');"
-					onmouseout="changeImageOnHover(false, 'HOME');" />
+                    onmouseover="changeImageOnHover(true, 'HOME');" onmouseout="changeImageOnHover(false, 'HOME');" />
                 <span class="pagina_principal"></span>
             </a>
         </div>
@@ -95,7 +92,7 @@
         </select>
 
         <img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();"
-                    onmouseover="changeImageOnHover(true, 'TEST');" onmouseout="changeImageOnHover(false, 'TEST');" />
+            onmouseover="changeImageOnHover(true, 'TEST');" onmouseout="changeImageOnHover(false, 'TEST');" />
 
 
     </header>
@@ -107,109 +104,6 @@
 
         <div id="structInfo">
             <span id="InfoText">Información sobre la estructura [estructura] </span>
-            <pre>	
-                this.def_html_project = {
-                    atributos: ["id_project", "name_project", "start_date_project", "end_date_project", "responsable_project", "organization_project", "code_project", "acronym_project", "id_sampling_methodology", "description_project", "file_project"],
-        
-                    "id_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: true,
-                        esAutoIncremental: true,
-                        esEspecial: false,
-                        size: 11
-                    },
-        
-                    "name_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 100
-                    },
-        
-                    "start_date_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: true,
-                        size: 10
-                    },
-        
-                    "end_date_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: true,
-                        size: 10
-                    },
-        
-                    "responsable_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 60
-                    },
-        
-                    "organization_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 100
-                    },
-        
-                    "code_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 50
-                    },
-        
-                    "acronym_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 15
-                    },
-        
-                    "id_sampling_methodology": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 11
-                    },
-        
-                    "description_project": {
-                        tag: "TEXTAREA",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        rows: 5,
-                        cols: 100
-                    },
-        
-                    "file_project": {
-                        tag: "INPUT",
-                        type: "file",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 100
-                    }
-                };</pre>
         </div>
     </div>
 
@@ -278,100 +172,117 @@
 
 
         function toggleTheme() {
-			const body = document.body;
+            const body = document.body;
 
-			// Verificar si está en modo oscuro antes de cambiar
-			const isDarkMode = body.classList.contains('darkmode');
-			const actions = ['API', 'HOME', 'MENU', 'TEST'];  // Asegúrate de incluir todas las acciones que usas en tu página
+            // Verificar si está en modo oscuro antes de cambiar
+            const isDarkMode = body.classList.contains('darkmode');
+            const actions = ['API', 'HOME', 'MENU', 'TEST'];  // Asegúrate de incluir todas las acciones que usas en tu página
 
-			// Cambiar entre modo claro y oscuro
-			if (isDarkMode) {
-				body.classList.remove('darkmode');
-				body.classList.add('lightmode');
-			} else {
-				body.classList.remove('lightmode');
-				body.classList.add('darkmode');
-			}
+            // Cambiar entre modo claro y oscuro
+            if (isDarkMode) {
+                body.classList.remove('darkmode');
+                body.classList.add('lightmode');
+            } else {
+                body.classList.remove('lightmode');
+                body.classList.add('darkmode');
+            }
 
-			// Actualizar las imágenes después de cambiar el tema
-			actions.forEach(action => {
-				const boton = document.getElementById("boton" + action);
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				} else {
-					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				}
-			});
-		}
-
-
-		document.addEventListener('DOMContentLoaded', () => {
-			const body = document.body;
-			const toggle = document.getElementById('themeToggle');
-			const actions = ['API', 'HOME', 'MENU', 'TEST'];
-
-			// Establecer modo claro por defecto
-			body.classList.remove('darkmode');
-			body.classList.add('lightmode');
-
-			// Sincronizar el estado del toggle (asegura que el botón esté en la posición "apagado")
-			toggle.checked = false;
-
-			actions.forEach(action => {
-				const boton = document.getElementById("boton" + action);
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				} else {
-					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				}
-			});
-
-		});
+            // Actualizar las imágenes después de cambiar el tema
+            actions.forEach(action => {
+                const boton = document.getElementById("boton" + action);
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            });
+        }
 
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const toggle = document.getElementById('themeToggle');
+            const actions = ['API', 'HOME', 'MENU', 'TEST'];
 
-		function changeImageOnHover(isMouseOver, action) {
-			const body = document.body;
-			const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+            // Establecer modo claro por defecto
+            body.classList.remove('darkmode');
+            body.classList.add('lightmode');
 
-			if (isMouseOver) {
-				// Si el mouse está sobre la imagen, la cambiamos
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				} else {
-					boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				}
-			} else {
-				// Cuando el mouse sale de la imagen, la restauramos según el modo
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				} else {
-					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				}
-			}
-		}
+            // Sincronizar el estado del toggle (asegura que el botón esté en la posición "apagado")
+            toggle.checked = false;
+
+            actions.forEach(action => {
+                const boton = document.getElementById("boton" + action);
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            });
+
+        });
+
+
+
+        function changeImageOnHover(isMouseOver, action) {
+            const body = document.body;
+            const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+
+            if (isMouseOver) {
+                // Si el mouse está sobre la imagen, la cambiamos
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            } else {
+                // Cuando el mouse sale de la imagen, la restauramos según el modo
+                if (body.classList.contains('darkmode')) {
+                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                } else {
+                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.style.width = '40px';
+                    boton.style.height = '40px';
+                }
+            }
+        }
 
         // Posiblemente se moverán a un arhcivo aparte
-        function showEstructura(entity){
+        function showEstructura(entity) {
             document.getElementById("text_title_page").className = "text_titulo_page_estructura_" + entity;
-
-            document.getElementById("structInfo").innerHTML=``;
+            console.log('Holi uwu'); // THIS IS FOR TESTING PURPOSES
+            switch (entity) {
+                case 'project':
+                    document.getElementById('structInfo').innerHTML = `
+                        <div class='StructureInfo'><p class='struct1'><pre class='desc94'></p></pre></div>
+                    `;
+                    break;
+                case 'analysis_preparation':
+                    document.getElementById('structInfo').innerHTML = `
+                        <div class='StructureInfo'><p class='struct1'><pre class='desc94'></p></pre></div>
+                    `;
+                    break;
+                case 'characteristic':
+                    document.getElementById('structInfo').innerHTML = `
+                        <div class='StructureInfo'><p class='struct1'><pre class='desc94'></p></pre></div>
+                    `;
+                    break;
+            }
+            document.getElementById("structInfo").innerHTML = ``;
 
             setLang('');
         }
