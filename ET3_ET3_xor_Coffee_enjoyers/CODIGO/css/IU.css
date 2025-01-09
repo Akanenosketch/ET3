@@ -398,12 +398,12 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.menu-btn {
+#botonMENU {
     cursor: pointer;
     height: 30px;
 }
 
-.menu-btn:hover {
+#botonMENU:hover {
     color: #e69500;
     scale: 1.15;
 }
@@ -422,8 +422,6 @@ h2 {
 
 #botonAPI {
     cursor: pointer;
-    height: 35px;
-    padding-left: 20px;
 }
 
 /* Al pasar el ratón sobre el contenedor conjuntoAPI */
@@ -726,7 +724,7 @@ h2 {
     background-color: #2c2c2c;
 }
 
-.darkmode .menu-btn {
+.darkmode .botonMENU {
     color: #cfcfcf;
 }
 
@@ -882,7 +880,7 @@ h2 {
     color: #e69500;
 }
 
-.darkmode .menu-btn:hover {
+.darkmode .botonMENU:hover {
     color: #e69500;
 }
 
