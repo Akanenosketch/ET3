@@ -229,7 +229,7 @@
 					fill="#222222" />
 			</svg> -->
 			<img id="botonBACK2" src="./iconos/BACK.png" onclick="validar.cerrar_tabla();"
-				onmouseover="changeImageOnHover(true, 'BACK');" onmouseout="changeImageOnHover(false, 'BACK');" />
+				onmouseover="changeImageOnHover(true, 'BACK','2');" onmouseout="changeImageOnHover(false, 'BACK','2');" />
 
 		</div>
 
@@ -255,7 +255,7 @@
 			</svg> -->
 
 			<img id="botonBACK3" src="./iconos/BACK.png" onclick="validar.cerrar_formulario();"
-				onmouseover="changeImageOnHover(true, 'BACK');" onmouseout="changeImageOnHover(false, 'BACK');" />
+				onmouseover="changeImageOnHover(true, 'BACK','3');" onmouseout="changeImageOnHover(false, 'BACK','3');" />
 
 		</div>
 
@@ -432,21 +432,26 @@
 
 		function changeImageOnHover(isMouseOver, action,aux = "") {
 			const body = document.body;
-						boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
-					}
-					boton.style.width = '40px';
-					boton.style.height = '40px';
+			boton = document.getElementById("boton" + action + aux);
+			if (isMouseOver) {
+				// Si el mouse está sobre la imagen, la cambiamos
+				if (body.classList.contains('darkmode')) {
+					boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
 				} else {
-					// Cuando el mouse sale de la imagen, la restauramos según el modo
-					if (body.classList.contains('darkmode')) {
-						boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-					} else {
-						boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-					}
-					boton.style.width = '40px';
-					boton.style.height = '40px';
+					boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
 				}
-			});
+				boton.style.width = '40px';
+				boton.style.height = '40px';
+			} else {
+				// Cuando el mouse sale de la imagen, la restauramos según el modo
+				if (body.classList.contains('darkmode')) {
+					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+				} else {
+					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+				}
+				boton.style.width = '40px';
+				boton.style.height = '40px';
+			}
 		}
 
 
