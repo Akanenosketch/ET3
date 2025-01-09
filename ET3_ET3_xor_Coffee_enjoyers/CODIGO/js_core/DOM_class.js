@@ -195,58 +195,40 @@ class DOM_class extends test {
 
     crearboton(accion, parametros) {
         let columna = document.createElement('td');
-
-        /*let opcion = document.createElement('img');
+        let opcion = document.createElement('img');
         opcion.src = "./iconos/" + accion + '.png';
         let textoonclick = "validar.createForm('" + accion + "'," + parametros + ");"
         opcion.setAttribute('onclick', textoonclick);
-        columna.appendChild(opcion);*/
+        columna.appendChild(opcion);
+        return columna.outerHTML; 
+    } 
 
-        // Crear el SVG según la acción
-        let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("width", "40px");
-        svg.setAttribute("height", "40px");
-        svg.setAttribute("viewBox", "0 0 24 24");
-        svg.setAttribute("fill", "none");
-        svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    /* crearboton(accion, parametros) {
+        let columna = document.createElement('td');
+        let opcion = document.createElement('img');
 
-        if (accion === 'DELETE') {
-            svg.innerHTML = `
-                <path d="M10 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14 12V17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4 7H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6 10V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V10" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                
-            `;
-            svg.classList.add("botonDELETE");  // Asignamos una clase al SVG
-            
-        } else if (accion === 'SHOWCURRENT') {
-            svg.innerHTML = `
-                <path d="M3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C4.97196 6.49956 7.81811 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957Z" stroke="#1C274C" stroke-width="1.5"/>
-                <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke="#1C274C" stroke-width="1.5"/>
-            `;
-            svg.classList.add("botonSHOWCURRENT");  // Asignamos una clase al SVG
+        // Configurar la fuente de la imagen
+        opcion.src = `./iconos/${accion}.png`;
 
-        } else if (accion === 'EDIT') {
-            svg.innerHTML = `
-                <path d="M21.2799 6.40005L11.7399 15.94C10.7899 16.89 7.96987 17.33 7.33987 16.7C6.70987 16.07 7.13987 13.25 8.08987 12.3L17.6399 2.75002C17.8754 2.49308 18.1605 2.28654 18.4781 2.14284C18.7956 1.99914 19.139 1.92124 19.4875 1.9139C19.8359 1.90657 20.1823 1.96991 20.5056 2.10012C20.8289 2.23033 21.1225 2.42473 21.3686 2.67153C21.6147 2.91833 21.8083 3.21243 21.9376 3.53609C22.0669 3.85976 22.1294 4.20626 22.1211 4.55471C22.1128 4.90316 22.0339 5.24635 21.8894 5.5635C21.7448 5.88065 21.5375 6.16524 21.2799 6.40005V6.40005Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11 4H6C4.93913 4 3.92178 4.42142 3.17163 5.17157C2.42149 5.92172 2 6.93913 2 8V18C2 19.0609 2.42149 20.0783 3.17163 20.8284C3.92178 21.5786 4.93913 22 6 22H17C19.21 22 20 20.2 20 18V13" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>    
-            `;
-            svg.classList.add("botonEDIT");  // Asignamos una clase al SVG
+        // Asignar un id único al botón
+        opcion.id = `boton${accion}`;
 
-        }
+        // Configurar el evento onclick
+        let textoonclick = `validar.createForm('${accion}', ${parametros});`;
+        opcion.setAttribute('onclick', textoonclick);
 
-        // Asignar el evento onclick al SVG
-        let textoonclick = "validar.createForm('" + accion + "'," + parametros + ");";
-        svg.setAttribute('onclick', textoonclick);
+        // Configurar los eventos onmouseover y onmouseout
+        opcion.setAttribute('onmouseover', `changeImageOnHover(true, '${accion}');`);
+        opcion.setAttribute('onmouseout', `changeImageOnHover(false, '${accion}');`);
 
-        // Añadir el SVG a la columna
-        columna.appendChild(svg);
+        // Agregar la imagen a la columna
+        columna.appendChild(opcion);
 
-        // Devolver el HTML de la columna con el SVG
+        // Retornar el HTML generado
         return columna.outerHTML;
-    }
+    } */
+
+
 
 
 
@@ -303,5 +285,65 @@ class DOM_class extends test {
         document.getElementById('modal_action_overlay').style.display = 'none';
     }
 
+    /*toggleTheme() {
+        const body = document.body;
+
+        // Verificar si está en modo oscuro antes de cambiar
+        const isDarkMode = body.classList.contains('darkmode');
+        const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS', 'TEST', 'SIG', 'ANT', 'SHOWCURRENT'];  // Asegúrate de incluir todas las acciones que usas en tu página
+
+        // Cambiar entre modo claro y oscuro
+        if (isDarkMode) {
+            body.classList.remove('darkmode');
+            body.classList.add('lightmode');
+        } else {
+            body.classList.remove('lightmode');
+            body.classList.add('darkmode');
+        }
+
+        // Actualizar las imágenes después de cambiar el tema
+        actions.forEach(action => {
+            const boton = document.getElementById("boton" + action);
+            if (body.classList.contains('darkmode')) {
+                boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                boton.style.width = '40px';
+                boton.style.height = '40px';
+            } else {
+                boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                boton.style.width = '40px';
+                boton.style.height = '40px';
+            }
+        });
+    } */
+
+
+    /* changeImageOnHover(isMouseOver, action) {
+        const body = document.body;
+        const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+
+        if (isMouseOver) {
+            // Si el mouse está sobre la imagen, la cambiamos
+            if (body.classList.contains('darkmode')) {
+                boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+                boton.style.width = '40px';
+                boton.style.height = '40px';
+            } else {
+                boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+                boton.style.width = '40px';
+                boton.style.height = '40px';
+            }
+        } else {
+            // Cuando el mouse sale de la imagen, la restauramos según el modo
+            if (body.classList.contains('darkmode')) {
+                boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                boton.style.width = '40px';
+                boton.style.height = '40px';
+            } else {
+                boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                boton.style.width = '40px';
+                boton.style.height = '40px';
+            }
+        }
+    } */
 
 } // fin de clase

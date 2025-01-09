@@ -85,11 +85,15 @@
 
 		<!-- <img src="./iconos/BACK.png" onclick="validar.cerrar_test();" /> -->
 
-		<svg id="botonBACK" width="50px" height="50px" viewBox="0 0 24 24" onclick="validar.cerrar_test();">
+		<!-- <svg id="botonBACK" width="50px" height="50px" viewBox="0 0 24 24" onclick="validar.cerrar_test();">
 			<path
 				d="M4 10L3.64645 10.3536L3.29289 10L3.64645 9.64645L4 10ZM20.5 18C20.5 18.2761 20.2761 18.5 20 18.5C19.7239 18.5 19.5 18.2761 19.5 18L20.5 18ZM8.64645 15.3536L3.64645 10.3536L4.35355 9.64645L9.35355 14.6464L8.64645 15.3536ZM3.64645 9.64645L8.64645 4.64645L9.35355 5.35355L4.35355 10.3536L3.64645 9.64645ZM4 9.5L14 9.5L14 10.5L4 10.5L4 9.5ZM20.5 16L20.5 18L19.5 18L19.5 16L20.5 16ZM14 9.5C17.5898 9.5 20.5 12.4101 20.5 16L19.5 16C19.5 12.9624 17.0376 10.5 14 10.5L14 9.5Z"
 				fill="#222222" />
-		</svg>
+		</svg> -->
+
+		<img id="botonBACK" src="./iconos/BACK.png" onclick="validar.cerrar_test();"
+			onmouseover="changeImageOnHover(true, 'BACK');" onmouseout="changeImageOnHover(false, 'BACK');" />
+
 
 
 	</div>
@@ -99,15 +103,14 @@
 		<nav class='navbar'>
 
 			<img id="botonMENU" src="./iconos/MENU.png" onclick="menu_work();"
-					onmouseover="changeImageOnHover(true, 'MENU');"
-					onmouseout="changeImageOnHover(false, 'MENU');" />
+				onmouseover="changeImageOnHover(true, 'MENU');" onmouseout="changeImageOnHover(false, 'MENU');" />
 
 			<!-- <svg id="menu-btn" class="menu-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
 				fill="currentColor" onclick="menu_work();">
 				<path fill-rule="evenodd"
 					d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
-					clip-rule="evenodd" /> 
-			</svg>-->
+					clip-rule="evenodd" /> -->
+
 		</nav>
 
 		<aside id='div-menu'>
@@ -128,8 +131,7 @@
 
 		<div class="opciones">
 			<a href="API.html" class="conjuntoAPI">
-				<img id="botonAPI" src="./iconos/API.png"
-					onmouseover="changeImageOnHover(true, 'API');"
+				<img id="botonAPI" src="./iconos/API.png" onmouseover="changeImageOnHover(true, 'API');"
 					onmouseout="changeImageOnHover(false, 'API');" />
 				<!-- <svg id="botonAPI" width="800px" height="800px" viewBox="0 0 1024 1024" version="1.1"
 					xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +152,7 @@
 						d="M407.6 521.4h50.3l11 28.6h27.6l-50.4-125.8h-26.9l-49 125.8h27l10.4-28.6z m24.8-67.9l17.3 46.7h-34.3l17-46.7zM535.4 502.6H552c11.5 0 20.3-0.6 26.4-1.8 4.5-1 8.9-3 13.2-6 4.3-3 7.9-7.1 10.7-12.4s4.2-11.8 4.2-19.5c0-10-2.4-18.2-7.3-24.5-4.9-6.3-10.9-10.4-18.1-12.3-4.7-1.3-14.8-1.9-30.2-1.9H510V550h25.4v-47.4z m0-57.1h12.3c9.2 0 15.2 0.3 18.3 0.9 4.1 0.7 7.5 2.6 10.2 5.6 2.7 3 4 6.8 4 11.3 0 3.7-1 7-2.9 9.8-1.9 2.8-4.6 4.9-7.9 6.2-3.4 1.3-10.1 2-20.1 2h-13.9v-35.8zM626.5 424.2h25.4V550h-25.4z"
 						fill="#000000" />
 				</svg>-->
-				<span class="API"></span> 
+				<span class="API"></span>
 			</a>
 			<a href="estructuras.html" class="conjuntoESTRUCTURAS">
 				<img id="botonESTRUCTURAS" src="./iconos/ESTRUCTURAS.png"
@@ -176,7 +178,7 @@
 		</select>
 
 		<!-- <img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();" /> -->
-		<svg id="botonTEST" width="40px" height="40px" viewBox="0 -14 164 164" fill="none"
+		<!-- <svg id="botonTEST" width="40px" height="40px" viewBox="0 -14 164 164" fill="none"
 			xmlns="http://www.w3.org/2000/svg" onclick="validar.test_run();">
 			<g clip-path="url(#clip0)">
 				<path
@@ -188,7 +190,10 @@
 					<rect width="163.428" height="135.206" fill="white" transform="translate(0.136719 0.137817)" />
 				</clipPath>
 			</defs>
-		</svg>
+		</svg> -->
+
+		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test_run();"
+			onmouseover="changeImageOnHover(true, 'TEST');" onmouseout="changeImageOnHover(false, 'TEST');" />
 
 
 	</header>
@@ -202,8 +207,8 @@
 		<div id="id_tabla_datos">
 
 			<div id="addysearch">
-				<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm('ADD');" onmouseover="changeImageOnHover(true, 'ADD');"
-				onmouseout="changeImageOnHover(false, 'ADD');" />
+				<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm('ADD');"
+					onmouseover="changeImageOnHover(true, 'ADD');" onmouseout="changeImageOnHover(false, 'ADD');" />
 				<!-- <svg id="botonADD" width="50px" height="50px" viewBox="0 0 24 24" onclick="validar.createForm('ADD');">
 					<g id="Edit / Add_Plus">
 						<path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="#000000" stroke-width="2"
@@ -237,28 +242,17 @@
 
 				<!-- <img id="botonANT" width="16" height="16" src="./iconos/IZQ.png"> -->
 				<div class="botonesSiguienteAnterior">
-					<svg id="botonANT" fill="#000000" width="30px" height="30px" viewBox="-9.5 0 32 32"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M12.52 22.24c-0.12 0-0.24-0.040-0.36-0.080l-11.68-5.4c-0.28-0.12-0.48-0.44-0.48-0.76s0.2-0.64 0.48-0.76l11.64-5.4c0.24-0.12 0.56-0.12 0.8 0.040s0.4 0.44 0.4 0.72v10.84c0 0.28-0.16 0.56-0.4 0.72-0.12 0.040-0.28 0.080-0.4 0.080zM2.88 16l8.8 4.12v-8.24l-8.8 4.12z">
-						</path>
-					</svg>
+					<img id="botonANT" src="./iconos/ANT.png" onmouseover="changeImageOnHover(true, 'ANT');"
+						onmouseout="changeImageOnHover(false, 'IZQ');" />
 
 					<span id="PaginaActual"></span>
 					<span id="preposicionPag" class="preposicionPag"></span>
 					<span id="FilasTotales"></span>
 					<!-- <img id="botonSIG" width="16" height="16" src="./iconos/DER.png"> -->
-					<!-- <svg id="botonSIG" fill="#000000" width="30px" height="30px" viewBox="-9.5 0 32 32" version="1.1"
-						xmlns="http://www.w3.org/2000/svg">
-						<title>right</title>
-						<path
-							d="M0.84 22.243c-0.16 0-0.32-0.040-0.44-0.12-0.24-0.16-0.4-0.44-0.4-0.72v-10.8c0-0.28 0.16-0.56 0.4-0.72s0.56-0.16 0.8-0.040l11.64 5.4c0.28 0.12 0.48 0.44 0.48 0.76s-0.2 0.64-0.48 0.76l-11.68 5.4c-0.12 0.080-0.2 0.080-0.32 0.080zM1.64 11.883v8.2l8.8-4.12-8.8-4.080z">
-						</path>
-					</svg> -->
 
-					<img id="botonSIG" src="./iconos/SIG.png" onclick="validar.createForm('SIG');"
-					onmouseover="changeImageOnHover(true, 'SIG');"
-					onmouseout="changeImageOnHover(false, 'SIG');" />
+
+					<img id="botonSIG" src="./iconos/SIG.png" onmouseover="changeImageOnHover(true, 'SIG');"
+						onmouseout="changeImageOnHover(false, 'SIG');" />
 				</div>
 
 			</div>
@@ -276,9 +270,8 @@
 					d="M4 10L3.64645 10.3536L3.29289 10L3.64645 9.64645L4 10ZM20.5 18C20.5 18.2761 20.2761 18.5 20 18.5C19.7239 18.5 19.5 18.2761 19.5 18L20.5 18ZM8.64645 15.3536L3.64645 10.3536L4.35355 9.64645L9.35355 14.6464L8.64645 15.3536ZM3.64645 9.64645L8.64645 4.64645L9.35355 5.35355L4.35355 10.3536L3.64645 9.64645ZM4 9.5L14 9.5L14 10.5L4 10.5L4 9.5ZM20.5 16L20.5 18L19.5 18L19.5 16L20.5 16ZM14 9.5C17.5898 9.5 20.5 12.4101 20.5 16L19.5 16C19.5 12.9624 17.0376 10.5 14 10.5L14 9.5Z"
 					fill="#222222" />
 			</svg> -->
-			<img id="botonBACK" src="./iconos/BACK.png" onclick="validar.cerrar_tabla();"
-					onmouseover="changeImageOnHover(true, 'BACK');"
-					onmouseout="changeImageOnHover(false, 'BACK');" />
+			<img id="botonBACK2" src="./iconos/BACK.png" onclick="validar.cerrar_tabla();"
+				onmouseover="changeImageOnHover(true, 'BACK');" onmouseout="changeImageOnHover(false, 'BACK');" />
 
 		</div>
 
@@ -297,11 +290,15 @@
 			<br>
 
 			<!-- <img src="./iconos/BACK.png" onclick="validar.cerrar_formulario();" /> -->
-			<svg id="botonBACK" width="50px" height="50px" viewBox="0 0 24 24" onclick="validar.cerrar_formulario();">
+			<!-- <svg id="botonBACK" width="50px" height="50px" viewBox="0 0 24 24" onclick="validar.cerrar_formulario();">
 				<path
 					d="M4 10L3.64645 10.3536L3.29289 10L3.64645 9.64645L4 10ZM20.5 18C20.5 18.2761 20.2761 18.5 20 18.5C19.7239 18.5 19.5 18.2761 19.5 18L20.5 18ZM8.64645 15.3536L3.64645 10.3536L4.35355 9.64645L9.35355 14.6464L8.64645 15.3536ZM3.64645 9.64645L8.64645 4.64645L9.35355 5.35355L4.35355 10.3536L3.64645 9.64645ZM4 9.5L14 9.5L14 10.5L4 10.5L4 9.5ZM20.5 16L20.5 18L19.5 18L19.5 16L20.5 16ZM14 9.5C17.5898 9.5 20.5 12.4101 20.5 16L19.5 16C19.5 12.9624 17.0376 10.5 14 10.5L14 9.5Z"
 					fill="#222222" />
-			</svg>
+			</svg> -->
+
+			<img id="botonBACK3" src="./iconos/BACK.png" onclick="validar.cerrar_formulario();"
+				onmouseover="changeImageOnHover(true, 'BACK');" onmouseout="changeImageOnHover(false, 'BACK');" />
+
 		</div>
 
 	</div>
@@ -425,7 +422,7 @@
 
 			// Verificar si está en modo oscuro antes de cambiar
 			const isDarkMode = body.classList.contains('darkmode');
-			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS'];  // Asegúrate de incluir todas las acciones que usas en tu página
+			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS', 'TEST', 'SIG', 'ANT'];  // Asegúrate de incluir todas las acciones que usas en tu página
 
 			// Cambiar entre modo claro y oscuro
 			if (isDarkMode) {
@@ -438,24 +435,25 @@
 
 			// Actualizar las imágenes después de cambiar el tema
 			actions.forEach(action => {
-				const boton = document.getElementById("boton" + action);
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+				const botones = document.querySelectorAll(`[id^="boton${action}"]`);  // Obtener todos los botones que empiezan con "boton" + acción
+				botones.forEach(boton => {
+					if (body.classList.contains('darkmode')) {
+						boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+					} else {
+						boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+					}
 					boton.style.width = '40px';
 					boton.style.height = '40px';
-				} else {
-					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				}
+				});
 			});
 		}
+
 
 
 		document.addEventListener('DOMContentLoaded', () => {
 			const body = document.body;
 			const toggle = document.getElementById('themeToggle');
-			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS'];
+			const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS', 'TEST', 'SIG', 'ANT'];
 
 			// Establecer modo claro por defecto
 			body.classList.remove('darkmode');
@@ -465,49 +463,47 @@
 			toggle.checked = false;
 
 			actions.forEach(action => {
-				const boton = document.getElementById("boton" + action);
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+				const botones = document.querySelectorAll(`[id^="boton${action}"]`);  // Obtener todos los botones que empiezan con "boton" + acción
+				botones.forEach(boton => {
+					if (body.classList.contains('darkmode')) {
+						boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+					} else {
+						boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+					}
 					boton.style.width = '40px';
 					boton.style.height = '40px';
-				} else {
-					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				}
+				});
 			});
-
 		});
+
 
 
 
 		function changeImageOnHover(isMouseOver, action) {
 			const body = document.body;
-			const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+			const botones = document.querySelectorAll(`[id^="boton${action}"]`);  // Obtener todos los botones que empiezan con "boton" + acción
 
-			if (isMouseOver) {
-				// Si el mouse está sobre la imagen, la cambiamos
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+			botones.forEach(boton => {
+				if (isMouseOver) {
+					// Si el mouse está sobre la imagen, la cambiamos
+					if (body.classList.contains('darkmode')) {
+						boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+					} else {
+						boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+					}
 					boton.style.width = '40px';
 					boton.style.height = '40px';
 				} else {
-					boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+					// Cuando el mouse sale de la imagen, la restauramos según el modo
+					if (body.classList.contains('darkmode')) {
+						boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+					} else {
+						boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+					}
 					boton.style.width = '40px';
 					boton.style.height = '40px';
 				}
-			} else {
-				// Cuando el mouse sale de la imagen, la restauramos según el modo
-				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				} else {
-					boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-					boton.style.width = '40px';
-					boton.style.height = '40px';
-				}
-			}
+			});
 		}
 
 
