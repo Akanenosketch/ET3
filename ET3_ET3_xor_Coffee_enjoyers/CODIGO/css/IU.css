@@ -788,6 +788,17 @@ tr:hover {
     /* Sombra naranja tenue */
 }
 
+.darkmode .text_titulo_app {
+    color: #cfcfcf;
+}
+
+.darkmode a {
+    color: #cfcfcf;
+    /* Texto blanco en el modo oscuro */
+    text-decoration: none;
+    /* Elimina el subrayado */
+}
+
 
 .darkmode .contenidoForm label {
     color: #f5f5f5;
