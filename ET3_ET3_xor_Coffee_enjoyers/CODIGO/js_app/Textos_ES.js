@@ -174,6 +174,519 @@ this.def_html_project = {
         esEspecial: false,
         size: 100
     }
+};
+
+<b>Estructura de pruebas para Project:</b>
+
+this.def_test_project = {
+    "ADD": {
+        "name_project": {
+            "min_size": {
+                valor: 15,
+                codigo: "project__name_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "project__name_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "project__name_project__format_KO",
+                especial: false
+            }
+        },
+
+        "start_date_project": {
+            "format": {
+                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                codigo: "project__start_date_project__format_KO",
+                especial: false
+            },
+            "fechavalida": {
+                valor: "fechavalida",
+                codigo: "project__start_date_project__valid_KO",
+                especial: true
+            },
+            "fechaSuperior": {
+                valor: "fechaSuperior",
+                codigo: "project__start_date_project__superior_KO",
+                especial: true
+            }
+        },
+
+        "end_date_project": {
+            "format": {
+                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                codigo: "project__end_date_project__format_KO",
+                especial: false
+            },
+            "fechavalida": {
+                valor: "fechavalida",
+                codigo: "project__end_date_project__valid_KO",
+                especial: true
+            },
+            "fechaInferior": {
+                valor: "fechaInferior",
+                codigo: "project__end_date_project__inferior_KO",
+                especial: true
+            }
+        },
+
+        "responsable_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__responsable_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 60,
+                codigo: "project__responsable_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
+                codigo: "project__responsable_project__format_KO",
+                especial: false
+            }
+        },
+
+        "organization_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__organization_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "project__organization_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: '^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$',
+                codigo: "project__organization_project__format_KO",
+                especial: false
+            }
+        },
+
+        "description_project": {
+            "min_size": {
+                valor: 30,
+                codigo: "project__description_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 500,
+                codigo: "project__description_project__max_size_KO",
+                especial: false
+            }
+        },
+
+        "code_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__code_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 50,
+                codigo: "project__code_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                codigo: "project__code_project__format_KO",
+                especial: false
+            }
+        },
+
+        "acronym_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__acronym_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 15,
+                codigo: "project__acronym_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                codigo: "project__acronym_project__format_KO",
+                especial: false
+            }
+        },
+
+        "id_sampling_methodology": {
+            "min_size": {
+                valor: 1,
+                codigo: "project__id_sampling_methodology__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 11,
+                codigo: "project__id_sampling_methodology__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[1-9][0-9]*$",
+                codigo: "project__id_sampling_methodology__format_KO",
+                especial: false
+            }
+        },
+        
+        "nuevo_file_project": {
+            "empty": {
+                valor: "empty",
+                codigo: "project__nuevo_file_project__empty_KO",
+                especial: true
+            },
+            "max_size_file": {
+                valor: 2000000,
+                codigo: "project__nuevo_file_project__max_size_file_KO",
+                especial: false
+            },
+            "type_file": {
+                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                codigo: "project__nuevo_file_project__type_file_KO",
+                especial: false
+            },
+            "min_size": {
+                valor: 7,
+                codigo: "project__nuevo_file_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "project__nuevo_file_project__max_size_KO",
+                especial: false
+            },
+            "format_name_file": {
+                valor: "^[A-Za-z.]*$",
+                codigo: "project__nuevo_file_project__format_name_file_KO",
+                especial: false
+            }
+        }
+    },
+
+    "EDIT": {
+        "name_project": {
+            "min_size": {
+                valor: 15,
+                codigo: "project__name_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "project__name_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "project__name_project__format_KO",
+                especial: false
+            }
+        },
+
+        "start_date_project": {
+            "format": {
+                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                codigo: "project__start_date_project__format_KO",
+                especial: false
+            },
+            "fechavalida": {
+                valor: "fechavalida",
+                codigo: "project__start_date_project__valid_KO",
+                especial: true
+            },
+            "fechaSuperior": {
+                valor: "fechaSuperior",
+                codigo: "project__start_date_project__superior_KO",
+                especial: true
+            }
+        },
+
+        "end_date_project": {
+            "format": {
+                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                codigo: "project__end_date_project__format_KO",
+                especial: false
+            },
+            "fechavalida": {
+                valor: "fechavalida",
+                codigo: "project__end_date_project__valid_KO",
+                especial: true
+            },
+            "fechaInferior": {
+                valor: "fechaInferior",
+                codigo: "project__end_date_project__inferior_KO",
+                especial: true
+            }
+        },
+        
+        "responsable_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__responsable_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 60,
+                codigo: "project__responsable_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$",
+                codigo: "project__responsable_project__format_KO",
+                especial: false
+            }
+        },
+
+        "organization_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__organization_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "project__organization_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
+                codigo: "project__organization_project__format_KO",
+                especial: false
+            }
+        },
+
+        "description_project": {
+            "min_size": {
+                valor: 30,
+                codigo: "project__description_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 500,
+                codigo: "project__description_project__max_size_KO",
+                especial: false
+            }
+        },
+
+        "code_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__code_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 50,
+                codigo: "project__code_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                codigo: "project__code_project__format_KO",
+                especial: false
+            }
+        },
+
+        "acronym_project": {
+            "min_size": {
+                valor: 6,
+                codigo: "project__acronym_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 15,
+                codigo: "project__acronym_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                codigo: "project__acronym_project__format_KO",
+                especial: false
+            }
+        },
+
+        "id_sampling_methodology": {
+            "min_size": {
+                valor: 1,
+                codigo: "project__id_sampling_methodology__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 11,
+                codigo: "project__id_sampling_methodology__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[1-9][0-9]*$",
+                codigo: "project__id_sampling_methodology__format_KO",
+                especial: false
+            }
+        },
+
+        "nuevo_file_project": {
+            "max_size_file": {
+                valor: 2000000,
+                codigo: "project__nuevo_file_project__max_size_file_KO",
+                especial: false
+            },
+            "type_file": {
+                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                codigo: "project__nuevo_file_project__type_file_KO",
+                especial: false
+            },
+            "min_size": {
+                valor: 7,
+                codigo: "project__nuevo_file_project__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "project__nuevo_file_project__max_size_KO",
+                especial: false
+            },
+            "format_name_file": {
+                valor: "^[A-Za-z.]*$",
+                codigo: "project__nuevo_file_project__format_name_file_KO",
+                especial: false
+            }
+        }
+    },
+
+    "SEARCH": {
+        "id_project": {
+            "max_size": {
+                valor: 11,
+                codigo: "project__id_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[0-9]*$",
+                codigo: "project__id_project__format_KO",
+                especial: false
+            }
+        },
+
+        "name_project": {
+            "max_size": {
+                valor: 100,
+                codigo: "project__name_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "project__name_project__format_KO",
+                especial: false
+            }
+        },
+
+        "start_date_project": {
+            "format": {
+                valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
+                codigo: "project__start_date_project__format_SEARCH_KO",
+                especial: false
+            }
+        },
+
+        "end_date_project": {
+            "format": {
+                valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
+                codigo: "project__end_date_project__format_SEARCH_KO",
+                especial: false
+            }
+        },
+
+        "responsable_project": {
+            "max_size": {
+                valor: 60,
+                codigo: "project__responsable_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$",
+                codigo: "project__responsable_project__format_KO",
+                especial: false
+            }
+        },
+
+        "organization_project": {
+            "max_size": {
+                valor: 100,
+                codigo: "project__organization_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
+                codigo: "project__organization_project__format_KO",
+                especial: false
+            }
+        },
+
+        "description_project": {
+            "max_size": {
+                valor: 500,
+                codigo: "project__description_project__max_size_KO",
+                especial: false
+            }
+        },
+
+        "code_project": {
+            "max_size": {
+                valor: 50,
+                codigo: "project__code_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                codigo: "project__code_project__format_KO",
+                especial: false
+            }
+        },
+
+        "acronym_project": {
+            "max_size": {
+                valor: 15,
+                codigo: "project__acronym_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                codigo: "project__acronym_project__format_KO",
+                especial: false
+            }
+        },
+
+        "id_sampling_methodology": {
+            "max_size": {
+                valor: 11,
+                codigo: "project__id_sampling_methodology__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[0-9]*$",
+                codigo: "project__id_sampling_methodology__format_KO",
+                especial: false
+            }
+        },
+
+        "file_project": {
+            "max_size": {
+                valor: 100,
+                codigo: "project__file_project__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z.]*$,
+                codigo: "project__file_project__format_KO",
+                especial: false
+            }
+        }
+    }
 };`,
     
     // Textos para la estructura de analysis_preparation
@@ -226,6 +739,250 @@ this.def_html_analysis_preparation = {
         esAutoIncremental: false,
         esEspecial: false,
         size: 100
+    }
+};
+
+<b>Estructura de pruebas para Analysis Preparation:</b>
+
+this.def_test_analysis_preparation = {
+    "ADD": {
+        "name_analysis_preparation": {
+            "min_size": {
+                valor: 8,
+                codigo: "analysis_preparation__name_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "analysis_preparation__name_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "description_analysis_preparation": {
+            "min_size": {
+                valor: 80,
+                codigo: "analysis_preparation__description_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 5000,
+                codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "analysis_preparation__description_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "bib_analysis_preparation": {
+            "min_size": {
+                valor: 6,
+                codigo: "analysis_preparation__bib_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 200,
+                codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "nuevo_file_analysis_preparation": {
+            "empty": {
+                valor: "empty",
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__empty_KO",
+                especial: true
+            },
+            "max_size_file": {
+                valor: 2000000,
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_file_KO",
+                especial: false
+            },
+            "type_file": {
+                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__type_file_KO",
+                especial: false
+            },
+            "min_size": {
+                valor: 7,
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format_name_file": {
+                valor: "^[A-Za-z.]*$",
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__format_name_file_KO",
+                especial: false
+            }
+        }
+    },
+
+    "EDIT": {
+        "name_analysis_preparation": {
+            "min_size": {
+                valor: 8,
+                codigo: "analysis_preparation__name_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "analysis_preparation__name_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "description_analysis_preparation": {
+            "min_size": {
+                valor: 80,
+                codigo: "analysis_preparation__description_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 5000,
+                codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "analysis_preparation__description_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "bib_analysis_preparation": {
+            "min_size": {
+                valor: 6,
+                codigo: "analysis_preparation__bib_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 200,
+                codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "nuevo_file_analysis_preparation": {
+            "max_size_file": {
+                valor: 2000000,
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_file_KO",
+                especial: false
+            },
+            "type_file": {
+                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__type_file_KO",
+                especial: false
+            },
+            "min_size": {
+                valor: 7,
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format_name_file": {
+                valor: "^[A-Za-z.]*$",
+                codigo: "analysis_preparation__nuevo_file_analysis_preparation__format_name_file_KO",
+                especial: false
+            }
+        }
+    },
+
+    "SEARCH": {
+        "id_analysis_preparation": {
+            "max_size": {
+                valor: 11,
+                codigo: "analysis_preparation__id_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[0-9]*$",
+                codigo: "analysis_preparation__id_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "name_analysis_preparation": {
+            "max_size": {
+                valor: 100,
+                codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "analysis_preparation__name_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "description_analysis_preparation": {
+            "max_size": {
+                valor: 5000,
+                codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "analysis_preparation__description_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "bib_analysis_preparation": {
+            "max_size": {
+                valor: 200,
+                codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
+                especial: false
+            }
+        },
+
+        "file_analysis_preparation": {
+            "max_size": {
+                valor: 100,
+                codigo: "analysis_preparation__file_analysis_preparation__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z.]*$,
+                codigo: "analysis_preparation__file_analysis_preparation__format_KO",
+                especial: false
+            }
+        }
     }
 };
 `,
@@ -299,7 +1056,301 @@ this.def_html_characteristic = {
         esEspecial: false,
         size: 100
     }
-};`,
+};
+
+<b>Estructura para los tests de Characteristic:</b>
+
+this.def_test_characteristic = {
+    "ADD": {
+        "name_characteristic": {
+            "min_size": {
+                valor: 8,
+                codigo: "characteristic__name_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "characteristic__name_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "characteristic__name_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "description_characteristic": {
+            "min_size": {
+                valor: 80,
+                codigo: "characteristic__description_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 5000,
+                codigo: "characteristic__description_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "characteristic__description_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "data_type_characteristic": {
+            "selectValido": {
+                valor: selectValido,
+                codigo: "characteristic__data_type_characteristic__valid_KO",
+                especial: true
+            }
+        },
+
+        "category_characteristic": {
+            "selectValido": {
+                valor: selectValido,
+                codigo: "characteristic__category_characteristic__valid_KO",
+                especial: true
+            }
+        },
+
+        "bibref_characteristic": {
+            "min_size": {
+                valor: 16,
+                codigo: "characteristic__bibref_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 200,
+                codigo: "characteristic__bibref_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                codigo: "characteristic__bibref_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "nuevo_file_characteristic": {
+            "empty": {
+                valor: "empty",
+                codigo: "characteristic__nuevo_file_characteristic__empty_KO",
+                especial: true
+            },
+            "max_size_file": {
+                valor: 200000,
+                codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
+                especial: false
+            },
+            "type_file": {
+                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                codigo: "characteristic__nuevo_file_characteristic__type_file_KO",
+                especial: false
+            },
+            "min_size": {
+                valor: 7,
+                codigo: "characteristic__nuevo_file_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "characteristic__nuevo_file_characteristic__max_size_KO",
+                especial: false
+            },
+            "format_name_file": {
+                valor: "^[A-Za-z.]*$",
+                codigo: "characteristic__nuevo_file_characteristic__format_name_file_KO",
+                especial: false
+            }
+        }
+    },
+
+    "EDIT": {
+        "name_characteristic": {
+            "min_size": {
+                valor: 8,
+                codigo: "characteristic__name_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "characteristic__name_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "characteristic__name_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "description_characteristic": {
+            "min_size": {
+                valor: 80,
+                codigo: "characteristic__description_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 5000,
+                codigo: "characteristic__description_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "characteristic__description_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "data_type_characteristic": {
+            "selectValido": {
+                valor: selectValido,
+                codigo: "characteristic__data_type_characteristic__valid_KO",
+                especial: true
+            }
+        },
+
+        "category_characteristic": {
+            "selectValido": {
+                valor: selectValido,
+                codigo: "characteristic__category_characteristic__valid_KO",
+                especial: true
+            }
+        },
+
+        "bibref_characteristic": {
+            "min_size": {
+                valor: 16,
+                codigo: "characteristic__bibref_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 200,
+                codigo: "characteristic__bibref_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                codigo: "characteristic__bibref_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "nuevo_file_characteristic": {
+            "max_size_file": {
+                valor: 200000,
+                codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
+                especial: false
+            },
+            "type_file": {
+                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                codigo: "characteristic__nuevo_file_characteristic__type_file_KO",
+                especial: false
+            },
+            "min_size": {
+                valor: 7,
+                codigo: "characteristic__nuevo_file_characteristic__min_size_KO",
+                especial: false
+            },
+            "max_size": {
+                valor: 100,
+                codigo: "characteristic__nuevo_file_characteristic__max_size_KO",
+                especial: false
+            },
+            "format_name_file": {
+                valor: "^[A-Za-z.]*$",
+                codigo: "characteristic__nuevo_file_characteristic__format_name_file_KO",
+                especial: false
+            }
+        }
+    },
+
+    "SEARCH": {
+        "id_characteristic": {
+            "max_size": {
+                valor: 11,
+                codigo: "characteristic__id_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[0-9]*$",
+                codigo: "characteristic__id_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "name_characteristic": {
+            "max_size": {
+                valor: 100,
+                codigo: "characteristic__name_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "characteristic__name_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "description_characteristic": {
+            "max_size": {
+                valor: 5000,
+                codigo: "characteristic__description_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: "^[A-Za-z ]*$",
+                codigo: "characteristic__description_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "data_type_characteristic": {
+            "selectValidoSEARCH": {
+                valor: selectValidoSEARCH,
+                codigo: "characteristic__data_type_characteristic__valid_SEARCH_KO",
+                especial: true
+            }
+        },
+
+        "category_characteristic": {
+            "selectValidoSEARCH": {
+                valor: selectValidoSEARCH,
+                codigo: "characteristic__category_characteristic__valid_SEARCH_KO",
+                especial: true
+            }
+        },
+
+        "bibref_characteristic": {
+            "max_size": {
+                valor: 200,
+                codigo: "characteristic__bibref_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                codigo: "characteristic__bibref_characteristic__format_KO",
+                especial: false
+            }
+        },
+
+        "file_characteristic": {
+            "max_size": {
+                valor: 100,
+                codigo: "characteristic__file_characteristic__max_size_KO",
+                especial: false
+            },
+            "format": {
+                valor: ^[A-Za-z.]*$,
+                codigo: "characteristic__file_characteristic__format_KO",
+                especial: false
+            }
+        }
+    }
+};
+
+`,
 
     /*TRADUCCIONES PARA API.HTML*/
 

@@ -942,7 +942,7 @@ tr:hover {
 
 /* Estilo empleado para el div naranja claro que contiene toda la información en API y estructuras*/
 #structInfo {
-    background-color: #f9e2b3cf;
+    background-color: #f9e2b3d3;
     /* Naranja vibrante */
     text-align: center;
     color: #000000;
@@ -981,7 +981,7 @@ tr:hover {
 .StrucAPIInfo p {
     padding: 5px 0px;
     margin-bottom: 5px;
-    background-color: #e69600ae;
+    background-color: #e69600d3;
     font-weight: bold;
 
 }
