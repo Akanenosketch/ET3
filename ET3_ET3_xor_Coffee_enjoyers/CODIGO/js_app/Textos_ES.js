@@ -1891,7 +1891,7 @@ def_test_nombreentidad = {                 //todo obligatorio
     // Test funciones Presentación de tablas
 
     'func24': 'SEARCH(empieza, filas)',
-    'desc24': '<b>Parámetros:</b>\n\tempieza:\n\t\tTipo: Número.\n\t\tDescripción: Indica el número por donde empieza la paginación.\n\tfilas:\n\t\tTipo: número\n\t\tDescipción: Indica el número de tuples que habrá por página.<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.<b>Función:</b> Se encarga de buscar tuplas dentro de una entidad en base a unos criterios especificados para, posteriormente, mostrarlos en la tabla.',
+    'desc24': '<b>Parámetros:</b>\n\tempieza:\n\t\tTipo: Número.\n\t\tDescripción: Indica el número por donde empieza la paginación.\n\tfilas:\n\t\tTipo: número\n\t\tDescripción: Indica el número de tuplas que habrá por página.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de buscar tuplas dentro de una entidad en base a unos criterios especificados para, posteriormente, mostrarlos en la tabla.',
     'func25': 'ADD()',
     'desc25': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back e insertar una nueva tupla dentro de la tabla de la entidad en la que estemos trabajando.',
     'func26': 'EDIT()',
@@ -1899,7 +1899,7 @@ def_test_nombreentidad = {                 //todo obligatorio
     'func27': 'DELETE()',
     'desc27': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back y borrar una tupla existente dentro de la tabla de la entidad en la que estemos trabajando.',
     'func28': 'cambiardatosespecialestabla(atributo, valoratributo, i)',
-    'desc28': '<b>Parámetros:</b>\n\atributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescipción: Valor que tiene el atributo atributp almacenado.\n\ti\n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output: </b>Proporciona un output en tipo string que hace referencia a un elemento html que cambia como se ven los datos especiales dentro de la tabla.\n<b>Función:</b> Se encarga de cambiar los datos/atributos asignados como datos especiales para que se puedan ver con el formato permitido en la tabla.',
+    'desc28': '<b>Parámetros:</b>\n\atributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescripción: Valor que tiene el atributo atributp almacenado.\n\ti\n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output: </b>Proporciona un output en tipo string que hace referencia a un elemento html que cambia como se ven los datos especiales dentro de la tabla.\n<b>Función:</b> Se encarga de cambiar los datos/atributos asignados como datos especiales para que se puedan ver con el formato permitido en la tabla.',
     'func29': 'modificarcolumnasmostrar(atributo)',
     'desc29': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de un entidad.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función: </b> Se emplea para mostrar o ocultar la columna asociada al atributo seleccionado en el select.',
     'func30': 'mostrarocultarcolumnas()',
@@ -1909,15 +1909,15 @@ def_test_nombreentidad = {                 //todo obligatorio
     'func32': 'crearTablaDatos()',
     'desc32': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a las funciones auxiliares necesarias para crear las tablas.',
     'func33': 'construirSelect()',
-    'desc33': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el select de selección de columnas.',
+    'desc33': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el select de selección de columnas, esta función es llamada por <b>crearDatosTabla()</b>.',
     'func34': 'hacerTabla()',
     'desc34': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear la propia tabla, esta función es llamada por <b>crearDatosTabla()</b>.',
     'func35': 'hacerPaginacion()',
-    'desc35': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la función encargada de crear la paginación en el caso de que existan tuplas, en caso contrario se ocultan todos los elementos del HTML relacionados con la paginación..',
+    'desc35': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la función encargada de crear la paginación en el caso de que existan tuplas, en caso contrario se ocultan todos los elementos del HTML relacionados con la paginación, esta función es llamada por <b>crearDatosTabla()</b>.',
     'func36': 'levantarPaginacion()',
     'desc36': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de propiamente crear la paginación, esta función es llamada por <b>hacerPaginacion()</b>.',
     'func37': 'crearboton(accion, parametros, i)',
-    'desc37': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia las acciones que se pueden realizar: DELETE, SHOWCURRENT, EDIT.\n\tparámetros:\n\t\tTipo: String.\n\t\tDescipción: Hace referencia a algún elemento de la estructura.\n\ti:\n\t\tTipo: Stirng.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> Devulve un HTMLTableCellElement con el svg de los iconos.\n<b>Función:</b> Se encarga de crear los botones y los iconos correspondientes para las acciones de DELETE, SHOWCURRENT y EDIT.',
+    'desc37': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia las acciones que se pueden realizar: DELETE, SHOWCURRENT, EDIT.\n\tparámetros:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a algún elemento de la estructura.\n\ti:\n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> Devuelve un el codigo HTML con la imagen del icono de la accion\n<b>Función:</b> Se encarga de crear los botones y los iconos correspondientes para las acciones de DELETE, SHOWCURRENT y EDIT.',
     'func38': 'cerrar_tabla()',
     'desc38': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se oculta la tabla y se oculta el boton de test.',
 
@@ -2018,7 +2018,7 @@ def_test_nombreentidad = {                 //todo obligatorio
     'func84': 'getCookie(name)',
     'desc84': '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre de la cookie.\n<b>Output:</b> Devuelve un valor nulo.\n<b>Función:</b> Se encarga de obtener el valor de la cookie en base a su nombre.',
     'func85': 'peticionBackGeneral(formulario, controlador, action, datosextra = null)',
-    'desc85': '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescipción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo\n\t\tDescripción: Datos extra.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones al back.',
+    'desc85': '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescripción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo\n\t\tDescripción: Datos extra.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones al back.',
 
     // Textos de funciones de validación
 

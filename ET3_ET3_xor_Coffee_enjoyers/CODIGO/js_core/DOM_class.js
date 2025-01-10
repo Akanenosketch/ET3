@@ -168,6 +168,7 @@ class DOM_class extends test {
             document.getElementById("botonSIG").style.visibility = "hidden";
         }
     }
+
     levantarPaginacion() {
         document.getElementById("preposicionPag").style.visibility = "visible";
 
@@ -241,8 +242,6 @@ class DOM_class extends test {
         document.getElementById("title_page").style.display = 'none';
         document.getElementById("divTablasDatosEntrega").style.display = "block";
         document.getElementById("textoInicio").style.display = "block";
-
-
         this.ocultar_boton_test();
         this.cerrar_test();
     }
