@@ -54,13 +54,17 @@ class constructor_form {
                 a.setAttribute("id", "link_" + atributo);
                 a.setAttribute("href", "http://193.147.87.202/ET2/filesuploaded/files_" + atributo + "/");
                 let img = document.createElement("img");
-                img.setAttribute("src", "./iconos/FILE.png");
+                let src = document.body.classList.contains('darkmode')
+                    ? `./iconos/FILE(gris).png`
+                    : `./iconos/FILE.png`;
+
+                img.setAttribute("src", src);
                 img.setAttribute("id", "botonFILE");
                 img.setAttribute('onmouseover', `changeImageOnHover(true,"FILE");`);
                 img.setAttribute('onmouseout', `changeImageOnHover(false, "FILE");`);
                 img.style.width = '40px';
                 img.style.height = '40px';
-        
+
                 a.appendChild(img);
                 formulario.appendChild(input);
 
