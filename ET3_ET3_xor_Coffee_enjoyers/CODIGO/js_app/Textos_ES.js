@@ -1,5 +1,6 @@
 let textos_ES = {
 
+    "text_struct":"Estructura",
     "SelectDefault": "Escoja",
     "textoInicio": "Bienvenidos, esto es la interfaz de la ET3 de nuestro grupo",
     /*TITULOS*/
@@ -72,6 +73,8 @@ let textos_ES = {
     'text_titulo_page_estructura_characteristic': 'Estructura de Característica',
 
     // Texto estructura project
+    'struct1': 'Estructura (Vacia) empleada para las entidades',
+    'desc94': '',
 
     'struct1': 'Estructura empleada para la entidad project',
     'desc94': `
@@ -105,7 +108,7 @@ this.def_html_project = {
 
     /*<b>start_date_project</b> hace referencia a la fecha de inicio de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
       Es un atributo de tipo Texto (String) y es una feche que debe de seguir un formato dd-mm-aaaa, debe de ser menor que la fecha de fin de proyecto.
-      Es una atributo especial, por lo que, en consecuencia, tendrá un set de validaciones especiales.*/
+      Es una atributo especial, por lo que,  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vezen consecuencia, sera mostrado de forma especial en el form (con una funcion de mostrardatosespecialesform).*/
 
     "start_date_project": {
         tag: "INPUT",
@@ -118,7 +121,7 @@ this.def_html_project = {
 
     /*<b>end_date_project</b> hace referencia a la fecha de fin de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
       Es un atributo de tipo Texto (String) y es una fecha que debe de seguir el formato dd-mm-aa, debe de ser mayor que la fecha de inicio de proyecto.
-      Es una atributo especial, por lo que, en consecuencia, tendrá un set de validaciones especiales.*/
+      Es una atributo especial, por lo que,  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vezen consecuencia, sera mostrado de forma especial en el form (con una funcion de mostrardatosespecialesform).*/
 
     "end_date_project": {
         tag: "INPUT",
@@ -249,7 +252,7 @@ this.def_test_project = {
         },
 
         /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
             - Debe de ser una fecha váida dentro del calendario gregoriano.
             - La fecha no debe de ser superior a la fecha de fin de proyecto.
          * /
@@ -273,7 +276,7 @@ this.def_test_project = {
         },
 
         /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
             - Debe de ser una fecha váida dentro del calendario gregoriano.
             - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
          * /
@@ -441,10 +444,11 @@ this.def_test_project = {
         },
         
         /* <b>nuevo_file_project</b> debe de seguir los siguientes requisitos:
+            - (Comprobado con una funcion especial) Que exista el fichero
             - Tamaño mínimo de 7 caracteres en nombre de archivo.
             - Tamaño máximo de 100 caracteres en nombre de archivo.
             - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 GBs.
+            - Tamaño de archivo máximo de 2 MBs.
             - Formato permitidos: pdf, doc, docx.
             - Permitidos: caracteres alfabéticos y punto para indicar el formato.
             - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
@@ -514,7 +518,7 @@ this.def_test_project = {
         },
 
         /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
             - Debe de ser una fecha váida dentro del calendario gregoriano.
             - La fecha no debe de ser superior a la fecha de fin de proyecto.
          * /        
@@ -538,7 +542,7 @@ this.def_test_project = {
         },
 
         /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
             - Debe de ser una fecha váida dentro del calendario gregoriano.
             - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
          * /
@@ -709,7 +713,7 @@ this.def_test_project = {
             - Tamaño mínimo de 7 caracteres en nombre de archivo.
             - Tamaño máximo de 100 caracteres en nombre de archivo.
             - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 GBs.
+            - Tamaño de archivo máximo de 2 MBs.
             - Formato permitidos: pdf, doc, docx.
             - Permitidos: caracteres alfabéticos y punto para indicar el formato.
             - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
@@ -789,7 +793,7 @@ this.def_test_project = {
         },
 
         /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
          * /
 
         "start_date_project": {
@@ -801,7 +805,7 @@ this.def_test_project = {
         },
 
         /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
          * /
 
         "end_date_project": {
@@ -948,37 +952,6 @@ this.def_test_project = {
         }
     }
 };
-
-<b>Ejemplo de uso: estructura vacía</b>
-
-def_html_nombreentidad = {
-    atributos: [],                         //lista de los atributos
-    atributo: {                            //definicion de cada atributo
-        tag: "",                           //el tag html (input,select,textarea)
-        type: "",                          //el tipo de input optativo
-        valores: [],                       //valores posibles si es select, optativo
-        multiple: false,                   //si da opciones y es multiple, optativo
-        esPK: true,                        //es PK en la tabla?
-        esAutoIncremental: true,           //es autoincremental?
-        esEspecial : true,                 //es para los especiales a la hora de ponerlo en la tabla
-        size: "",                          //para el tamaño del input optativo
-        rows : "",                         //para textarea optativo
-        cols : "",                         //para textarea optativo
-    }
-
-};
-
-def_test_nombreentidad = {                 //todo obligatorio
-    accion: {                                   //ADD, EDIT o SEARCH, para SHOWCURRENT y DELETE no hay validaciones
-        atributo: {                             //el atributo a probar
-            prueba: {                           //el nombre de la prueba a realizar
-                valor : "",                     //el maximo para un max_size o el regex para formato
-                codigo: "",                     //el codigo de error
-                especial : false                //indica si es prueba especial/estandar (al hacer test que invoque validaciones atomicas o metodo especifco)
-            }   
-        }                                       //la de empty de fichero cuenta como especial (IMPORTANTE)
-    }
-}
 `,
 
     // Textos para la estructura de analysis_preparation
@@ -1135,10 +1108,11 @@ this.def_test_analysis_preparation = {
         },
 
         /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - (Comprobado con una funcion especial) Que exista el fichero
             - Tamaño mínimo de 7 caracteres en nombre de archivo.
             - Tamaño máximo de 100 caracteres en nombre de archivo.
             - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 GBs.
+            - Tamaño de archivo máximo de 2 MBs.
             - Formato permitidos: pdf, doc, docx.
             - Permitidos: caracteres alfabéticos y punto para indicar el formato.
             - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
@@ -1261,7 +1235,7 @@ this.def_test_analysis_preparation = {
             - Tamaño mínimo de 7 caracteres en nombre de archivo.
             - Tamaño máximo de 100 caracteres en nombre de archivo.
             - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 GBs.
+            - Tamaño de archivo máximo de 2 MBs.
             - Formato permitidos: pdf, doc, docx.
             - Permitidos: caracteres alfabéticos y punto para indicar el formato.
             - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
@@ -1402,36 +1376,6 @@ this.def_test_analysis_preparation = {
     }
 };
 
-<b>Ejemplo de uso: estructura vacía</b>
-
-def_html_nombreentidad = {
-    atributos: [],                         //lista de los atributos
-    atributo: {                            //definicion de cada atributo
-        tag: "",                           //el tag html (input,select,textarea)
-        type: "",                          //el tipo de input optativo
-        valores: [],                       //valores posibles si es select, optativo
-        multiple: false,                   //si da opciones y es multiple, optativo
-        esPK: true,                        //es PK en la tabla?
-        esAutoIncremental: true,           //es autoincremental?
-        esEspecial : true,                 //es para los especiales a la hora de ponerlo en la tabla
-        size: "",                          //para el tamaño del input optativo
-        rows : "",                         //para textarea optativo
-        cols : "",                         //para textarea optativo
-    }
-
-};
-
-def_test_nombreentidad = {                 //todo obligatorio
-    accion: {                                   //ADD, EDIT o SEARCH, para SHOWCURRENT y DELETE no hay validaciones
-        atributo: {                             //el atributo a probar
-            prueba: {                           //el nombre de la prueba a realizar
-                valor : "",                     //el maximo para un max_size o el regex para formato
-                codigo: "",                     //el codigo de error
-                especial : false                //indica si es prueba especial/estandar (al hacer test que invoque validaciones atomicas o metodo especifco)
-            }   
-        }                                       //la de empty de fichero cuenta como especial (IMPORTANTE)
-    }
-}
 `,
 
     // Textos para la estructura de characteristic
@@ -1636,10 +1580,11 @@ this.def_test_characteristic = {
         },
 
         /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
+            - (Comprobado con una funcion especial) Que exista el fichero
             - Tamaño mínimo de 7 caracteres en nombre de archivo.
             - Tamaño máximo de 100 caracteres en nombre de archivo.
             - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 GBs.
+            - Tamaño de archivo máximo de 200 KBs.
             - Formato permitidos: pdf, doc, docx.
             - Permitidos: caracteres alfabéticos y punto para indicar el formato.
             - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
@@ -1786,7 +1731,7 @@ this.def_test_characteristic = {
             - Tamaño mínimo de 7 caracteres en nombre de archivo.
             - Tamaño máximo de 100 caracteres en nombre de archivo.
             - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 GBs.
+            - Tamaño de archivo máximo de 200 KBs.
             - Formato permitidos: pdf, doc, docx.
             - Permitidos: caracteres alfabéticos y punto para indicar el formato.
             - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
@@ -1951,36 +1896,6 @@ this.def_test_characteristic = {
     }
 };
 
-<b>Ejemplo de uso: estructura vacía</b>
-
-def_html_nombreentidad = {
-    atributos: [],                         //lista de los atributos
-    atributo: {                            //definicion de cada atributo
-        tag: "",                           //el tag html (input,select,textarea)
-        type: "",                          //el tipo de input optativo
-        valores: [],                       //valores posibles si es select, optativo
-        multiple: false,                   //si da opciones y es multiple, optativo
-        esPK: true,                        //es PK en la tabla?
-        esAutoIncremental: true,           //es autoincremental?
-        esEspecial : true,                 //es para los especiales a la hora de ponerlo en la tabla
-        size: "",                          //para el tamaño del input optativo
-        rows : "",                         //para textarea optativo
-        cols : "",                         //para textarea optativo
-    }
-
-};
-
-def_test_nombreentidad = {                 //todo obligatorio
-    accion: {                                   //ADD, EDIT o SEARCH, para SHOWCURRENT y DELETE no hay validaciones
-        atributo: {                             //el atributo a probar
-            prueba: {                           //el nombre de la prueba a realizar
-                valor : "",                     //el maximo para un max_size o el regex para formato
-                codigo: "",                     //el codigo de error
-                especial : false                //indica si es prueba especial/estandar (al hacer test que invoque validaciones atomicas o metodo especifco)
-            }   
-        }                                       //la de empty de fichero cuenta como especial (IMPORTANTE)
-    }
-}
 `,
 
     /*TRADUCCIONES PARA API.HTML*/
