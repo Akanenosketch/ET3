@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-#id_tabla_datos{
+#id_tabla_datos {
     overflow-x: auto;
 }
 
@@ -255,38 +255,66 @@ h2 {
 }
 
 #div_IU_test {
-    display: none; /* Ocultamos el modal por defecto */
-    position: fixed; /* Fijamos la posición */
-    top: 40%; /* Centro vertical */
-    left: 50%; /* Centro horizontal */
-    transform: translate(-50%, -50%); /* Ajusta para que el centro del modal sea el centro de la pantalla */
-    background-color: white; /* Fondo blanco */
-    padding: 20px; /* Espaciado */
-    z-index: 9999; /* Asegura que el modal esté por encima del contenido y del overlay */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para el modal */
-    width: auto; /* Ajusta el ancho según el contenido */
-    max-width: 90%; /* Evita que el modal sea demasiado ancho */
-    max-height: 90%; /* Evita que el modal sea demasiado alto */
-    overflow: auto; /* Permite scroll si el contenido excede el tamaño del modal */
+    display: none;
+    /* Ocultamos el modal por defecto */
+    position: fixed;
+    /* Fijamos la posición */
+    top: 40%;
+    /* Centro vertical */
+    left: 50%;
+    /* Centro horizontal */
+    transform: translate(-50%, -50%);
+    /* Ajusta para que el centro del modal sea el centro de la pantalla */
+    background-color: white;
+    /* Fondo blanco */
+    padding: 20px;
+    /* Espaciado */
+    z-index: 9999;
+    /* Asegura que el modal esté por encima del contenido y del overlay */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para el modal */
+    width: auto;
+    /* Ajusta el ancho según el contenido */
+    max-width: 90%;
+    /* Evita que el modal sea demasiado ancho */
+    max-height: 90%;
+    /* Evita que el modal sea demasiado alto */
+    overflow: auto;
+    /* Permite scroll si el contenido excede el tamaño del modal */
 }
 
 
 .darkmode #div_IU_test {
-    display: none; /* Ocultamos el modal por defecto */
-    position: fixed; /* Fijamos la posición */
-    top: 40%; /* Centro vertical */
-    left: 50%; /* Centro horizontal */
-    transform: translate(-50%, -50%); /* Ajusta para que el centro del modal sea el centro de la pantalla */
-    background-color: #2c2c2c; /* Fondo blanco */
-    padding: 20px; /* Espaciado */
-    z-index: 9999; /* Asegura que el modal esté por encima del contenido y del overlay */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para el modal */
-    width: auto; /* Ajusta el ancho según el contenido */
-    max-width: 90%; /* Evita que el modal sea demasiado ancho */
-    max-height: 90%; /* Evita que el modal sea demasiado alto */
-    overflow: auto; /* Permite scroll si el contenido excede el tamaño del modal */
+    display: none;
+    /* Ocultamos el modal por defecto */
+    position: fixed;
+    /* Fijamos la posición */
+    top: 40%;
+    /* Centro vertical */
+    left: 50%;
+    /* Centro horizontal */
+    transform: translate(-50%, -50%);
+    /* Ajusta para que el centro del modal sea el centro de la pantalla */
+    background-color: #2c2c2c;
+    /* Fondo blanco */
+    padding: 20px;
+    /* Espaciado */
+    z-index: 9999;
+    /* Asegura que el modal esté por encima del contenido y del overlay */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para el modal */
+    width: auto;
+    /* Ajusta el ancho según el contenido */
+    max-width: 90%;
+    /* Evita que el modal sea demasiado ancho */
+    max-height: 90%;
+    /* Evita que el modal sea demasiado alto */
+    overflow: auto;
+    /* Permite scroll si el contenido excede el tamaño del modal */
 }
 
 /* Al pasar el ratón sobre el contenedor conjuntoAPI */
@@ -879,41 +907,41 @@ tr:hover {
     position: fixed;
     z-index: 9999;
     display: none;
-    border: 2px solid #e69500; 
+    border: 2px solid #e69500;
     margin-bottom: 15px;
     border-radius: 10px;
-    background-color: #f8f9fa; 
-    color: black; 
-    padding: 15px 20px; 
+    background-color: #f8f9fa;
+    color: black;
+    padding: 15px 20px;
     box-shadow: 0 2px 5px rgba(255, 165, 0, 0.7);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Arial', sans-serif; 
-    font-size: 14px; 
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
 }
 
 #cerrar_modal {
-    background-color: #e69500; 
-    color: #ffffff; 
+    background-color: #e69500;
+    color: #ffffff;
     border: none;
-    border-radius: 5px; 
-    padding: 8px 16px; 
-    font-size: 14px; 
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
     margin-top: 10px;
 }
 
 #cerrar_modal:hover {
-    background-color: #cf7e00; 
-    scale: 1.1; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: #cf7e00;
+    scale: 1.1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #cerrar_modal:active {
-    background-color: #b96d00; 
-    transform: scale(0.95); 
+    background-color: #b96d00;
+    transform: scale(0.95);
 }
 
 
@@ -1038,16 +1066,20 @@ pre {
 /* Estilos para pantallas pequeñas (960x540 px a 640x480 px) */
 @media (max-width: 960px) {
     #div-menu {
-        width: 100%; /* El ancho permanece al 100% */
-        min-height: 55%; /* Opcional: define una altura mínima */
-        height: auto; /* Permite que la altura se ajuste al contenido */
-        align-items: center; /* Alineación vertical (solo relevante si es un contenedor flex) */
-        border-radius: 0 0 8px 8px; /* Bordes redondeados en las esquinas inferiores */
-    }    
+        width: 100%;
+        /* El ancho permanece al 100% */
+        min-height: 55%;
+        /* Opcional: define una altura mínima */
+        height: auto;
+        /* Permite que la altura se ajuste al contenido */
+        align-items: center;
+        /* Alineación vertical (solo relevante si es un contenedor flex) */
+        border-radius: 0 0 8px 8px;
+        /* Bordes redondeados en las esquinas inferiores */
+    }
 
-    #div-menu .opcionmenu .text_project,
-    #div-menu .opcionmenu .text_analysis_prep,
-    #div-menu .opcionmenu .text_characteristic {
+
+    #div-menu .opcionmenu span {
         display: block;
         /* Hace que el texto ocupe todo el espacio disponible */
         text-align: center;
@@ -1060,28 +1092,13 @@ pre {
         /* Bordes redondeados opcionales */
     }
 
-    #div-menu .opcionmenu .opt_funciones_test,
-    #div-menu .opcionmenu .opt_funciones_tabla,
-    #div-menu .opcionmenu .opt_funciones_form,
-    #div-menu .opcionmenu .opt_funciones_valid,
-    #div-menu .opcionmenu .opt_funciones_other {
-        display: block;
-        /* Hace que el texto ocupe todo el espacio disponible */
-        text-align: center;
-        /* Centra el texto dentro de cada opción */
-        cursor: pointer;
-        /* Cambia el cursor al pasar sobre las opciones */
-        padding: 10px 20px;
-        /* Espaciado dentro de las opciones */
-        border-radius: 5px;
-        /* Bordes redondeados opcionales */
-    }
+       
 
     .text_titulo_app {
         display: none;
     }
 
-    
+
     .opciones {
         left: 20%;
         width: auto;

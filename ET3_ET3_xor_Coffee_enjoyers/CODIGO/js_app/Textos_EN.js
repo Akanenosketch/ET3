@@ -1,5 +1,6 @@
 let textos_EN = {
     
+    "text_struct":"Structure",
     "SelectDefault" : "Select",
     "textoInicio" : "Welcome, this is our group´s ET3 Interface",
 
@@ -69,6 +70,8 @@ let textos_EN = {
     //Titulos
     'text_title_page_default_structures'               : 'Used Structures',
     'text_titulo_page_estructura_project'              : 'Proyect Structure',
+    'text_titulo_page_estructura_struct': 'Empty Structure Explained',
+
     'text_titulo_page_estructura_analysis_preparation' : 'Analysis Preparation Structure',
     'text_titulo_page_estructura_characteristic'       : 'Characteristic Structure',
 
