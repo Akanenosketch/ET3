@@ -53,30 +53,6 @@
     /* Asegura que el contenedor ocupe todo el ancho disponible */
 }
 
-.navbar a {
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    color: black;
-    display: flex;
-    align-items: center;
-    /* Alinea el texto verticalmente con el SVG */
-}
-
-.navbar a:hover {
-    color: #e69500;
-    scale: 1.05;
-}
-
-.navbar svg {
-    height: 30px;
-    /* Ajusta el tamaño del SVG para que no sea más alto que el texto */
-    width: auto;
-    /* Mantiene la proporción del SVG */
-    margin-right: 15px;
-    /* Espacio entre el SVG y el texto */
-}
-
 .text_titulo_app {
     color: black;
     padding-top: 50%;
@@ -317,13 +293,7 @@ h2 {
     /* Permite scroll si el contenido excede el tamaño del modal */
 }
 
-/* Al pasar el ratón sobre el contenedor conjuntoAPI */
-.conjuntoAPI:hover .path-4,
-.conjuntoAPI:hover .path-5,
-.conjuntoAPI:hover .path-6 {
-    fill: #e69500;
-    /* Cambia el color al que prefieras */
-}
+
 
 
 #div-menu .opcionmenu {
@@ -396,21 +366,8 @@ h2 {
     position: relative;
 }
 
-/*.circle {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05),
-                -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(10%, -50%);
-}*/
 
 
-/* Formularios  estos sobran?*/
 .div_IU_form,
 .div_IU_test {
     width: 100%;

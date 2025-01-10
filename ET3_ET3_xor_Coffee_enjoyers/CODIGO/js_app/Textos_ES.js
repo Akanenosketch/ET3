@@ -3,6 +3,7 @@ let textos_ES = {
     "text_struct":"Estructura",
     "SelectDefault": "Escoja",
     "textoInicio": "Bienvenidos, esto es la interfaz de la ET3 de nuestro grupo",
+
     /*TITULOS*/
 
     "base_de_datos": "Estructura",
@@ -61,2116 +62,6 @@ let textos_ES = {
     'text_contenido_titulo_form_characteristic_SHOWCURRENT': 'Formulario Muestra Característica',
     'text_contenido_titulo_form_characteristic_DELETE': 'Formulario Borrado Característica',
 
-    /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
-
-    'InfoTextStruct1': 'En está página se ofrece una explicación sobre las estructuras realizadas para las entidades empleadas para este proyecto.',
-    'InfoTextStruct2': 'Para conocer más información sobre una estructura selecciona una de las entidades disponibles dentro del menú localizado en la parte superior izquierda.',
-
-    //Titulos
-    'text_title_page_default_structures': 'Estructuras Empleadas',
-    'text_titulo_page_estructura_project': 'Estructura de Proyecto',
-    'text_titulo_page_estructura_struct': 'Estructura Vacia Explicada',
-    'text_titulo_page_estructura_analysis_preparation': 'Estructura de Preparacion Análisis',
-    'text_titulo_page_estructura_characteristic': 'Estructura de Característica',
-
-    // Texto estructura project
-    'struct4': 'Estructura (Vacia) empleada para las entidades',
-    'desc97': `
-//Variable que contiene la informacion para la generacion automatica de formularios
-def_html_nombreentidad = {
-    atributos: [],                         //Lista de los atributos de la entidad (obligatorio)
-    atributo: {                            //Definicion de cada atributo (repetido para cada atributo, obligatorio para todos los atributos)
-        tag: "",                           //El tag html del atributo (INPUT,SELECT,TEXTAREA) (obligatorio)
-        type: "",                          //El tipo de input, obligatorio y solo para atributos con tag INPUT (text,date,number,password,file)
-        valores: [],                       //Los valores posibles a seleccionar, obligatorio y solo para atributos con tag SELECT
-        multiple: false,                   //Para atributos con tag SELECT, indica si se pueden marcar multiples valores (obligatorio para SELECTs)
-        esPK: true,                        //Obligatorio, indica si el atributo es Primary Key en la tabla correspondiente a la entidad
-        esAutoIncremental: true,           //Obligatorio, indica si el atributo es Autoincremental en la tabla correspondiente a la entidad
-        esEspecial : true,                 //Obligatorio, indica si existe una funcion mostrardatosespecialesForm(atributo, valoratributo) en la clase nombreentidad para mostrar el atributo de una forma personalizada
-        size: "",                          //Optativo, para los atributos con tag INPUT, especifica el tamaño maximo del campo de input
-        rows : "",                         //Optativo, para los atributos con tag TEXTAREA, especifica el numero de filas del campo textarea
-        cols : "",                         //Optativo, para los atributos con tag TEXTAREA, especifica el numero de columnas del campo textarea
-    }
-
-};
-//Variable que contiene la informacion para la generacion automatica de validaciones
-def_test_nombreentidad = { //Todos los campos son obligatorios
-    accion: {                                   //La accion a realizar (ADD,EDIT,DELETE) (repetir para todas las acciones)
-        atributo: {                             //El atributo que va a ser probado (repetir para todos los atributos)
-            prueba: {                           //El nombre de la prueba a realizar (repetir para todas las pruebas del atributo)
-                valor : "",                     //El valor de referencia de la prueba (un tamaño minimo/maximo o una regEx; en las pruebas especiales,el nombre de la prueba para las pruebas especiales)
-                codigo: "",                     //El codigo de error correspondiente al mensaje de error a mostrar ante un fallo de esta validacion
-                especial : false                //Indica si se trata de una prueba especial, es decir, que no este implementada en Validaciones_Atomicas.js y deba ser implementada en una clase nombreentidad.js en un metodo validacionesespeciales(atributo, prueba)
-            }   
-        }
-    }
-}
-
-    
-    `,
-
-    'struct1': 'Estructura empleada para la entidad project',
-    'desc94': `
-this.def_html_project = {
-    atributos: ["id_project", "name_project", "start_date_project", "end_date_project", "responsable_project", "organization_project", "code_project", "acronym_project", "id_sampling_methodology", "description_project", "file_project"],
-
-    /*<b>id_project</b> hace referencia a la ID de proyecto, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
-      Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
-      Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/
-
-    "id_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: true,
-        esAutoIncremental: true,
-        esEspecial: false,
-        size: 11
-    },
-
-    /*<b>name_project</b> hace referencia al nombre de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
-
-    "name_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 100
-    },
-
-    /*<b>start_date_project</b> hace referencia a la fecha de inicio de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y es una feche que debe de seguir un formato dd-mm-aaaa, debe de ser menor que la fecha de fin de proyecto.
-      Es una atributo especial, por lo que,  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vezen consecuencia, sera mostrado de forma especial en el form (con una funcion de mostrardatosespecialesform).*/
-
-    "start_date_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: true,
-        size: 10
-    },
-
-    /*<b>end_date_project</b> hace referencia a la fecha de fin de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y es una fecha que debe de seguir el formato dd-mm-aa, debe de ser mayor que la fecha de inicio de proyecto.
-      Es una atributo especial, por lo que,  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vezen consecuencia, sera mostrado de forma especial en el form (con una funcion de mostrardatosespecialesform).*/
-
-    "end_date_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: true,
-        size: 10
-    },
-
-    /*<b>responsable_project</b> hace referencia al responsable de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 60 caracteres.*/
-
-    "responsable_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 60
-    },
-
-    /*<b>organization_project</b> hace referencia a la organización de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres.*/
-
-    "organization_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 100
-    },
-
-    /*<b>code_project</b> hace referencia al código de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 50 caracteres.*/
-
-    "code_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 50
-    },
-
-    /*<b>acronym_project</b> hace referencia al acrónimo de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 15 caracteres.*/
-
-    "acronym_project": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 15
-    },
-
-    /*<b>id_sampling_methodology</b> hace referencia al ID de metodología de muestreo, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 15 caracteres numéricos.*/
-
-    "id_sampling_methodology": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 11
-    },
-
-    /*<b>description_project</b> hace referencia a la descripción de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 500 caracteres.*/
-
-    "description_project": {
-        tag: "TEXTAREA",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        rows: 5,
-        cols: 100
-    },
-
-    /*<b>file_project</b> hace referencia al archivo de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
-      Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/
-
-    "file_project": {
-        tag: "INPUT",
-        type: "file",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 100
-    }
-};
-
-<b>Estructura de pruebas para Project:</b>
-
-this.def_test_project = {
-
-    // Estructura para los test de adición de un nuevo proyecto.
-
-    "ADD": {
-
-        /* <b>name_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 15 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "name_project": {
-            "min_size": {
-                valor: 15,
-                codigo: "project__name_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "project__name_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "project__name_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
-            - Debe de ser una fecha váida dentro del calendario gregoriano.
-            - La fecha no debe de ser superior a la fecha de fin de proyecto.
-         * /
-
-        "start_date_project": {
-            "format": {
-                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
-                codigo: "project__start_date_project__format_KO",
-                especial: false
-            },
-            "fechavalida": {
-                valor: "fechavalida",
-                codigo: "project__start_date_project__valid_KO",
-                especial: true
-            },
-            "fechaSuperior": {
-                valor: "fechaSuperior",
-                codigo: "project__start_date_project__superior_KO",
-                especial: true
-            }
-        },
-
-        /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
-            - Debe de ser una fecha váida dentro del calendario gregoriano.
-            - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
-         * /
-
-        "end_date_project": {
-            "format": {
-                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
-                codigo: "project__end_date_project__format_KO",
-                especial: false
-            },
-            "fechavalida": {
-                valor: "fechavalida",
-                codigo: "project__end_date_project__valid_KO",
-                especial: true
-            },
-            "fechaInferior": {
-                valor: "fechaInferior",
-                codigo: "project__end_date_project__inferior_KO",
-                especial: true
-            }
-        },
-
-        /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 60 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
-            - No permitidos: caracteres no mencionados.
-         * /        
-
-        "responsable_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__responsable_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 60,
-                codigo: "project__responsable_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
-                codigo: "project__responsable_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>organization_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
-            - No permitidos: caracteres no mencionados.
-         * / 
-
-        "organization_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__organization_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "project__organization_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: '^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$',
-                codigo: "project__organization_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 30 caracteres.
-            - Tamaño máximo de 500 caracteres.
-            - Permitidos: Todos.
-         * / 
-
-        "description_project": {
-            "min_size": {
-                valor: 30,
-                codigo: "project__description_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 500,
-                codigo: "project__description_project__max_size_KO",
-                especial: false
-            }
-        },
-
-        /* <b>code_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 50 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
-            - No permitidos: acentos y caracteres no mencionados.
-         * / 
-
-        "code_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__code_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 50,
-                codigo: "project__code_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
-                codigo: "project__code_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 15 caracteres.
-            - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
-            - No permitidos: espacios, acentos y caracteres no mencionados.
-         * / 
-
-        "acronym_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__acronym_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 15,
-                codigo: "project__acronym_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
-                codigo: "project__acronym_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 1 dígito.
-            - Tamaño máximo de 100 dígitos.
-            - Permitidos: números.
-            - No permitidos: el resto de caracteres.
-         * / 
-
-        "id_sampling_methodology": {
-            "min_size": {
-                valor: 1,
-                codigo: "project__id_sampling_methodology__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 11,
-                codigo: "project__id_sampling_methodology__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[1-9][0-9]*$",
-                codigo: "project__id_sampling_methodology__format_KO",
-                especial: false
-            }
-        },
-        
-        /* <b>nuevo_file_project</b> debe de seguir los siguientes requisitos:
-            - (Comprobado con una funcion especial) Que exista el fichero
-            - Tamaño mínimo de 7 caracteres en nombre de archivo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 MBs.
-            - Formato permitidos: pdf, doc, docx.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * / 
-
-        "nuevo_file_project": {
-            "empty": {
-                valor: "empty",
-                codigo: "project__nuevo_file_project__empty_KO",
-                especial: true
-            },
-            "max_size_file": {
-                valor: 2000000,
-                codigo: "project__nuevo_file_project__max_size_file_KO",
-                especial: false
-            },
-            "type_file": {
-                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
-                codigo: "project__nuevo_file_project__type_file_KO",
-                especial: false
-            },
-            "min_size": {
-                valor: 7,
-                codigo: "project__nuevo_file_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "project__nuevo_file_project__max_size_KO",
-                especial: false
-            },
-            "format_name_file": {
-                valor: "^[A-Za-z.]*$",
-                codigo: "project__nuevo_file_project__format_name_file_KO",
-                especial: false
-            }
-        }
-    },
-
-    // Estructura para las pruebas de edición de un proyecto
-
-    "EDIT": {
-
-        /* <b>name_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 15 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-    
-        "name_project": {
-            "min_size": {
-                valor: 15,
-                codigo: "project__name_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "project__name_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "project__name_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
-            - Debe de ser una fecha váida dentro del calendario gregoriano.
-            - La fecha no debe de ser superior a la fecha de fin de proyecto.
-         * /        
-
-        "start_date_project": {
-            "format": {
-                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
-                codigo: "project__start_date_project__format_KO",
-                especial: false
-            },
-            "fechavalida": {
-                valor: "fechavalida",
-                codigo: "project__start_date_project__valid_KO",
-                especial: true
-            },
-            "fechaSuperior": {
-                valor: "fechaSuperior",
-                codigo: "project__start_date_project__superior_KO",
-                especial: true
-            }
-        },
-
-        /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
-            - Debe de ser una fecha váida dentro del calendario gregoriano.
-            - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
-         * /
-
-        "end_date_project": {
-            "format": {
-                valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
-                codigo: "project__end_date_project__format_KO",
-                especial: false
-            },
-            "fechavalida": {
-                valor: "fechavalida",
-                codigo: "project__end_date_project__valid_KO",
-                especial: true
-            },
-            "fechaInferior": {
-                valor: "fechaInferior",
-                codigo: "project__end_date_project__inferior_KO",
-                especial: true
-            }
-        },
-        
-        /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 60 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
-            - No permitidos: caracteres no mencionados.
-         * /  
-
-        "responsable_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__responsable_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 60,
-                codigo: "project__responsable_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$",
-                codigo: "project__responsable_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>organization_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
-            - No permitidos: caracteres no mencionados.
-         * / 
-
-        "organization_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__organization_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "project__organization_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
-                codigo: "project__organization_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 30 caracteres.
-            - Tamaño máximo de 500 caracteres.
-            - Permitidos: Todos.
-         * / 
-
-        "description_project": {
-            "min_size": {
-                valor: 30,
-                codigo: "project__description_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 500,
-                codigo: "project__description_project__max_size_KO",
-                especial: false
-            }
-        },
-
-        /* <b>code_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 50 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
-            - No permitidos: acentos y caracteres no mencionados.
-         * / 
-
-        "code_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__code_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 50,
-                codigo: "project__code_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
-                codigo: "project__code_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 15 caracteres.
-            - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
-            - No permitidos: espacios, acentos y caracteres no mencionados.
-         * / 
-
-        "acronym_project": {
-            "min_size": {
-                valor: 6,
-                codigo: "project__acronym_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 15,
-                codigo: "project__acronym_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
-                codigo: "project__acronym_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 1 dígito.
-            - Tamaño máximo de 100 dígitos.
-            - Permitidos: números.
-            - No permitidos: el resto de caracteres.
-         * / 
-
-        "id_sampling_methodology": {
-            "min_size": {
-                valor: 1,
-                codigo: "project__id_sampling_methodology__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 11,
-                codigo: "project__id_sampling_methodology__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[1-9][0-9]*$",
-                codigo: "project__id_sampling_methodology__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>nuevo_file_project</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 7 caracteres en nombre de archivo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 MBs.
-            - Formato permitidos: pdf, doc, docx.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * / 
-
-        "nuevo_file_project": {
-            "max_size_file": {
-                valor: 2000000,
-                codigo: "project__nuevo_file_project__max_size_file_KO",
-                especial: false
-            },
-            "type_file": {
-                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
-                codigo: "project__nuevo_file_project__type_file_KO",
-                especial: false
-            },
-            "min_size": {
-                valor: 7,
-                codigo: "project__nuevo_file_project__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "project__nuevo_file_project__max_size_KO",
-                especial: false
-            },
-            "format_name_file": {
-                valor: "^[A-Za-z.]*$",
-                codigo: "project__nuevo_file_project__format_name_file_KO",
-                especial: false
-            }
-        }
-    },
-
-    // Estructura para los test de búsqueda de proyectos
-
-    "SEARCH": {
-
-        /* <b>id_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 11 dígitos.
-            - Permitidos: números.
-            - No permitidos: el resto de caracteres.
-        * / 
-
-        "id_project": {
-            "max_size": {
-                valor: 11,
-                codigo: "project__id_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[0-9]*$",
-                codigo: "project__id_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>name_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "name_project": {
-            "max_size": {
-                valor: 100,
-                codigo: "project__name_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "project__name_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
-         * /
-
-        "start_date_project": {
-            "format": {
-                valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
-                codigo: "project__start_date_project__format_SEARCH_KO",
-                especial: false
-            }
-        },
-
-        /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
-            - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
-         * /
-
-        "end_date_project": {
-            "format": {
-                valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
-                codigo: "project__end_date_project__format_SEARCH_KO",
-                especial: false
-            }
-        },
-
-        /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 60 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
-            - No permitidos: caracteres no mencionados.
-         * /  
-
-        "responsable_project": {
-            "max_size": {
-                valor: 60,
-                codigo: "project__responsable_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$",
-                codigo: "project__responsable_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>organization_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
-            - No permitidos: caracteres no mencionados.
-         * / 
-
-        "organization_project": {
-            "max_size": {
-                valor: 100,
-                codigo: "project__organization_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
-                codigo: "project__organization_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 500 caracteres.
-            - Permitidos: Todos.
-         * / 
-
-        "description_project": {
-            "max_size": {
-                valor: 500,
-                codigo: "project__description_project__max_size_KO",
-                especial: false
-            }
-        },
-
-        /* <b>code_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínino.
-            - Tamaño máximo de 50 caracteres.
-            - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
-            - No permitidos: acentos y caracteres no mencionados.
-         * / 
-
-        "code_project": {
-            "max_size": {
-                valor: 50,
-                codigo: "project__code_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
-                codigo: "project__code_project__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 15 caracteres.
-            - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
-            - No permitidos: espacios, acentos y caracteres no mencionados.
-         * / 
-
-        "acronym_project": {
-            "max_size": {
-                valor: 15,
-                codigo: "project__acronym_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
-                codigo: "project__acronym_project__format_KO",
-                especial: false
-            }
-        },
-
-
-        /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 dígitos.
-            - Permitidos: números.
-            - No permitidos: el resto de caracteres.
-         * / 
-
-        "id_sampling_methodology": {
-            "max_size": {
-                valor: 11,
-                codigo: "project__id_sampling_methodology__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[0-9]*$",
-                codigo: "project__id_sampling_methodology__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>file_project</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * / 
-
-        "file_project": {
-            "max_size": {
-                valor: 100,
-                codigo: "project__file_project__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z.]*$,
-                codigo: "project__file_project__format_KO",
-                especial: false
-            }
-        }
-    }
-};
-`,
-
-    // Textos para la estructura de analysis_preparation
-
-    'struct2': 'Estructura empleada para la entidad analysis preparation',
-    'desc95': `
-this.def_html_analysis_preparation = {
-    atributos: ["id_analysis_preparation", "name_analysis_preparation", "bib_analysis_preparation", "description_analysis_preparation", "file_analysis_preparation"],
-
-    /*<b>id_analysis_preparation</b> hace referencia al ID de análisis, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
-      Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
-      Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/    
-
-    "id_analysis_preparation": {
-        tag: "INPUT",
-        type: "text",
-        esPK: true,
-        esAutoIncremental: true,
-        esEspecial: false,
-        size: 11
-    },
-
-    /*<b>name_analysis_preparation</b> hace referencia al nombre de análisis, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
-
-    "name_analysis_preparation": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 100
-    },
-
-    /*<b>bib_analysis_preparation</b> hace referencia a la bibliografía de análisis, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 200 caracteres*/
-
-    "bib_analysis_preparation": {
-        tag: "TEXTAREA",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        rows: 4,
-        cols: 50
-    },
-
-    /*<b>description_analysis_preparation</b> hace referencia a la descripción de análisis, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 5000 caracteres*/
-
-    "description_analysis_preparation": {
-        tag: "TEXTAREA",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        rows: 50,
-        cols: 100
-    },
-
-    /*<b>file_analysis_preparation</b> hace referencia al archivo de análisis, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
-      Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/
-
-    "file_analysis_preparation": {
-        tag: "INPUT",
-        type: "file",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 100
-    }
-};
-
-<b>Estructura de pruebas para Analysis Preparation:</b>
-
-this.def_test_analysis_preparation = {
-    
-    // Estructura para los test de adición de un nuevo análisis.
-
-    "ADD": {
-
-        /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 8 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "name_analysis_preparation": {
-            "min_size": {
-                valor: 8,
-                codigo: "analysis_preparation__name_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "analysis_preparation__name_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 80 caracteres.
-            - Tamaño máximo de 5000 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "description_analysis_preparation": {
-            "min_size": {
-                valor: 80,
-                codigo: "analysis_preparation__description_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 5000,
-                codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "analysis_preparation__description_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 200 caracteres.
-            - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
-            - No permitidos: caracteres no mencionados.
-         * /
-
-        "bib_analysis_preparation": {
-            "min_size": {
-                valor: 6,
-                codigo: "analysis_preparation__bib_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 200,
-                codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
-                codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - (Comprobado con una funcion especial) Que exista el fichero
-            - Tamaño mínimo de 7 caracteres en nombre de archivo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 MBs.
-            - Formato permitidos: pdf, doc, docx.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "nuevo_file_analysis_preparation": {
-            "empty": {
-                valor: "empty",
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__empty_KO",
-                especial: true
-            },
-            "max_size_file": {
-                valor: 2000000,
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_file_KO",
-                especial: false
-            },
-            "type_file": {
-                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__type_file_KO",
-                especial: false
-            },
-            "min_size": {
-                valor: 7,
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format_name_file": {
-                valor: "^[A-Za-z.]*$",
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__format_name_file_KO",
-                especial: false
-            }
-        }
-    },
-
-    // Estructura para los test de edición de un análisis.
-
-    "EDIT": {
-
-        /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 8 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "name_analysis_preparation": {
-            "min_size": {
-                valor: 8,
-                codigo: "analysis_preparation__name_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "analysis_preparation__name_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 80 caracteres.
-            - Tamaño máximo de 5000 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "description_analysis_preparation": {
-            "min_size": {
-                valor: 80,
-                codigo: "analysis_preparation__description_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 5000,
-                codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "analysis_preparation__description_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 6 caracteres.
-            - Tamaño máximo de 200 caracteres.
-            - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
-            - No permitidos: caracteres no mencionados.
-         * /
-
-        "bib_analysis_preparation": {
-            "min_size": {
-                valor: 6,
-                codigo: "analysis_preparation__bib_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 200,
-                codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
-                codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 7 caracteres en nombre de archivo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 2 MBs.
-            - Formato permitidos: pdf, doc, docx.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * /        
-
-        "nuevo_file_analysis_preparation": {
-            "max_size_file": {
-                valor: 2000000,
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_file_KO",
-                especial: false
-            },
-            "type_file": {
-                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__type_file_KO",
-                especial: false
-            },
-            "min_size": {
-                valor: 7,
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format_name_file": {
-                valor: "^[A-Za-z.]*$",
-                codigo: "analysis_preparation__nuevo_file_analysis_preparation__format_name_file_KO",
-                especial: false
-            }
-        }
-    },
-
-    // Estructura para los test de búsqueda de un análisis.
-
-    "SEARCH": {
-
-        /* <b>id_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: números.
-            - No permitidos: caracteres no mencionados.
-         * /
-
-        "id_analysis_preparation": {
-            "max_size": {
-                valor: 11,
-                codigo: "analysis_preparation__id_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[0-9]*$",
-                codigo: "analysis_preparation__id_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "name_analysis_preparation": {
-            "max_size": {
-                valor: 100,
-                codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "analysis_preparation__name_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 5000 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "description_analysis_preparation": {
-            "max_size": {
-                valor: 5000,
-                codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "analysis_preparation__description_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 200 caracteres.
-            - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
-            - No permitidos: caracteres no mencionados.
-         * /
-
-        "bib_analysis_preparation": {
-            "max_size": {
-                valor: 200,
-                codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
-                codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "file_analysis_preparation": {
-            "max_size": {
-                valor: 100,
-                codigo: "analysis_preparation__file_analysis_preparation__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z.]*$,
-                codigo: "analysis_preparation__file_analysis_preparation__format_KO",
-                especial: false
-            }
-        }
-    }
-};
-
-`,
-
-    // Textos para la estructura de characteristic
-
-    'struct3': 'Estructura empleada para la entidad characteristic',
-    'desc96': `
-this.def_html_characteristic = {
-    atributos: ["id_characteristic", "name_characteristic", "data_type_characteristic","category_characteristic","description_characteristic",  "bibref_characteristic", "file_characteristic"],
-
-    /*<b>id_characteristic</b> hace referencia al ID de característica, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
-      Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
-      Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/
-
-    "id_characteristic": {
-        tag: "INPUT",
-        type: "text",
-        esPK: true,
-        esAutoIncremental: true,
-        esEspecial: false,
-        size: 11
-    },
-
-    /*<b>name_characteristic</b> hace referencia al nombre de característica, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
-
-    "name_characteristic": {
-        tag: "INPUT",
-        type: "text",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 100
-    },
-
-    /*<b>data_type_characteristic</b> hace referencia al tipo de dato de la característica, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Enum y su sólo se puede escoger entre number, text o set*/
-
-    "data_type_characteristic": { 
-        tag: "SELECT", 
-        valores: ['number','text','set'], 
-        multiple: false, 
-        esPK: false,  
-        esAutoIncremental: false,
-        esEspecial : false
-    },
-
-    /*<b>category_characteristic</b> hace referencia a la categoría de la característica, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Enum y su sólo se puede escoger entre soil_site, soil_chem, soil_bio*/
-
-    "category_characteristic": { 
-        tag: "SELECT", 
-        valores: ['soil_site','soil_chem','soil_bio'], 
-        multiple: false, 
-        esPK: false,  
-        esAutoIncremental: false,
-        esEspecial : false
-    },
-
-    /*<b>description_characteristic</b> hace referencia a la descripción de la característica, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 5000 caracteres*/
-
-    "description_characteristic": {
-        tag: "TEXTAREA",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        rows: 50,
-        cols: 100
-    },
-
-    /*<b>bibref_characteristic</b> hace referencia a la referencia bibliográfica de la característica, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo Texto (String) y su tamaño máximo es de 200 caracteres*/
-
-    "bibref_characteristic": {
-        tag: "TEXTAREA",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        rows: 4,
-        cols: 50
-    },
-
-    /*<b>file_characteristic</b> hace referencia al archivo de análisis, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
-      Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/    
-
-    "file_characteristic": {
-        tag: "INPUT",
-        type: "file",
-        esPK: false,
-        esAutoIncremental: false,
-        esEspecial: false,
-        size: 100
-    }
-};
-
-<b>Estructura para los tests de Characteristic:</b>
-
-this.def_test_characteristic = {
-
-    // Estructura para los tests de adición de una nueva característica.
-
-    "ADD": {
-
-        /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 8 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "name_characteristic": {
-            "min_size": {
-                valor: 8,
-                codigo: "characteristic__name_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "characteristic__name_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "characteristic__name_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 80 caracteres.
-            - Tamaño máximo de 5000 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "description_characteristic": {
-            "min_size": {
-                valor: 80,
-                codigo: "characteristic__description_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 5000,
-                codigo: "characteristic__description_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "characteristic__description_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
-            - Debe de ser una de las opciones porporcionadas.
-         * /
-
-        "data_type_characteristic": {
-            "selectValido": {
-                valor: selectValido,
-                codigo: "characteristic__data_type_characteristic__valid_KO",
-                especial: true
-            }
-        },
-
-        /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
-            - Debe de ser una de las opciones porporcionadas.
-         * /
-
-        "category_characteristic": {
-            "selectValido": {
-                valor: selectValido,
-                codigo: "characteristic__category_characteristic__valid_KO",
-                especial: true
-            }
-        },
-
-        /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 16 caracteres.
-            - Tamaño máximo de 200 caracteres.
-            - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
-            - No permitidos: caracteres no mencionados.
-         * /
-
-        "bibref_characteristic": {
-            "min_size": {
-                valor: 16,
-                codigo: "characteristic__bibref_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 200,
-                codigo: "characteristic__bibref_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
-                codigo: "characteristic__bibref_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
-            - (Comprobado con una funcion especial) Que exista el fichero
-            - Tamaño mínimo de 7 caracteres en nombre de archivo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 200 KBs.
-            - Formato permitidos: pdf, doc, docx.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "nuevo_file_characteristic": {
-            "empty": {
-                valor: "empty",
-                codigo: "characteristic__nuevo_file_characteristic__empty_KO",
-                especial: true
-            },
-            "max_size_file": {
-                valor: 200000,
-                codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
-                especial: false
-            },
-            "type_file": {
-                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
-                codigo: "characteristic__nuevo_file_characteristic__type_file_KO",
-                especial: false
-            },
-            "min_size": {
-                valor: 7,
-                codigo: "characteristic__nuevo_file_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "characteristic__nuevo_file_characteristic__max_size_KO",
-                especial: false
-            },
-            "format_name_file": {
-                valor: "^[A-Za-z.]*$",
-                codigo: "characteristic__nuevo_file_characteristic__format_name_file_KO",
-                especial: false
-            }
-        }
-    },
-
-    // Estructura para los tests de edición de characteristic
-
-    "EDIT": {
-
-        /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 8 caracteres.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "name_characteristic": {
-            "min_size": {
-                valor: 8,
-                codigo: "characteristic__name_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "characteristic__name_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "characteristic__name_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 80 caracteres.
-            - Tamaño máximo de 5000 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "description_characteristic": {
-            "min_size": {
-                valor: 80,
-                codigo: "characteristic__description_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 5000,
-                codigo: "characteristic__description_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "characteristic__description_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
-            - Debe de ser una de las opciones porporcionadas.
-         * /
-
-        "data_type_characteristic": {
-            "selectValido": {
-                valor: selectValido,
-                codigo: "characteristic__data_type_characteristic__valid_KO",
-                especial: true
-            }
-        },
-
-        /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
-            - Debe de ser una de las opciones porporcionadas.
-         * /
-
-        "category_characteristic": {
-            "selectValido": {
-                valor: selectValido,
-                codigo: "characteristic__category_characteristic__valid_KO",
-                especial: true
-            }
-        },
-
-        /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 16 caracteres.
-            - Tamaño máximo de 200 caracteres.
-            - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
-            - No permitidos: caracteres no mencionados.
-         * /
-
-        "bibref_characteristic": {
-            "min_size": {
-                valor: 16,
-                codigo: "characteristic__bibref_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 200,
-                codigo: "characteristic__bibref_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
-                codigo: "characteristic__bibref_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
-            - Tamaño mínimo de 7 caracteres en nombre de archivo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
-            - Tamaño de archivo máximo de 200 KBs.
-            - Formato permitidos: pdf, doc, docx.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "nuevo_file_characteristic": {
-            "max_size_file": {
-                valor: 200000,
-                codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
-                especial: false
-            },
-            "type_file": {
-                valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
-                codigo: "characteristic__nuevo_file_characteristic__type_file_KO",
-                especial: false
-            },
-            "min_size": {
-                valor: 7,
-                codigo: "characteristic__nuevo_file_characteristic__min_size_KO",
-                especial: false
-            },
-            "max_size": {
-                valor: 100,
-                codigo: "characteristic__nuevo_file_characteristic__max_size_KO",
-                especial: false
-            },
-            "format_name_file": {
-                valor: "^[A-Za-z.]*$",
-                codigo: "characteristic__nuevo_file_characteristic__format_name_file_KO",
-                especial: false
-            }
-        }
-    },
-
-    // Estructura para los tests de búsqueda de characteristic
-
-    "SEARCH": {
-
-        /* <b>id_characteristic</b> debe de seguir los siguientes requisitos:
-            - No hya tamaño mínimo.
-            - Tamaño máximo de 11 dígitos.
-            - Permitidos: números.
-            - No permitidos: el resto.
-         * /
-    
-        "id_characteristic": {
-            "max_size": {
-                valor: 11,
-                codigo: "characteristic__id_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[0-9]*$",
-                codigo: "characteristic__id_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /       
-
-        "name_characteristic": {
-            "max_size": {
-                valor: 100,
-                codigo: "characteristic__name_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "characteristic__name_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 5000 caracteres.
-            - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: acentos, ñ's y caracteres no mencionados.
-         * /        
-
-        "description_characteristic": {
-            "max_size": {
-                valor: 5000,
-                codigo: "characteristic__description_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: "^[A-Za-z ]*$",
-                codigo: "characteristic__description_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
-            - Debe de ser una de las opciones porporcionadas.
-         * /
-
-        "data_type_characteristic": {
-            "selectValidoSEARCH": {
-                valor: selectValidoSEARCH,
-                codigo: "characteristic__data_type_characteristic__valid_SEARCH_KO",
-                especial: true
-            }
-        },
-
-        /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
-            - Debe de ser una de las opciones porporcionadas.
-         * /
-
-        "category_characteristic": {
-            "selectValidoSEARCH": {
-                valor: selectValidoSEARCH,
-                codigo: "characteristic__category_characteristic__valid_SEARCH_KO",
-                especial: true
-            }
-        },
-
-        /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 200 caracteres.
-            - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
-            - No permitidos: caracteres no mencionados.
-         * /
-        
-        "bibref_characteristic": {
-            "max_size": {
-                valor: 200,
-                codigo: "characteristic__bibref_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
-                codigo: "characteristic__bibref_characteristic__format_KO",
-                especial: false
-            }
-        },
-
-        /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
-            - No hay tamaño mínimo.
-            - Tamaño máximo de 100 caracteres en nombre de archivo.
-            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
-            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
-         * /
-
-        "file_characteristic": {
-            "max_size": {
-                valor: 100,
-                codigo: "characteristic__file_characteristic__max_size_KO",
-                especial: false
-            },
-            "format": {
-                valor: ^[A-Za-z.]*$,
-                codigo: "characteristic__file_characteristic__format_KO",
-                especial: false
-            }
-        }
-    }
-};
-
-`,
-
-    /*TRADUCCIONES PARA API.HTML*/
-
-    'InfoTextAPI1': 'En esta página se mostrarán todas las funciones que se han implementado para la realización de este trabajo.',
-    'InfoTextAPI2': 'Para conocer sobre las funciones implementadas escoja una de las opciones dentro del menú localizado en la parte superior izquierda.',
-
-    // Textos funciones test
-
-    'func1': 'test_run()',
-    'desc1': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de preparar, verificar y ejecutar todos los test que han sido definidos.',
-    'func2': 'prepararTest()',
-    'desc2': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Es llamada por <b>test_run()</b> para limpiar las tablas y crear los arrays necesarios para ejecutar los tests.',
-    'func3': 'crearArrays()',
-    'desc3': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear los arrays para las definiciones de test, las pruebas y las pruebas específicas de archivos y especiales, esta función es llamada por <b>prepararTest()</b>.',
-    'func4': 'verificar()',
-    'desc4': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de comprobar que todas las definiciones de test y de pruebas están definidas correctamente, esta función es llamada por <b>test_run()</b>',
-    'func5': 'verificarDeftest()',
-    'desc5': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de de verificar que el formato de las definiciones de test son correctas, esta función es llamada por <b>verificar()</b>',
-    'func6': 'verificarPruebas()',
-    'desc6': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (filacorrecta) que indica si el formato de las pruebas es correcto o no.\n<b>Función:</b> Se encarga de comprobar que el formato de las pruebas definidas es correcto, esta función es llamada por <b>verificar()</b>.',
-    'func7': 'verificarPruebas_file()',
-    'desc7': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (filacorrecta) que indica si el formato de las pruebas de fichero es correcto o no.\n<b>Función:</b> Se encarga de comprobar que el formato de las pruebas de fichero definidas es correcto, esta función es llamada por <b>verificar()</b>.',
-    'func8': 'verificarPruebas_esp()',
-    'desc8': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (filacorrecta) que indica si el formato de las pruebas especiales es correcto o no.\n<b>Función:</b> Se encarga de comprobar que el formato de las pruebas especiales definidas es correcto, esta función es llamada por <b>verificar()</b>.',
-    'func9': 'ejecutar_pruebas()',
-    'desc9': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de comprobar que todas las pruebas definidas se ejecutan correctamente, esta función es llamada por <b>test_run()</b>',
-    'func10': 'test_entidad()',
-    'desc10': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (flag) que indica si las pruebas definidas se han ejecutado correctamente o no.\n<b>Función:</b> Se encarga de comprobar que las pruebas definidas se ejecutan correctamente, esta función es llamada por <b>ejecutar_pruebas()</b>.',
-    'func11': 'test_entidad_files()',
-    'desc11': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (flag) que indica si las pruebas de ficheros definidas se han ejecutado correctamente o no.\n<b>Función:</b> Se encarga de comprobar que las pruebas de ficheros definidas se ejecutan correctamente, esta función es llamada por <b>ejecutar_pruebas()</b>.',
-    'func12': 'test_entidad_esp()',
-    'desc12': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (flag) que indica si las pruebas para variables especiales definidas se han ejecutado correctamente o no.\n<b>Función:</b> Se encarga de comprobar que las pruebas para variables especiales definidas se ejecutan correctamente, esta función es llamada por <b>ejecutar_pruebas()</b>.',
-    'func13': 'devolver_dev(num_def)',
-    'desc13': '<b>Parámetros:</b>\n\tnum_def:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al número de definición de test.\n<b>Output:</b> Devuelve un array (array_def) que contiene el test asociado a ese número de defincición.\n<b>Función:</b> Se encarga de devolver la definición de test asociada a un número de definición de test determinado.',
-    'func14': 'check(id, accion)',
-    'desc14': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un atributo de una entidad\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, EDIT.\n<b>Output:</b> Devuelve un valor booleano, indicando que las pruebas han salido con éxito o no.\n<b>Función:</b> Se encarga de comprobar si las pruebas realizadas en un atributo han salido todas con éxito, en caso contrario se muestra un campo con el mensaje de error asociado.',
-    'func15': 'check_submit(accion)',
-    'desc15': '<b>Parámetros:</b>\n\taccion\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, EDIT.\n<b>Output:</b> Devuelve un booleano indicando que los tests se han realizado correctamente o no.\n<b>Función:</b> Se encarga de comprobar todos los atributos para ver si cumplen con los requisitos definidos en las definiciones de test.',
-    'func16': 'colocarvalicaciones(accion)',
-    'desc16': '<b>Parámetros:</b>\n\taccion\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, EDIT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún output.\n<b>Función:</b> Se encarga de coloca todas las validaciones relacionadas con los tests, esta función es llamada por <b>createForm()</b>',
-    'func17': 'ocultar_boton_test()',
-    'desc17': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de ocultar el botón que permite la ejecución de los test y pruebas definidas.',
-    'func18': 'mostrar_boton_test()',
-    'desc18': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de poner en visible el botón que permite la ejecución de los test y pruebas definidas.',
-    'func19': 'validacionesespeciales(atributo, prueba)',
-    'desc19': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre del atributo especial a analizar.\n\tprueba:\n\t\tTipo: String.\n\t\tDescripción: Nombre de la prueba a realizar.\n<b>Output:</b> Devuelve un valor booleano que viene de lo que devuelvan las correspondientes funciónes auxiliares.\n<b>Función:</b> Se encarga de realizar las pruebas a los campos considerados como especiales (i.e.: las fechas en project).',
-    'func20': 'fechaValida(fecha)',
-    'desc20': '<b>Parámetros:</b>\n\tfecha:\n\t\tTipo: String.\n\t\tDescripción: Fecha a validar (inicio o fin de proyecto)\n<b>Output:</b> Devuelve un valor booleano, indicando si la fecha es válida o no.\n<b>Función:</b> Se encarga de comprobar si la fecha introducida es una fecha válida, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>project</b>.',
-    'func21': 'fechasOrdenadas(fecha1, fecha2)',
-    'desc21': '<b>Parámetros:</b>\n\tfecha1:\n\t\tTipo: String.\n\t\tDescripción: Fecha de inicio de proyecto\n\tfecha2:\n\t\tTipo: String.\n\t\tDescripción: Fecha de fin de proyecto.\n<b>Output:</b> Devuelve un valor booleano, indicando si las fechas están ordenadas o no.\n<b>Función:</b> Se encarga de comprobar si la fecha de inicio es menor que la de fin y que la fecha de fin sea mayor que la de inicio, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>project</b>.',
-    'func22': 'selectValido(atributo, valores)',
-    'desc22': '<b>Parámetros:</b>\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Categoría o tipo de dato.\n\tvalores:\n\t\tTipo: Array.\n\t\tDescripción: Almacena los valores que son válidos (los que se pueden escoger).\n<b>Output:</b> Devuelve un valor booleano, indicando si el valor escogido está contenido en la lista de valores o no.\n<b>Función:</b> Se encarga de comprobar si el valor escogido o buscado está entre las opciones válidas, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>characteristic</b>.',
-    'func23': 'cerrar_test()',
-    'desc23': '<b>Parámetros/Output:</b> No usa parámetros y su ejecución no devuelve ningun tipo de output.\n<b>Función:</b> Se encarga de limpiar la tabla de tests y ocultarlo.',
-
-
-    // Test funciones Presentación de tablas
-
-    'func24': 'SEARCH(empieza, filas)',
-    'desc24': '<b>Parámetros:</b>\n\tempieza:\n\t\tTipo: Número.\n\t\tDescripción: Indica el número por donde empieza la paginación.\n\tfilas:\n\t\tTipo: número\n\t\tDescripción: Indica el número de tuplas que habrá por página.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de buscar tuplas dentro de una entidad en base a unos criterios especificados para, posteriormente, mostrarlos en la tabla.',
-    'func25': 'ADD()',
-    'desc25': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back e insertar una nueva tupla dentro de la tabla de la entidad en la que estemos trabajando.',
-    'func26': 'EDIT()',
-    'desc26': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back y editar la tupla editada dentro de la tabla de la entidad en la que estemos trabajando.',
-    'func27': 'DELETE()',
-    'desc27': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back y borrar una tupla existente dentro de la tabla de la entidad en la que estemos trabajando.',
-    'func28': 'cambiardatosespecialestabla(atributo, valoratributo, i)',
-    'desc28': '<b>Parámetros:</b>\n\atributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescripción: Valor que tiene el atributo atributp almacenado.\n\ti\n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output: </b>Proporciona un output en tipo string que hace referencia a un elemento html que cambia como se ven los datos especiales dentro de la tabla.\n<b>Función:</b> Se encarga de cambiar los datos/atributos asignados como datos especiales para que se puedan ver con el formato permitido en la tabla.',
-    'func29': 'modificarcolumnasmostrar(atributo)',
-    'desc29': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de un entidad.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función: </b> Se emplea para mostrar o ocultar la columna asociada al atributo seleccionado en el select.',
-    'func30': 'mostrarocultarcolumnas()',
-    'desc30': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de ocultar las columnas que no están marcadas para mostrar.',
-    'func31': 'cambiarcolumnatabla(atributo)',
-    'desc31': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de un entidad.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función: </b> Se encarga de ocultar la tabla en base al atributo pasado en los parámetros, esta función es llamada por <b>mostrarocultarcolumna()</b>.',
-    'func32': 'crearTablaDatos()',
-    'desc32': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a las funciones auxiliares necesarias para crear las tablas.',
-    'func33': 'construirSelect()',
-    'desc33': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el select de selección de columnas, esta función es llamada por <b>crearDatosTabla()</b>.',
-    'func34': 'hacerTabla()',
-    'desc34': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear la propia tabla, esta función es llamada por <b>crearDatosTabla()</b>.',
-    'func35': 'hacerPaginacion()',
-    'desc35': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la función encargada de crear la paginación en el caso de que existan tuplas, en caso contrario se ocultan todos los elementos del HTML relacionados con la paginación, esta función es llamada por <b>crearDatosTabla()</b>.',
-    'func36': 'levantarPaginacion()',
-    'desc36': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de propiamente crear la paginación, esta función es llamada por <b>hacerPaginacion()</b>.',
-    'func37': 'crearboton(accion, parametros, i)',
-    'desc37': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia las acciones que se pueden realizar: DELETE, SHOWCURRENT, EDIT.\n\tparámetros:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a algún elemento de la estructura.\n\ti:\n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> Devuelve un el codigo HTML con la imagen del icono de la accion\n<b>Función:</b> Se encarga de crear los botones y los iconos correspondientes para las acciones de DELETE, SHOWCURRENT y EDIT.',
-    'func38': 'cerrar_tabla()',
-    'desc38': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se oculta la tabla y se oculta el boton de test.',
-
-    //textos funciones de formularios
-
-    'func39': 'crearForm()',
-    'desc39': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la función auxiliar <b>crearFormAtributo()</b> para crear la parte de formulario correspondiente a un atributo para todos los atributos que queremos que tenga el formulario.',
-    'func40': 'crearFormAtributo(atributo)',
-    'desc40': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún output.\n<b>Función:</b> Se encarga de crear la parte del formulario asociada a un atributo, esta función es llamada por <b>crearForm()</b>.',
-    'func41': 'crearInput(datos, atributo)',
-    'desc41' : '<b>Parámetros:</b>\n\tdatos:\n\t\tTipo: Array.\n\t\tDescripción: Es una lista con los diferentes atributos a usar dentro de un formulario.\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el input para un determinado atributo, esta función es llamada por <b>crearFormAtributo()</b>.',
-    'func42' : 'crearTextarea(datos, atributo)',
-    'desc42' : '<b>Parámetros:</b>\n\tdatos:\n\t\tTipo: Array.\n\t\tDescripción: Es una lista con los diferentes atributos a usar dentro de un formulario.\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el textarea para un determinado atributo, esta función es llamada por <b>crearFormAtributo()</b>.',
-    'func43' : 'crearSelect(datos, atributo)',
-    'desc43' : '<b>Parámetros:</b>\n\tdatos:\n\t\tTipo: Array.\n\t\tDescripción: Es una lista con los diferentes atributos a usar dentro de un formulario.\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el select para un determinado atributo, esta función es llamada por <b>crearFormAtributo()</b>.',
-    'func44': 'crearLabel(atributo)',
-    'desc44': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> Devuelve un HTMLLabelElement (label).\n<b>Función:</b> Se encarga de crear una etiqueta label que acompaña a cada uno de los inputs, esta función es llamada por <b>crearFormAtributo()</b>.',
-    'func45': 'crearSpanError(atributo)',
-    'desc45': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> Devuelve un HTMLSpanElement (span).\n<b>Función:</b> Se encarga de crear una etiqueta span que se mostrará cuando las validaciones de input no salgan bien, esta función es llamada por <b>crearFormAtributo()</b>.',
-    'func46': 'eliminarCampos(accion)',
-    'desc46': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, DELETE, SHOWCURRENT, EDIT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de eliminar los campos necesarios en base a la acción a realizar.',
-    'func47': 'eliminarCampo(id)',
-    'desc47': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de eliminar el campo del id proporcionado, esta función es llamada por <b>eliminarCampos()</b>.',
-    'func48': 'ponernoactivoform(accion)',
-    'desc48': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar DELETE, SHOWCURRENT, EDIT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de desactivar los campos, los cuales no son necesarios o no debe de ser editados.',
-    'func49': 'requiereReadOnlyEDIT(id)',
-    'desc49': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n<b>Output:</b> Devuelve un valor booleano indicando si el campo debe de ser no editable dentro de un formulario de edición o no.\n<b>Función:</b> Se encarga de indicar qué campos deben de ser puestos en sólo lectura en los formularios de edición, esta función es llamada por <b>ponernoactivoform()</b>.',
-    'func50': 'desactivarCampo(id)',
-    'desc50': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de poner en sólo lectura los atributos necesarios en los formularios de edición, esta función es llamada por <b>ponernoactivoform()</b>.',
-    'func51': 'SearchPH()',
-    'desc51': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de buscar y de colocar los placeholders para los formularios de SEARCH.',
-    'func52': 'colocarValoresForm(parametros)',
-    'desc52': '<b>Parámetros:</b>\n\tparametros:\n\t\tTipo: Array.\n\t\tDescripción: Array que contiene los datos correspondientes a una tupla.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la correspondiente función auxiliar para colocar todos los valores para todos los atributos de una entidad.',
-    'func53': 'colocarValor(atributo, valor)',
-    'desc53': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvalor:\n\t\tTipo: String(Puede tomar cualquier tipo)\n\t\tDescripción: Hace referencia al dato asignado a un atributo en específico.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar el valor de un atributo en su correspondiente campo, teniendo en cuenta su tipo y si es un atributo especial.',
-    'func54': 'mostrarvaloresespecialesform(atributo, valoratributo)',
-    'desc54': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al valor asignado a un atributo.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar los valores especiales dentro del formulario.',
-    'func55': 'inicializar()',
-    'desc55': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de incializar todo lo necesarios para la creación de formularios, tablas y test.',
-    'func56': 'createForm(accion, parametros)',
-    'desc56': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, EDIT, DELETE, SEARCH, SHOWCURRENT.\n\tparametros\n\t\tTipo: \n\t\tDescripción: Array que contiene los datos correspondientes a una tupla\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a todas las funciones auxiliares necesarias para crear el formulario.',
-    'func57': 'cargar_formulario(accion)',
-    'desc57': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cargar el formulario y mostrará error en el caso de que no exista un formulario, esta función es llamada por <b>createForm()</b>.',
-    'func58': 'cargar_formulario_dinamico(accion)',
-    'desc58': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cargar el formulario dinámico, esta función es llamada por <b>cargar_formulario()</b> si no existe formulario en clase entidad.',
-    'func59': 'ponerTituloForm(accion)',
-    'desc59': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de ponerle el título al formulario teniendo en cuenta la acción que se está a realizar, esta función es llamada por <b>createForm()</b>.',
-    'func60': 'eliminarCamposForm(accion)',
-    'desc60': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de eliminar los campos no necesario teniendo en cuenta la acción que se está a realizar, esta función es llamada por <b>createForm()</b>.',
-    'func61': 'mostrarAtributosForm(accion, parametros)',
-    'desc61': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, EDIT, DELETE, SEARCH, SHOWCURRENT.\n\tparametros\n\t\tTipo: \n\t\tDescripción: Array que contiene los datos correspondientes a una tupla\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar los atributos necesarios dentro del formulario.',
-    'func62': 'colocarvalidaciones(accion)',
-    'desc62': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar las validaciones en los correspondientes campos, esta función es llamada por <b>createForm()</b>.',
-    'func63': 'comprobar(id, accion)',
-    'desc63': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, EDIT,  SEARCH.\n<b>Output:</b> Devuelve un valor booleano que es la respuesta de la función <b>check(id, accion)</b> indicando si lo introducido es válido o no.\n<b>Función:</b> Se encarga de comprobar si lo introducido dentro del campo con el id proporcionado cumple con lo que está permitido.',
-    'func64': 'ponernoactivo(accion)',
-    'desc64': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de poner en modo de lectura los campos correspondientes, esta función es llamada por <b>createForm()</b>.',
-    'func65': 'colocarboton(accion)',
-    'desc65': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el botón de submit, esta función es llamada por <b>createForm()</b>.',
-    'func66': 'colocarOnSubmitForm(accion)',
-    'desc66': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar la validacion de submit en el formulario que se esté creando, esta función es llamada por <b>createForm()</b>.',
-    'func67': 'comprobar_submit(accion)',
-    'desc67': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> Devuelve un valor booleano que corresponderá con la respuesta dada por la función <b>check_submit(accion)</b>, indicando que todo lo introducido en el formulario está correcto o no.\n<b>Función:</b> Se encarga de comprobar que todo lo introducido en el formulario cumple con los requisitos definidos en las correspondientes estructuras de las entidades.',
-    'func68': 'colocarActionForm(accion)',
-    'desc68': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de establecer la acción del formulario para realizar la llamada al back correspondiente a la acción que se esté a realizar, esta función es llamada por <b>createForm()</b>.',
-    'func69': 'mostrarform()',
-    'desc69': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Muestra el formulario una vez creado, esta función es llamada por <b>createForm()</b>.',
-    'func70': 'actuarRespuesta(respuesta)',
-    'desc70': '<b>Parámetros:</b>\n\trespuesta:\n\t\tTipo: Lista de datos recibida del back\n\t\tDescripción: Hace referencia a la respuesta que proporciona el back.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función: </b>Se encarga de limpiar el formulario.',
-    'func71': 'abrirModalError(errorMsg)',
-    'desc71': '<b>Parámetros:</b>\n\terrorMsg:\n\t\tTipo: String.\n\t\tDescripción: Es el codigo del mensaje de error que se debe de mostrar en el modal.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función: </b>Se encarga de abrir un modal con el mensaje de error correspondiente.',
-    'func72': 'cerrarModalError()',
-    'desc72': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cerrar el modal una vez que el usuario lo ha visto.',
-    'func73': 'cerrar_formulario()',
-    'desc73': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b>  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vez envíado al back o cuando el usuario lo cancela.',
-    'func74': 'mostrar_error_campo(id, codigoerror)',
-    'desc74': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tcodigoerror:\n\t\tTipo: String.\n\t\tDescripción: Se refiere uno de los códigos de error que se pueden producir si no se ponen los valores correctamente.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar error y su correspondiente error en el campo del id proporcionado.',
-    'func75': 'mostrar_exito_campo(id)',
-    'desc75': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de HTML.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función: </b>Se encarga de mostrar que el dato intorducido en un campo es correcto.',
-
-    //Textos para otras funciones
-    'func76': 'evento(event)',
-    'desc76': '<b>Parámetros:</b>\n\tevent:\n\t\tTipo: Objeto\n\t\tDescripción: Evento registrado a partir de la realización de una acción determinada.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de cerrar el menú en el caso de que esté abierto y el click no fuera dentro del menú ni en el botón para abrirlo.',
-    'func77': 'menu_work()',
-    'desc77': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de abrir y cerrar el menú, es llamada por la función <b>evento()</b> cuando hay que cerrar el menú o al clickar el boton de abrir el menu.',
-    'func78': 'toggleTheme()',
-    'desc78': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de manejar los cambios de modo claro a modo oscuro.',
-    'func79': 'changeImageOnHover(isMouseOver, action, aux)',
-    'desc79': '<b>Parámetros:</b>\n\tisMouseOver:\n\t\tTipo: Booleano.\n\t\tDescripción: Cambia cuando el ratón está encima de un objeto en específico.\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Parte del nombre de la imagen en cuestión, que hace referencia a la acción que realizas al hacer click en el icono.\n\taux: \n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el color de los iconos cuando se le pasa el ratón por encima.',
-    'func80': 'showAPI(APIElement)',
-    'desc80': '<b>Parámetros:</b>\n\tAPIElement:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las diferentes clasificaciones de las funciones.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar todas las funciones relacionadas a la opción seleccionada en el menú.',
-    'func81': 'showEstructura(entity)',
-    'desc81': '<b>Parámetros:</b>\n\tentity:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las entidades existentes en este proyecto (Analysis preparation, Project y Characteristic).\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar y explicar las estructuras empleadas para la realización de esta ET3.',
-    'func82': 'setLang(lang)',
-    'desc82': '<b>Parámetros:</b>\n\tlang:\n\t\tTipo: String.\n\t\tDescripción: Empleada para almacenar el lenguaje al que queremos traducir la página web.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el lenguaje entre castellado e inglés en toda web mediante el uso de cookies.',
-    'func83': 'setCookie(name, value, days)',
-    'desc83': '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Nombre que le queremos poner a la cookie.\n\tvalue:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a los idiomas disponibles (EN y ES).\n\tdays:\n\t\tTipo: Número.\n\t\tDescripción: Número de días los que queremos que aguante la cookie.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de establecer el valor de la cookie al valor que nosotros queramos, esta función es llamada por <b>setLang(lang)</b>.',
-    'func84': 'getCookie(name)',
-    'desc84' : '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre de la cookie.\n<b>Output:</b> Devuelve el valor de la cookie o nulo si no existe.\n<b>Función:</b> Se encarga de obtener el valor de la cookie en base a su nombre, esta función es llamada por <b>setLang(lang)</b>.',
-    'func85': 'peticionBackGeneral(formulario, controlador, action, datosextra = null)',
-    'desc85': '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescripción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo/Array\n\t\tDescripción: Datos extra para la petición.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones al back.',
-
-    // Textos de funciones de validación
-
-    'func86': 'min_size(id, minsize)',
-    'desc86': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tminsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño mínimo que debe de tener el valor.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño mínimo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño mínimo establecido en los requisitos de ese campo.',
-    'func87': 'max_size(id, maxsize)',
-    'desc87': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tmaxsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo que puede tener el valor.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño máximo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño máximo establecido en los requisitos de ese campo.',
-    'func88': 'format(id, expreg)',
-    'desc88': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor del elemento contenido en id.\n<b>Output:</b> Devuelve un valor booleando correspondiente al output de <b>evaluar_regex()</b>, indicando si el valor introducido en el campo id cumple con el formato indicado o no.\n<b>Función:</b> Se encarga de comprobar si el valor introducido en campo id cumple con el formato establecido o no.',
-    'func89': 'max_size_file(id, maxsize)',
-    'desc89': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tmaxsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo para el archivo en cuestión.\n<b>Output:</b>Devuelve un valor booleano indicando si el archivo supera el tamaño permitido o no.\n<b>Función:</b> Se encarga de comprobar que el archivo adjuntado no sobrepase el tamaño máximo permitido.',
-    'func90': 'type_file(id, array_tipos)',
-    'desc90': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tarray_tipos:\n\t\tTipo: Array.\n\t\tDescripción: Hace referencia a los tipos de archivos permitidos (doc, docx, pdf).\n<b>Output:</b> Devuelve un valor booleano confirmando si el tipo de archivo coincide con uno de los tipos de archivos permitidos.\n<b>Función:</b> Se encarga de verificar que el tipo de archivo del archivo adjuntado esté dentro de los tipos de archivo permitidos en la definición de la entidad.',
-    'func91': 'format_name_file(id, expreg)',
-    'desc91': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor del elemento contenido en id.\n<b>Output:</b>Devuleve un valor booleando correspondiente al output de <b>evaluar_regex()</b>, indicando si el valor introducido en el campo id cumpel con el formato indicado o no.\n<b>Función:</b> Se encarga de comprobar si el nombre del fichero adjuntado cumple con el formato establecido o no.',
-    'func92': 'evaluar_regex(valor, expreg)',
-    'desc92': '<b>Parámetros:</b>\n\tvalor:\n\t\tTipo: String.\n\t\tDescripción: Hace al valor introducido dentro de un campop de un formulario.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor introducido.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>expresionregular.test(valor)</b> indicando si cumple con el regex indicado o no.\n<b>Función:</b> Se encarga de comprobar que el valor introducido cumple con el formato indicado, esta función es llamada por <b>format()</b> y <b>format_name_file()</b>',
-    'func93': 'evaluar_tam(id, parametro, mayor)',
-    'desc93': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tparametro:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo o mínimo.\n\tmayor:\n\t\tTipo: Booleano.\n\t\tDescripción: Indica si el valor debe de ser mayor/igual o menor al parametro indicado.\n<b>Output:</b> Devuelve un valor booleando indicando si el valor cumple con que sea mayor/igual o menor al parametro indicado.\n<b>Función:</b> Se encarga de comprobar si el valor introducido en el campo id, cumple con el requisisto de tamaño mínimo o de tamaño máximo, esta función es llamada por <b>min_size(id, minsize)</b> y <b>max_size(id, maxsize)</b>.',
-
-
-    //Textos referencia a las clases
-
-    'clase1': 'Funciones dentro de EntidadAbstracta.js',
-    'clase2': 'Funciones dentro de Test_class.js',
-    'clase3': 'Funciones dentro de DOM_class.js',
-    'clase4': 'Funciones dentro de constructor_form.js',
-    'clase5': 'Funciones dentro de constructor_validaciones.js',
-    'clase6': 'Funciones dentro de colocador_valores.js',
-    'clase7': 'Funciones dentro de project.js',
-    'clase8': 'Funciones dentro de characteristic.js',
-    'clase9': 'Funciones dentro de analysis_preparation.js',
-    'clase10': 'Funciones dentro de varias clases (project.js/characteristic.js)',
-    'clase11': 'Funciones dentro de varias clases (analysis_preparation.js/project.js/characteristic.js)',
-    'clase12': 'Funciones dentro de otros archivos (index.html/estructuras.html/API.html)',
-    'clase13': 'Funciones dentro de idioma.js',
-    'clase14': 'Funciones dentro de Validaciones_Atomicas.js',
-    'clase15': 'Funciones dentro de ExternalAccess.js ',
-    'clase16': 'Funciones dentro de idioma.js',
-
-    //Titulos
-    'text_title_page_default_API': 'API Empleada',
-    'text_title_page_test': 'Funciones empleadas para Test',
-    'text_title_page_tabla': 'Funciones empleadas para Tabla de Presentación',
-    'text_title_page_form': 'Funciones empleadas para Creación de Formularios',
-    'text_title_page_other': 'Funciones empleadas para otras cosas',
-    'text_title_page_validaciones': 'Funciones empleadas para Validaciones',
-
-    //Opciones Menu
-    'opt_funciones_test': 'Tests',
-    'opt_funciones_tabla': 'Presentación de Tablas',
-    'opt_funciones_form': 'Creación de Formularios',
-    'opt_funciones_valid': 'Funciones de Validaciones',
-    'opt_funciones_other': 'Otras Funciones',
 
     /*TRADUCCIONES PARA TEST*/
 
@@ -2607,5 +498,2117 @@ this.def_test_characteristic = {
     'SQL_KO': 'Se ha producido un error, revise que los datos son correctos',
 
     //SEARCH no encuentra tuplas
-    'RECORDSET_VACIO': 'No se han encontrado datos'
+    'RECORDSET_VACIO': 'No se han encontrado datos',
+
+        /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
+
+        'InfoTextStruct1': 'En está página se ofrece una explicación sobre las estructuras realizadas para las entidades empleadas para este proyecto.',
+        'InfoTextStruct2': 'Para conocer más información sobre una estructura selecciona una de las entidades disponibles dentro del menú localizado en la parte superior izquierda.',
+    
+        //Titulos
+        'text_title_page_default_structures': 'Estructuras Empleadas',
+        'text_titulo_page_estructura_project': 'Estructura de Proyecto',
+        'text_titulo_page_estructura_struct': 'Estructura Vacia Explicada',
+        'text_titulo_page_estructura_analysis_preparation': 'Estructura de Preparacion Análisis',
+        'text_titulo_page_estructura_characteristic': 'Estructura de Característica',
+    
+        // Texto estructura project
+        'struct4': 'Estructura (Vacia) empleada para las entidades',
+        'desc97': `
+    //Variable que contiene la informacion para la generacion automatica de formularios
+    def_html_nombreentidad = {
+        atributos: [],                         //Lista de los atributos de la entidad (obligatorio)
+        atributo: {                            //Definicion de cada atributo (repetido para cada atributo, obligatorio para todos los atributos)
+            tag: "",                           //El tag html del atributo (INPUT,SELECT,TEXTAREA) (obligatorio)
+            type: "",                          //El tipo de input, obligatorio y solo para atributos con tag INPUT (text,date,number,password,file)
+            valores: [],                       //Los valores posibles a seleccionar, obligatorio y solo para atributos con tag SELECT
+            multiple: false,                   //Para atributos con tag SELECT, indica si se pueden marcar multiples valores (obligatorio para SELECTs)
+            esPK: true,                        //Obligatorio, indica si el atributo es Primary Key en la tabla correspondiente a la entidad
+            esAutoIncremental: true,           //Obligatorio, indica si el atributo es Autoincremental en la tabla correspondiente a la entidad
+            esEspecial : true,                 //Obligatorio, indica si existe una funcion mostrardatosespecialesForm(atributo, valoratributo) en la clase nombreentidad para mostrar el atributo de una forma personalizada
+            size: "",                          //Optativo, para los atributos con tag INPUT, especifica el tamaño maximo del campo de input
+            rows : "",                         //Optativo, para los atributos con tag TEXTAREA, especifica el numero de filas del campo textarea
+            cols : "",                         //Optativo, para los atributos con tag TEXTAREA, especifica el numero de columnas del campo textarea
+        }
+    
+    };
+    //Variable que contiene la informacion para la generacion automatica de validaciones
+    def_test_nombreentidad = { //Todos los campos son obligatorios
+        accion: {                                   //La accion a realizar (ADD,EDIT,DELETE) (repetir para todas las acciones)
+            atributo: {                             //El atributo que va a ser probado (repetir para todos los atributos)
+                prueba: {                           //El nombre de la prueba a realizar (repetir para todas las pruebas del atributo)
+                    valor : "",                     //El valor de referencia de la prueba (un tamaño minimo/maximo o una regEx; en las pruebas especiales,el nombre de la prueba para las pruebas especiales)
+                    codigo: "",                     //El codigo de error correspondiente al mensaje de error a mostrar ante un fallo de esta validacion
+                    especial : false                //Indica si se trata de una prueba especial, es decir, que no este implementada en Validaciones_Atomicas.js y deba ser implementada en una clase nombreentidad.js en un metodo validacionesespeciales(atributo, prueba)
+                }   
+            }
+        }
+    }
+    
+        
+        `,
+    
+        'struct1': 'Estructura empleada para la entidad project',
+        'desc94': `
+    this.def_html_project = {
+        atributos: ["id_project", "name_project", "start_date_project", "end_date_project", "responsable_project", "organization_project", "code_project", "acronym_project", "id_sampling_methodology", "description_project", "file_project"],
+    
+        /*<b>id_project</b> hace referencia a la ID de proyecto, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
+          Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
+          Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/
+    
+        "id_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: true,
+            esAutoIncremental: true,
+            esEspecial: false,
+            size: 11
+        },
+    
+        /*<b>name_project</b> hace referencia al nombre de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
+    
+        "name_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 100
+        },
+    
+        /*<b>start_date_project</b> hace referencia a la fecha de inicio de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y es una feche que debe de seguir un formato dd-mm-aaaa, debe de ser menor que la fecha de fin de proyecto.
+          Es una atributo especial, por lo que,  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vezen consecuencia, sera mostrado de forma especial en el form (con una funcion de mostrardatosespecialesform).*/
+    
+        "start_date_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: true,
+            size: 10
+        },
+    
+        /*<b>end_date_project</b> hace referencia a la fecha de fin de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y es una fecha que debe de seguir el formato dd-mm-aa, debe de ser mayor que la fecha de inicio de proyecto.
+          Es una atributo especial, por lo que,  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vezen consecuencia, sera mostrado de forma especial en el form (con una funcion de mostrardatosespecialesform).*/
+    
+        "end_date_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: true,
+            size: 10
+        },
+    
+        /*<b>responsable_project</b> hace referencia al responsable de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 60 caracteres.*/
+    
+        "responsable_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 60
+        },
+    
+        /*<b>organization_project</b> hace referencia a la organización de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres.*/
+    
+        "organization_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 100
+        },
+    
+        /*<b>code_project</b> hace referencia al código de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 50 caracteres.*/
+    
+        "code_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 50
+        },
+    
+        /*<b>acronym_project</b> hace referencia al acrónimo de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 15 caracteres.*/
+    
+        "acronym_project": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 15
+        },
+    
+        /*<b>id_sampling_methodology</b> hace referencia al ID de metodología de muestreo, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 15 caracteres numéricos.*/
+    
+        "id_sampling_methodology": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 11
+        },
+    
+        /*<b>description_project</b> hace referencia a la descripción de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 500 caracteres.*/
+    
+        "description_project": {
+            tag: "TEXTAREA",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            rows: 5,
+            cols: 100
+        },
+    
+        /*<b>file_project</b> hace referencia al archivo de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
+          Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/
+    
+        "file_project": {
+            tag: "INPUT",
+            type: "file",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 100
+        }
+    };
+    
+    <b>Estructura de pruebas para Project:</b>
+    
+    this.def_test_project = {
+    
+        // Estructura para los test de adición de un nuevo proyecto.
+    
+        "ADD": {
+    
+            /* <b>name_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 15 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "name_project": {
+                "min_size": {
+                    valor: 15,
+                    codigo: "project__name_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__name_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "project__name_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
+                - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
+                - Debe de ser una fecha váida dentro del calendario gregoriano.
+                - La fecha no debe de ser superior a la fecha de fin de proyecto.
+             * /
+    
+            "start_date_project": {
+                "format": {
+                    valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                    codigo: "project__start_date_project__format_KO",
+                    especial: false
+                },
+                "fechavalida": {
+                    valor: "fechavalida",
+                    codigo: "project__start_date_project__valid_KO",
+                    especial: true
+                },
+                "fechaSuperior": {
+                    valor: "fechaSuperior",
+                    codigo: "project__start_date_project__superior_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
+                - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
+                - Debe de ser una fecha váida dentro del calendario gregoriano.
+                - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
+             * /
+    
+            "end_date_project": {
+                "format": {
+                    valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                    codigo: "project__end_date_project__format_KO",
+                    especial: false
+                },
+                "fechavalida": {
+                    valor: "fechavalida",
+                    codigo: "project__end_date_project__valid_KO",
+                    especial: true
+                },
+                "fechaInferior": {
+                    valor: "fechaInferior",
+                    codigo: "project__end_date_project__inferior_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 60 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+                - No permitidos: caracteres no mencionados.
+             * /        
+    
+            "responsable_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__responsable_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 60,
+                    codigo: "project__responsable_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
+                    codigo: "project__responsable_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>organization_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+                - No permitidos: caracteres no mencionados.
+             * / 
+    
+            "organization_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__organization_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__organization_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: '^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$',
+                    codigo: "project__organization_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 30 caracteres.
+                - Tamaño máximo de 500 caracteres.
+                - Permitidos: Todos.
+             * / 
+    
+            "description_project": {
+                "min_size": {
+                    valor: 30,
+                    codigo: "project__description_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 500,
+                    codigo: "project__description_project__max_size_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>code_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 50 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
+                - No permitidos: acentos y caracteres no mencionados.
+             * / 
+    
+            "code_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__code_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 50,
+                    codigo: "project__code_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                    codigo: "project__code_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 15 caracteres.
+                - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
+                - No permitidos: espacios, acentos y caracteres no mencionados.
+             * / 
+    
+            "acronym_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__acronym_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 15,
+                    codigo: "project__acronym_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                    codigo: "project__acronym_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 1 dígito.
+                - Tamaño máximo de 100 dígitos.
+                - Permitidos: números.
+                - No permitidos: el resto de caracteres.
+             * / 
+    
+            "id_sampling_methodology": {
+                "min_size": {
+                    valor: 1,
+                    codigo: "project__id_sampling_methodology__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 11,
+                    codigo: "project__id_sampling_methodology__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[1-9][0-9]*$",
+                    codigo: "project__id_sampling_methodology__format_KO",
+                    especial: false
+                }
+            },
+            
+            /* <b>nuevo_file_project</b> debe de seguir los siguientes requisitos:
+                - (Comprobado con una funcion especial) Que exista el fichero
+                - Tamaño mínimo de 7 caracteres en nombre de archivo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+                - Tamaño de archivo máximo de 2 MBs.
+                - Formato permitidos: pdf, doc, docx.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * / 
+    
+            "nuevo_file_project": {
+                "empty": {
+                    valor: "empty",
+                    codigo: "project__nuevo_file_project__empty_KO",
+                    especial: true
+                },
+                "max_size_file": {
+                    valor: 2000000,
+                    codigo: "project__nuevo_file_project__max_size_file_KO",
+                    especial: false
+                },
+                "type_file": {
+                    valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                    codigo: "project__nuevo_file_project__type_file_KO",
+                    especial: false
+                },
+                "min_size": {
+                    valor: 7,
+                    codigo: "project__nuevo_file_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__nuevo_file_project__max_size_KO",
+                    especial: false
+                },
+                "format_name_file": {
+                    valor: "^[A-Za-z.]*$",
+                    codigo: "project__nuevo_file_project__format_name_file_KO",
+                    especial: false
+                }
+            }
+        },
+    
+        // Estructura para las pruebas de edición de un proyecto
+    
+        "EDIT": {
+    
+            /* <b>name_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 15 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+        
+            "name_project": {
+                "min_size": {
+                    valor: 15,
+                    codigo: "project__name_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__name_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "project__name_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
+                - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
+                - Debe de ser una fecha váida dentro del calendario gregoriano.
+                - La fecha no debe de ser superior a la fecha de fin de proyecto.
+             * /        
+    
+            "start_date_project": {
+                "format": {
+                    valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                    codigo: "project__start_date_project__format_KO",
+                    especial: false
+                },
+                "fechavalida": {
+                    valor: "fechavalida",
+                    codigo: "project__start_date_project__valid_KO",
+                    especial: true
+                },
+                "fechaSuperior": {
+                    valor: "fechaSuperior",
+                    codigo: "project__start_date_project__superior_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
+                - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
+                - Debe de ser una fecha váida dentro del calendario gregoriano.
+                - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
+             * /
+    
+            "end_date_project": {
+                "format": {
+                    valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
+                    codigo: "project__end_date_project__format_KO",
+                    especial: false
+                },
+                "fechavalida": {
+                    valor: "fechavalida",
+                    codigo: "project__end_date_project__valid_KO",
+                    especial: true
+                },
+                "fechaInferior": {
+                    valor: "fechaInferior",
+                    codigo: "project__end_date_project__inferior_KO",
+                    especial: true
+                }
+            },
+            
+            /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 60 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+                - No permitidos: caracteres no mencionados.
+             * /  
+    
+            "responsable_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__responsable_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 60,
+                    codigo: "project__responsable_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$",
+                    codigo: "project__responsable_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>organization_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+                - No permitidos: caracteres no mencionados.
+             * / 
+    
+            "organization_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__organization_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__organization_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
+                    codigo: "project__organization_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 30 caracteres.
+                - Tamaño máximo de 500 caracteres.
+                - Permitidos: Todos.
+             * / 
+    
+            "description_project": {
+                "min_size": {
+                    valor: 30,
+                    codigo: "project__description_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 500,
+                    codigo: "project__description_project__max_size_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>code_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 50 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
+                - No permitidos: acentos y caracteres no mencionados.
+             * / 
+    
+            "code_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__code_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 50,
+                    codigo: "project__code_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                    codigo: "project__code_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 15 caracteres.
+                - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
+                - No permitidos: espacios, acentos y caracteres no mencionados.
+             * / 
+    
+            "acronym_project": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "project__acronym_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 15,
+                    codigo: "project__acronym_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                    codigo: "project__acronym_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 1 dígito.
+                - Tamaño máximo de 100 dígitos.
+                - Permitidos: números.
+                - No permitidos: el resto de caracteres.
+             * / 
+    
+            "id_sampling_methodology": {
+                "min_size": {
+                    valor: 1,
+                    codigo: "project__id_sampling_methodology__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 11,
+                    codigo: "project__id_sampling_methodology__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[1-9][0-9]*$",
+                    codigo: "project__id_sampling_methodology__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>nuevo_file_project</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 7 caracteres en nombre de archivo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+                - Tamaño de archivo máximo de 2 MBs.
+                - Formato permitidos: pdf, doc, docx.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * / 
+    
+            "nuevo_file_project": {
+                "max_size_file": {
+                    valor: 2000000,
+                    codigo: "project__nuevo_file_project__max_size_file_KO",
+                    especial: false
+                },
+                "type_file": {
+                    valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                    codigo: "project__nuevo_file_project__type_file_KO",
+                    especial: false
+                },
+                "min_size": {
+                    valor: 7,
+                    codigo: "project__nuevo_file_project__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__nuevo_file_project__max_size_KO",
+                    especial: false
+                },
+                "format_name_file": {
+                    valor: "^[A-Za-z.]*$",
+                    codigo: "project__nuevo_file_project__format_name_file_KO",
+                    especial: false
+                }
+            }
+        },
+    
+        // Estructura para los test de búsqueda de proyectos
+    
+        "SEARCH": {
+    
+            /* <b>id_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 11 dígitos.
+                - Permitidos: números.
+                - No permitidos: el resto de caracteres.
+            * / 
+    
+            "id_project": {
+                "max_size": {
+                    valor: 11,
+                    codigo: "project__id_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[0-9]*$",
+                    codigo: "project__id_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>name_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "name_project": {
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__name_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "project__name_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
+                - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
+             * /
+    
+            "start_date_project": {
+                "format": {
+                    valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
+                    codigo: "project__start_date_project__format_SEARCH_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
+                - Formato de dd/mm/aaaa(no sirve aaaa-mm-dd o similares).
+             * /
+    
+            "end_date_project": {
+                "format": {
+                    valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
+                    codigo: "project__end_date_project__format_SEARCH_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 60 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+                - No permitidos: caracteres no mencionados.
+             * /  
+    
+            "responsable_project": {
+                "max_size": {
+                    valor: 60,
+                    codigo: "project__responsable_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$",
+                    codigo: "project__responsable_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>organization_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+                - No permitidos: caracteres no mencionados.
+             * / 
+    
+            "organization_project": {
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__organization_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z áéíóúÁÉÍÓÚ ñÑ]*$,
+                    codigo: "project__organization_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 500 caracteres.
+                - Permitidos: Todos.
+             * / 
+    
+            "description_project": {
+                "max_size": {
+                    valor: 500,
+                    codigo: "project__description_project__max_size_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>code_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínino.
+                - Tamaño máximo de 50 caracteres.
+                - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
+                - No permitidos: acentos y caracteres no mencionados.
+             * / 
+    
+            "code_project": {
+                "max_size": {
+                    valor: 50,
+                    codigo: "project__code_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                    codigo: "project__code_project__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 15 caracteres.
+                - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
+                - No permitidos: espacios, acentos y caracteres no mencionados.
+             * / 
+    
+            "acronym_project": {
+                "max_size": {
+                    valor: 15,
+                    codigo: "project__acronym_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-zñÑ!"'(),-.:;?^_{\|}~¿»¡«]*$,
+                    codigo: "project__acronym_project__format_KO",
+                    especial: false
+                }
+            },
+    
+    
+            /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 dígitos.
+                - Permitidos: números.
+                - No permitidos: el resto de caracteres.
+             * / 
+    
+            "id_sampling_methodology": {
+                "max_size": {
+                    valor: 11,
+                    codigo: "project__id_sampling_methodology__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[0-9]*$",
+                    codigo: "project__id_sampling_methodology__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>file_project</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * / 
+    
+            "file_project": {
+                "max_size": {
+                    valor: 100,
+                    codigo: "project__file_project__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z.]*$,
+                    codigo: "project__file_project__format_KO",
+                    especial: false
+                }
+            }
+        }
+    };
+    `,
+    
+        // Textos para la estructura de analysis_preparation
+    
+        'struct2': 'Estructura empleada para la entidad analysis preparation',
+        'desc95': `
+    this.def_html_analysis_preparation = {
+        atributos: ["id_analysis_preparation", "name_analysis_preparation", "bib_analysis_preparation", "description_analysis_preparation", "file_analysis_preparation"],
+    
+        /*<b>id_analysis_preparation</b> hace referencia al ID de análisis, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
+          Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
+          Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/    
+    
+        "id_analysis_preparation": {
+            tag: "INPUT",
+            type: "text",
+            esPK: true,
+            esAutoIncremental: true,
+            esEspecial: false,
+            size: 11
+        },
+    
+        /*<b>name_analysis_preparation</b> hace referencia al nombre de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
+    
+        "name_analysis_preparation": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 100
+        },
+    
+        /*<b>bib_analysis_preparation</b> hace referencia a la bibliografía de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 200 caracteres*/
+    
+        "bib_analysis_preparation": {
+            tag: "TEXTAREA",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            rows: 4,
+            cols: 50
+        },
+    
+        /*<b>description_analysis_preparation</b> hace referencia a la descripción de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 5000 caracteres*/
+    
+        "description_analysis_preparation": {
+            tag: "TEXTAREA",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            rows: 50,
+            cols: 100
+        },
+    
+        /*<b>file_analysis_preparation</b> hace referencia al archivo de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
+          Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/
+    
+        "file_analysis_preparation": {
+            tag: "INPUT",
+            type: "file",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 100
+        }
+    };
+    
+    <b>Estructura de pruebas para Analysis Preparation:</b>
+    
+    this.def_test_analysis_preparation = {
+        
+        // Estructura para los test de adición de un nuevo análisis.
+    
+        "ADD": {
+    
+            /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 8 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "name_analysis_preparation": {
+                "min_size": {
+                    valor: 8,
+                    codigo: "analysis_preparation__name_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "analysis_preparation__name_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 80 caracteres.
+                - Tamaño máximo de 5000 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "description_analysis_preparation": {
+                "min_size": {
+                    valor: 80,
+                    codigo: "analysis_preparation__description_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 5000,
+                    codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "analysis_preparation__description_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 200 caracteres.
+                - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
+                - No permitidos: caracteres no mencionados.
+             * /
+    
+            "bib_analysis_preparation": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "analysis_preparation__bib_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 200,
+                    codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                    codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - (Comprobado con una funcion especial) Que exista el fichero
+                - Tamaño mínimo de 7 caracteres en nombre de archivo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+                - Tamaño de archivo máximo de 2 MBs.
+                - Formato permitidos: pdf, doc, docx.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "nuevo_file_analysis_preparation": {
+                "empty": {
+                    valor: "empty",
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__empty_KO",
+                    especial: true
+                },
+                "max_size_file": {
+                    valor: 2000000,
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_file_KO",
+                    especial: false
+                },
+                "type_file": {
+                    valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__type_file_KO",
+                    especial: false
+                },
+                "min_size": {
+                    valor: 7,
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format_name_file": {
+                    valor: "^[A-Za-z.]*$",
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__format_name_file_KO",
+                    especial: false
+                }
+            }
+        },
+    
+        // Estructura para los test de edición de un análisis.
+    
+        "EDIT": {
+    
+            /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 8 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "name_analysis_preparation": {
+                "min_size": {
+                    valor: 8,
+                    codigo: "analysis_preparation__name_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "analysis_preparation__name_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 80 caracteres.
+                - Tamaño máximo de 5000 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "description_analysis_preparation": {
+                "min_size": {
+                    valor: 80,
+                    codigo: "analysis_preparation__description_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 5000,
+                    codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "analysis_preparation__description_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 6 caracteres.
+                - Tamaño máximo de 200 caracteres.
+                - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
+                - No permitidos: caracteres no mencionados.
+             * /
+    
+            "bib_analysis_preparation": {
+                "min_size": {
+                    valor: 6,
+                    codigo: "analysis_preparation__bib_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 200,
+                    codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                    codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 7 caracteres en nombre de archivo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+                - Tamaño de archivo máximo de 2 MBs.
+                - Formato permitidos: pdf, doc, docx.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * /        
+    
+            "nuevo_file_analysis_preparation": {
+                "max_size_file": {
+                    valor: 2000000,
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_file_KO",
+                    especial: false
+                },
+                "type_file": {
+                    valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__type_file_KO",
+                    especial: false
+                },
+                "min_size": {
+                    valor: 7,
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format_name_file": {
+                    valor: "^[A-Za-z.]*$",
+                    codigo: "analysis_preparation__nuevo_file_analysis_preparation__format_name_file_KO",
+                    especial: false
+                }
+            }
+        },
+    
+        // Estructura para los test de búsqueda de un análisis.
+    
+        "SEARCH": {
+    
+            /* <b>id_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: números.
+                - No permitidos: caracteres no mencionados.
+             * /
+    
+            "id_analysis_preparation": {
+                "max_size": {
+                    valor: 11,
+                    codigo: "analysis_preparation__id_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[0-9]*$",
+                    codigo: "analysis_preparation__id_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "name_analysis_preparation": {
+                "max_size": {
+                    valor: 100,
+                    codigo: "analysis_preparation__name_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "analysis_preparation__name_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 5000 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "description_analysis_preparation": {
+                "max_size": {
+                    valor: 5000,
+                    codigo: "analysis_preparation__description_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "analysis_preparation__description_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 200 caracteres.
+                - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
+                - No permitidos: caracteres no mencionados.
+             * /
+    
+            "bib_analysis_preparation": {
+                "max_size": {
+                    valor: 200,
+                    codigo: "analysis_preparation__bib_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                    codigo: "analysis_preparation__bib_analysis_preparation__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "file_analysis_preparation": {
+                "max_size": {
+                    valor: 100,
+                    codigo: "analysis_preparation__file_analysis_preparation__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z.]*$,
+                    codigo: "analysis_preparation__file_analysis_preparation__format_KO",
+                    especial: false
+                }
+            }
+        }
+    };
+    
+    `,
+    
+        // Textos para la estructura de characteristic
+    
+        'struct3': 'Estructura empleada para la entidad characteristic',
+        'desc96': `
+    this.def_html_characteristic = {
+        atributos: ["id_characteristic", "name_characteristic", "data_type_characteristic","category_characteristic","description_characteristic",  "bibref_characteristic", "file_characteristic"],
+    
+        /*<b>id_characteristic</b> hace referencia al ID de característica, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
+          Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
+          Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/
+    
+        "id_characteristic": {
+            tag: "INPUT",
+            type: "text",
+            esPK: true,
+            esAutoIncremental: true,
+            esEspecial: false,
+            size: 11
+        },
+    
+        /*<b>name_characteristic</b> hace referencia al nombre de característica, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
+    
+        "name_characteristic": {
+            tag: "INPUT",
+            type: "text",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 100
+        },
+    
+        /*<b>data_type_characteristic</b> hace referencia al tipo de dato de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Enum y su sólo se puede escoger entre number, text o set*/
+    
+        "data_type_characteristic": { 
+            tag: "SELECT", 
+            valores: ['number','text','set'], 
+            multiple: false, 
+            esPK: false,  
+            esAutoIncremental: false,
+            esEspecial : false
+        },
+    
+        /*<b>category_characteristic</b> hace referencia a la categoría de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Enum y su sólo se puede escoger entre soil_site, soil_chem, soil_bio*/
+    
+        "category_characteristic": { 
+            tag: "SELECT", 
+            valores: ['soil_site','soil_chem','soil_bio'], 
+            multiple: false, 
+            esPK: false,  
+            esAutoIncremental: false,
+            esEspecial : false
+        },
+    
+        /*<b>description_characteristic</b> hace referencia a la descripción de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 5000 caracteres*/
+    
+        "description_characteristic": {
+            tag: "TEXTAREA",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            rows: 50,
+            cols: 100
+        },
+    
+        /*<b>bibref_characteristic</b> hace referencia a la referencia bibliográfica de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo Texto (String) y su tamaño máximo es de 200 caracteres*/
+    
+        "bibref_characteristic": {
+            tag: "TEXTAREA",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            rows: 4,
+            cols: 50
+        },
+    
+        /*<b>file_characteristic</b> hace referencia al archivo de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+          Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
+          Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/    
+    
+        "file_characteristic": {
+            tag: "INPUT",
+            type: "file",
+            esPK: false,
+            esAutoIncremental: false,
+            esEspecial: false,
+            size: 100
+        }
+    };
+    
+    <b>Estructura para los tests de Characteristic:</b>
+    
+    this.def_test_characteristic = {
+    
+        // Estructura para los tests de adición de una nueva característica.
+    
+        "ADD": {
+    
+            /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 8 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "name_characteristic": {
+                "min_size": {
+                    valor: 8,
+                    codigo: "characteristic__name_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "characteristic__name_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "characteristic__name_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 80 caracteres.
+                - Tamaño máximo de 5000 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "description_characteristic": {
+                "min_size": {
+                    valor: 80,
+                    codigo: "characteristic__description_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 5000,
+                    codigo: "characteristic__description_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "characteristic__description_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
+                - Debe de ser una de las opciones porporcionadas.
+             * /
+    
+            "data_type_characteristic": {
+                "selectValido": {
+                    valor: selectValido,
+                    codigo: "characteristic__data_type_characteristic__valid_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
+                - Debe de ser una de las opciones porporcionadas.
+             * /
+    
+            "category_characteristic": {
+                "selectValido": {
+                    valor: selectValido,
+                    codigo: "characteristic__category_characteristic__valid_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 16 caracteres.
+                - Tamaño máximo de 200 caracteres.
+                - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
+                - No permitidos: caracteres no mencionados.
+             * /
+    
+            "bibref_characteristic": {
+                "min_size": {
+                    valor: 16,
+                    codigo: "characteristic__bibref_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 200,
+                    codigo: "characteristic__bibref_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                    codigo: "characteristic__bibref_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
+                - (Comprobado con una funcion especial) Que exista el fichero
+                - Tamaño mínimo de 7 caracteres en nombre de archivo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+                - Tamaño de archivo máximo de 200 KBs.
+                - Formato permitidos: pdf, doc, docx.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "nuevo_file_characteristic": {
+                "empty": {
+                    valor: "empty",
+                    codigo: "characteristic__nuevo_file_characteristic__empty_KO",
+                    especial: true
+                },
+                "max_size_file": {
+                    valor: 200000,
+                    codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
+                    especial: false
+                },
+                "type_file": {
+                    valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                    codigo: "characteristic__nuevo_file_characteristic__type_file_KO",
+                    especial: false
+                },
+                "min_size": {
+                    valor: 7,
+                    codigo: "characteristic__nuevo_file_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "characteristic__nuevo_file_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format_name_file": {
+                    valor: "^[A-Za-z.]*$",
+                    codigo: "characteristic__nuevo_file_characteristic__format_name_file_KO",
+                    especial: false
+                }
+            }
+        },
+    
+        // Estructura para los tests de edición de characteristic
+    
+        "EDIT": {
+    
+            /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 8 caracteres.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "name_characteristic": {
+                "min_size": {
+                    valor: 8,
+                    codigo: "characteristic__name_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "characteristic__name_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "characteristic__name_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 80 caracteres.
+                - Tamaño máximo de 5000 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "description_characteristic": {
+                "min_size": {
+                    valor: 80,
+                    codigo: "characteristic__description_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 5000,
+                    codigo: "characteristic__description_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "characteristic__description_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
+                - Debe de ser una de las opciones porporcionadas.
+             * /
+    
+            "data_type_characteristic": {
+                "selectValido": {
+                    valor: selectValido,
+                    codigo: "characteristic__data_type_characteristic__valid_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
+                - Debe de ser una de las opciones porporcionadas.
+             * /
+    
+            "category_characteristic": {
+                "selectValido": {
+                    valor: selectValido,
+                    codigo: "characteristic__category_characteristic__valid_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 16 caracteres.
+                - Tamaño máximo de 200 caracteres.
+                - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
+                - No permitidos: caracteres no mencionados.
+             * /
+    
+            "bibref_characteristic": {
+                "min_size": {
+                    valor: 16,
+                    codigo: "characteristic__bibref_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 200,
+                    codigo: "characteristic__bibref_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                    codigo: "characteristic__bibref_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
+                - Tamaño mínimo de 7 caracteres en nombre de archivo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+                - Tamaño de archivo máximo de 200 KBs.
+                - Formato permitidos: pdf, doc, docx.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "nuevo_file_characteristic": {
+                "max_size_file": {
+                    valor: 200000,
+                    codigo: "characteristic__nuevo_file_characteristic__max_size_file_KO",
+                    especial: false
+                },
+                "type_file": {
+                    valor: Array("application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"),
+                    codigo: "characteristic__nuevo_file_characteristic__type_file_KO",
+                    especial: false
+                },
+                "min_size": {
+                    valor: 7,
+                    codigo: "characteristic__nuevo_file_characteristic__min_size_KO",
+                    especial: false
+                },
+                "max_size": {
+                    valor: 100,
+                    codigo: "characteristic__nuevo_file_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format_name_file": {
+                    valor: "^[A-Za-z.]*$",
+                    codigo: "characteristic__nuevo_file_characteristic__format_name_file_KO",
+                    especial: false
+                }
+            }
+        },
+    
+        // Estructura para los tests de búsqueda de characteristic
+    
+        "SEARCH": {
+    
+            /* <b>id_characteristic</b> debe de seguir los siguientes requisitos:
+                - No hya tamaño mínimo.
+                - Tamaño máximo de 11 dígitos.
+                - Permitidos: números.
+                - No permitidos: el resto.
+             * /
+        
+            "id_characteristic": {
+                "max_size": {
+                    valor: 11,
+                    codigo: "characteristic__id_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[0-9]*$",
+                    codigo: "characteristic__id_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /       
+    
+            "name_characteristic": {
+                "max_size": {
+                    valor: 100,
+                    codigo: "characteristic__name_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "characteristic__name_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 5000 caracteres.
+                - Permitidos: caracteres alfabéticos y espacios.
+                - No permitidos: acentos, ñ's y caracteres no mencionados.
+             * /        
+    
+            "description_characteristic": {
+                "max_size": {
+                    valor: 5000,
+                    codigo: "characteristic__description_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: "^[A-Za-z ]*$",
+                    codigo: "characteristic__description_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
+                - Debe de ser una de las opciones porporcionadas.
+             * /
+    
+            "data_type_characteristic": {
+                "selectValidoSEARCH": {
+                    valor: selectValidoSEARCH,
+                    codigo: "characteristic__data_type_characteristic__valid_SEARCH_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
+                - Debe de ser una de las opciones porporcionadas.
+             * /
+    
+            "category_characteristic": {
+                "selectValidoSEARCH": {
+                    valor: selectValidoSEARCH,
+                    codigo: "characteristic__category_characteristic__valid_SEARCH_KO",
+                    especial: true
+                }
+            },
+    
+            /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 200 caracteres.
+                - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
+                - No permitidos: caracteres no mencionados.
+             * /
+            
+            "bibref_characteristic": {
+                "max_size": {
+                    valor: 200,
+                    codigo: "characteristic__bibref_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z ñÑ !"'(),-.:;?^_{\|}~¿»¡«  áéíóúÁÉÍÓÚ]*$,
+                    codigo: "characteristic__bibref_characteristic__format_KO",
+                    especial: false
+                }
+            },
+    
+            /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
+                - No hay tamaño mínimo.
+                - Tamaño máximo de 100 caracteres en nombre de archivo.
+                - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+                - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+             * /
+    
+            "file_characteristic": {
+                "max_size": {
+                    valor: 100,
+                    codigo: "characteristic__file_characteristic__max_size_KO",
+                    especial: false
+                },
+                "format": {
+                    valor: ^[A-Za-z.]*$,
+                    codigo: "characteristic__file_characteristic__format_KO",
+                    especial: false
+                }
+            }
+        }
+    };
+    
+    `,
+    
+        /*TRADUCCIONES PARA API.HTML*/
+    
+        'InfoTextAPI1': 'En esta página se mostrarán todas las funciones que se han implementado para la realización de este trabajo.',
+        'InfoTextAPI2': 'Para conocer sobre las funciones implementadas escoja una de las opciones dentro del menú localizado en la parte superior izquierda.',
+    
+        // Textos funciones test
+    
+        'func1': 'test_run()',
+        'desc1': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de preparar, verificar y ejecutar todos los test que han sido definidos.',
+        'func2': 'prepararTest()',
+        'desc2': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Es llamada por <b>test_run()</b> para limpiar las tablas y crear los arrays necesarios para ejecutar los tests.',
+        'func3': 'crearArrays()',
+        'desc3': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear los arrays para las definiciones de test, las pruebas y las pruebas específicas de archivos y especiales, esta función es llamada por <b>prepararTest()</b>.',
+        'func4': 'verificar()',
+        'desc4': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de comprobar que todas las definiciones de test y de pruebas están definidas correctamente, esta función es llamada por <b>test_run()</b>',
+        'func5': 'verificarDeftest()',
+        'desc5': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de de verificar que el formato de las definiciones de test son correctas, esta función es llamada por <b>verificar()</b>',
+        'func6': 'verificarPruebas()',
+        'desc6': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (filacorrecta) que indica si el formato de las pruebas es correcto o no.\n<b>Función:</b> Se encarga de comprobar que el formato de las pruebas definidas es correcto, esta función es llamada por <b>verificar()</b>.',
+        'func7': 'verificarPruebas_file()',
+        'desc7': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (filacorrecta) que indica si el formato de las pruebas de fichero es correcto o no.\n<b>Función:</b> Se encarga de comprobar que el formato de las pruebas de fichero definidas es correcto, esta función es llamada por <b>verificar()</b>.',
+        'func8': 'verificarPruebas_esp()',
+        'desc8': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (filacorrecta) que indica si el formato de las pruebas especiales es correcto o no.\n<b>Función:</b> Se encarga de comprobar que el formato de las pruebas especiales definidas es correcto, esta función es llamada por <b>verificar()</b>.',
+        'func9': 'ejecutar_pruebas()',
+        'desc9': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de comprobar que todas las pruebas definidas se ejecutan correctamente, esta función es llamada por <b>test_run()</b>',
+        'func10': 'test_entidad()',
+        'desc10': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (flag) que indica si las pruebas definidas se han ejecutado correctamente o no.\n<b>Función:</b> Se encarga de comprobar que las pruebas definidas se ejecutan correctamente, esta función es llamada por <b>ejecutar_pruebas()</b>.',
+        'func11': 'test_entidad_files()',
+        'desc11': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (flag) que indica si las pruebas de ficheros definidas se han ejecutado correctamente o no.\n<b>Función:</b> Se encarga de comprobar que las pruebas de ficheros definidas se ejecutan correctamente, esta función es llamada por <b>ejecutar_pruebas()</b>.',
+        'func12': 'test_entidad_esp()',
+        'desc12': '<b>Parámetros:</b> No usa parámetros.\n<b>Output:</b> Devuelve un valor booleano (flag) que indica si las pruebas para variables especiales definidas se han ejecutado correctamente o no.\n<b>Función:</b> Se encarga de comprobar que las pruebas para variables especiales definidas se ejecutan correctamente, esta función es llamada por <b>ejecutar_pruebas()</b>.',
+        'func13': 'devolver_dev(num_def)',
+        'desc13': '<b>Parámetros:</b>\n\tnum_def:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al número de definición de test.\n<b>Output:</b> Devuelve un array (array_def) que contiene el test asociado a ese número de defincición.\n<b>Función:</b> Se encarga de devolver la definición de test asociada a un número de definición de test determinado.',
+        'func14': 'check(id, accion)',
+        'desc14': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un atributo de una entidad\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, EDIT.\n<b>Output:</b> Devuelve un valor booleano, indicando que las pruebas han salido con éxito o no.\n<b>Función:</b> Se encarga de comprobar si las pruebas realizadas en un atributo han salido todas con éxito, en caso contrario se muestra un campo con el mensaje de error asociado.',
+        'func15': 'check_submit(accion)',
+        'desc15': '<b>Parámetros:</b>\n\taccion\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, EDIT.\n<b>Output:</b> Devuelve un booleano indicando que los tests se han realizado correctamente o no.\n<b>Función:</b> Se encarga de comprobar todos los atributos para ver si cumplen con los requisitos definidos en las definiciones de test.',
+        'func16': 'colocarvalicaciones(accion)',
+        'desc16': '<b>Parámetros:</b>\n\taccion\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, EDIT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún output.\n<b>Función:</b> Se encarga de coloca todas las validaciones relacionadas con los tests, esta función es llamada por <b>createForm()</b>',
+        'func17': 'ocultar_boton_test()',
+        'desc17': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de ocultar el botón que permite la ejecución de los test y pruebas definidas.',
+        'func18': 'mostrar_boton_test()',
+        'desc18': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de poner en visible el botón que permite la ejecución de los test y pruebas definidas.',
+        'func19': 'validacionesespeciales(atributo, prueba)',
+        'desc19': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre del atributo especial a analizar.\n\tprueba:\n\t\tTipo: String.\n\t\tDescripción: Nombre de la prueba a realizar.\n<b>Output:</b> Devuelve un valor booleano que viene de lo que devuelvan las correspondientes funciónes auxiliares.\n<b>Función:</b> Se encarga de realizar las pruebas a los campos considerados como especiales (i.e.: las fechas en project).',
+        'func20': 'fechaValida(fecha)',
+        'desc20': '<b>Parámetros:</b>\n\tfecha:\n\t\tTipo: String.\n\t\tDescripción: Fecha a validar (inicio o fin de proyecto)\n<b>Output:</b> Devuelve un valor booleano, indicando si la fecha es válida o no.\n<b>Función:</b> Se encarga de comprobar si la fecha introducida es una fecha válida, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>project</b>.',
+        'func21': 'fechasOrdenadas(fecha1, fecha2)',
+        'desc21': '<b>Parámetros:</b>\n\tfecha1:\n\t\tTipo: String.\n\t\tDescripción: Fecha de inicio de proyecto\n\tfecha2:\n\t\tTipo: String.\n\t\tDescripción: Fecha de fin de proyecto.\n<b>Output:</b> Devuelve un valor booleano, indicando si las fechas están ordenadas o no.\n<b>Función:</b> Se encarga de comprobar si la fecha de inicio es menor que la de fin y que la fecha de fin sea mayor que la de inicio, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>project</b>.',
+        'func22': 'selectValido(atributo, valores)',
+        'desc22': '<b>Parámetros:</b>\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Categoría o tipo de dato.\n\tvalores:\n\t\tTipo: Array.\n\t\tDescripción: Almacena los valores que son válidos (los que se pueden escoger).\n<b>Output:</b> Devuelve un valor booleano, indicando si el valor escogido está contenido en la lista de valores o no.\n<b>Función:</b> Se encarga de comprobar si el valor escogido o buscado está entre las opciones válidas, esta función es llamada por <b>validacionesespeciales()</b> dentro de la clase <b>characteristic</b>.',
+        'func23': 'cerrar_test()',
+        'desc23': '<b>Parámetros/Output:</b> No usa parámetros y su ejecución no devuelve ningun tipo de output.\n<b>Función:</b> Se encarga de limpiar la tabla de tests y ocultarlo.',
+    
+    
+        // Test funciones Presentación de tablas
+    
+        'func24': 'SEARCH(empieza, filas)',
+        'desc24': '<b>Parámetros:</b>\n\tempieza:\n\t\tTipo: Número.\n\t\tDescripción: Indica el número por donde empieza la paginación.\n\tfilas:\n\t\tTipo: número\n\t\tDescripción: Indica el número de tuplas que habrá por página.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de buscar tuplas dentro de una entidad en base a unos criterios especificados para, posteriormente, mostrarlos en la tabla.',
+        'func25': 'ADD()',
+        'desc25': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back e insertar una nueva tupla dentro de la tabla de la entidad en la que estemos trabajando.',
+        'func26': 'EDIT()',
+        'desc26': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back y editar la tupla editada dentro de la tabla de la entidad en la que estemos trabajando.',
+        'func27': 'DELETE()',
+        'desc27': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar al back y borrar una tupla existente dentro de la tabla de la entidad en la que estemos trabajando.',
+        'func28': 'cambiardatosespecialestabla(atributo, valoratributo, i)',
+        'desc28': '<b>Parámetros:</b>\n\atributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescripción: Valor que tiene el atributo atributp almacenado.\n\ti\n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output: </b>Proporciona un output en tipo string que hace referencia a un elemento html que cambia como se ven los datos especiales dentro de la tabla.\n<b>Función:</b> Se encarga de cambiar los datos/atributos asignados como datos especiales para que se puedan ver con el formato permitido en la tabla.',
+        'func29': 'modificarcolumnasmostrar(atributo)',
+        'desc29': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de un entidad.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función: </b> Se emplea para mostrar o ocultar la columna asociada al atributo seleccionado en el select.',
+        'func30': 'mostrarocultarcolumnas()',
+        'desc30': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de ocultar las columnas que no están marcadas para mostrar.',
+        'func31': 'cambiarcolumnatabla(atributo)',
+        'desc31': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de un entidad.\n<b>Output: </b>La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función: </b> Se encarga de ocultar la tabla en base al atributo pasado en los parámetros, esta función es llamada por <b>mostrarocultarcolumna()</b>.',
+        'func32': 'crearTablaDatos()',
+        'desc32': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a las funciones auxiliares necesarias para crear las tablas.',
+        'func33': 'construirSelect()',
+        'desc33': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el select de selección de columnas, esta función es llamada por <b>crearDatosTabla()</b>.',
+        'func34': 'hacerTabla()',
+        'desc34': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear la propia tabla, esta función es llamada por <b>crearDatosTabla()</b>.',
+        'func35': 'hacerPaginacion()',
+        'desc35': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la función encargada de crear la paginación en el caso de que existan tuplas, en caso contrario se ocultan todos los elementos del HTML relacionados con la paginación, esta función es llamada por <b>crearDatosTabla()</b>.',
+        'func36': 'levantarPaginacion()',
+        'desc36': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de propiamente crear la paginación, esta función es llamada por <b>hacerPaginacion()</b>.',
+        'func37': 'crearboton(accion, parametros, i)',
+        'desc37': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia las acciones que se pueden realizar: DELETE, SHOWCURRENT, EDIT.\n\tparámetros:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a algún elemento de la estructura.\n\ti:\n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> Devuelve un el codigo HTML con la imagen del icono de la accion\n<b>Función:</b> Se encarga de crear los botones y los iconos correspondientes para las acciones de DELETE, SHOWCURRENT y EDIT.',
+        'func38': 'cerrar_tabla()',
+        'desc38': '<b>Parámetros/Output:</b>No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se oculta la tabla y se oculta el boton de test.',
+    
+        //textos funciones de formularios
+    
+        'func39': 'crearForm()',
+        'desc39': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la función auxiliar <b>crearFormAtributo()</b> para crear la parte de formulario correspondiente a un atributo para todos los atributos que queremos que tenga el formulario.',
+        'func40': 'crearFormAtributo(atributo)',
+        'desc40': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún output.\n<b>Función:</b> Se encarga de crear la parte del formulario asociada a un atributo, esta función es llamada por <b>crearForm()</b>.',
+        'func41': 'crearInput(datos, atributo)',
+        'desc41' : '<b>Parámetros:</b>\n\tdatos:\n\t\tTipo: Array.\n\t\tDescripción: Es una lista con los diferentes atributos a usar dentro de un formulario.\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el input para un determinado atributo, esta función es llamada por <b>crearFormAtributo()</b>.',
+        'func42' : 'crearTextarea(datos, atributo)',
+        'desc42' : '<b>Parámetros:</b>\n\tdatos:\n\t\tTipo: Array.\n\t\tDescripción: Es una lista con los diferentes atributos a usar dentro de un formulario.\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el textarea para un determinado atributo, esta función es llamada por <b>crearFormAtributo()</b>.',
+        'func43' : 'crearSelect(datos, atributo)',
+        'desc43' : '<b>Parámetros:</b>\n\tdatos:\n\t\tTipo: Array.\n\t\tDescripción: Es una lista con los diferentes atributos a usar dentro de un formulario.\n\tatributo\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el select para un determinado atributo, esta función es llamada por <b>crearFormAtributo()</b>.',
+        'func44': 'crearLabel(atributo)',
+        'desc44': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> Devuelve un HTMLLabelElement (label).\n<b>Función:</b> Se encarga de crear una etiqueta label que acompaña a cada uno de los inputs, esta función es llamada por <b>crearFormAtributo()</b>.',
+        'func45': 'crearSpanError(atributo)',
+        'desc45': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n<b>Output:</b> Devuelve un HTMLSpanElement (span).\n<b>Función:</b> Se encarga de crear una etiqueta span que se mostrará cuando las validaciones de input no salgan bien, esta función es llamada por <b>crearFormAtributo()</b>.',
+        'func46': 'eliminarCampos(accion)',
+        'desc46': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, SEARCH, DELETE, SHOWCURRENT, EDIT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de eliminar los campos necesarios en base a la acción a realizar.',
+        'func47': 'eliminarCampo(id)',
+        'desc47': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de eliminar el campo del id proporcionado, esta función es llamada por <b>eliminarCampos()</b>.',
+        'func48': 'ponernoactivoform(accion)',
+        'desc48': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar DELETE, SHOWCURRENT, EDIT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de desactivar los campos, los cuales no son necesarios o no debe de ser editados.',
+        'func49': 'requiereReadOnlyEDIT(id)',
+        'desc49': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n<b>Output:</b> Devuelve un valor booleano indicando si el campo debe de ser no editable dentro de un formulario de edición o no.\n<b>Función:</b> Se encarga de indicar qué campos deben de ser puestos en sólo lectura en los formularios de edición, esta función es llamada por <b>ponernoactivoform()</b>.',
+        'func50': 'desactivarCampo(id)',
+        'desc50': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de poner en sólo lectura los atributos necesarios en los formularios de edición, esta función es llamada por <b>ponernoactivoform()</b>.',
+        'func51': 'SearchPH()',
+        'desc51': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de buscar y de colocar los placeholders para los formularios de SEARCH.',
+        'func52': 'colocarValoresForm(parametros)',
+        'desc52': '<b>Parámetros:</b>\n\tparametros:\n\t\tTipo: Array.\n\t\tDescripción: Array que contiene los datos correspondientes a una tupla.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a la correspondiente función auxiliar para colocar todos los valores para todos los atributos de una entidad.',
+        'func53': 'colocarValor(atributo, valor)',
+        'desc53': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvalor:\n\t\tTipo: String(Puede tomar cualquier tipo)\n\t\tDescripción: Hace referencia al dato asignado a un atributo en específico.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar el valor de un atributo en su correspondiente campo, teniendo en cuenta su tipo y si es un atributo especial.',
+        'func54': 'mostrarvaloresespecialesform(atributo, valoratributo)',
+        'desc54': '<b>Parámetros:</b>\n\tatributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento perteneciente a una entidad.\n\tvaloratributo:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al valor asignado a un atributo.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar los valores especiales dentro del formulario.',
+        'func55': 'inicializar()',
+        'desc55': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de incializar todo lo necesarios para la creación de formularios, tablas y test.',
+        'func56': 'createForm(accion, parametros)',
+        'desc56': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, EDIT, DELETE, SEARCH, SHOWCURRENT.\n\tparametros\n\t\tTipo: \n\t\tDescripción: Array que contiene los datos correspondientes a una tupla\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de llamar a todas las funciones auxiliares necesarias para crear el formulario.',
+        'func57': 'cargar_formulario(accion)',
+        'desc57': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cargar el formulario y mostrará error en el caso de que no exista un formulario, esta función es llamada por <b>createForm()</b>.',
+        'func58': 'cargar_formulario_dinamico(accion)',
+        'desc58': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cargar el formulario dinámico, esta función es llamada por <b>cargar_formulario()</b> si no existe formulario en clase entidad.',
+        'func59': 'ponerTituloForm(accion)',
+        'desc59': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de ponerle el título al formulario teniendo en cuenta la acción que se está a realizar, esta función es llamada por <b>createForm()</b>.',
+        'func60': 'eliminarCamposForm(accion)',
+        'desc60': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de eliminar los campos no necesario teniendo en cuenta la acción que se está a realizar, esta función es llamada por <b>createForm()</b>.',
+        'func61': 'mostrarAtributosForm(accion, parametros)',
+        'desc61': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, EDIT, DELETE, SEARCH, SHOWCURRENT.\n\tparametros\n\t\tTipo: \n\t\tDescripción: Array que contiene los datos correspondientes a una tupla\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar los atributos necesarios dentro del formulario.',
+        'func62': 'colocarvalidaciones(accion)',
+        'desc62': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar las validaciones en los correspondientes campos, esta función es llamada por <b>createForm()</b>.',
+        'func63': 'comprobar(id, accion)',
+        'desc63': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, EDIT,  SEARCH.\n<b>Output:</b> Devuelve un valor booleano que es la respuesta de la función <b>check(id, accion)</b> indicando si lo introducido es válido o no.\n<b>Función:</b> Se encarga de comprobar si lo introducido dentro del campo con el id proporcionado cumple con lo que está permitido.',
+        'func64': 'ponernoactivo(accion)',
+        'desc64': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de poner en modo de lectura los campos correspondientes, esta función es llamada por <b>createForm()</b>.',
+        'func65': 'colocarboton(accion)',
+        'desc65': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de crear el botón de submit, esta función es llamada por <b>createForm()</b>.',
+        'func66': 'colocarOnSubmitForm(accion)',
+        'desc66': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de colocar la validacion de submit en el formulario que se esté creando, esta función es llamada por <b>createForm()</b>.',
+        'func67': 'comprobar_submit(accion)',
+        'desc67': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> Devuelve un valor booleano que corresponderá con la respuesta dada por la función <b>check_submit(accion)</b>, indicando que todo lo introducido en el formulario está correcto o no.\n<b>Función:</b> Se encarga de comprobar que todo lo introducido en el formulario cumple con los requisitos definidos en las correspondientes estructuras de las entidades.',
+        'func68': 'colocarActionForm(accion)',
+        'desc68': '<b>Parámetros:</b>\n\taccion:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las acciones que se pueden realizar ADD, DELETE, EDIT, SEARCH, SHOWCURRENT.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de establecer la acción del formulario para realizar la llamada al back correspondiente a la acción que se esté a realizar, esta función es llamada por <b>createForm()</b>.',
+        'func69': 'mostrarform()',
+        'desc69': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Muestra el formulario una vez creado, esta función es llamada por <b>createForm()</b>.',
+        'func70': 'actuarRespuesta(respuesta)',
+        'desc70': '<b>Parámetros:</b>\n\trespuesta:\n\t\tTipo: Lista de datos recibida del back\n\t\tDescripción: Hace referencia a la respuesta que proporciona el back.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función: </b>Se encarga de limpiar el formulario.',
+        'func71': 'abrirModalError(errorMsg)',
+        'desc71': '<b>Parámetros:</b>\n\terrorMsg:\n\t\tTipo: String.\n\t\tDescripción: Es el codigo del mensaje de error que se debe de mostrar en el modal.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función: </b>Se encarga de abrir un modal con el mensaje de error correspondiente.',
+        'func72': 'cerrarModalError()',
+        'desc72': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cerrar el modal una vez que el usuario lo ha visto.',
+        'func73': 'cerrar_formulario()',
+        'desc73': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b>  Es el codigo del mensaje de error que se debe de mostrar en el modalSe encarga de cerrar el formulario una vez envíado al back o cuando el usuario lo cancela.',
+        'func74': 'mostrar_error_campo(id, codigoerror)',
+        'desc74': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tcodigoerror:\n\t\tTipo: String.\n\t\tDescripción: Se refiere uno de los códigos de error que se pueden producir si no se ponen los valores correctamente.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar error y su correspondiente error en el campo del id proporcionado.',
+        'func75': 'mostrar_exito_campo(id)',
+        'desc75': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento de HTML.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función: </b>Se encarga de mostrar que el dato intorducido en un campo es correcto.',
+    
+        //Textos para otras funciones
+        'func76': 'evento(event)',
+        'desc76': '<b>Parámetros:</b>\n\tevent:\n\t\tTipo: Objeto\n\t\tDescripción: Evento registrado a partir de la realización de una acción determinada.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de cerrar el menú en el caso de que esté abierto y el click no fuera dentro del menú ni en el botón para abrirlo.',
+        'func77': 'menu_work()',
+        'desc77': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de abrir y cerrar el menú, es llamada por la función <b>evento()</b> cuando hay que cerrar el menú o al clickar el boton de abrir el menu.',
+        'func78': 'toggleTheme()',
+        'desc78': '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de manejar los cambios de modo claro a modo oscuro.',
+        'func79': 'changeImageOnHover(isMouseOver, action, aux)',
+        'desc79': '<b>Parámetros:</b>\n\tisMouseOver:\n\t\tTipo: Booleano.\n\t\tDescripción: Cambia cuando el ratón está encima de un objeto en específico.\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Parte del nombre de la imagen en cuestión, que hace referencia a la acción que realizas al hacer click en el icono.\n\taux: \n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el color de los iconos cuando se le pasa el ratón por encima.',
+        'func80': 'showAPI(APIElement)',
+        'desc80': '<b>Parámetros:</b>\n\tAPIElement:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las diferentes clasificaciones de las funciones.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar todas las funciones relacionadas a la opción seleccionada en el menú.',
+        'func81': 'showEstructura(entity)',
+        'desc81': '<b>Parámetros:</b>\n\tentity:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las entidades existentes en este proyecto (Analysis preparation, Project y Characteristic).\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar y explicar las estructuras empleadas para la realización de esta ET3.',
+        'func82': 'setLang(lang)',
+        'desc82': '<b>Parámetros:</b>\n\tlang:\n\t\tTipo: String.\n\t\tDescripción: Empleada para almacenar el lenguaje al que queremos traducir la página web.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el lenguaje entre castellado e inglés en toda web mediante el uso de cookies.',
+        'func83': 'setCookie(name, value, days)',
+        'desc83': '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Nombre que le queremos poner a la cookie.\n\tvalue:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a los idiomas disponibles (EN y ES).\n\tdays:\n\t\tTipo: Número.\n\t\tDescripción: Número de días los que queremos que aguante la cookie.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de establecer el valor de la cookie al valor que nosotros queramos, esta función es llamada por <b>setLang(lang)</b>.',
+        'func84': 'getCookie(name)',
+        'desc84' : '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre de la cookie.\n<b>Output:</b> Devuelve el valor de la cookie o nulo si no existe.\n<b>Función:</b> Se encarga de obtener el valor de la cookie en base a su nombre, esta función es llamada por <b>setLang(lang)</b>.',
+        'func85': 'peticionBackGeneral(formulario, controlador, action, datosextra = null)',
+        'desc85': '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescripción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo/Array\n\t\tDescripción: Datos extra para la petición.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones al back.',
+    
+        // Textos de funciones de validación
+    
+        'func86': 'min_size(id, minsize)',
+        'desc86': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tminsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño mínimo que debe de tener el valor.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño mínimo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño mínimo establecido en los requisitos de ese campo.',
+        'func87': 'max_size(id, maxsize)',
+        'desc87': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tmaxsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo que puede tener el valor.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño máximo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño máximo establecido en los requisitos de ese campo.',
+        'func88': 'format(id, expreg)',
+        'desc88': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor del elemento contenido en id.\n<b>Output:</b> Devuelve un valor booleando correspondiente al output de <b>evaluar_regex()</b>, indicando si el valor introducido en el campo id cumple con el formato indicado o no.\n<b>Función:</b> Se encarga de comprobar si el valor introducido en campo id cumple con el formato establecido o no.',
+        'func89': 'max_size_file(id, maxsize)',
+        'desc89': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tmaxsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo para el archivo en cuestión.\n<b>Output:</b>Devuelve un valor booleano indicando si el archivo supera el tamaño permitido o no.\n<b>Función:</b> Se encarga de comprobar que el archivo adjuntado no sobrepase el tamaño máximo permitido.',
+        'func90': 'type_file(id, array_tipos)',
+        'desc90': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tarray_tipos:\n\t\tTipo: Array.\n\t\tDescripción: Hace referencia a los tipos de archivos permitidos (doc, docx, pdf).\n<b>Output:</b> Devuelve un valor booleano confirmando si el tipo de archivo coincide con uno de los tipos de archivos permitidos.\n<b>Función:</b> Se encarga de verificar que el tipo de archivo del archivo adjuntado esté dentro de los tipos de archivo permitidos en la definición de la entidad.',
+        'func91': 'format_name_file(id, expreg)',
+        'desc91': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor del elemento contenido en id.\n<b>Output:</b>Devuleve un valor booleando correspondiente al output de <b>evaluar_regex()</b>, indicando si el valor introducido en el campo id cumpel con el formato indicado o no.\n<b>Función:</b> Se encarga de comprobar si el nombre del fichero adjuntado cumple con el formato establecido o no.',
+        'func92': 'evaluar_regex(valor, expreg)',
+        'desc92': '<b>Parámetros:</b>\n\tvalor:\n\t\tTipo: String.\n\t\tDescripción: Hace al valor introducido dentro de un campop de un formulario.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor introducido.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>expresionregular.test(valor)</b> indicando si cumple con el regex indicado o no.\n<b>Función:</b> Se encarga de comprobar que el valor introducido cumple con el formato indicado, esta función es llamada por <b>format()</b> y <b>format_name_file()</b>',
+        'func93': 'evaluar_tam(id, parametro, mayor)',
+        'desc93': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tparametro:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo o mínimo.\n\tmayor:\n\t\tTipo: Booleano.\n\t\tDescripción: Indica si el valor debe de ser mayor/igual o menor al parametro indicado.\n<b>Output:</b> Devuelve un valor booleando indicando si el valor cumple con que sea mayor/igual o menor al parametro indicado.\n<b>Función:</b> Se encarga de comprobar si el valor introducido en el campo id, cumple con el requisisto de tamaño mínimo o de tamaño máximo, esta función es llamada por <b>min_size(id, minsize)</b> y <b>max_size(id, maxsize)</b>.',
+    
+    
+        //Textos referencia a las clases
+    
+        'clase1': 'Funciones dentro de EntidadAbstracta.js',
+        'clase2': 'Funciones dentro de Test_class.js',
+        'clase3': 'Funciones dentro de DOM_class.js',
+        'clase4': 'Funciones dentro de constructor_form.js',
+        'clase5': 'Funciones dentro de constructor_validaciones.js',
+        'clase6': 'Funciones dentro de colocador_valores.js',
+        'clase7': 'Funciones dentro de project.js',
+        'clase8': 'Funciones dentro de characteristic.js',
+        'clase9': 'Funciones dentro de analysis_preparation.js',
+        'clase10': 'Funciones dentro de varias clases (project.js/characteristic.js)',
+        'clase11': 'Funciones dentro de varias clases (analysis_preparation.js/project.js/characteristic.js)',
+        'clase12': 'Funciones dentro de otros archivos (index.html/estructuras.html/API.html)',
+        'clase13': 'Funciones dentro de idioma.js',
+        'clase14': 'Funciones dentro de Validaciones_Atomicas.js',
+        'clase15': 'Funciones dentro de ExternalAccess.js ',
+        'clase16': 'Funciones dentro de idioma.js',
+    
+        //Titulos
+        'text_title_page_default_API': 'API Empleada',
+        'text_title_page_test': 'Funciones empleadas para Test',
+        'text_title_page_tabla': 'Funciones empleadas para Tabla de Presentación',
+        'text_title_page_form': 'Funciones empleadas para Creación de Formularios',
+        'text_title_page_other': 'Funciones empleadas para otras cosas',
+        'text_title_page_validaciones': 'Funciones empleadas para Validaciones',
+    
+        //Opciones Menu
+        'opt_funciones_test': 'Tests',
+        'opt_funciones_tabla': 'Presentación de Tablas',
+        'opt_funciones_form': 'Creación de Formularios',
+        'opt_funciones_valid': 'Funciones de Validaciones',
+        'opt_funciones_other': 'Otras Funciones',
+    
 }
