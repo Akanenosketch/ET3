@@ -260,21 +260,22 @@ h2 {
 }
 
 #div_IU_test {
-    display: none;
-    /* Ocultamos el modal por defecto */
-    position: fixed;
-    /* Fijamos la posición */
-    margin-top: 100px;
-    margin-left: 175px;
-    background-color: white;
-    /* Fondo blanco */
-    padding: 20px;
-    /* Espaciado */
-    z-index: 9999;
-    /* Asegura que el modal esté por encima del contenido y del overlay*/
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none; /* Ocultamos el modal por defecto */
+    position: fixed; /* Fijamos la posición */
+    top: 40%; /* Centro vertical */
+    left: 50%; /* Centro horizontal */
+    transform: translate(-50%, -50%); /* Ajusta para que el centro del modal sea el centro de la pantalla */
+    background-color: white; /* Fondo blanco */
+    padding: 20px; /* Espaciado */
+    z-index: 9999; /* Asegura que el modal esté por encima del contenido y del overlay */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para el modal */
+    width: auto; /* Ajusta el ancho según el contenido */
+    max-width: 90%; /* Evita que el modal sea demasiado ancho */
+    max-height: 90%; /* Evita que el modal sea demasiado alto */
+    overflow: auto; /* Permite scroll si el contenido excede el tamaño del modal */
 }
+
 
 .darkmode #div_IU_test {
     display: none;
@@ -1069,6 +1070,7 @@ pre {
         display: none;
     }
 
+    
     .opciones {
         left: 20%;
         width: auto;
