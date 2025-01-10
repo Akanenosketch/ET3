@@ -78,7 +78,7 @@ let textos_ES = {
 this.def_html_project = {
     atributos: ["id_project", "name_project", "start_date_project", "end_date_project", "responsable_project", "organization_project", "code_project", "acronym_project", "id_sampling_methodology", "description_project", "file_project"],
 
-    /*<b>id_project</b> hace referencia a la ID de proyecto, la cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
+    /*<b>id_project</b> hace referencia a la ID de proyecto, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
       Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
       Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/
 
@@ -93,6 +93,7 @@ this.def_html_project = {
 
     /*<b>name_project</b> hace referencia al nombre de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
       Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
+
     "name_project": {
         tag: "INPUT",
         type: "text",
@@ -201,7 +202,7 @@ this.def_html_project = {
     },
 
     /*<b>file_project</b> hace referencia al archivo de proyecto, no es un atributo autoincremental y tampoco es clave primaria.
-      Es un atributo de tipo archivo (file) y su tamaño máximo es de 2Mb, debe de tener un nombre de máximo 100 caracteres.
+      Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
       Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/
 
     "file_project": {
@@ -226,7 +227,7 @@ this.def_test_project = {
             - Tamaño mínimo de 15 caracteres.
             - Tamaño máximo de 100 caracteres.
             - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: Acentos, ñ's y caracteres no mencionados.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
          * /
 
         "name_project": {
@@ -491,7 +492,7 @@ this.def_test_project = {
             - Tamaño mínimo de 15 caracteres.
             - Tamaño máximo de 100 caracteres.
             - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: Acentos, ñ's y caracteres no mencionados.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
          * /
     
         "name_project": {
@@ -772,7 +773,7 @@ this.def_test_project = {
             - No hay tamaño mínimo.
             - Tamaño máximo de 100 caracteres.
             - Permitidos: caracteres alfabéticos y espacios.
-            - No permitidos: Acentos, ñ's y caracteres no mencionados.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
          * /
 
         "name_project": {
@@ -988,6 +989,10 @@ def_test_nombreentidad = {                 //todo obligatorio
 this.def_html_analysis_preparation = {
     atributos: ["id_analysis_preparation", "name_analysis_preparation", "bib_analysis_preparation", "description_analysis_preparation", "file_analysis_preparation"],
 
+    /*<b>id_analysis_preparation</b> hace referencia al ID de análisis, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
+      Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
+      Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/    
+
     "id_analysis_preparation": {
         tag: "INPUT",
         type: "text",
@@ -996,6 +1001,9 @@ this.def_html_analysis_preparation = {
         esEspecial: false,
         size: 11
     },
+
+    /*<b>name_analysis_preparation</b> hace referencia al nombre de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
 
     "name_analysis_preparation": {
         tag: "INPUT",
@@ -1006,6 +1014,9 @@ this.def_html_analysis_preparation = {
         size: 100
     },
 
+    /*<b>bib_analysis_preparation</b> hace referencia a la bibliografía de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Texto (String) y su tamaño máximo es de 200 caracteres*/
+
     "bib_analysis_preparation": {
         tag: "TEXTAREA",
         esPK: false,
@@ -1015,6 +1026,9 @@ this.def_html_analysis_preparation = {
         cols: 50
     },
 
+    /*<b>description_analysis_preparation</b> hace referencia a la descripción de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Texto (String) y su tamaño máximo es de 5000 caracteres*/
+
     "description_analysis_preparation": {
         tag: "TEXTAREA",
         esPK: false,
@@ -1023,6 +1037,10 @@ this.def_html_analysis_preparation = {
         rows: 50,
         cols: 100
     },
+
+    /*<b>file_analysis_preparation</b> hace referencia al archivo de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
+      Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/
 
     "file_analysis_preparation": {
         tag: "INPUT",
@@ -1037,7 +1055,18 @@ this.def_html_analysis_preparation = {
 <b>Estructura de pruebas para Analysis Preparation:</b>
 
 this.def_test_analysis_preparation = {
+    
+    // Estructura para los test de adición de un nuevo análisis.
+
     "ADD": {
+
+        /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 8 caracteres.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
+
         "name_analysis_preparation": {
             "min_size": {
                 valor: 8,
@@ -1055,6 +1084,13 @@ this.def_test_analysis_preparation = {
                 especial: false
             }
         },
+
+        /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 80 caracteres.
+            - Tamaño máximo de 5000 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
 
         "description_analysis_preparation": {
             "min_size": {
@@ -1074,6 +1110,13 @@ this.def_test_analysis_preparation = {
             }
         },
 
+        /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 200 caracteres.
+            - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
+            - No permitidos: caracteres no mencionados.
+         * /
+
         "bib_analysis_preparation": {
             "min_size": {
                 valor: 6,
@@ -1091,6 +1134,16 @@ this.def_test_analysis_preparation = {
                 especial: false
             }
         },
+
+        /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 7 caracteres en nombre de archivo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+            - Tamaño de archivo máximo de 2 GBs.
+            - Formato permitidos: pdf, doc, docx.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * /
 
         "nuevo_file_analysis_preparation": {
             "empty": {
@@ -1126,7 +1179,17 @@ this.def_test_analysis_preparation = {
         }
     },
 
+    // Estructura para los test de edición de un análisis.
+
     "EDIT": {
+
+        /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 8 caracteres.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
+
         "name_analysis_preparation": {
             "min_size": {
                 valor: 8,
@@ -1144,6 +1207,13 @@ this.def_test_analysis_preparation = {
                 especial: false
             }
         },
+
+        /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 80 caracteres.
+            - Tamaño máximo de 5000 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
 
         "description_analysis_preparation": {
             "min_size": {
@@ -1163,6 +1233,13 @@ this.def_test_analysis_preparation = {
             }
         },
 
+        /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 200 caracteres.
+            - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
+            - No permitidos: caracteres no mencionados.
+         * /
+
         "bib_analysis_preparation": {
             "min_size": {
                 valor: 6,
@@ -1180,6 +1257,16 @@ this.def_test_analysis_preparation = {
                 especial: false
             }
         },
+
+        /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 7 caracteres en nombre de archivo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+            - Tamaño de archivo máximo de 2 GBs.
+            - Formato permitidos: pdf, doc, docx.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * /        
 
         "nuevo_file_analysis_preparation": {
             "max_size_file": {
@@ -1210,7 +1297,17 @@ this.def_test_analysis_preparation = {
         }
     },
 
+    // Estructura para los test de búsqueda de un análisis.
+
     "SEARCH": {
+
+        /* <b>id_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: números.
+            - No permitidos: caracteres no mencionados.
+         * /
+
         "id_analysis_preparation": {
             "max_size": {
                 valor: 11,
@@ -1223,6 +1320,13 @@ this.def_test_analysis_preparation = {
                 especial: false
             }
         },
+
+        /* <b>name_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
 
         "name_analysis_preparation": {
             "max_size": {
@@ -1237,6 +1341,13 @@ this.def_test_analysis_preparation = {
             }
         },
 
+        /* <b>description_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 5000 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
+
         "description_analysis_preparation": {
             "max_size": {
                 valor: 5000,
@@ -1250,6 +1361,13 @@ this.def_test_analysis_preparation = {
             }
         },
 
+        /* <b>bib_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 200 caracteres.
+            - Permitidos: caracteres alfabéticos, acentos, ñ's, signos de puntuación y espacios.
+            - No permitidos: caracteres no mencionados.
+         * /
+
         "bib_analysis_preparation": {
             "max_size": {
                 valor: 200,
@@ -1262,6 +1380,13 @@ this.def_test_analysis_preparation = {
                 especial: false
             }
         },
+
+        /* <b>nuevo_file_analysis_preparation</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * /
 
         "file_analysis_preparation": {
             "max_size": {
@@ -1384,6 +1509,9 @@ this.def_html_characteristic = {
 <b>Estructura para los tests de Characteristic:</b>
 
 this.def_test_characteristic = {
+
+    // Estructura para los test de adición de una nueva característica.
+
     "ADD": {
         "name_characteristic": {
             "min_size": {
