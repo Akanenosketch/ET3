@@ -196,17 +196,24 @@ class DOM_class extends test {
     crearboton(accion, parametros, i = "") {
         let columna = document.createElement('td');
         let opcion = document.createElement('img');
-        opcion.src = "./iconos/" + accion + '.png';
+        const body = document.body;
+        const isDarkMode = body.classList.contains('darkmode');
+        
+        opcion.src = isDarkMode 
+            ? `./iconos/${accion}(gris).png` 
+            : `./iconos/${accion}.png`;
+    
         opcion.id = "boton" + accion + i;
-        let textoonclick = "validar.createForm('" + accion + "'," + parametros + ");"
+        let textoonclick = `validar.createForm('${accion}', ${parametros});`;
         opcion.setAttribute('onclick', textoonclick);
-        opcion.setAttribute('onmouseover', `changeImageOnHover(true,"` + accion + `","` + i + `");`);
-        opcion.setAttribute('onmouseout', `changeImageOnHover(false, "` + accion + `","` + i + `");`);
+        opcion.setAttribute('onmouseover', `changeImageOnHover(true, '${accion}', '${i}');`);
+        opcion.setAttribute('onmouseout', `changeImageOnHover(false, '${accion}', '${i}');`);
         opcion.style.width = '40px';
         opcion.style.height = '40px';
         columna.appendChild(opcion);
         return columna.outerHTML;
     }
+    
 
     /* crearboton(accion, parametros) {
         let columna = document.createElement('td');

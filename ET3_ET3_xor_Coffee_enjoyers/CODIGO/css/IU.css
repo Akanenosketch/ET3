@@ -879,21 +879,51 @@ tr:hover {
 
 
 #error_action_modal {
+    text-align: center;
     position: fixed;
     z-index: 9999;
     display: none;
-    border: 3px solid;
+    border: 2px solid #e69500; 
+    margin-bottom: 15px;
     border-radius: 10px;
-    background-color: white;
-    color: #000000;
-    padding: 10px;
+    background-color: #f8f9fa; 
+    color: black; 
+    padding: 15px 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Arial', sans-serif; 
+    font-size: 14px; 
 }
+
+#cerrar_modal {
+    background-color: #e69500; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 5px; 
+    padding: 8px 16px; 
+    font-size: 14px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    margin-top: 10px;
+}
+
+#cerrar_modal:hover {
+    background-color: #cf7e00; 
+    scale: 1.1; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#cerrar_modal:active {
+    background-color: #b96d00; 
+    transform: scale(0.95); 
+}
+
 
 .darkmode #error_action_modal {
     background-color: #444444;
+    border-color: #e69500;
     color: white;
 }
 

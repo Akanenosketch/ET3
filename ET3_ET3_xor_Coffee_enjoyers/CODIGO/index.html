@@ -230,7 +230,8 @@
 	<!-- Modal para mostrar los errores de accion -->
 	<div id="error_action_modal">
 		<span id="error_action_msg"></span>
-		<button onclick="validar.cerrarModalError()">X</button>
+		<br>
+		<button id="cerrar_modal" onclick="validar.cerrarModalError()">X</button>
 	</div>
 
 	<input type="checkbox" class="toggle" id="themeToggle" onclick="toggleTheme()">
@@ -342,6 +343,8 @@
 					boton.style.height = '40px';
 				});
 			});
+
+			actualizarImagenesSegunTema();
 		}
 
 
