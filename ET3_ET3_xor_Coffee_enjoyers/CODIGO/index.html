@@ -113,13 +113,16 @@
 			<a href="API.html" class="conjuntoAPI">
 				<img id="botonAPI" src="./iconos/API.png" onmouseover="changeImageOnHover(true, 'API');"
 					onmouseout="changeImageOnHover(false, 'API');" />
-				<span class="API"></span>
+				<span class="API" onmouseover="changeImageOnHover(true, 'API');"
+					onmouseout="changeImageOnHover(false, 'API');"></span>
+
 			</a>
 			<a href="estructuras.html" class="conjuntoESTRUCTURAS">
 				<img id="botonESTRUCTURAS" src="./iconos/ESTRUCTURAS.png"
 					onmouseover="changeImageOnHover(true, 'ESTRUCTURAS');"
 					onmouseout="changeImageOnHover(false, 'ESTRUCTURAS');" />
-				<span class="base_de_datos"></span>
+				<span class="base_de_datos" onmouseover="changeImageOnHover(true, 'ESTRUCTURAS');"
+				onmouseout="changeImageOnHover(false, 'ESTRUCTURAS');"></span>
 			</a>
 		</div>
 
@@ -146,7 +149,7 @@
 			<div id="addysearch">
 				<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm('ADD');"
 					onmouseover="changeImageOnHover(true, 'ADD');" onmouseout="changeImageOnHover(false, 'ADD');" />
-		
+
 				<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm('SEARCH');"
 					onmouseover="changeImageOnHover(true, 'SEARCH');"
 					onmouseout="changeImageOnHover(false, 'SEARCH');" />
@@ -176,7 +179,8 @@
 
 			<br>
 			<img id="botonBACK2" src="./iconos/BACK.png" onclick="validar.cerrar_tabla();"
-				onmouseover="changeImageOnHover(true, 'BACK','2');" onmouseout="changeImageOnHover(false, 'BACK','2');" />
+				onmouseover="changeImageOnHover(true, 'BACK','2');"
+				onmouseout="changeImageOnHover(false, 'BACK','2');" />
 
 		</div>
 
@@ -195,7 +199,8 @@
 			<br>
 
 			<img id="botonBACK3" src="./iconos/BACK.png" onclick="validar.cerrar_formulario();"
-				onmouseover="changeImageOnHover(true, 'BACK','3');" onmouseout="changeImageOnHover(false, 'BACK','3');" />
+				onmouseover="changeImageOnHover(true, 'BACK','3');"
+				onmouseout="changeImageOnHover(false, 'BACK','3');" />
 
 		</div>
 
@@ -232,8 +237,8 @@
 	<div class="display">
 		<label for="themeToggle" class="theme-label">
 			<div class="circle">
-				<img class="sun" src="./iconos/SUN.png" height='16px'/>	
-				<img class="moon" src="./iconos/MOON.png" height='16px'/>			
+				<img class="sun" src="./iconos/SUN.png" height='16px' />
+				<img class="moon" src="./iconos/MOON.png" height='16px' />
 			</div>
 		</label>
 	</div>
@@ -329,9 +334,9 @@
 				const botones = document.querySelectorAll(`[id^="boton${action}"]`);  // Obtener todos los botones que empiezan con "boton" + acciónacción
 				botones.forEach(boton => {
 					if (body.classList.contains('darkmode')) {
-						boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
+						boton.src = `./iconos/` + action + `(gris).png`;  // Imagen para modo oscuro
 					} else {
-						boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
+						boton.src = `./iconos/` + action + `.png`;  // Imagen para modo claro
 					}
 					boton.style.width = '40px';
 					boton.style.height = '40px';
@@ -357,9 +362,9 @@
 				const botones = document.querySelectorAll(`[id^="boton${action}"]`);  // Obtener todos los botones que empiezan con "boton" + acciónacción
 				botones.forEach(boton => {
 					if (body.classList.contains('darkmode')) {
-						boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
+						boton.src = `./iconos/` + action + `(gris).png`;  // Imagen para modo oscuro
 					} else {
-						boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
+						boton.src = `./iconos/` + action + `.png`;  // Imagen para modo claro
 					}
 					boton.style.width = '40px';
 					boton.style.height = '40px';
@@ -370,24 +375,24 @@
 
 
 
-		function changeImageOnHover(isMouseOver, action,aux = "") {
+		function changeImageOnHover(isMouseOver, action, aux = "") {
 			const body = document.body;
 			boton = document.getElementById("boton" + action + aux);
 			if (isMouseOver) {
 				// Si el mouse está sobre la imagen, la cambiamos
 				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/`+action+`(naranja).png`;  // Imagen oscura al pasar el mouse
+					boton.src = `./iconos/` + action + `(naranja).png`;  // Imagen oscura al pasar el mouse
 				} else {
-					boton.src = `./iconos/`+action+`(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+					boton.src = `./iconos/` + action + `(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
 				}
 				boton.style.width = '40px';
 				boton.style.height = '40px';
 			} else {
 				// Cuando el mouse sale de la imagen, la restauramos según el modo
 				if (body.classList.contains('darkmode')) {
-					boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
+					boton.src = `./iconos/` + action + `(gris).png`;  // Imagen para modo oscuro
 				} else {
-					boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
+					boton.src = `./iconos/` + action + `.png`;  // Imagen para modo claro
 				}
 				boton.style.width = '40px';
 				boton.style.height = '40px';
