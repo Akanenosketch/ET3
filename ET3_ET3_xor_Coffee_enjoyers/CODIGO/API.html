@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title class="text_titulo_app"></title>
+    <title class="text_titulo_app_api"></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,15 +29,15 @@
             <h2 class="text_titulo_menu"></h2>
             <ol class="no-style">
                 <li class="opcionmenu"><span class="opt_funciones_test"
-                        onclick="validar = showAPI('test'); menu_work();"></span></li>
+                        onclick="showAPI('test'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="opt_funciones_tabla"
-                        onclick="validar = showAPI('tabla'); menu_work();"></span></li>
+                        onclick="showAPI('tabla'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="opt_funciones_form"
-                        onclick="validar = showAPI('form'); menu_work();"></span></li>
+                        onclick="showAPI('form'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="opt_funciones_valid"
-                        onclick="validar = showAPI('validaciones'); menu_work();"></span></li>
+                        onclick="showAPI('validaciones'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="opt_funciones_other"
-                        onclick="validar = showAPI('other'); menu_work();"></span>
+                        onclick="showAPI('other'); menu_work();"></span>
                 </li>
             </ol>
 
@@ -54,7 +54,7 @@
                 onmouseout="changeImageOnHover(false, 'ESTRUCTURAS');"></span>
             </a>
             <a href="index.html" class="conjuntoINDEX">
-                <img id="botonHOME" src="./iconos/HOME.png" onclick="validar.cerrar_tabla();"
+                <img id="botonHOME" src="./iconos/HOME.png" 
                     onmouseover="changeImageOnHover(true, 'HOME');" onmouseout="changeImageOnHover(false, 'HOME');" />
                 <span class="pagina_principal" onmouseover="changeImageOnHover(true, 'HOME');"
                 onmouseout="changeImageOnHover(false, 'HOME');"></span>
@@ -158,11 +158,11 @@
             actions.forEach(action => {
                 const boton = document.getElementById("boton" + action);
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }
@@ -185,11 +185,11 @@
             actions.forEach(action => {
                 const boton = document.getElementById("boton" + action);
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }
@@ -201,27 +201,27 @@
 
         function changeImageOnHover(isMouseOver, action) {
             const body = document.body;
-            const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+            const boton = document.getElementById(`boton`+action);  // Usar el nombre de la acción para identificar el botón
 
             if (isMouseOver) {
                 // Si el mouse está sobre la imagen, la cambiamos
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+                    boton.src = `./iconos/`+action+`(naranja).png`;  // Imagen oscura al pasar el mouse
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+                    boton.src = `./iconos/`+action+`(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }
             } else {
                 // Cuando el mouse sale de la imagen, la restauramos según el modo
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }

@@ -24,6 +24,8 @@ let textos_ES = {
 
     //textos titulos index
     'text_titulo_app': 'Interfaz ET3 IU',
+    'text_titulo_app_est': 'Estructura ET3',
+    'text_titulo_app_api': 'API ET3',
     'text_titulo_menu': 'Menú',
     'text_titulo_pie': 'Pie de Página',
 

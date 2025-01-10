@@ -2,49 +2,17 @@
 <html>
 
 <head>
-    <title class="text_titulo_app"></title>
+    <title class="text_titulo_app_est"></title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Igual el linkeo este hay que cambiarlo no estoy seguro, solo le cambie el nombre del archivo -->
-    <link rel="stylesheet" type="text/css" href="./css/IU.css" media="screen" />
-
+	<link rel="stylesheet" type="text/css" href="./css/IU.css" media="screen" />
 
     <!-- ficheros de idiomas -->
     <script type="text/javascript" src="./locale/idioma.js"></script>
     <script type="text/javascript" src="./js_app/Textos_ES.js"></script>
     <script type="text/javascript" src="./js_app/Textos_EN.js"></script>
 
-    <!-- clases auxiliares -->
-    <script type="text/javascript" src="./js_core/Validaciones_Atomicas.js"></script>
-    <script type="text/javascript" src="./js_core/ExternalAccess.js"></script>
-    <script type="text/javascript" src="./js_app/colocador_valores.js"></script>
-    <script type="text/javascript" src="./js_app/constructor_form.js"></script>
-    <script type="text/javascript" src="./js_app/constructor_validaciones.js"></script>
-
-    <!-- arbol de clases de entidades -->
-    <script type="text/javascript" src="./js_core/Tests_class.js"></script>
-    <script type="text/javascript" src="./js_core/DOM_class.js"></script>
-    <script type="text/javascript" src="./js_base/EntidadAbstracta.js"></script>
-
-    <script type="text/javascript" src="./js_app/estructura_analysis_preparation.js"></script>
-    <script type="text/javascript" src="./js_app/analysis_preparation.js"></script>
-
-    <script type="text/javascript" src="./js_app/estructura_project.js"></script>
-    <script type="text/javascript" src="./js_app/project.js"></script>
-
-    <script type="text/javascript" src="./js_app/estructura_characteristic.js"></script>
-    <script type="text/javascript" src="./js_app/characteristic.js"></script>
-
-    <!-- Tests de entidades -->
-    <script type="text/javascript" src="./js_app/tests_analysis_preparation.js"></script>
-    <script type="text/javascript" src="./js_app/tests_project.js"></script>
-    <script type="text/javascript" src="./js_app/tests_characteristic.js"></script>
-
-    <!-- Fichero de datos-->
-    <script type="text/javascript" src="./ET3_Datos_ET3_xor_Coffee_enjoyers.js"></script>
-
-    <!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body onload="" class="darkmode">
@@ -60,11 +28,11 @@
             <h2 class="text_titulo_menu"></h2>
             <ol class="no-style">
                 <li class="opcionmenu"><span class="text_project"
-                        onclick="validar = showEstructura('project'); menu_work();"></span></li>
+                        onclick="showEstructura('project'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="text_analysis_prep"
-                        onclick="validar = showEstructura('analysis_preparation'); menu_work();"></span></li>
+                        onclick="showEstructura('analysis_preparation'); menu_work();"></span></li>
                 <li class="opcionmenu"><span class="text_characteristic"
-                        onclick="validar = showEstructura('characteristic'); menu_work();"></span>
+                        onclick="showEstructura('characteristic'); menu_work();"></span>
                 </li>
             </ol>
 
@@ -80,7 +48,7 @@
                 onmouseout="changeImageOnHover(false, 'API');"></span>
             </a>
             <a href="index.html" class="conjuntoINDEX">
-                <img id="botonHOME" src="./iconos/HOME.png" onclick="validar.cerrar_tabla();"
+                <img id="botonHOME" src="./iconos/HOME.png" 
                     onmouseover="changeImageOnHover(true, 'HOME');" onmouseout="changeImageOnHover(false, 'HOME');" />
                 <span class="pagina_principal" onmouseover="changeImageOnHover(true, 'HOME');"
                 onmouseout="changeImageOnHover(false, 'HOME');"></span>
@@ -184,11 +152,11 @@
             actions.forEach(action => {
                 const boton = document.getElementById("boton" + action);
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }
@@ -211,11 +179,11 @@
             actions.forEach(action => {
                 const boton = document.getElementById("boton" + action);
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }
@@ -227,27 +195,27 @@
 
         function changeImageOnHover(isMouseOver, action) {
             const body = document.body;
-            const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
+            const boton = document.getElementById(`boton`+action);  // Usar el nombre de la acción para identificar el botón
 
             if (isMouseOver) {
                 // Si el mouse está sobre la imagen, la cambiamos
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
+                    boton.src = `./iconos/`+action+`(naranja).png`;  // Imagen oscura al pasar el mouse
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
+                    boton.src = `./iconos/`+action+`(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }
             } else {
                 // Cuando el mouse sale de la imagen, la restauramos según el modo
                 if (body.classList.contains('darkmode')) {
-                    boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
+                    boton.src = `./iconos/`+action+`(gris).png`;  // Imagen para modo oscuro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 } else {
-                    boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
+                    boton.src = `./iconos/`+action+`.png`;  // Imagen para modo claro
                     boton.style.width = '40px';
                     boton.style.height = '40px';
                 }
