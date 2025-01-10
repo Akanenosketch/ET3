@@ -110,7 +110,6 @@ class constructor_form {
         }
     }
 
-
     crearTextarea(datos, atributo) {
         let text = document.createElement("textarea");
         text.setAttribute("id", atributo);
@@ -171,7 +170,6 @@ class constructor_form {
         span.appendChild(a);
         return span;
     }
-
 
     eliminarCampos(accion) {
         for (let atributo of this.def_html.atributos) {
