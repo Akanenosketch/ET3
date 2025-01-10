@@ -214,36 +214,6 @@ class DOM_class extends test {
         return columna.outerHTML;
     }
 
-
-    /* crearboton(accion, parametros) {
-        let columna = document.createElement('td');
-        let opcion = document.createElement('img');
-
-        // Configurar la fuente de la imagen
-        opcion.src = `./iconos/${accion}.png`;
-
-        // Asignar un id único al botón
-        opcion.id = `boton${accion}`;
-
-        // Configurar el evento onclick
-        let textoonclick = `validar.createForm('${accion}', ${parametros});`;
-        opcion.setAttribute('onclick', textoonclick);
-
-        // Configurar los eventos onmouseover y onmouseout
-        opcion.setAttribute('onmouseover', `changeImageOnHover(true, '${accion}');`);
-        opcion.setAttribute('onmouseout', `changeImageOnHover(false, '${accion}');`);
-
-        // Agregar la imagen a la columna
-        columna.appendChild(opcion);
-
-        // Retornar el HTML generado
-        return columna.outerHTML;
-    } */
-
-
-
-
-
     cerrar_formulario() {
         document.getElementById("IU_form").innerHTML = '';
         document.getElementById("IU_form").setAttribute('onsubmit', "");
@@ -296,66 +266,5 @@ class DOM_class extends test {
         document.getElementById('error_action_modal').style.display = 'none';
         document.getElementById('modal_action_overlay').style.display = 'none';
     }
-
-    /*toggleTheme() {
-        const body = document.body;
-
-        // Verificar si está en modo oscuro antes de cambiar
-        const isDarkMode = body.classList.contains('darkmode');
-        const actions = ['SEARCH', 'ADD', 'BACK', 'MENU', 'API', 'ESTRUCTURAS', 'TEST', 'SIG', 'ANT', 'SHOWCURRENT'];  // Asegúrate de incluir todas las acciones que usas en tu página
-
-        // Cambiar entre modo claro y oscuro
-        if (isDarkMode) {
-            body.classList.remove('darkmode');
-            body.classList.add('lightmode');
-        } else {
-            body.classList.remove('lightmode');
-            body.classList.add('darkmode');
-        }
-
-        // Actualizar las imágenes después de cambiar el tema
-        actions.forEach(action => {
-            const boton = document.getElementById("boton" + action);
-            if (body.classList.contains('darkmode')) {
-                boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-                boton.style.width = '40px';
-                boton.style.height = '40px';
-            } else {
-                boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-                boton.style.width = '40px';
-                boton.style.height = '40px';
-            }
-        });
-    } */
-
-
-    /* changeImageOnHover(isMouseOver, action) {
-        const body = document.body;
-        const boton = document.getElementById(`boton${action}`);  // Usar el nombre de la acción para identificar el botón
-
-        if (isMouseOver) {
-            // Si el mouse está sobre la imagen, la cambiamos
-            if (body.classList.contains('darkmode')) {
-                boton.src = `./iconos/${action}(naranja).png`;  // Imagen oscura al pasar el mouse
-                boton.style.width = '40px';
-                boton.style.height = '40px';
-            } else {
-                boton.src = `./iconos/${action}(naranja).png`;  // Otra imagen al pasar el mouse en modo claro
-                boton.style.width = '40px';
-                boton.style.height = '40px';
-            }
-        } else {
-            // Cuando el mouse sale de la imagen, la restauramos según el modo
-            if (body.classList.contains('darkmode')) {
-                boton.src = `./iconos/${action}(gris).png`;  // Imagen para modo oscuro
-                boton.style.width = '40px';
-                boton.style.height = '40px';
-            } else {
-                boton.src = `./iconos/${action}.png`;  // Imagen para modo claro
-                boton.style.width = '40px';
-                boton.style.height = '40px';
-            }
-        }
-    } */
-
+    
 } // fin de clase

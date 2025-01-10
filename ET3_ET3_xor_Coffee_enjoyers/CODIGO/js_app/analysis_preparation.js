@@ -9,7 +9,7 @@ class analysis_preparation extends estructura_analysis_preparation {
 
 	/*Metodos de personalizacion */
 
-	//metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
+	//Método para mostrar información especial de atributo en la tabla de muestra de tuplas
 	cambiardatosespecialestabla(atributo, valoratributo,i) {
 		if (atributo === 'file_analysis_preparation') {
 			if (valoratributo === '') return `<a class="no_file_found"></a>`; // Por definición de la entidad, debe haber fichero.
