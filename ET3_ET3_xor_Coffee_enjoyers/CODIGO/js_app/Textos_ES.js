@@ -63,7 +63,7 @@ let textos_ES = {
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
     'InfoTextStruct1': 'En está página se ofrece una explicación sobre las estructuras realizadas para las entidades empleadas para este proyecto.',
-    'InfoTextStruct2': 'Para conocer más información sobre una estructura selecciona una de las entidades disponibles dentro del menú localizado a en la parte superior izquierda.',
+    'InfoTextStruct2': 'Para conocer más información sobre una estructura selecciona una de las entidades disponibles dentro del menú localizado en la parte superior izquierda.',
 
     //Titulos
     'text_title_page_default_structures': 'Estructuras Empleadas',

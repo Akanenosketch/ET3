@@ -63,18 +63,19 @@ let textos_EN = {
 
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
-    'InfoTextStruct':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
+    'InfoTextStruct1': 'This page offers an explanation of the structures made for the entities used for this project.',
+    'InfoTextStruct2': 'To learn more information about a structure, select one of the available entities within the menu located at the top left..',
 
     //Titulos
-    'text_title_page_default_structures'               : 'Estructuras Empleadas',
-    'text_titulo_page_estructura_project'              : 'Estructura de Proyecto',
-    'text_titulo_page_estructura_analysis_preparation' : 'Estructura de Preparacion Análisis',
-    'text_titulo_page_estructura_characteristic'       : 'Estructura de Característica',
+    'text_title_page_default_structures'               : 'Used Structures',
+    'text_titulo_page_estructura_project'              : 'Proyect Structure',
+    'text_titulo_page_estructura_analysis_preparation' : 'Analysis Preparation Structure',
+    'text_titulo_page_estructura_characteristic'       : 'Characteristic Structure',
 
     /*TRADUCCIONES PARA API.HTML*/
 
-    'InfoTextAPI1' : 'En esta página se mostrarán todas las funciones que se han implementado para la realización de este trabajo.',
-    'InfoTextAPI2' : 'Para conocer sobre las funciones implementadas escoja una de las opciones dentro del menú localizado en la parte superior izquierda.',
+    'InfoTextAPI1' : 'This page will show all the functions that have been implemented to carry out this work.',
+    'InfoTextAPI2' : 'To learn about the implemented functions, choose one of the options in the menu located at the top left.',
 
     // Textos funciones test
 
@@ -298,12 +299,12 @@ let textos_EN = {
     'clase16'  : 'Funciones dentro de idioma.js',
 
     //Titulos
-    'text_title_page_default_API'  : 'API Empleada',
-    'text_title_page_test'         : 'Funciones empleadas para Test',
-    'text_title_page_tabla'        : 'Funciones empleadas para Tabla de Presentación',
-    'text_title_page_form'         : 'Funciones empleadas para Creación de Formularios',
-    'text_title_page_other'        : 'Funciones empleadas para otras cosas',
-    'text_title_page_validaciones' : 'Funciones empleadas para Validaciones',
+    'text_title_page_default_API'  : 'API Used',
+    'text_title_page_test'         : 'Functions used for Test',
+    'text_title_page_tabla'        : 'Functions used for Presentation Table',
+    'text_title_page_form'         : 'Functions used for Form Creation',
+    'text_title_page_other'        : 'Functions used for Other Things',
+    'text_title_page_validaciones' : 'Functions used forValidations',
 
     //Opciones Menu
     'opt_funciones_test'      : 'Tests',
