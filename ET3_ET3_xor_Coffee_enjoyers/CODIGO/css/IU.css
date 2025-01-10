@@ -6,6 +6,10 @@
     font-family: Arial, sans-serif;
 }
 
+#id_tabla_datos{
+    overflow-x: auto;
+}
+
 #header_page {
     font-size: 36px;
     padding-left: 60px;
