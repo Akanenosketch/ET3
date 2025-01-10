@@ -65,7 +65,7 @@ class EntidadAbstracta extends DOM_class {
 		}
 	}
 
-	cargar_formulario_dinamico(accion) {
+	cargar_formulario_dinamico(accion = "EDIT") {
 		document.getElementById("IU_form").innerHTML = ''; //limpia el form
 		this.constructor_form.crearForm();
 		if (accion == "SEARCH") this.constructor_form.SearchPH(); //cambia las classes 
@@ -168,7 +168,7 @@ class EntidadAbstracta extends DOM_class {
 		await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH', datosextra)
 			.then((respuesta) => {
 				//limpiar el formulario
-				this.cargar_formulario();
+				this.cargar_formulario("SEARCH");
 				//poner el div del formulario no visible
 				document.getElementById("div_IU_form").style.display = 'none';
 

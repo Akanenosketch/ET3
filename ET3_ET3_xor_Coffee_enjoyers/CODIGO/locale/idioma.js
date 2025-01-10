@@ -18,17 +18,17 @@ function setLang(lang = '') {
     switch (lang) {
         case 'ES':
             traduccion = textos_ES;
+            document.getElementById("languageSelect").value = 'ES';
             break;
         case 'EN':
             traduccion = textos_EN;
+            document.getElementById("languageSelect").value = 'EN';
             break;
         default:
             traduccion = textos_ES;
+            document.getElementById("languageSelect").value = 'ES';
             break;
     }
-
-    // Aquí se actualiza el valor del select para reflejar el idioma seleccionado
-    document.getElementById("languageSelect").value = lang;
 
 
     /*Se recorre el array de traducciones buscando coincidencias una por una*/
@@ -85,7 +85,7 @@ function setLang(lang = '') {
                 options[i].innerHTML = traduccion[clave];
             }
         }
-        
+
         //comprobar si es necesario traducir otros tipos de campos
         if (!traducido) { //evita que se traduzca al innerHTML si se ha traducido un input o textarea (comprobar si hace falta para select o radio)
             for (var elem in elementos) {
