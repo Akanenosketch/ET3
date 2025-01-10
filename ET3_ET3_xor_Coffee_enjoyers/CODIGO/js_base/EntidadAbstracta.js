@@ -126,6 +126,9 @@ class EntidadAbstracta extends DOM_class {
 			img.src = './iconos/' + accion + '.png';
 			boton.append(img);
 			document.getElementById('div_boton').append(boton);
+			document.getElementById('IU_form').append(document.createElement("br"));
+    		document.getElementById('IU_form').append(document.createElement("br"));
+        
 		}
 	}
 

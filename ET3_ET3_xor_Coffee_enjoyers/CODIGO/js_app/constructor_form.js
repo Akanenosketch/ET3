@@ -14,7 +14,6 @@ class constructor_form {
             formulario.appendChild(document.createElement("br"));
             formulario.appendChild(document.createElement("br"));
         }
-        formulario.appendChild(document.createElement("br"));
     }
 
     crearFormAtributo(atributo) {
