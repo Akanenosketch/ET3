@@ -225,9 +225,10 @@ this.def_test_project = {
         /* <b>name_project</b> debe de seguir los siguientes requisitos:
             - Tamaño mínimo de 15 caracteres.
             - Tamaño máximo de 100 caracteres.
-            - Permitidos: carateres alfabéticos y espacios.
+            - Permitidos: caracteres alfabéticos y espacios.
             - No permitidos: Acentos, ñ's y caracteres no mencionados.
          * /
+
         "name_project": {
             "min_size": {
                 valor: 15,
@@ -245,6 +246,12 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
+            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Debe de ser una fecha váida dentro del calendario gregoriano.
+            - La fecha no debe de ser superior a la fecha de fin de proyecto.
+         * /
 
         "start_date_project": {
             "format": {
@@ -264,6 +271,12 @@ this.def_test_project = {
             }
         },
 
+        /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
+            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Debe de ser una fecha váida dentro del calendario gregoriano.
+            - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
+         * /
+
         "end_date_project": {
             "format": {
                 valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
@@ -281,6 +294,13 @@ this.def_test_project = {
                 especial: true
             }
         },
+
+        /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 60 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+            - No permitidos: caracteres no mencionados.
+         * /        
 
         "responsable_project": {
             "min_size": {
@@ -300,6 +320,13 @@ this.def_test_project = {
             }
         },
 
+        /* <b>organization_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+            - No permitidos: caracteres no mencionados.
+         * / 
+
         "organization_project": {
             "min_size": {
                 valor: 6,
@@ -318,6 +345,12 @@ this.def_test_project = {
             }
         },
 
+        /* <b>description_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 30 caracteres.
+            - Tamaño máximo de 500 caracteres.
+            - Permitidos: Todos.
+         * / 
+
         "description_project": {
             "min_size": {
                 valor: 30,
@@ -330,6 +363,13 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>code_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 50 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
+            - No permitidos: acentos y caracteres no mencionados.
+         * / 
 
         "code_project": {
             "min_size": {
@@ -349,6 +389,13 @@ this.def_test_project = {
             }
         },
 
+        /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 15 caracteres.
+            - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
+            - No permitidos: espacios, acentos y caracteres no mencionados.
+         * / 
+
         "acronym_project": {
             "min_size": {
                 valor: 6,
@@ -366,6 +413,13 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 1 dígito.
+            - Tamaño máximo de 100 dígitos.
+            - Permitidos: números.
+            - No permitidos: el resto de caracteres.
+         * / 
 
         "id_sampling_methodology": {
             "min_size": {
@@ -385,6 +439,16 @@ this.def_test_project = {
             }
         },
         
+        /* <b>nuevo_file_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 7 caracteres en nombre de archivo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+            - Tamaño de archivo máximo de 2 GBs.
+            - Formato permitidos: pdf, doc, docx.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * / 
+
         "nuevo_file_project": {
             "empty": {
                 valor: "empty",
@@ -419,7 +483,17 @@ this.def_test_project = {
         }
     },
 
+    // Estructura para las pruebas de edición de un proyecto
+
     "EDIT": {
+
+        /* <b>name_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 15 caracteres.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: Acentos, ñ's y caracteres no mencionados.
+         * /
+    
         "name_project": {
             "min_size": {
                 valor: 15,
@@ -437,6 +511,12 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
+            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Debe de ser una fecha váida dentro del calendario gregoriano.
+            - La fecha no debe de ser superior a la fecha de fin de proyecto.
+         * /        
 
         "start_date_project": {
             "format": {
@@ -456,6 +536,12 @@ this.def_test_project = {
             }
         },
 
+        /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
+            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+            - Debe de ser una fecha váida dentro del calendario gregoriano.
+            - La fecha no debe de ser inferior a la fecha de inicio de proyecto.
+         * /
+
         "end_date_project": {
             "format": {
                 valor: "^[0-9]{2}/[0-9]{2}/[0-9]{4}$",
@@ -474,6 +560,13 @@ this.def_test_project = {
             }
         },
         
+        /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 60 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+            - No permitidos: caracteres no mencionados.
+         * /  
+
         "responsable_project": {
             "min_size": {
                 valor: 6,
@@ -491,6 +584,13 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>organization_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+            - No permitidos: caracteres no mencionados.
+         * / 
 
         "organization_project": {
             "min_size": {
@@ -510,6 +610,12 @@ this.def_test_project = {
             }
         },
 
+        /* <b>description_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 30 caracteres.
+            - Tamaño máximo de 500 caracteres.
+            - Permitidos: Todos.
+         * / 
+
         "description_project": {
             "min_size": {
                 valor: 30,
@@ -522,6 +628,13 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>code_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 50 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
+            - No permitidos: acentos y caracteres no mencionados.
+         * / 
 
         "code_project": {
             "min_size": {
@@ -541,6 +654,13 @@ this.def_test_project = {
             }
         },
 
+        /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 6 caracteres.
+            - Tamaño máximo de 15 caracteres.
+            - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
+            - No permitidos: espacios, acentos y caracteres no mencionados.
+         * / 
+
         "acronym_project": {
             "min_size": {
                 valor: 6,
@@ -559,6 +679,13 @@ this.def_test_project = {
             }
         },
 
+        /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 1 dígito.
+            - Tamaño máximo de 100 dígitos.
+            - Permitidos: números.
+            - No permitidos: el resto de caracteres.
+         * / 
+
         "id_sampling_methodology": {
             "min_size": {
                 valor: 1,
@@ -576,6 +703,16 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>nuevo_file_project</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 7 caracteres en nombre de archivo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+            - Tamaño de archivo máximo de 2 GBs.
+            - Formato permitidos: pdf, doc, docx.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * / 
 
         "nuevo_file_project": {
             "max_size_file": {
@@ -606,7 +743,18 @@ this.def_test_project = {
         }
     },
 
+    // Estructura para los test de búsqueda de proyectos
+
     "SEARCH": {
+
+
+        /* <b>id_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 11 dígitos.
+            - Permitidos: números.
+            - No permitidos: el resto de caracteres.
+        * / 
+
         "id_project": {
             "max_size": {
                 valor: 11,
@@ -619,6 +767,13 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>name_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: Acentos, ñ's y caracteres no mencionados.
+         * /
 
         "name_project": {
             "max_size": {
@@ -633,6 +788,10 @@ this.def_test_project = {
             }
         },
 
+        /* <b>start_date_project</b> debe de seguir los siguientes requisitos:
+            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+         * /
+
         "start_date_project": {
             "format": {
                 valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
@@ -641,6 +800,10 @@ this.def_test_project = {
             }
         },
 
+        /* <b>end_date_project</b> debe de seguir los siguientes requisitos:
+            - Formato de dd-mm-aaaa (no sirve dd/mm/aaaa o similares).
+         * /
+
         "end_date_project": {
             "format": {
                 valor: "^[0-9]{0,2}[/]{0,1}[0-9]{0,2}[/]{0,1}[0-9]{0,4}$",
@@ -648,6 +811,13 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>responsable_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 60 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+            - No permitidos: caracteres no mencionados.
+         * /  
 
         "responsable_project": {
             "max_size": {
@@ -662,6 +832,13 @@ this.def_test_project = {
             }
         },
 
+        /* <b>organization_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, acentos y ñ's.
+            - No permitidos: caracteres no mencionados.
+         * / 
+
         "organization_project": {
             "max_size": {
                 valor: 100,
@@ -675,6 +852,12 @@ this.def_test_project = {
             }
         },
 
+        /* <b>description_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 500 caracteres.
+            - Permitidos: Todos.
+         * / 
+
         "description_project": {
             "max_size": {
                 valor: 500,
@@ -682,6 +865,13 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+        /* <b>code_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínino.
+            - Tamaño máximo de 50 caracteres.
+            - Permitidos: caracteres alfabéticos, espacios, signos de puntuación y ñ's.
+            - No permitidos: acentos y caracteres no mencionados.
+         * / 
 
         "code_project": {
             "max_size": {
@@ -696,6 +886,13 @@ this.def_test_project = {
             }
         },
 
+        /* <b>acronym_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 15 caracteres.
+            - Permitidos: caracteres alfabéticos, signos de puntuación y ñ's.
+            - No permitidos: espacios, acentos y caracteres no mencionados.
+         * / 
+
         "acronym_project": {
             "max_size": {
                 valor: 15,
@@ -708,6 +905,14 @@ this.def_test_project = {
                 especial: false
             }
         },
+
+
+        /* <b>id_sampling_methodology</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 dígitos.
+            - Permitidos: números.
+            - No permitidos: el resto de caracteres.
+         * / 
 
         "id_sampling_methodology": {
             "max_size": {
@@ -722,6 +927,13 @@ this.def_test_project = {
             }
         },
 
+        /* <b>file_project</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * / 
+
         "file_project": {
             "max_size": {
                 valor: 100,
@@ -735,7 +947,39 @@ this.def_test_project = {
             }
         }
     }
-};`,
+};
+
+<b>Ejemplo de uso: estructura vacía</b>
+
+def_html_nombreentidad = {
+    atributos: [],                         //lista de los atributos
+    atributo: {                            //definicion de cada atributo
+        tag: "",                           //el tag html (input,select,textarea)
+        type: "",                          //el tipo de input optativo
+        valores: [],                       //valores posibles si es select, optativo
+        multiple: false,                   //si da opciones y es multiple, optativo
+        esPK: true,                        //es PK en la tabla?
+        esAutoIncremental: true,           //es autoincremental?
+        esEspecial : true,                 //es para los especiales a la hora de ponerlo en la tabla
+        size: "",                          //para el tamaño del input optativo
+        rows : "",                         //para textarea optativo
+        cols : "",                         //para textarea optativo
+    }
+
+};
+
+def_test_nombreentidad = {                 //todo obligatorio
+    accion: {                                   //ADD, EDIT o SEARCH, para SHOWCURRENT y DELETE no hay validaciones
+        atributo: {                             //el atributo a probar
+            prueba: {                           //el nombre de la prueba a realizar
+                valor : "",                     //el maximo para un max_size o el regex para formato
+                codigo: "",                     //el codigo de error
+                especial : false                //indica si es prueba especial/estandar (al hacer test que invoque validaciones atomicas o metodo especifco)
+            }   
+        }                                       //la de empty de fichero cuenta como especial (IMPORTANTE)
+    }
+}
+`,
 
     // Textos para la estructura de analysis_preparation
 
@@ -1033,6 +1277,37 @@ this.def_test_analysis_preparation = {
         }
     }
 };
+
+<b>Ejemplo de uso: estructura vacía</b>
+
+def_html_nombreentidad = {
+    atributos: [],                         //lista de los atributos
+    atributo: {                            //definicion de cada atributo
+        tag: "",                           //el tag html (input,select,textarea)
+        type: "",                          //el tipo de input optativo
+        valores: [],                       //valores posibles si es select, optativo
+        multiple: false,                   //si da opciones y es multiple, optativo
+        esPK: true,                        //es PK en la tabla?
+        esAutoIncremental: true,           //es autoincremental?
+        esEspecial : true,                 //es para los especiales a la hora de ponerlo en la tabla
+        size: "",                          //para el tamaño del input optativo
+        rows : "",                         //para textarea optativo
+        cols : "",                         //para textarea optativo
+    }
+
+};
+
+def_test_nombreentidad = {                 //todo obligatorio
+    accion: {                                   //ADD, EDIT o SEARCH, para SHOWCURRENT y DELETE no hay validaciones
+        atributo: {                             //el atributo a probar
+            prueba: {                           //el nombre de la prueba a realizar
+                valor : "",                     //el maximo para un max_size o el regex para formato
+                codigo: "",                     //el codigo de error
+                especial : false                //indica si es prueba especial/estandar (al hacer test que invoque validaciones atomicas o metodo especifco)
+            }   
+        }                                       //la de empty de fichero cuenta como especial (IMPORTANTE)
+    }
+}
 `,
 
     // Textos para la estructura de characteristic
@@ -1398,6 +1673,36 @@ this.def_test_characteristic = {
     }
 };
 
+<b>Ejemplo de uso: estructura vacía</b>
+
+def_html_nombreentidad = {
+    atributos: [],                         //lista de los atributos
+    atributo: {                            //definicion de cada atributo
+        tag: "",                           //el tag html (input,select,textarea)
+        type: "",                          //el tipo de input optativo
+        valores: [],                       //valores posibles si es select, optativo
+        multiple: false,                   //si da opciones y es multiple, optativo
+        esPK: true,                        //es PK en la tabla?
+        esAutoIncremental: true,           //es autoincremental?
+        esEspecial : true,                 //es para los especiales a la hora de ponerlo en la tabla
+        size: "",                          //para el tamaño del input optativo
+        rows : "",                         //para textarea optativo
+        cols : "",                         //para textarea optativo
+    }
+
+};
+
+def_test_nombreentidad = {                 //todo obligatorio
+    accion: {                                   //ADD, EDIT o SEARCH, para SHOWCURRENT y DELETE no hay validaciones
+        atributo: {                             //el atributo a probar
+            prueba: {                           //el nombre de la prueba a realizar
+                valor : "",                     //el maximo para un max_size o el regex para formato
+                codigo: "",                     //el codigo de error
+                especial : false                //indica si es prueba especial/estandar (al hacer test que invoque validaciones atomicas o metodo especifco)
+            }   
+        }                                       //la de empty de fichero cuenta como especial (IMPORTANTE)
+    }
+}
 `,
 
     /*TRADUCCIONES PARA API.HTML*/
