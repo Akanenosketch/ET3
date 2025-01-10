@@ -748,7 +748,6 @@ this.def_test_project = {
 
     "SEARCH": {
 
-
         /* <b>id_project</b> debe de seguir los siguientes requisitos:
             - No hay tamaño mínimo.
             - Tamaño máximo de 11 dígitos.
@@ -1442,6 +1441,10 @@ def_test_nombreentidad = {                 //todo obligatorio
 this.def_html_characteristic = {
     atributos: ["id_characteristic", "name_characteristic", "data_type_characteristic","category_characteristic","description_characteristic",  "bibref_characteristic", "file_characteristic"],
 
+    /*<b>id_characteristic</b> hace referencia al ID de característica, el cual es un atributo autoincremental, lo cual no debe de ser introducido por el usuario en la operación de ADD.
+      Es una clave primaria (PK), porque debe de ser único para todos los valores introducidos dentro de la entidad.
+      Es un valor de tipo Texto (String) y su tamaño máximo es de 11 carácteres, todos de ellos numéricos.*/
+
     "id_characteristic": {
         tag: "INPUT",
         type: "text",
@@ -1450,6 +1453,9 @@ this.def_html_characteristic = {
         esEspecial: false,
         size: 11
     },
+
+    /*<b>name_characteristic</b> hace referencia al nombre de característica, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Texto (String) y su tamaño máximo es de 100 caracteres*/
 
     "name_characteristic": {
         tag: "INPUT",
@@ -1460,6 +1466,9 @@ this.def_html_characteristic = {
         size: 100
     },
 
+    /*<b>data_type_characteristic</b> hace referencia al tipo de dato de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Enum y su sólo se puede escoger entre number, text o set*/
+
     "data_type_characteristic": { 
         tag: "SELECT", 
         valores: ['number','text','set'], 
@@ -1468,6 +1477,9 @@ this.def_html_characteristic = {
         esAutoIncremental: false,
         esEspecial : false
     },
+
+    /*<b>category_characteristic</b> hace referencia a la categoría de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Enum y su sólo se puede escoger entre soil_site, soil_chem, soil_bio*/
 
     "category_characteristic": { 
         tag: "SELECT", 
@@ -1478,6 +1490,9 @@ this.def_html_characteristic = {
         esEspecial : false
     },
 
+    /*<b>description_characteristic</b> hace referencia a la descripción de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Texto (String) y su tamaño máximo es de 5000 caracteres*/
+
     "description_characteristic": {
         tag: "TEXTAREA",
         esPK: false,
@@ -1487,6 +1502,9 @@ this.def_html_characteristic = {
         cols: 100
     },
 
+    /*<b>bibref_characteristic</b> hace referencia a la referencia bibliográfica de la característica, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo Texto (String) y su tamaño máximo es de 200 caracteres*/
+
     "bibref_characteristic": {
         tag: "TEXTAREA",
         esPK: false,
@@ -1495,6 +1513,10 @@ this.def_html_characteristic = {
         rows: 4,
         cols: 50
     },
+
+    /*<b>file_characteristic</b> hace referencia al archivo de análisis, no es un atributo autoincremental y tampoco es clave primaria.
+      Es un atributo de tipo archivo (file) y su tamaño máximo es de 2MBs, debe de tener un nombre de máximo 100 caracteres.
+      Además, debe ser de uno de los siguientes formatos de archivos: pdf, doc (MSWord 2000-2003), docx (MSWord 2007-365)*/    
 
     "file_characteristic": {
         tag: "INPUT",
@@ -1510,9 +1532,17 @@ this.def_html_characteristic = {
 
 this.def_test_characteristic = {
 
-    // Estructura para los test de adición de una nueva característica.
+    // Estructura para los tests de adición de una nueva característica.
 
     "ADD": {
+
+        /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 8 caracteres.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
+
         "name_characteristic": {
             "min_size": {
                 valor: 8,
@@ -1530,6 +1560,13 @@ this.def_test_characteristic = {
                 especial: false
             }
         },
+
+        /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 80 caracteres.
+            - Tamaño máximo de 5000 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
 
         "description_characteristic": {
             "min_size": {
@@ -1549,6 +1586,10 @@ this.def_test_characteristic = {
             }
         },
 
+        /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
+            - Debe de ser una de las opciones porporcionadas.
+         * /
+
         "data_type_characteristic": {
             "selectValido": {
                 valor: selectValido,
@@ -1557,6 +1598,10 @@ this.def_test_characteristic = {
             }
         },
 
+        /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
+            - Debe de ser una de las opciones porporcionadas.
+         * /
+
         "category_characteristic": {
             "selectValido": {
                 valor: selectValido,
@@ -1564,6 +1609,13 @@ this.def_test_characteristic = {
                 especial: true
             }
         },
+
+        /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 16 caracteres.
+            - Tamaño máximo de 200 caracteres.
+            - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
+            - No permitidos: caracteres no mencionados.
+         * /
 
         "bibref_characteristic": {
             "min_size": {
@@ -1582,6 +1634,16 @@ this.def_test_characteristic = {
                 especial: false
             }
         },
+
+        /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 7 caracteres en nombre de archivo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+            - Tamaño de archivo máximo de 2 GBs.
+            - Formato permitidos: pdf, doc, docx.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * /
 
         "nuevo_file_characteristic": {
             "empty": {
@@ -1617,7 +1679,17 @@ this.def_test_characteristic = {
         }
     },
 
+    // Estructura para los tests de edición de characteristic
+
     "EDIT": {
+
+        /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 8 caracteres.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
+
         "name_characteristic": {
             "min_size": {
                 valor: 8,
@@ -1635,6 +1707,13 @@ this.def_test_characteristic = {
                 especial: false
             }
         },
+
+        /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 80 caracteres.
+            - Tamaño máximo de 5000 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /
 
         "description_characteristic": {
             "min_size": {
@@ -1654,6 +1733,10 @@ this.def_test_characteristic = {
             }
         },
 
+        /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
+            - Debe de ser una de las opciones porporcionadas.
+         * /
+
         "data_type_characteristic": {
             "selectValido": {
                 valor: selectValido,
@@ -1662,6 +1745,10 @@ this.def_test_characteristic = {
             }
         },
 
+        /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
+            - Debe de ser una de las opciones porporcionadas.
+         * /
+
         "category_characteristic": {
             "selectValido": {
                 valor: selectValido,
@@ -1669,6 +1756,13 @@ this.def_test_characteristic = {
                 especial: true
             }
         },
+
+        /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 16 caracteres.
+            - Tamaño máximo de 200 caracteres.
+            - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
+            - No permitidos: caracteres no mencionados.
+         * /
 
         "bibref_characteristic": {
             "min_size": {
@@ -1687,6 +1781,16 @@ this.def_test_characteristic = {
                 especial: false
             }
         },
+
+        /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
+            - Tamaño mínimo de 7 caracteres en nombre de archivo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - No puedes dejar este campo vacío, debes de adjuntar un archivo.
+            - Tamaño de archivo máximo de 2 GBs.
+            - Formato permitidos: pdf, doc, docx.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * /
 
         "nuevo_file_characteristic": {
             "max_size_file": {
@@ -1717,7 +1821,17 @@ this.def_test_characteristic = {
         }
     },
 
+    // Estructura para los tests de búsqueda de characteristic
+
     "SEARCH": {
+
+        /* <b>id_characteristic</b> debe de seguir los siguientes requisitos:
+            - No hya tamaño mínimo.
+            - Tamaño máximo de 11 dígitos.
+            - Permitidos: números.
+            - No permitidos: el resto.
+         * /
+    
         "id_characteristic": {
             "max_size": {
                 valor: 11,
@@ -1730,6 +1844,13 @@ this.def_test_characteristic = {
                 especial: false
             }
         },
+
+        /* <b>name_characteristic</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /       
 
         "name_characteristic": {
             "max_size": {
@@ -1744,6 +1865,13 @@ this.def_test_characteristic = {
             }
         },
 
+        /* <b>description_characteristic</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 5000 caracteres.
+            - Permitidos: caracteres alfabéticos y espacios.
+            - No permitidos: acentos, ñ's y caracteres no mencionados.
+         * /        
+
         "description_characteristic": {
             "max_size": {
                 valor: 5000,
@@ -1757,6 +1885,10 @@ this.def_test_characteristic = {
             }
         },
 
+        /* <b>data_type_characteristic</b> debe de seguir los siguientes requisitos:
+            - Debe de ser una de las opciones porporcionadas.
+         * /
+
         "data_type_characteristic": {
             "selectValidoSEARCH": {
                 valor: selectValidoSEARCH,
@@ -1764,6 +1896,10 @@ this.def_test_characteristic = {
                 especial: true
             }
         },
+
+        /* <b>category_characteristic</b> debe de seguir los siguientes requisitos:
+            - Debe de ser una de las opciones porporcionadas.
+         * /
 
         "category_characteristic": {
             "selectValidoSEARCH": {
@@ -1773,6 +1909,13 @@ this.def_test_characteristic = {
             }
         },
 
+        /* <b>bibref_characteristic</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 200 caracteres.
+            - Permitidos: caracteres alfabéticos, ñ's, acentos, signos de puntuación y espacios.
+            - No permitidos: caracteres no mencionados.
+         * /
+        
         "bibref_characteristic": {
             "max_size": {
                 valor: 200,
@@ -1785,6 +1928,13 @@ this.def_test_characteristic = {
                 especial: false
             }
         },
+
+        /* <b>nuevo_file_characteristic</b> debe de seguir los siguientes requisitos:
+            - No hay tamaño mínimo.
+            - Tamaño máximo de 100 caracteres en nombre de archivo.
+            - Permitidos: caracteres alfabéticos y punto para indicar el formato.
+            - No permitidos: espacios, acentos, ñ's y caracteres no mencionados.
+         * /
 
         "file_characteristic": {
             "max_size": {
