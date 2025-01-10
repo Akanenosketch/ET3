@@ -89,7 +89,8 @@
     /* Aumenta el espacio entre los elementos */
     align-items: center;
     width: auto;
-    gap: 100%; /* Ajusta el valor según el espacio deseado */
+    gap: 100%;
+    /* Ajusta el valor según el espacio deseado */
     /* Ocupa un mayor ancho disponible */
 }
 
@@ -217,81 +218,9 @@ h2 {
     padding: 0.5rem;
 }
 
-.botonDELETE {
-    cursor: pointer;
-}
 
-.botonDELETE:hover {
-    scale: 1.05;
-}
 
-.botonDELETE:hover path {
-    stroke: orange;
-}
 
-.botonSHOWCURRENT {
-    cursor: pointer;
-}
-
-.botonSHOWCURRENT path{
-    stroke: black;
-}
-
-.botonSHOWCURRENT:hover {
-    scale: 1.05;
-}
-
-.botonSHOWCURRENT:hover path {
-    stroke: orange;
-}
-
-.botonEDIT {
-    cursor: pointer;
-}
-
-.botonEDIT:hover {
-    scale: 1.05;
-}
-
-.botonEDIT:hover path {
-    stroke: orange;
-}
-
-.botonFILE {
-    cursor: pointer;
-}
-
-.botonFILE:hover {
-    scale: 1.05;
-}
-
-.botonFILE:hover path {
-    stroke: orange;
-}
-
-#botonTEST {
-    cursor: pointer;
-}
-
-#botonTEST:hover {
-    scale: 1.05;
-}
-
-#botonTEST:hover path {
-    fill: orange;
-}
-
-.darkmode #botonTEST path {
-    fill: #cfcfcf;
-}
-
-.darkmode #botonTEST:hover {
-    scale: 1.05;
-}
-
-.darkmode #botonTEST:hover path {
-    fill: orange;
-}
 
 #addysearch {
     display: flex;
@@ -307,39 +236,6 @@ h2 {
     /* Espaciado entre los elementos dentro de botonesSiguienteAnterior */
 }
 
-#botonANT:hover {
-    cursor: pointer;
-}
-
-#botonANT:hover path {
-    fill: orange;
-    scale: 1.05;
-}
-
-#botonSIG:hover {
-    cursor: pointer;
-}
-
-#botonSIG:hover path {
-    fill: orange;
-    scale: 1.05;
-}
-
-.darkmode #botonANT path{
-    fill: #cfcfcf;
-}
-
-.darkmode #botonSIG path{
-    fill: #cfcfcf;
-}
-
-.darkmode #botonANT:hover path{
-    fill: orange;
-}
-
-.darkmode #botonSIG:hover path{
-    fill: orange;
-}
 
 /* Menú lateral */
 #div-menu {
@@ -391,32 +287,6 @@ h2 {
     /* Asegura que el modal esté por encima del contenido y del overlay*/
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-#botonMENU {
-    cursor: pointer;
-    height: 30px;
-}
-
-#botonMENU:hover {
-    color: #e69500;
-    scale: 1.15;
-}
-
-#botonBACK {
-    cursor: pointer;
-}
-
-#botonBACK:hover {
-    scale: 1.05;
-}
-
-#botonBACK:hover path {
-    fill: orange;
-}
-
-#botonAPI {
-    cursor: pointer;
 }
 
 /* Al pasar el ratón sobre el contenedor conjuntoAPI */
@@ -719,172 +589,7 @@ h2 {
     background-color: #2c2c2c;
 }
 
-.darkmode .botonMENU {
-    color: #cfcfcf;
-}
 
-.darkmode #botonBACK path {
-    fill: #cfcfcf;
-}
-
-.darkmode #botonBACK:hover {
-    scale: 1.05;
-}
-
-.darkmode #botonBACK:hover path {
-    fill: orange;
-}
-
-.darkmode #botonADD path {
-    stroke: #cfcfcf;
-}
-
-.darkmode #botonADD:hover {
-    scale: 1.05;
-}
-
-.darkmode #botonADD:hover path {
-    stroke: orange;
-}
-
-#botonADD:hover {
-    scale: 1.05;
-}
-
-#botonADD:hover path {
-    stroke: orange;
-}
-
-/* Estilo en modo oscuro */
-.darkmode #botonSEARCH path {
-    fill: #cfcfcf;
-    /* Color en modo oscuro */
-}
-
-.darkmode #botonSEARCH circle {
-    stroke: #cfcfcf;
-    /* Color del borde en modo oscuro */
-}
-
-.darkmode #botonSEARCH:hover {
-    scale: 1.05;
-}
-
-.darkmode #botonSEARCH:hover path {
-    fill: orange;
-    /* Color en modo oscuro */
-}
-
-.darkmode #botonSEARCH:hover circle {
-    stroke: orange;
-    /* Color del borde en modo oscuro */
-}
-
-#botonSEARCH:hover {
-    transform: scale(1.05);
-}
-
-#botonSEARCH:hover path {
-    fill: orange;
-    /* Color en modo oscuro */
-}
-
-#botonSEARCH:hover circle {
-    stroke: orange;
-    /* Color del borde en modo oscuro */
-}
-
-
-
-.darkmode .botonDELETE path {
-    stroke: #cfcfcf;
-}
-
-.darkmode .botonDELETE:hover {
-    scale: 1.05;
-}
-
-.darkmode .botonDELETE:hover path {
-    stroke: orange;
-}
-
-.darkmode .botonSHOWCURRENT path {
-    stroke: #cfcfcf;
-}
-
-.darkmode .botonSHOWCURRENT:hover {
-    scale: 1.05;
-}
-
-.darkmode .botonSHOWCURRENT:hover path {
-    stroke: orange;
-}
-
-.darkmode .botonEDIT path {
-    stroke: #cfcfcf;
-}
-
-.darkmode .botonEDIT:hover {
-    scale: 1.05;
-}
-
-.darkmode .botonEDIT:hover path {
-    stroke: orange;
-}
-
-
-.darkmode .botonFILE path {
-    stroke: #cfcfcf;
-}
-
-.darkmode .botonFILE:hover {
-    scale: 1.05;
-}
-
-.darkmode .botonFILE:hover path {
-    stroke: orange;
-}
-
-
-.darkmode .text_titulo_app {
-    color: #cfcfcf;
-}
-
-.darkmode .path-1,
-.darkmode .path-2,
-.darkmode .path-3 {
-    fill: #2c2c2c;
-}
-
-.darkmode .path-4,
-.darkmode .path-5,
-.darkmode .path-6 {
-    fill: #cfcfcf;
-}
-
-.darkmode .conjuntoESTRUCTURAS:hover,
-.darkmode .conjuntoESTRUCTURAS:hover svg {
-    color: #e69500;
-    /* Cambia el color del texto y el SVG */
-    fill: #e69500;
-    /* Cambia el color de relleno del SVG */
-}
-
-
-.conjuntoESTRUCTURAS:hover {
-    color: #e69500;
-}
-
-.darkmode .botonMENU:hover {
-    color: #e69500;
-}
-
-.darkmode a {
-    color: #cfcfcf;
-    /* Texto blanco en el modo oscuro */
-    text-decoration: none;
-    /* Elimina el subrayado */
-}
 
 /* Modo claro */
 .lightmode {
@@ -908,7 +613,6 @@ h2 {
 }
 
 .moon {
-    color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
     position: absolute;
@@ -1173,7 +877,7 @@ tr:hover {
     transform: translate(-50%, -50%);
 }
 
-.darkmode #error_action_modal{
+.darkmode #error_action_modal {
     background-color: #444444;
     color: white;
 }
@@ -1205,19 +909,31 @@ tr:hover {
 }
 
 /* Estilo empleado para los textos de API y estructuras*/
-.clase1, .clase2, .clase3, .clase4, .clase5,
-.clase6, .clase7, .clase8, .clase9, .clase10,
-.clase11, .clase12, .clase13, .clase14, .clase15, .clase16
-{
+.clase1,
+.clase2,
+.clase3,
+.clase4,
+.clase5,
+.clase6,
+.clase7,
+.clase8,
+.clase9,
+.clase10,
+.clase11,
+.clase12,
+.clase13,
+.clase14,
+.clase15,
+.clase16 {
     font-size: large;
     font-weight: bold;
 }
 
 .StrucAPIInfo {
-    margin:10px auto;
+    margin: 10px auto;
 }
 
-.StrucAPIInfo p{
+.StrucAPIInfo p {
     padding: 5px 0px;
     margin-bottom: 5px;
     background-color: #e69600ae;
@@ -1232,6 +948,7 @@ pre {
 
 /* Estilos para pantallas grandes (1920x1080 px) */
 @media screen and (min-width: 1920px) {
+
     /* Aquí puedes ajustar los márgenes, tamaños de fuente, etc., para pantallas grandes */
     #formulario {
         padding: 2rem;
@@ -1258,8 +975,8 @@ pre {
 }
 
 /* Estilos para pantallas medianas (960x540 px) */
-@media (max-width: 1920px){
-    
+@media (max-width: 1920px) {
+
 
     #submit_button {
         padding: 1rem 2rem;
@@ -1278,8 +995,8 @@ pre {
 }
 
 /* Estilos para pantallas pequeñas (960x540 px a 640x480 px) */
-@media (max-width: 960px){
- 
+@media (max-width: 960px) {
+
 
     #div-menu {
         width: 100%;
@@ -1291,27 +1008,32 @@ pre {
     #div-menu .opcionmenu .text_project,
     #div-menu .opcionmenu .text_analysis_prep,
     #div-menu .opcionmenu .text_characteristic {
-        display: block; /* Hace que el texto ocupe todo el espacio disponible */
-        text-align: center; /* Centra el texto dentro de cada opción */
-        cursor: pointer; /* Cambia el cursor al pasar sobre las opciones */
-        padding: 10px 20px; /* Espaciado dentro de las opciones */
-        border-radius: 5px; /* Bordes redondeados opcionales */
+        display: block;
+        /* Hace que el texto ocupe todo el espacio disponible */
+        text-align: center;
+        /* Centra el texto dentro de cada opción */
+        cursor: pointer;
+        /* Cambia el cursor al pasar sobre las opciones */
+        padding: 10px 20px;
+        /* Espaciado dentro de las opciones */
+        border-radius: 5px;
+        /* Bordes redondeados opcionales */
     }
 
-    .text_titulo_app{
+    .text_titulo_app {
         display: none;
     }
 
-    .opciones{
+    .opciones {
         left: 20%;
         width: auto;
         gap: 30%;
     }
 
-    .opcionmenu{
+    .opcionmenu {
         text-align: center;
     }
-    
+
     #submit_button {
         width: 100%;
         padding: 1rem;
@@ -1334,5 +1056,3 @@ pre {
         padding: 15px;
     }
 }
-
-
