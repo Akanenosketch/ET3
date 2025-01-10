@@ -18,7 +18,7 @@ class test {
         document.getElementById('tablaresultadosprueba').innerHTML = '';//limpiar tabla definicion pruebas
         document.getElementById('salidaresultadosprueba').innerHTML = '';//limpia tabla de pruebas
         document.getElementById('modal_action_overlay').style.display = 'block';
-    
+
         this.crearArrays();
     }
 
@@ -235,8 +235,6 @@ class test {
         </tr>`;
         let flag = true;
         for (let i = 0; i < this.array_pruebas.length; i++) {
-            //cargo formulario
-            this.cargar_formulario();
 
             var campotest = this.array_pruebas[i][1];
             var numdeftest = this.array_pruebas[i][2];
@@ -244,6 +242,8 @@ class test {
             var acciontest = this.array_pruebas[i][4];
             var valortest = this.array_pruebas[i][5];
             var respuestatest = this.array_pruebas[i][6];
+            //cargo formulario
+            this.cargar_formulario(acciontest);
 
             // recupero el test correspondiente a la prueba que realizo
             var def = this.devolver_def(numdeftest);
@@ -301,8 +301,6 @@ class test {
         </tr>`;
         let flag = true;
         for (let i = 0; i < this.array_pruebas_file.length; i++) {
-            //cargo formulario 
-            this.cargar_formulario();
 
             var campotest = this.array_pruebas_file[i][1];
             var numdeftest = this.array_pruebas_file[i][2];
@@ -311,7 +309,8 @@ class test {
             var clasedetest = this.array_pruebas_file[i][5];
             var valortest = this.array_pruebas_file[i][6];
             var respuestatest = this.array_pruebas_file[i][7];
-
+            //cargo formulario
+            this.cargar_formulario(acciontest);
             //construyo objeto file y relleno valor para prueba
             if (valortest.length != 0) {
                 var file = new File([new ArrayBuffer(valortest[2])], valortest[0], { type: valortest[1], webkitRelativePath: "C:\\fakepath\\" + valortest[0] });
@@ -377,8 +376,6 @@ class test {
         </tr>`;
         let flag = true;
         for (let i = 0; i < this.array_pruebas_esp.length; i++) {
-            //cargo formulario
-            this.cargar_formulario();
 
             var campotest = this.array_pruebas_esp[i][1];
             var numdeftest = this.array_pruebas_esp[i][2];
@@ -388,7 +385,8 @@ class test {
             var respuestatest = this.array_pruebas_esp[i][6];
             let campoAux = this.array_pruebas_esp[i][7];
             let valorAux = this.array_pruebas_esp[i][8];
-            
+            //cargo formulario
+            this.cargar_formulario(acciontest);
             // recupero el test correspondiente a la prueba que realizo
             var def = this.devolver_def(numdeftest);
 
