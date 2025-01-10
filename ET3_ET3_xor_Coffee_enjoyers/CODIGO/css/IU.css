@@ -118,7 +118,7 @@
     /* Texto en negrita */
     color: #ffffff;
     /* Texto blanco */
-    background: linear-gradient(135deg, #e69500, #e9a72c);
+    background: #e69500;
     /* Degradado verde */
     padding: 20px;
     /* Espaciado interno */
@@ -1049,7 +1049,7 @@ tr:hover {
 }
 
 .darkmode tr:hover {
-    background-color: rgb(228, 195, 133);
+    background-color: #e6960050;
 }
 
 /* Estilos específicos para las columnas */
