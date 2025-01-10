@@ -2173,9 +2173,9 @@ def_test_nombreentidad = {                 //todo obligatorio
     // Textos de funciones de validación
 
     'func86': 'min_size(id, minsize)',
-    'desc86': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tminsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño mínimo que debe de tener el valor.\n<b>Output:</b> Devuelve un valor booleano corespondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño mínimo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño mínimo establecido en los requisitos de ese campo.',
+    'desc86': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tminsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño mínimo que debe de tener el valor.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño mínimo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño mínimo establecido en los requisitos de ese campo.',
     'func87': 'max_size(id, maxsize)',
-    'desc87': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tmaxsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo que puede tener el valor.\n<b>Output:</b> Devuelve un valor booleano corespondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño máximo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño máximo establecido en los requisitos de ese campo.',
+    'desc87': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\tmaxsize:\n\t\tTipo: Número.\n\t\tDescripción: Hace referencia al tamaño máximo que puede tener el valor.\n<b>Output:</b> Devuelve un valor booleano correspondiente a la respuesta de <b>evaluar_tam()</b> indicando si cumple con el tamaño máximo o no.\n<b>Función:</b>Se encarga de comprobar si el valor introducido cumple con el tamaño máximo establecido en los requisitos de ese campo.',
     'func88': 'format(id, expreg)',
     'desc88': '<b>Parámetros:</b>\n\tid:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a un elemento HTML.\n\texpreg:\n\t\tTipo: String.\n\t\tDescripción: Expresión regular empleada para comprobar el formato del valor del elemento contenido en id.\n<b>Output:</b> Devuelve un valor booleando correspondiente al output de <b>evaluar_regex()</b>, indicando si el valor introducido en el campo id cumple con el formato indicado o no.\n<b>Función:</b> Se encarga de comprobar si el valor introducido en campo id cumple con el formato establecido o no.',
     'func89': 'max_size_file(id, maxsize)',
@@ -2221,7 +2221,7 @@ def_test_nombreentidad = {                 //todo obligatorio
     'opt_funciones_test': 'Tests',
     'opt_funciones_tabla': 'Presentación de Tablas',
     'opt_funciones_form': 'Creación de Formularios',
-    'opt_funciones_valid': 'Funciones de validaciones',
+    'opt_funciones_valid': 'Funciones de Validaciones',
     'opt_funciones_other': 'Otras Funciones',
 
     /*TRADUCCIONES PARA TEST*/
