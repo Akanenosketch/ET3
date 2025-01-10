@@ -60,7 +60,8 @@ let textos_ES = {
 
     /*TRADUCCIONES PARA ESTRUCTURA.HTML*/
 
-    'InfoTextStruct':'Seleccione una de las entidades en el menú lateral para conocer sobre su estructura',
+    'InfoTextStruct1' : 'En está página se ofrece una explicación sobre las estructuras realizadas para las entidades empleadas para este proyecto.',
+    'InfoTextStruct2' : 'Para conocer más información sobre una estructura selecciona una de las entidades disponibles dentro del menú localizado a en la parte superior izquierda.',
 
     //Titulos
     'text_title_page_default_structures'               : 'Estructuras Empleadas',
@@ -71,108 +72,234 @@ let textos_ES = {
     // Texto estructura project
 
     'struct1' : 'Estructura empleada para la entidad project',
-    'desc94':`      this.def_html_project = {
-                    atributos: ["id_project", "name_project", "start_date_project", "end_date_project", "responsable_project", "organization_project", "code_project", "acronym_project", "id_sampling_methodology", "description_project", "file_project"],
-        
-                    "id_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: true,
-                        esAutoIncremental: true,
-                        esEspecial: false,
-                        size: 11
-                    },
-        
-                    "name_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 100
-                    },
-        
-                    "start_date_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: true,
-                        size: 10
-                    },
-        
-                    "end_date_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: true,
-                        size: 10
-                    },
-        
-                    "responsable_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 60
-                    },
-        
-                    "organization_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 100
-                    },
-        
-                    "code_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 50
-                    },
-        
-                    "acronym_project": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 15
-                    },
-        
-                    "id_sampling_methodology": {
-                        tag: "INPUT",
-                        type: "text",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 11
-                    },
-        
-                    "description_project": {
-                        tag: "TEXTAREA",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        rows: 5,
-                        cols: 100
-                    },
-        
-                    "file_project": {
-                        tag: "INPUT",
-                        type: "file",
-                        esPK: false,
-                        esAutoIncremental: false,
-                        esEspecial: false,
-                        size: 100
-                    }
-                };`,
+    'desc94':`
+this.def_html_project = {
+    atributos: ["id_project", "name_project", "start_date_project", "end_date_project", "responsable_project", "organization_project", "code_project", "acronym_project", "id_sampling_methodology", "description_project", "file_project"],
+
+    "id_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: true,
+        esAutoIncremental: true,
+        esEspecial: false,
+        size: 11
+    },
+
+    "name_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 100
+    },
+
+    "start_date_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: true,
+        size: 10
+    },
+
+    "end_date_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: true,
+        size: 10
+    },
+
+    "responsable_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 60
+    },
+
+    "organization_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 100
+    },
+
+    "code_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 50
+    },
+
+    "acronym_project": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 15
+    },
+
+    "id_sampling_methodology": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 11
+    },
+
+    "description_project": {
+        tag: "TEXTAREA",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        rows: 5,
+        cols: 100
+    },
+
+    "file_project": {
+        tag: "INPUT",
+        type: "file",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 100
+    }
+};`,
+    
+    // Textos para la estructura de analysis_preparation
+
+    'struct2' : 'Estructura empleada para la entidad analysis preparation',
+    'desc95' : `
+this.def_html_analysis_preparation = {
+    atributos: ["id_analysis_preparation", "name_analysis_preparation", "bib_analysis_preparation", "description_analysis_preparation", "file_analysis_preparation"],
+
+    "id_analysis_preparation": {
+        tag: "INPUT",
+        type: "text",
+        esPK: true,
+        esAutoIncremental: true,
+        esEspecial: false,
+        size: 11
+    },
+
+    "name_analysis_preparation": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 100
+    },
+
+    "bib_analysis_preparation": {
+        tag: "TEXTAREA",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        rows: 4,
+        cols: 50
+    },
+
+    "description_analysis_preparation": {
+        tag: "TEXTAREA",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        rows: 50,
+        cols: 100
+    },
+
+    "file_analysis_preparation": {
+        tag: "INPUT",
+        type: "file",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 100
+    }
+};
+`,
+    
+    // Textos para la estructura de characteristic
+
+    'struct3' : 'Estructura empleada para la entidad characteristic',
+    'desc96' : `
+this.def_html_characteristic = {
+    atributos: ["id_characteristic", "name_characteristic", "data_type_characteristic","category_characteristic","description_characteristic",  "bibref_characteristic", "file_characteristic"],
+
+    "id_characteristic": {
+        tag: "INPUT",
+        type: "text",
+        esPK: true,
+        esAutoIncremental: true,
+        esEspecial: false,
+        size: 11
+    },
+
+    "name_characteristic": {
+        tag: "INPUT",
+        type: "text",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 100
+    },
+
+    "data_type_characteristic": { 
+        tag: "SELECT", 
+        valores: ['number','text','set'], 
+        multiple: false, 
+        esPK: false,  
+        esAutoIncremental: false,
+        esEspecial : false
+    },
+
+    "category_characteristic": { 
+        tag: "SELECT", 
+        valores: ['soil_site','soil_chem','soil_bio'], 
+        multiple: false, 
+        esPK: false,  
+        esAutoIncremental: false,
+        esEspecial : false
+    },
+
+    "description_characteristic": {
+        tag: "TEXTAREA",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        rows: 50,
+        cols: 100
+    },
+
+    "bibref_characteristic": {
+        tag: "TEXTAREA",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        rows: 4,
+        cols: 50
+    },
+
+    "file_characteristic": {
+        tag: "INPUT",
+        type: "file",
+        esPK: false,
+        esAutoIncremental: false,
+        esEspecial: false,
+        size: 100
+    }
+};`,
 
     /*TRADUCCIONES PARA API.HTML*/
 

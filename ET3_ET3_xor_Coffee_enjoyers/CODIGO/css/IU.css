@@ -1213,11 +1213,11 @@ tr:hover {
     font-weight: bold;
 }
 
-.APIInfo {
+.StrucAPIInfo {
     margin:10px auto;
 }
 
-.APIInfo p{
+.StrucAPIInfo p{
     padding: 5px 0px;
     margin-bottom: 5px;
     background-color: #e69600ae;
