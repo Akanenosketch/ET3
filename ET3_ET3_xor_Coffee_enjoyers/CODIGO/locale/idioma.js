@@ -27,6 +27,9 @@ function setLang(lang = '') {
             break;
     }
 
+    // Aquí se actualiza el valor del select para reflejar el idioma seleccionado
+    document.getElementById("languageSelect").value = lang;
+
 
     /*Se recorre el array de traducciones buscando coincidencias una por una*/
     for (var clave in traduccion) {
