@@ -69,12 +69,45 @@ let textos_ES = {
     //Titulos
     'text_title_page_default_structures': 'Estructuras Empleadas',
     'text_titulo_page_estructura_project': 'Estructura de Proyecto',
+    'text_titulo_page_estructura_struct': 'Estructura Vacia Explicada',
     'text_titulo_page_estructura_analysis_preparation': 'Estructura de Preparacion Análisis',
     'text_titulo_page_estructura_characteristic': 'Estructura de Característica',
 
     // Texto estructura project
-    'struct1': 'Estructura (Vacia) empleada para las entidades',
-    'desc94': '',
+    'struct4': 'Estructura (Vacia) empleada para las entidades',
+    'desc97': `
+//Variable que contiene la informacion para la generacion automatica de formularios
+def_html_nombreentidad = {
+    atributos: [],                         //Lista de los atributos de la entidad (obligatorio)
+    atributo: {                            //Definicion de cada atributo (repetido para cada atributo, obligatorio para todos los atributos)
+        tag: "",                           //El tag html del atributo (INPUT,SELECT,TEXTAREA) (obligatorio)
+        type: "",                          //El tipo de input, obligatorio y solo para atributos con tag INPUT (text,date,number,password,file)
+        valores: [],                       //Los valores posibles a seleccionar, obligatorio y solo para atributos con tag SELECT
+        multiple: false,                   //Para atributos con tag SELECT, indica si se pueden marcar multiples valores (obligatorio para SELECTs)
+        esPK: true,                        //Obligatorio, indica si el atributo es Primary Key en la tabla correspondiente a la entidad
+        esAutoIncremental: true,           //Obligatorio, indica si el atributo es Autoincremental en la tabla correspondiente a la entidad
+        esEspecial : true,                 //Obligatorio, indica si existe una funcion mostrardatosespecialesForm(atributo, valoratributo) en la clase nombreentidad para mostrar el atributo de una forma personalizada
+        size: "",                          //Optativo, para los atributos con tag INPUT, especifica el tamaño maximo del campo de input
+        rows : "",                         //Optativo, para los atributos con tag TEXTAREA, especifica el numero de filas del campo textarea
+        cols : "",                         //Optativo, para los atributos con tag TEXTAREA, especifica el numero de columnas del campo textarea
+    }
+
+};
+//Variable que contiene la informacion para la generacion automatica de validaciones
+def_test_nombreentidad = { //Todos los campos son obligatorios
+    accion: {                                   //La accion a realizar (ADD,EDIT,DELETE) (repetir para todas las acciones)
+        atributo: {                             //El atributo que va a ser probado (repetir para todos los atributos)
+            prueba: {                           //El nombre de la prueba a realizar (repetir para todas las pruebas del atributo)
+                valor : "",                     //El valor de referencia de la prueba (un tamaño minimo/maximo o una regEx; en las pruebas especiales,el nombre de la prueba para las pruebas especiales)
+                codigo: "",                     //El codigo de error correspondiente al mensaje de error a mostrar ante un fallo de esta validacion
+                especial : false                //Indica si se trata de una prueba especial, es decir, que no este implementada en Validaciones_Atomicas.js y deba ser implementada en una clase nombreentidad.js en un metodo validacionesespeciales(atributo, prueba)
+            }   
+        }
+    }
+}
+
+    
+    `,
 
     'struct1': 'Estructura empleada para la entidad project',
     'desc94': `
