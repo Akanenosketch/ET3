@@ -16,30 +16,33 @@ class project extends estructura_project {
 	}
 
 	//metodo para mostrar información especial de atributo en la tabla de muestra de tuplas
-	cambiardatosespecialestabla(atributo, valoratributo,i) {
+	cambiardatosespecialestabla(atributo, valoratributo, i) {
 		if (atributo == 'file_project') {
 			if (valoratributo == '') return `<a class="no_file_found"></a>`;
-	
+
 			let texto = valoratributo;
 			texto += `<a id="link_file_project_`;
 			texto += i; // Para evitar ids duplicados
 			texto += `" href="http://193.147.87.202/ET2/filesuploaded/files_file_project/`;
 			texto += valoratributo;
 			texto += `" target="_blank">`; // Abre el archivo en una nueva pestaña.
-			texto += `<img id="botonFILE`+i+`" src="./iconos/FILE.png"`
-			texto += `onmouseover="changeImageOnHover(true,'FILE','`+i+`');"`
-			texto +=`width=40px height=40px  onmouseout="changeImageOnHover(false, 'FILE','`+i+`');"`
+			let src = document.body.classList.contains('darkmode')
+				? `./iconos/FILE(gris).png`
+				: `./iconos/FILE.png`;
+			texto += `<img id="botonFILE` + i + `" src="` + src + `"`;
+			texto += `onmouseover="changeImageOnHover(true,'FILE','` + i + `');"`
+			texto += `width=40px height=40px  onmouseout="changeImageOnHover(false, 'FILE','` + i + `');"`
 			texto += `/></a>`;
-				return texto;
+			return texto;
 		}
-	
+
 		if (atributo == 'start_date_project' || atributo == 'end_date_project') {
 			let fech = valoratributo.split('-');
 			let fechaformateada = fech[2] + '/' + fech[1] + '/' + fech[0];
 			return fechaformateada;
 		}
 	}
-	
+
 
 	validacionesespeciales(atributo, prueba) {
 		if (atributo == 'nuevo_file_project') {
@@ -77,11 +80,11 @@ class project extends estructura_project {
 		let year = parseInt(fechaf[2]);
 		if (year == 0) return false; //En el calendario gregoriano no hay año 0
 		let month = parseInt(fechaf[1]);
-		if(month < 0 || month > 12) return false;
-		let bisiesto = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29:28;
-		let days = [31,bisiesto,31,30,31,30,31,31,30,31,30,31];
+		if (month < 0 || month > 12) return false;
+		let bisiesto = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28;
+		let days = [31, bisiesto, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 		let day = parseInt(fechaf[0]);
-		return day > 0 && day <= days[month-1];
+		return day > 0 && day <= days[month - 1];
 	}
 
 	fechasOrdenadas(fecha1, fecha2) {
