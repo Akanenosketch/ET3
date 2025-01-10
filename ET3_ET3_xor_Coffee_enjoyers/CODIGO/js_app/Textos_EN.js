@@ -241,11 +241,11 @@ let textos_EN = {
     'func76' : 'evento(event)',
     'desc76' : '<b>Parámetros:</b>\n\tevent:\n\t\tTipo: Objeto\n\t\tDescripción: Evento registrado a partir de la realización de una acción determinada.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de cerrar el menú en el caso de que esté abierto y el click no fuera dentro del menú ni en el botón para abrirlo.',
     'func77' : 'menu_work()',
-    'desc77' : '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de abrir y cerrar el menú, es llamada por la función <b>evento()</b> cuando hay que cerrar el menú.',
+    'desc77' : '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de abrir y cerrar el menú, es llamada por la función <b>evento()</b> cuando hay que cerrar el menú o al clickar el boton de abrir el menu.',
     'func78' : 'toggleTheme()',
     'desc78' : '<b>Parámetros/Output:</b> No usa parámetros y la ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de manejar los cambios de modo claro a modo oscuro.',
-    'func79' : 'changeImageOnHover(isMouseOver, action, i)',
-    'desc79' : '<b>Parámetros:</b>\n\tisMouseOver:\n\t\tTipo: Booleano.\n\t\tDescripción: Cambia cuando el ratón está encima de un objeto en específico.\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Parte del nombre de la imagen en cuestión, que hace referencia a la acción que realizas al hacer click en el icono.\n\ti: \n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el color de los iconos cuando se le pasa el ratón por encima.',
+    'func79' : 'changeImageOnHover(isMouseOver, action, aux)',
+    'desc79' : '<b>Parámetros:</b>\n\tisMouseOver:\n\t\tTipo: Booleano.\n\t\tDescripción: Cambia cuando el ratón está encima de un objeto en específico.\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Parte del nombre de la imagen en cuestión, que hace referencia a la acción que realizas al hacer click en el icono.\n\taux: \n\t\tTipo: String.\n\t\tDescripción: Elemento auxiliar.\n<b>Output:</b> La ejecución de esta función no devuelve ningún tipo de output.\n<b>Función:</b> Se encarga de cambiar el color de los iconos cuando se le pasa el ratón por encima.',
     'func80' : 'showAPI(APIElement)',
     'desc80' : '<b>Parámetros:</b>\n\tAPIElement:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a las diferentes clasificaciones de las funciones.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de mostrar todas las funciones relacionadas a la opción seleccionada en el menú.',
     'func81' : 'showEstructura(entity)',
@@ -255,9 +255,9 @@ let textos_EN = {
     'func83' : 'setCookie(name, value, days)',
     'desc83' : '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Nombre que le queremos poner a la cookie.\n\tvalue:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a los idiomas disponibles (EN y ES).\n\tdays:\n\t\tTipo: Número.\n\t\tDescripción: Número de días los que queremos que aguante la cookie.\n<b>Output:</b> La ejecución de esta función no proporciona ningún tipo de output.\n<b>Función:</b> Se encarga de establecer el valor de la cookie al valor que nosotros queramos, esta función es llamada por <b>setLang(lang)</b>.',
     'func84' : 'getCookie(name)',
-    'desc84' : '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre de la cookie.\n<b>Output:</b> Devuelve un valor nulo.\n<b>Función:</b> Se encarga de obtener el valor de la cookie en base a su nombre.',
+    'desc84' : '<b>Parámetros:</b>\n\tname:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia al nombre de la cookie.\n<b>Output:</b> Devuelve el valor de la cookie o nulo si no existe.\n<b>Función:</b> Se encarga de obtener el valor de la cookie en base a su nombre, esta función es llamada por <b>setLang(lang)</b>.',
     'func85' : 'peticionBackGeneral(formulario, controlador, action, datosextra = null)',
-    'desc85' : '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescripción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo\n\t\tDescripción: Datos extra.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones al back.',
+    'desc85': '<b>Parámetros:</b>\n\tformulario\n\t\tTipo: Objeto formulario\n\t\tDescripción: El formulario creado.\n\tcontrolador:\n\t\tTipo: Any\n\t\tDescripción: Controlador\n\taction:\n\t\tTipo: String.\n\t\tDescripción: Hace referencia a la acción que se esté realizando\n\tdatosextra:\n\t\tTipo: Nulo/Array\n\t\tDescripción: Datos extra para la petición.\n<b>Output:</b> Devuelve una nueva promesa con la resolución del dominio del servidor.\n<b>Función:</b> Se encarga de mandar las peticiones al back.',
 
     // Textos de funciones de validación
 
